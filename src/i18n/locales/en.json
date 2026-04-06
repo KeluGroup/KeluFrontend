@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home":     "Home",
+    "about":    "About",
+    "services": "Services",
+    "contact":  "Contact"
+  },
+  "home": {
+    "eyebrow":   "Welcome",
+    "heading":   "Your Brand Story Begins Here",
+    "headingEm": "Story",
+    "body":      "This is the hero description placeholder. Introduce your brand, communicate your core value proposition, and invite visitors to take the next step.",
+    "cta":       "Get in Touch",
+    "ctaSecond": "Secondary Action",
+    "scroll":    "Scroll",
+    "heroLabel": "Hero Visual / Media",
+    "imgLabel":  "Image",
+    "contentLabel": "Content"
+  },
+  "about": {
+    "tag":      "About Us",
+    "title":    "Our Story & Mission",
+    "subtitle": "Placeholder copy for the about section. Share your company background, founding story, core values, and what drives your team.",
+    "metricA":  "Metric A",
+    "metricB":  "Metric B",
+    "metricC":  "Metric C",
+    "imgLabel": "Image Placeholder"
+  },
+  "services": {
+    "tag":        "What We Offer",
+    "title":      "Our Services",
+    "subtitle":   "Placeholder overview of your service offering. Explain how each service solves a real problem and creates value for your clients.",
+    "one":        "Service One",
+    "two":        "Service Two",
+    "three":      "Service Three",
+    "four":       "Service Four",
+    "ctaTag":     "Call to Action",
+    "ctaTitle":   "Ready to get started? This is your CTA heading placeholder.",
+    "ctaBtn":     "Button Placeholder"
+  },
+  "contact": {
+    "tag":      "Get in Touch",
+    "title":    "Contact Us",
+    "subtitle": "Placeholder copy for the contact section. Invite visitors to reach out and let them know what to expect.",
+    "address":  "Address",
+    "phone":    "Phone",
+    "email":    "Email",
+    "map":      "Map Placeholder"
+  },
+  "footer": {
+    "copy": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms":   "Terms",
+    "sitemap": "Sitemap"
+  },
+  "privacy": {
+    "title":   "Privacy Policy",
+    "updated": "Last updated: April 2026",
+    "s1title": "What we collect",
+    "s1body":  "We only collect information you explicitly provide, such as your name and email when submitting the contact form.",
+    "s2title": "How we use it",
+    "s2body":  "Your information is used solely to respond to your enquiry. We never sell or share it with third parties.",
+    "s3title": "Cookies",
+    "s3body":  "This site uses only essential cookies required for basic functionality. We do not use tracking or advertising cookies.",
+    "s4title": "Your rights",
+    "s4body":  "You have the right to access, correct, or request deletion of any personal data we hold. Contact us via the contact form.",
+    "s5title": "Contact",
+    "s5body":  "For any privacy-related questions, reach out via our",
+    "s5link":  "Contact page"
+  },
+  "terms": {
+    "title":   "Terms of Use",
+    "updated": "Last updated: April 2026",
+    "s1title": "Acceptance",
+    "s1body":  "By accessing this website you agree to be bound by these Terms of Use. If you do not agree, please discontinue use immediately.",
+    "s2title": "Intellectual property",
+    "s2body":  "All content on this site is owned by Kelu and protected by copyright laws. Reproduction without written permission is prohibited.",
+    "s3title": "Limitation of liability",
+    "s3body":  "This site is provided on an as-is basis. Kelu is not liable for any damages arising from use of the site.",
+    "s4title": "External links",
+    "s4body":  "We may link to third-party websites. We have no control over their content and accept no responsibility for them.",
+    "s5title": "Changes",
+    "s5body":  "These terms may be updated at any time. Continued use constitutes your acceptance of the revised terms.",
+    "s6title": "Questions",
+    "s6body":  "For any questions about these terms, contact us via our",
+    "s6link":  "Contact page"
+  },
+  "shell": {
+    "back": "Back to site"
+  }
+}

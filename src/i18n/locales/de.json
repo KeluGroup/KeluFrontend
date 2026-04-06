@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home":     "Startseite",
+    "about":    "Über uns",
+    "services": "Leistungen",
+    "contact":  "Kontakt"
+  },
+  "home": {
+    "eyebrow":   "Willkommen",
+    "heading":   "Ihre Markengeschichte beginnt hier",
+    "headingEm": "Markengeschichte",
+    "body":      "Dies ist der Platzhaltertext für den Hero-Bereich. Stellen Sie Ihre Marke vor, kommunizieren Sie Ihr Alleinstellungsmerkmal und laden Sie Besucher zum nächsten Schritt ein.",
+    "cta":       "Kontakt aufnehmen",
+    "ctaSecond": "Weitere Aktion",
+    "scroll":    "Scrollen",
+    "heroLabel": "Hero-Visual / Medien",
+    "imgLabel":  "Bild",
+    "contentLabel": "Inhalt"
+  },
+  "about": {
+    "tag":      "Über uns",
+    "title":    "Unsere Geschichte & Mission",
+    "subtitle": "Platzhaltertext für den Über-uns-Bereich. Teilen Sie Ihren Unternehmenshintergrund, Ihre Gründungsgeschichte und Ihre Kernwerte.",
+    "metricA":  "Kennzahl A",
+    "metricB":  "Kennzahl B",
+    "metricC":  "Kennzahl C",
+    "imgLabel": "Bild-Platzhalter"
+  },
+  "services": {
+    "tag":        "Unser Angebot",
+    "title":      "Unsere Leistungen",
+    "subtitle":   "Platzhalterübersicht Ihrer Dienstleistungen. Erklären Sie, wie jede Leistung ein echtes Problem löst und Mehrwert schafft.",
+    "one":        "Leistung Eins",
+    "two":        "Leistung Zwei",
+    "three":      "Leistung Drei",
+    "four":       "Leistung Vier",
+    "ctaTag":     "Handlungsaufforderung",
+    "ctaTitle":   "Bereit loszulegen? Dies ist Ihr CTA-Überschriften-Platzhalter.",
+    "ctaBtn":     "Schaltfläche"
+  },
+  "contact": {
+    "tag":      "Kontakt aufnehmen",
+    "title":    "Kontakt",
+    "subtitle": "Platzhaltertext für den Kontaktbereich. Laden Sie Besucher ein, sich zu melden.",
+    "address":  "Adresse",
+    "phone":    "Telefon",
+    "email":    "E-Mail",
+    "map":      "Karten-Platzhalter"
+  },
+  "footer": {
+    "copy": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms":   "Nutzungsbedingungen",
+    "sitemap": "Sitemap"
+  },
+  "privacy": {
+    "title":   "Datenschutzerklärung",
+    "updated": "Zuletzt aktualisiert: April 2026",
+    "s1title": "Was wir erheben",
+    "s1body":  "Wir erheben nur Informationen, die Sie ausdrücklich angeben, z. B. Ihren Namen und Ihre E-Mail-Adresse beim Absenden des Kontaktformulars.",
+    "s2title": "Wie wir sie verwenden",
+    "s2body":  "Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfrage verwendet. Wir verkaufen oder teilen sie niemals mit Dritten.",
+    "s3title": "Cookies",
+    "s3body":  "Diese Website verwendet nur technisch notwendige Cookies. Wir verwenden keine Tracking- oder Werbe-Cookies.",
+    "s4title": "Ihre Rechte",
+    "s4body":  "Sie haben das Recht, auf Ihre gespeicherten Daten zuzugreifen, diese zu korrigieren oder deren Löschung zu beantragen.",
+    "s5title": "Kontakt",
+    "s5body":  "Bei datenschutzbezogenen Fragen wenden Sie sich über unsere",
+    "s5link":  "Kontaktseite"
+  },
+  "terms": {
+    "title":   "Nutzungsbedingungen",
+    "updated": "Zuletzt aktualisiert: April 2026",
+    "s1title": "Annahme",
+    "s1body":  "Durch den Zugriff auf diese Website stimmen Sie diesen Nutzungsbedingungen zu. Falls Sie nicht einverstanden sind, stellen Sie die Nutzung ein.",
+    "s2title": "Geistiges Eigentum",
+    "s2body":  "Alle Inhalte dieser Website sind Eigentum von Kelu und urheberrechtlich geschützt. Eine Reproduktion ohne Genehmigung ist untersagt.",
+    "s3title": "Haftungsbeschränkung",
+    "s3body":  "Diese Website wird ohne Gewähr bereitgestellt. Kelu haftet nicht für Schäden, die aus der Nutzung der Website entstehen.",
+    "s4title": "Externe Links",
+    "s4body":  "Wir verlinken möglicherweise auf Websites Dritter. Wir übernehmen keine Verantwortung für deren Inhalte.",
+    "s5title": "Änderungen",
+    "s5body":  "Diese Bedingungen können jederzeit aktualisiert werden. Die weitere Nutzung gilt als Zustimmung zu den geänderten Bedingungen.",
+    "s6title": "Fragen",
+    "s6body":  "Bei Fragen zu diesen Bedingungen wenden Sie sich über unsere",
+    "s6link":  "Kontaktseite"
+  },
+  "shell": {
+    "back": "Zurück zur Website"
+  }
+}

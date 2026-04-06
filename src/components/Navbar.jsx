@@ -1,0 +1,109 @@
+import { useTranslation } from 'react-i18next'
+import { BRAND_NAME } from '../config'
+
+const SunIcon  = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="12" cy="12" r="5"/>
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+  </svg>
+)
+const MoonIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+)
+
+export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
+  const { t, i18n } = useTranslation()
+
+  const NAV_LINKS = [
+    { href: '#home',     label: t('nav.home')     },
+    { href: '#about',    label: t('nav.about')    },
+    { href: '#services', label: t('nav.services') },
+    { href: '#contact',  label: t('nav.contact')  },
+  ]
+
+  const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')
+
+  return (
+    <>
+      <header className={['navbar', scrolled ? 'scrolled' : ''].join(' ')} role="banner" id="navbar">
+        <div className="navbar-inner">
+
+          <a href="#home" className="navbar-logo" aria-label={`${BRAND_NAME} — Home`}>
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect width="34" height="34" rx="9" fill="rgba(255,255,255,0.12)"/>
+              <path d="M17 7C17 7 9 13 9 20C9 24.4 12.7 28 17 28C21.3 28 25 24.4 25 20C25 13 17 7 17 7Z" fill="#9DB59F"/>
+              <path d="M17 11C17 11 11 16 11 21C11 24.3 13.7 27 17 27" stroke="white" strokeWidth="1.4" strokeLinecap="round"/>
+              <circle cx="17" cy="20" r="2.5" fill="white"/>
+            </svg>
+            <span className="logo-wordmark">{BRAND_NAME}</span>
+          </a>
+
+          <nav aria-label="Primary navigation">
+            <ul className="navbar-nav" role="list">
+              {NAV_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <a href={href} className={activeSection === href.slice(1) ? 'active' : ''}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="navbar-actions">
+
+            {/* Language switcher */}
+            <button
+              className="lang-switcher"
+              onClick={toggleLang}
+              aria-label="Switch language"
+              title="Switch language"
+            >
+              {i18n.language === 'en' ? 'DE' : 'EN'}
+            </button>
+
+            {/* Theme toggle */}
+            <button
+              className="icon-btn"
+              onClick={onToggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              title="Toggle theme"
+            >
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            <button
+              className={['hamburger', 'icon-btn', menuOpen ? 'open' : ''].join(' ')}
+              id="hamburger"
+              onClick={onToggleMenu}
+              aria-label="Open menu"
+              aria-expanded={menuOpen}
+            >
+              <span /><span /><span />
+            </button>
+          </div>
+
+        </div>
+      </header>
+
+      <div
+        className={['mobile-drawer', menuOpen ? 'open' : ''].join(' ')}
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        {NAV_LINKS.map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            className={activeSection === href.slice(1) ? 'active' : ''}
+            onClick={onCloseMenu}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </>
+  )
+}

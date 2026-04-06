@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Brand Mockup</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- =====================
+       NAVBAR
+       ===================== -->
+  <header class="navbar" role="banner" id="navbar">
+    <div class="navbar-inner">
+
+      <!-- Logo -->
+      <a href="#home" class="navbar-logo" aria-label="Kelu — Home">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <rect width="34" height="34" rx="9" fill="rgba(255,255,255,0.12)"/>
+          <path d="M17 7C17 7 9 13 9 20C9 24.4 12.7 28 17 28C21.3 28 25 24.4 25 20C25 13 17 7 17 7Z" fill="#9DB59F"/>
+          <path d="M17 11C17 11 11 16 11 21C11 24.3 13.7 27 17 27" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="17" cy="20" r="2.5" fill="white"/>
+        </svg>
+        <span class="logo-wordmark">Kelu</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Primary navigation">
+        <ul class="navbar-nav" role="list">
+          <li><a href="#home"     class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="navbar-actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Switch to dark mode" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+        <button class="hamburger icon-btn" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile navigation">
+    <a href="#home"     class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Side Progress Dots -->
+  <nav class="side-dots" aria-label="Section navigation">
+    <button class="side-dot active" data-section="home"     aria-label="Go to Home"></button>
+    <button class="side-dot"        data-section="about"    aria-label="Go to About"></button>
+    <button class="side-dot"        data-section="services" aria-label="Go to Services"></button>
+    <button class="side-dot"        data-section="contact"  aria-label="Go to Contact"></button>
+  </nav>
+
+  <!-- =====================
+       MAIN
+       ===================== -->
+  <main id="main-content">
+
+    <!-- ── HOME ── -->
+    <section id="home" class="section" aria-label="Home">
+      <div class="home-inner">
+
+        <div class="home-copy">
+          <span class="eyebrow">Welcome</span>
+          <h1 class="hero-heading">
+            Your Brand <em>Story</em> Begins Here
+          </h1>
+          <p class="hero-body">
+            This is the hero description placeholder. Introduce your brand, communicate your core
+            value proposition, and invite visitors to take the next step in two or three focused sentences.
+          </p>
+          <div class="cta-row">
+            <div class="btn-ph btn-ph-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+              Primary CTA
+            </div>
+            <div class="btn-ph btn-ph-ghost">Secondary Action</div>
+          </div>
+          <div class="scroll-cue" aria-hidden="true">
+            <span>Scroll</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="home-visual" aria-hidden="true">
+          <div class="ph-block ph-hero-main">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span class="ph-block-label">Hero Visual / Media</span>
+          </div>
+          <div class="ph-mini-row">
+            <div class="ph-block ph-mini">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span class="ph-block-label">Image</span>
+            </div>
+            <div class="ph-block ph-mini">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="ph-block-label">Content</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section" aria-label="About">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">Our Story &amp; Mission</h2>
+          <p class="section-sub">Placeholder copy for the about section. Share your company background,
+            founding story, core values, and what drives your team — in warm, authentic language that builds trust.</p>
+        </div>
+
+        <div class="two-col">
+
+          <div class="ph-image" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            <span>Image Placeholder</span>
+          </div>
+
+          <div class="text-col">
+            <div class="ph-text-block">
+              <div class="ph-h"></div>
+              <div class="ph-l"></div>
+              <div class="ph-l"></div>
+              <div class="ph-l short"></div>
+            </div>
+            <div class="ph-text-block">
+              <div class="ph-h"></div>
+              <div class="ph-l"></div>
+              <div class="ph-l"></div>
+              <div class="ph-l shorter"></div>
+            </div>
+            <div class="stats-row">
+              <div class="stat">
+                <span class="stat-num">—</span>
+                <span class="stat-label">Metric A</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">—</span>
+                <span class="stat-label">Metric B</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">—</span>
+                <span class="stat-label">Metric C</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SERVICES ── -->
+    <section id="services" class="section" aria-label="Services">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <span class="section-tag">What We Offer</span>
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-sub">Placeholder overview of your service offering. Explain how each service
+            solves a real problem and creates value for your clients or users.</p>
+        </div>
+
+        <div class="cards-grid">
+
+          <div class="ph-card">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="ph-card-title">Service One</div>
+            <div class="ph-lines">
+              <div class="ph-line"></div><div class="ph-line"></div>
+              <div class="ph-line short"></div><div class="ph-line shorter"></div>
+            </div>
+          </div>
+
+          <div class="ph-card">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <div class="ph-card-title">Service Two</div>
+            <div class="ph-lines">
+              <div class="ph-line"></div><div class="ph-line"></div>
+              <div class="ph-line short"></div><div class="ph-line shorter"></div>
+            </div>
+          </div>
+
+          <div class="ph-card">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="ph-card-title">Service Three</div>
+            <div class="ph-lines">
+              <div class="ph-line"></div><div class="ph-line"></div>
+              <div class="ph-line short"></div><div class="ph-line shorter"></div>
+            </div>
+          </div>
+
+          <div class="ph-card">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="ph-card-title">Service Four</div>
+            <div class="ph-lines">
+              <div class="ph-line"></div><div class="ph-line"></div>
+              <div class="ph-line short"></div><div class="ph-line shorter"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cta-banner" aria-hidden="true">
+          <div class="cta-banner-copy">
+            <p class="cta-banner-tag">Call to Action</p>
+            <p class="cta-banner-title">Ready to get started? This is your CTA heading placeholder.</p>
+          </div>
+          <div class="cta-banner-btn">[ Button Placeholder ]</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-sub">Placeholder copy for the contact section. Invite visitors to reach out and
+            let them know what to expect — response time, available channels, or a short welcoming message.</p>
+        </div>
+
+        <div class="contact-layout">
+
+          <div class="contact-aside">
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Address</p>
+                <div class="ph-contact-val">
+                  <div class="ph-cv ph-l" style="width:130px;"></div>
+                  <div class="ph-cv ph-l" style="width:100px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <div class="ph-contact-val">
+                  <div class="ph-cv ph-l" style="width:110px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <div class="ph-contact-val">
+                  <div class="ph-cv ph-l" style="width:150px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ph-map" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                <line x1="9" y1="3" x2="9" y2="18"/>
+                <line x1="15" y1="6" x2="15" y2="21"/>
+              </svg>
+              <span>Map Placeholder</span>
+            </div>
+
+          </div>
+
+          <div class="form-ph" role="form" aria-label="Contact form (placeholder)">
+            <div class="form-row-2">
+              <div class="form-field">
+                <div class="form-lbl"></div>
+                <div class="form-inp"></div>
+              </div>
+              <div class="form-field">
+                <div class="form-lbl"></div>
+                <div class="form-inp"></div>
+              </div>
+            </div>
+            <div class="form-field">
+              <div class="form-lbl"></div>
+              <div class="form-inp"></div>
+            </div>
+            <div class="form-field">
+              <div class="form-lbl"></div>
+              <div class="form-inp"></div>
+            </div>
+            <div class="form-field">
+              <div class="form-lbl" style="width:80px;"></div>
+              <div class="form-inp tall"></div>
+            </div>
+            <div class="form-submit" aria-hidden="true"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================
+       FOOTER
+       ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <a href="#home" class="footer-brand" aria-label="Kelu home">
+        <svg width="24" height="24" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <rect width="34" height="34" rx="9" fill="rgba(255,255,255,0.12)"/>
+          <path d="M17 7C17 7 9 13 9 20C9 24.4 12.7 28 17 28C21.3 28 25 24.4 25 20C25 13 17 7 17 7Z" fill="#9DB59F"/>
+          <circle cx="17" cy="20" r="2.5" fill="white"/>
+        </svg>
+        <span class="footer-wordmark">Kelu</span>
+      </a>
+      <p class="footer-copy">© 2026 Kelu. All rights reserved. — Website Mockup.</p>
+      <ul class="footer-links" role="list">
+        <li><a href="#" target="_blank" rel="noopener noreferrer">Privacy</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">Terms</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Script (deferred, placed before </body>) -->
+  <script src="main.js"></script>
+
+</body>
+</html>
