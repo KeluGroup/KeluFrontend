@@ -38,14 +38,17 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
 
 
 export default function App() {
-  const [theme,         setTheme]         = useState(() =>
-    matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  const [theme, setTheme] = useState(() =>
+    localStorage.getItem('theme') ??
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   )
   const [menuOpen,      setMenuOpen]      = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled,      setScrolled]      = useState(false)
 
   const location = useLocation()
+
+  
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -56,6 +59,11 @@ export default function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   // Re-runs every time the path changes so the IO re-attaches
   // to sections when navigating back to /

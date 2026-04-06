@@ -45,7 +45,21 @@
     "address":  "Adresse",
     "phone":    "Telefon",
     "email":    "E-Mail",
-    "map":      "Karten-Platzhalter"
+    "map":      "Karten-Platzhalter",
+    "form": {
+      "name":               "Vollständiger Name",
+      "namePlaceholder":    "Max Mustermann",
+      "email":              "E-Mail-Adresse",
+      "emailPlaceholder":   "max@beispiel.de",
+      "company":            "Unternehmen",
+      "companyPlaceholder": "Optional",
+      "message":            "Nachricht",
+      "messagePlaceholder": "Erzählen Sie uns mehr...",
+      "send":               "Nachricht senden",
+      "sending":            "Wird gesendet...",
+      "success":            "Nachricht gesendet! Wir melden uns bald.",
+      "error":              "Etwas ist schiefgelaufen. Bitte erneut versuchen."
+      }
   },
   "footer": {
     "copy": "Alle Rechte vorbehalten.",

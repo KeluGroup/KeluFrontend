@@ -45,7 +45,21 @@
     "address":  "Address",
     "phone":    "Phone",
     "email":    "Email",
-    "map":      "Map Placeholder"
+    "map":      "Map Placeholder",
+      "form": {
+        "name":               "Full Name",
+        "namePlaceholder":    "Jane Smith",
+        "email":              "Email Address",
+        "emailPlaceholder":   "jane@example.com",
+        "company":            "Company",
+        "companyPlaceholder": "Optional",
+        "message":            "Message",
+        "messagePlaceholder": "Tell us more...",
+        "send":               "Send Message",
+        "sending":            "Sending...",
+        "success":            "Message sent! We'll be in touch soon.",
+        "error":              "Something went wrong. Please try again."
+    }
   },
   "footer": {
     "copy": "All rights reserved.",
