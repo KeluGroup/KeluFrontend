@@ -388,3 +388,15 @@ a.btn-ph {
   margin-top: var(--space-1);
   display: block;
 }
+
+.navbar-logo img {
+  background: white;
+  border-radius: 6px;   /* optional, match your logo shape */
+  padding: 2px;         /* optional, give it some breathing room */
+}
+
+.footer-brand img {
+  background: white;
+  border-radius: 6px;   /* optional, match your logo shape */
+  padding: 2px;         /* optional, give it some breathing room */
+}

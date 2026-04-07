@@ -31,12 +31,13 @@ export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, o
         <div className="navbar-inner">
 
           <a href="#home" className="navbar-logo" aria-label={`${BRAND_NAME} — Home`}>
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-              <rect width="34" height="34" rx="9" fill="rgba(255,255,255,0.12)"/>
-              <path d="M17 7C17 7 9 13 9 20C9 24.4 12.7 28 17 28C21.3 28 25 24.4 25 20C25 13 17 7 17 7Z" fill="#9DB59F"/>
-              <path d="M17 11C17 11 11 16 11 21C11 24.3 13.7 27 17 27" stroke="white" strokeWidth="1.4" strokeLinecap="round"/>
-              <circle cx="17" cy="20" r="2.5" fill="white"/>
-            </svg>
+            <img
+              src="/logo.svg"
+              alt={BRAND_NAME}
+              width="34"
+              height="34"
+              aria-hidden="true"
+            />
             <span className="logo-wordmark">{BRAND_NAME}</span>
           </a>
 

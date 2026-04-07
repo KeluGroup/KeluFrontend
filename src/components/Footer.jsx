@@ -9,12 +9,14 @@ export default function Footer() {
     <footer className="site-footer" role="contentinfo">
       <div className="footer-inner">
         <a href="#home" className="footer-brand" aria-label="Kelu home">
-          <svg width="24" height="24" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-            <rect width="34" height="34" rx="9" fill="rgba(255,255,255,0.12)"/>
-            <path d="M17 7C17 7 9 13 9 20C9 24.4 12.7 28 17 28C21.3 28 25 24.4 25 20C25 13 17 7 17 7Z" fill="#9DB59F"/>
-            <circle cx="17" cy="20" r="2.5" fill="white"/>
-          </svg>
-          <span className="footer-wordmark">Kelu</span>
+          <img
+            src="/logo.svg"
+            alt={BRAND_NAME}
+            width="34"
+            height="34"
+            aria-hidden="true"
+          />
+          <span className="logo-wordmark">{BRAND_NAME}</span>
         </a>
         <p className="footer-copy">© {BRAND_YEAR} {BRAND_NAME} Gmbh. {t('footer.copy')}</p>
         <ul className="footer-links" role="list">
