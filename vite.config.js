@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.alphacode.ch',
+        target: 'https://api.kelugroup.ch',
         changeOrigin: true,
       }
     }
