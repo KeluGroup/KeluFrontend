@@ -10,6 +10,7 @@ import Footer   from './components/Footer'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
 import ScrollToHash from './components/ScrollToHash'
+import { SECTIONS } from './config'
 
 
 function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
@@ -27,8 +28,8 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <SideDots activeSection={activeSection} />
       <main id="main-content">
         <Home />
-        <About />
         <Services />
+        <About />
         <Contact />
       </main>
       <Footer />
@@ -72,7 +73,7 @@ export default function App() {
 
     setActiveSection('home')
 
-    const ids = ['home', 'about', 'services', 'contact']
+    const ids = SECTIONS
     const io  = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id) }),
       { threshold: 0.45 }

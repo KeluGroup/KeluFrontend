@@ -6,10 +6,10 @@
     "contact":  "Contact"
   },
   "home": {
-    "eyebrow":   "Welcome",
-    "heading":   "Your Brand Story Begins Here",
-    "headingEm": "Story",
-    "body":      "This is the hero description placeholder. Introduce your brand, communicate your core value proposition, and invite visitors to take the next step.",
+    "eyebrow":   "Latin Food Distribution",
+    "heading":   "Premium Latin Food",
+    "headingEm": "Distribution in Switzerland",
+    "body":      "Supplying restaurants, retailers and food professionals with authentic Latin American products.",
     "cta":       "Get in Touch",
     "ctaSecond": "Secondary Action",
     "scroll":    "Scroll",
@@ -40,8 +40,8 @@
   },
   "contact": {
     "tag":      "Get in Touch",
-    "title":    "Contact Us",
-    "subtitle": "Placeholder copy for the contact section. Invite visitors to reach out and let them know what to expect.",
+    "title":    "Let's work together",
+    "subtitle": "Whether you're looking for a reliable Latin food supplier or want to explore partnership opportunities, we'd love to hear from you.",
     "address":  "Address",
     "phone":    "Phone",
     "email":    "Email",

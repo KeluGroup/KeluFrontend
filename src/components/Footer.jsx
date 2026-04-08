@@ -18,7 +18,7 @@ export default function Footer() {
           />
           <span className="logo-wordmark">{BRAND_NAME}</span>
         </a>
-        <p className="footer-copy">© {BRAND_YEAR} {BRAND_NAME} Gmbh. {t('footer.copy')}</p>
+        <p className="footer-copy">© {BRAND_YEAR} {BRAND_NAME} Group Gmbh. {t('footer.copy')}</p>
         <ul className="footer-links" role="list">
           <li><Link to="/privacy">{t('footer.privacy')}</Link></li>
           <li><Link to="/terms">{t('footer.terms')}</Link></li>
