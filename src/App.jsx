@@ -12,6 +12,7 @@ import CtaBanner from './components/CtaBanner'
 import Team      from './components/Team'
 import Contact   from './components/Contact'
 import Footer    from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
 import ScrollToHash from './components/ScrollToHash'
@@ -43,6 +44,7 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import ProductModal from './ProductModal'
 
 const FEATURES = [
   {
@@ -48,6 +50,7 @@ const PRODUCTS = [
 
 export default function Solution() {
   const { t } = useTranslation()
+  const [activeProduct, setActiveProduct] = useState(null)
 
   return (
     <section id="solution" className="section" aria-label="Solution">
@@ -77,22 +80,40 @@ export default function Solution() {
           </div>
 
           <div className="solution-visual scroll-animate">
-            {/* decorative circles inside the visual panel */}
             <span className="visual-blob visual-blob--1" aria-hidden="true" />
             <span className="visual-blob visual-blob--2" aria-hidden="true" />
             <h3 className="products-title">{t('solution.productsTitle')}</h3>
+            <p className="products-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{display:'inline',marginRight:'4px',verticalAlign:'middle'}}>
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Tap a product to learn more
+            </p>
             <div className="products-grid">
               {PRODUCTS.map((p) => (
-                <div key={p.key} className="product-tag">
+                <button
+                  key={p.key}
+                  className="product-tag product-tag--clickable"
+                  onClick={() => setActiveProduct(p)}
+                  aria-label={t(`solution.${p.key}`)}
+                >
                   <span className="product-emoji" aria-hidden="true">{p.emoji}</span>
                   <span className="product-name">{t(`solution.${p.key}`)}</span>
-                </div>
+                  <span className="product-tag-arrow" aria-hidden="true">→</span>
+                </button>
               ))}
             </div>
           </div>
 
         </div>
       </div>
+
+      {activeProduct && (
+        <ProductModal
+          product={activeProduct}
+          onClose={() => setActiveProduct(null)}
+        />
+      )}
     </section>
   )
 }

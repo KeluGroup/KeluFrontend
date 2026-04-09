@@ -89,6 +89,16 @@ export default function Stats() {
           </div>
         ))}
       </div>
+
+      {/* Trust strip */}
+      <div className="stats-trust-strip">
+        {['Zürich zones covered', 'On-time delivery', 'Fixed weekly routes', 'Zero hidden fees'].map((label) => (
+          <div key={label} className="stats-trust-item">
+            <span className="stats-trust-check">✓</span>
+            {label}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

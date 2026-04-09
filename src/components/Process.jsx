@@ -38,7 +38,14 @@ export default function Process() {
   const { t } = useTranslation()
 
   return (
-    <section id="process" className="section" aria-label="Process">
+    <section id="process" className="section process-section" aria-label="Process">
+      {/* Soft decorative background shapes */}
+      <div className="process-bg" aria-hidden="true">
+        <div className="process-bg-circle process-bg-circle--1" />
+        <div className="process-bg-circle process-bg-circle--2" />
+        <div className="process-bg-circle process-bg-circle--3" />
+      </div>
+
       <div className="section-inner">
 
         <div className="section-header">
@@ -55,6 +62,7 @@ export default function Process() {
                 <span className="process-icon">{STEP_ICONS[i]}</span>
               </div>
               <div className="process-content">
+                <div className="process-step-num-label">Paso {n}</div>
                 <h3 className="process-step-title">{t(`process.step${n}title`)}</h3>
                 <p className="process-step-desc">{t(`process.step${n}desc`)}</p>
               </div>

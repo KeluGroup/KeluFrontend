@@ -1,5 +1,18 @@
 import { useTranslation } from 'react-i18next'
 
+const FOOD_STICKERS = [
+  { emoji: '🫓', label: 'Arepa' },
+  { emoji: '🧀', label: 'Tequeño' },
+  { emoji: '🥟', label: 'Empanada' },
+  { emoji: '🌶️', label: 'Ají' },
+  { emoji: '🍌', label: 'Plátano' },
+  { emoji: '🥑', label: 'Aguacate' },
+  { emoji: '🫔', label: 'Yuca' },
+  { emoji: '🥭', label: 'Mango' },
+  { emoji: '🍹', label: 'Pulpa' },
+  { emoji: '🌮', label: 'Latino' },
+]
+
 const CARDS = [
   {
     key: 'card1',
@@ -52,7 +65,20 @@ export default function Problem() {
   const { t } = useTranslation()
 
   return (
-    <section id="problem" className="section" aria-label="Problem">
+    <section id="problem" className="section problem-section" aria-label="Problem">
+
+      {/* Scrolling food marquee */}
+      <div className="problem-marquee" aria-hidden="true">
+        <div className="problem-marquee-track">
+          {[...FOOD_STICKERS, ...FOOD_STICKERS, ...FOOD_STICKERS].map((s, i) => (
+            <div key={i} className="food-chip">
+              <span className="food-chip-emoji">{s.emoji}</span>
+              <span className="food-chip-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="section-inner">
 
         <div className="section-header">
@@ -72,6 +98,14 @@ export default function Problem() {
         </div>
 
       </div>
+
+      {/* Decorative background food emojis */}
+      <div className="problem-bg-deco" aria-hidden="true">
+        {['🫓','🧀','🌶️','🥑','🍌','🥟','🥭','🍹'].map((e, i) => (
+          <span key={i} className={`problem-bg-emoji problem-bg-emoji--${i + 1}`}>{e}</span>
+        ))}
+      </div>
+
     </section>
   )
 }
