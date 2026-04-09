@@ -21,7 +21,10 @@ export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, o
     label: t(`nav.${id}`),
   }))
 
-  const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')
+  const toggleLang = () => {
+    const cycle = { en: 'de', de: 'es', es: 'en' }
+    i18n.changeLanguage(cycle[i18n.language] ?? 'en')
+  }
 
   return (
     <>
@@ -60,7 +63,7 @@ export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, o
               aria-label="Switch language"
               title="Switch language"
             >
-              {i18n.language === 'en' ? 'DE' : 'EN'}
+              {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
             </button>
 
             {/* Theme toggle */}

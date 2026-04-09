@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home":     "Inicio",
+    "about":    "Nosotros",
+    "services": "Servicios",
+    "contact":  "Contacto"
+  },
+  "home": {
+    "eyebrow":   "Distribución de Comida Latina",
+    "heading":   "Comida Latina Premium",
+    "headingEm": "Distribución en Suiza",
+    "body":      "Abastecemos restaurantes, minoristas y profesionales de la gastronomía con productos latinoamericanos auténticos.",
+    "cta":       "Contáctanos",
+    "ctaSecond": "Acción secundaria",
+    "scroll":    "Desplazar",
+    "heroLabel": "Visual Hero / Medios",
+    "imgLabel":  "Imagen",
+    "contentLabel": "Contenido"
+  },
+  "about": {
+    "tag":      "Sobre Nosotros",
+    "title":    "Nuestra Historia & Misión",
+    "subtitle": "Somos una empresa dedicada a conectar los sabores auténticos de Latinoamérica con el mercado suizo, llevando productos de calidad a restaurantes y minoristas.",
+    "metricA":  "Métrica A",
+    "metricB":  "Métrica B",
+    "metricC":  "Métrica C",
+    "imgLabel": "Imagen de referencia"
+  },
+  "services": {
+    "tag":        "Lo Que Ofrecemos",
+    "title":      "Nuestros Servicios",
+    "subtitle":   "Ofrecemos una amplia gama de servicios de distribución de alimentos latinos, adaptados a las necesidades de cada cliente.",
+    "one":        "Servicio Uno",
+    "two":        "Servicio Dos",
+    "three":      "Servicio Tres",
+    "four":       "Servicio Cuatro",
+    "ctaTag":     "Llamada a la acción",
+    "ctaTitle":   "¿Listo para comenzar? Este es el encabezado de tu CTA.",
+    "ctaBtn":     "Botón de acción"
+  },
+  "contact": {
+    "tag":      "Contáctanos",
+    "title":    "Trabajemos juntos",
+    "subtitle": "Si buscas un proveedor confiable de alimentos latinos o quieres explorar oportunidades de colaboración, nos encantaría saber de ti.",
+    "address":  "Dirección",
+    "phone":    "Teléfono",
+    "email":    "Correo electrónico",
+    "map":      "Mapa de referencia",
+    "form": {
+      "name":               "Nombre completo",
+      "namePlaceholder":    "Juan Pérez",
+      "email":              "Correo electrónico",
+      "emailPlaceholder":   "juan@ejemplo.com",
+      "company":            "Empresa",
+      "companyPlaceholder": "Opcional",
+      "message":            "Mensaje",
+      "messagePlaceholder": "Cuéntanos más...",
+      "send":               "Enviar mensaje",
+      "sending":            "Enviando...",
+      "success":            "¡Mensaje enviado! Nos pondremos en contacto pronto.",
+      "error":              "Algo salió mal. Por favor intenta de nuevo."
+    }
+  },
+  "footer": {
+    "copy": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms":   "Términos",
+    "sitemap": "Mapa del sitio"
+  },
+  "privacy": {
+    "title":   "Política de Privacidad",
+    "updated": "Última actualización: Abril 2026",
+    "s1title": "Qué recopilamos",
+    "s1body":  "Solo recopilamos la información que usted proporciona explícitamente, como su nombre y correo al enviar el formulario de contacto.",
+    "s2title": "Cómo la usamos",
+    "s2body":  "Su información se utiliza únicamente para responder a su consulta. Nunca la vendemos ni la compartimos con terceros.",
+    "s3title": "Cookies",
+    "s3body":  "Este sitio utiliza únicamente cookies esenciales para su funcionamiento básico. No usamos cookies de seguimiento ni publicidad.",
+    "s4title": "Sus derechos",
+    "s4body":  "Usted tiene derecho a acceder, corregir o solicitar la eliminación de cualquier dato personal que tengamos. Contáctenos a través del formulario.",
+    "s5title": "Contacto",
+    "s5body":  "Para cualquier pregunta relacionada con la privacidad, comuníquese a través de nuestra",
+    "s5link":  "página de contacto"
+  },
+  "terms": {
+    "title":   "Términos de Uso",
+    "updated": "Última actualización: Abril 2026",
+    "s1title": "Aceptación",
+    "s1body":  "Al acceder a este sitio web, usted acepta estar sujeto a estos Términos de Uso. Si no está de acuerdo, deje de usarlo de inmediato.",
+    "s2title": "Propiedad intelectual",
+    "s2body":  "Todo el contenido de este sitio es propiedad de Kelu y está protegido por las leyes de derechos de autor. Su reproducción sin autorización está prohibida.",
+    "s3title": "Limitación de responsabilidad",
+    "s3body":  "Este sitio se proporciona tal cual. Kelu no es responsable de los daños derivados del uso del sitio.",
+    "s4title": "Enlaces externos",
+    "s4body":  "Podemos enlazar a sitios web de terceros. No tenemos control sobre su contenido y no aceptamos responsabilidad por ellos.",
+    "s5title": "Cambios",
+    "s5body":  "Estos términos pueden actualizarse en cualquier momento. El uso continuado implica la aceptación de los términos revisados.",
+    "s6title": "Preguntas",
+    "s6body":  "Para cualquier pregunta sobre estos términos, contáctenos a través de nuestra",
+    "s6link":  "página de contacto"
+  },
+  "shell": {
+    "back": "Volver al sitio"
+  }
+}
