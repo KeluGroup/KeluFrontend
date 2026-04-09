@@ -116,10 +116,24 @@
     "description": "Vereinbare ein 30-minütiges Meeting und entdecke, wie KELU+ dein zuverlässiger Lieferant werden kann.",
     "button":      "Meeting jetzt vereinbaren"
   },
+  "team": {
+    "tag":      "Unser Team",
+    "title":    "Die Menschen hinter KELU+",
+    "subtitle": "Drei Bereiche, eine Mission: das Beste Lateinamerikas in die Schweiz bringen.",
+    "kevinRole":  "Chief Growth & Commercial Officer",
+    "kevinAreas": ["B2B-Kundengewinnung", "Kommerzielle Strategie", "Finanzprognosen", "Institutionelle Beziehungen", "Nationale Expansion"],
+    "juliaRole":  "Chief Operations & Supply Officer",
+    "juliaAreas": ["Lieferantenmanagement", "Logistik & Transport", "Bestandskontrolle", "Optimierung der Betriebskosten", "Basel-Expansion"],
+    "andresRole": "Chief Technology Officer",
+    "andresAreas": ["Strategisches Marketing", "Branding & Positionierung", "CRM & Kundendatenbank", "Technische Infrastruktur", "Prozessautomatisierung"]
+  },
   "contact": {
-    "tag":      "Kontakt aufnehmen",
-    "title":    "Lass uns zusammenarbeiten",
-    "subtitle": "Ob du einen zuverlässigen Lieferanten für lateinamerikanische Lebensmittel suchst oder Partnerschaftsmöglichkeiten erkunden möchtest – wir freuen uns von dir zu hören.",
+    "tag":       "Kontakt aufnehmen",
+    "title":     "Lass uns zusammenarbeiten",
+    "subtitle":  "Ob du einen zuverlässigen Lieferanten für lateinamerikanische Lebensmittel suchst oder Partnerschaftsmöglichkeiten erkunden möchtest – wir freuen uns von dir zu hören.",
+    "followUs":  "Folge uns",
+    "openForm":  "Nachricht senden",
+    "formTitle": "Nachricht schreiben",
     "address":  "Adresse",
     "phone":    "Telefon",
     "email":    "E-Mail",

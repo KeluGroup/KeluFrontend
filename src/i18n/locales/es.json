@@ -38,10 +38,24 @@
     "ctaTitle":   "¿Listo para comenzar? Este es el encabezado de tu CTA.",
     "ctaBtn":     "Botón de acción"
   },
+  "team": {
+    "tag":      "Nuestro Equipo",
+    "title":    "Las Personas detrás de KELU+",
+    "subtitle": "Tres áreas, una misión: llevar lo mejor de Latinoamérica a Suiza.",
+    "kevinRole":  "Chief Growth & Commercial Officer",
+    "kevinAreas": ["Captación B2B", "Estrategia comercial", "Proyección financiera", "Relaciones institucionales", "Desarrollo de expansión nacional"],
+    "juliaRole":  "Chief Operations & Supply Officer",
+    "juliaAreas": ["Gestión de proveedores", "Logística y transporte", "Control de inventario", "Optimización de costes operativos", "Expansión Basel"],
+    "andresRole": "Chief Technology Officer",
+    "andresAreas": ["Marketing estratégico", "Branding y posicionamiento", "CRM y base de datos de clientes", "Infraestructura tecnológica", "Automatización de procesos"]
+  },
   "contact": {
-    "tag":      "Contáctanos",
-    "title":    "Trabajemos juntos",
-    "subtitle": "Si buscas un proveedor confiable de alimentos latinos o quieres explorar oportunidades de colaboración, nos encantaría saber de ti.",
+    "tag":       "Contáctanos",
+    "title":     "Trabajemos juntos",
+    "subtitle":  "Si buscas un proveedor confiable de alimentos latinos o quieres explorar oportunidades de colaboración, nos encantaría saber de ti.",
+    "followUs":  "Síguenos",
+    "openForm":  "Envíanos un mensaje",
+    "formTitle": "Enviar Mensaje",
     "address":  "Dirección",
     "phone":    "Teléfono",
     "email":    "Correo electrónico",

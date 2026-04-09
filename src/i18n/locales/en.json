@@ -116,10 +116,24 @@
     "description": "Schedule a 30-minute meeting and discover how KELU+ can become your trusted supplier.",
     "button":      "Schedule Your Meeting Now"
   },
+  "team": {
+    "tag":      "Our Team",
+    "title":    "The People Behind KELU+",
+    "subtitle": "Three areas, one mission: bring the best of Latin America to Switzerland.",
+    "kevinRole":  "Chief Growth & Commercial Officer",
+    "kevinAreas": ["B2B client acquisition", "Commercial strategy", "Financial projections", "Institutional relations", "National expansion"],
+    "juliaRole":  "Chief Operations & Supply Officer",
+    "juliaAreas": ["Supplier management", "Logistics & transport", "Inventory control", "Operational cost optimisation", "Basel expansion"],
+    "andresRole": "Chief Technology Officer",
+    "andresAreas": ["Strategic marketing", "Branding & positioning", "CRM & client database", "Tech infrastructure", "Process automation"]
+  },
   "contact": {
-    "tag":      "Get in Touch",
-    "title":    "Let's work together",
-    "subtitle": "Whether you're looking for a reliable Latin food supplier or want to explore partnership opportunities, we'd love to hear from you.",
+    "tag":       "Get in Touch",
+    "title":     "Let's work together",
+    "subtitle":  "Whether you're looking for a reliable Latin food supplier or want to explore partnership opportunities, we'd love to hear from you.",
+    "followUs":  "Follow us",
+    "openForm":  "Send us a message",
+    "formTitle": "Send a Message",
     "address":  "Address",
     "phone":    "Phone",
     "email":    "Email",

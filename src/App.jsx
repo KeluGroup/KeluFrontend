@@ -9,6 +9,7 @@ import Pricing   from './components/Pricing'
 import Stats     from './components/Stats'
 import Process   from './components/Process'
 import CtaBanner from './components/CtaBanner'
+import Team      from './components/Team'
 import Contact   from './components/Contact'
 import Footer    from './components/Footer'
 import Privacy  from './pages/Privacy'
@@ -38,6 +39,7 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Stats />
         <Process />
         <CtaBanner />
+        <Team />
         <Contact />
       </main>
       <Footer />
