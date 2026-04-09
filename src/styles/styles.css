@@ -1017,28 +1017,82 @@ a.btn-ph {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-5);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-full);
-  color: var(--color-secondary, #FFD23F);
+  color: #FFD23F;
   font-weight: 600;
   font-size: var(--text-xs);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: badgeFadeIn 0.8s ease-out both, badgeShimmer 4s ease-in-out 1s infinite;
+  position: relative;
+  overflow: hidden;
 }
 
+/* shimmer sweep across the badge */
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: badgeSweep 4s ease-in-out 1s infinite;
+  border-radius: inherit;
+}
+
+/* ── dot wrapper so we can stack the sonar ring ── */
 .badge-dot {
+  position: relative;
   width: 8px;
   height: 8px;
-  background: #06D6A0;
-  border-radius: var(--radius-full);
   flex-shrink: 0;
-  animation: badgeBlink 2s ease-in-out infinite;
 }
 
-@keyframes badgeBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.25; }
+/* the solid green dot */
+.badge-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #06D6A0;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* the sonar pulse ring */
+.badge-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: 2px solid #06D6A0;
+  border-radius: 50%;
+  animation: sonarPulse 2s ease-out infinite;
+}
+
+@keyframes sonarPulse {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.9; }
+  100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
+}
+
+@keyframes badgeFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes badgeSweep {
+  0%   { background-position: 200% center; }
+  40%  { background-position: -200% center; }
+  100% { background-position: -200% center; }
 }
