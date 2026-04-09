@@ -33,7 +33,7 @@
     "card4text":  "No fixed routes, no clear schedules, no reliability you can count on."
   },
   "solution": {
-    "tag":          "The KELU+ Solution",
+    "tag":          "The KELU Solution",
     "title":        "Designed for Latin Restaurants",
     "subtitle":     "We're not just another supplier. We're your strategic partner for Latin products.",
     "contentTitle": "Everything You Need, Nothing You Don't",
@@ -113,12 +113,12 @@
   },
   "ctabanner": {
     "title":       "Ready to Simplify Your Operation?",
-    "description": "Schedule a 30-minute meeting and discover how KELU+ can become your trusted supplier.",
+    "description": "Schedule a 30-minute meeting and discover how KELU can become your trusted supplier.",
     "button":      "Schedule Your Meeting Now"
   },
   "team": {
     "tag":      "Our Team",
-    "title":    "The People Behind KELU+",
+    "title":    "The People Behind KELU",
     "subtitle": "Three areas, one mission: bring the best of Latin America to Switzerland.",
     "kevinRole":  "Chief Growth & Commercial Officer",
     "kevinAreas": ["B2B client acquisition", "Commercial strategy", "Financial projections", "Institutional relations", "National expansion"],

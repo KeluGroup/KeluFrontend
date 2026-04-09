@@ -27,7 +27,7 @@ export default function Footer() {
           <span className="logo-wordmark">{BRAND_NAME}</span>
         </a>
 
-        <p className="footer-copy">© {BRAND_YEAR} {BRAND_NAME} Group GmbH. {t('footer.copy')}</p>
+        <p className="footer-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
 
         <div className="footer-social">
           <a
