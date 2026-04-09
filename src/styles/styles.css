@@ -1002,15 +1002,29 @@ a.btn-ph {
   .pricing-grid        { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
   .pricing-card--featured { transform: scale(1); }
   .stats-container     { grid-template-columns: repeat(2, 1fr); }
-  .team-grid           { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; }
-  .team-card           { align-items: flex-start; text-align: left; flex-direction: row; flex-wrap: wrap; gap: var(--space-4); }
-  .team-avatar         { flex-shrink: 0; }
-  .team-name           { flex: 1; min-width: 0; }
-  .team-role-full      { width: 100%; margin-top: calc(-1 * var(--space-3)); }
-  .team-areas          { width: 100%; }
+  .team-grid           { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
+  .team-card           { flex-direction: column; align-items: center; text-align: center; }
+  .team-name           { flex: unset; min-width: unset; }
+  .team-role-full      { width: auto; margin-top: 0; }
+  .team-areas          { width: 100%; text-align: left; }
   .contact-layout-new  { grid-template-columns: 1fr; }
   .contact-form-wrap   { transform: translateY(20px); }
   .contact-form-wrap--open { transform: translateY(0); }
+}
+
+/* Force team to 1 column on all phones */
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 340px !important;
+    margin-inline: auto;
+  }
+  .team-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .team-areas { text-align: left; }
 }
 
 @media (max-width: 480px) {
@@ -1257,19 +1271,20 @@ a.btn-ph {
 /* avatar */
 .team-avatar {
   position: relative;
-  width: 72px;
-  height: 72px;
-  margin-bottom: var(--space-1);
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-2);
 }
 .team-avatar-photo {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--radius-full);
   object-fit: cover;
-  border: 3px solid color-mix(in oklch, var(--member-color, var(--color-primary)) 40%, transparent);
+  border: 3px solid color-mix(in oklch, var(--member-color, var(--color-primary)) 50%, transparent);
   position: relative;
   z-index: 1;
   display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 .team-avatar-ring {
   position: absolute;
