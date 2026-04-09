@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import Navbar   from './components/Navbar'
-import SideDots from './components/SideDots'
-import Home     from './components/Home'
-import About    from './components/About'
-import Services from './components/Services'
-import Contact  from './components/Contact'
-import Footer   from './components/Footer'
+import Navbar    from './components/Navbar'
+import SideDots  from './components/SideDots'
+import Home      from './components/Home'
+import Problem   from './components/Problem'
+import Solution  from './components/Solution'
+import Pricing   from './components/Pricing'
+import Stats     from './components/Stats'
+import Process   from './components/Process'
+import CtaBanner from './components/CtaBanner'
+import Contact   from './components/Contact'
+import Footer    from './components/Footer'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
 import ScrollToHash from './components/ScrollToHash'
@@ -28,8 +32,12 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <SideDots activeSection={activeSection} />
       <main id="main-content">
         <Home />
-        <Services />
-        <About />
+        <Problem />
+        <Solution />
+        <Pricing />
+        <Stats />
+        <Process />
+        <CtaBanner />
         <Contact />
       </main>
       <Footer />
@@ -59,6 +67,17 @@ export default function App() {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    )
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
+    }, 100)
+    return () => { clearTimeout(timer); io.disconnect() }
   }, [])
 
   useEffect(() => {
