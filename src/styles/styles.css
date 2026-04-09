@@ -2230,21 +2230,17 @@ a.btn-ph {
 .contact-chip--plain { cursor: default; }
 .contact-chip--plain:hover { transform: none; box-shadow: var(--shadow-sm); border-color: var(--color-border); color: var(--color-text-muted); }
 
-.contact-socials-center {
-  text-align: center;
-  margin-bottom: var(--space-10);
-}
 .contact-socials-row--center {
   justify-content: center;
 }
 
 .contact-form-card {
-  max-width: 640px;
+  max-width: 800px;
   margin-inline: auto;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
-  padding: var(--space-10) var(--space-8);
+  padding: var(--space-12) var(--space-10);
   box-shadow: var(--shadow-md);
 }
 .contact-form-card .contact-form-title {
@@ -2255,9 +2251,16 @@ a.btn-ph {
   text-align: center;
 }
 
+.contact-socials-below {
+  text-align: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-divider);
+}
+
 @media (max-width: 600px) {
   .contact-chips-row { flex-direction: column; align-items: center; }
-  .contact-form-card { padding: var(--space-6) var(--space-5); }
+  .contact-form-card { padding: var(--space-8) var(--space-5); }
   .form-row-2 { grid-template-columns: 1fr; }
 }
 

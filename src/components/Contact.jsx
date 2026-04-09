@@ -114,21 +114,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* ── Social buttons ── */}
-        <div className="contact-socials-center">
-          <p className="contact-socials-label">{t('contact.followUs')}</p>
-          <div className="contact-socials-row contact-socials-row--center">
-            <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer"
-               className="social-btn social-btn--ig" aria-label="Instagram @kelugroup">
-              <InstagramIcon /><span>@kelugroup</span>
-            </a>
-            <a href="https://www.tiktok.com/@kelugmbh" target="_blank" rel="noopener noreferrer"
-               className="social-btn social-btn--tt" aria-label="TikTok @kelugmbh">
-              <TikTokIcon /><span>@kelugmbh</span>
-            </a>
-          </div>
-        </div>
-
         {/* ── Form ── */}
         <div className="contact-form-card scroll-animate">
           <h3 className="contact-form-title">{t('contact.formTitle')}</h3>
@@ -191,6 +176,22 @@ export default function Contact() {
             </button>
 
           </form>
+
+          {/* ── Social buttons below the form ── */}
+          <div className="contact-socials-below">
+            <p className="contact-socials-label">{t('contact.followUs')}</p>
+            <div className="contact-socials-row contact-socials-row--center">
+              <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer"
+                 className="social-btn social-btn--ig" aria-label="Instagram @kelugroup">
+                <InstagramIcon /><span>@kelugroup</span>
+              </a>
+              <a href="https://www.tiktok.com/@kelugmbh" target="_blank" rel="noopener noreferrer"
+                 className="social-btn social-btn--tt" aria-label="TikTok @kelugmbh">
+                <TikTokIcon /><span>@kelugmbh</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>
