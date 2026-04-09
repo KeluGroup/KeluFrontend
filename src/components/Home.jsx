@@ -14,7 +14,7 @@ export default function Home() {
       <div className="hero-video-wrap" aria-hidden="true">
         <video
           className="hero-video"
-          src="https://github.com/KeluGroup/KeluFrontend/releases/download/video/hero.mp4"
+          src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/hero-compressed.mp4"
           autoPlay
           muted
           loop
