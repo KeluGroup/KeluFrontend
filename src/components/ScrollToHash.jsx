@@ -1,13 +1,18 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export default function ScrollToHash() {
   const { hash, pathname } = useLocation()
+  const isFirstRender = useRef(true)
 
   useEffect(() => {
+    // Skip on initial page load — only scroll when user explicitly navigates to a hash
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     if (!hash) return
 
-    // Wait for React to finish rendering the page
     const timer = setTimeout(() => {
       const el = document.querySelector(hash)
       if (el) el.scrollIntoView({ behavior: 'smooth' })
