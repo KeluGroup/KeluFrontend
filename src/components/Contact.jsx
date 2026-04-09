@@ -116,8 +116,6 @@ export default function Contact() {
 
         {/* ── Form ── */}
         <div className="contact-form-card scroll-animate">
-          <h3 className="contact-form-title">{t('contact.formTitle')}</h3>
-
           <form onSubmit={handleSubmit} noValidate>
 
             <div className="form-row-2">

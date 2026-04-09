@@ -67,18 +67,6 @@ export default function Problem() {
   return (
     <section id="problem" className="section problem-section" aria-label="Problem">
 
-      {/* Scrolling food marquee */}
-      <div className="problem-marquee" aria-hidden="true">
-        <div className="problem-marquee-track">
-          {[...FOOD_STICKERS, ...FOOD_STICKERS, ...FOOD_STICKERS].map((s, i) => (
-            <div key={i} className="food-chip">
-              <span className="food-chip-emoji">{s.emoji}</span>
-              <span className="food-chip-label">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="section-inner">
 
         <div className="section-header">
