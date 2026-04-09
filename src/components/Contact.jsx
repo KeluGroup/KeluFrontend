@@ -8,32 +8,15 @@ const INITIAL  = { name: '', email: '', company: '', message: '' }
 const INITIAL_ERRORS = { name: '', email: '' }
 
 const InstagramIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
   </svg>
 )
 const TikTokIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
-  </svg>
-)
-const PhoneIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </svg>
-)
-const MailIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-    <polyline points="22,6 12,13 2,6"/>
-  </svg>
-)
-const MapPinIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-    <circle cx="12" cy="10" r="3"/>
   </svg>
 )
 
@@ -56,7 +39,6 @@ export default function Contact() {
   const [touched, setTouched] = useState({ name: false, email: false })
   const [status, setStatus]   = useState('idle')
   const [errMsg, setErrMsg]   = useState('')
-  const [formOpen, setFormOpen] = useState(false)
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -108,150 +90,109 @@ export default function Contact() {
           <p className="section-sub">{t('contact.subtitle')}</p>
         </div>
 
-        <div className="contact-layout-new">
-
-          {/* ── LEFT: info panel ── */}
-          <div className="contact-panel">
-
-            {/* info items */}
-            <div className="contact-info-list">
-              <a href={`tel:${BRAND_PHONE}`} className="contact-info-item">
-                <div className="contact-info-icon"><PhoneIcon /></div>
-                <div>
-                  <p className="contact-info-label">{t('contact.phone')}</p>
-                  <p className="contact-info-value">{BRAND_PHONE}</p>
-                </div>
-              </a>
-              <a href={`mailto:${BRAND_EMAIL}`} className="contact-info-item">
-                <div className="contact-info-icon"><MailIcon /></div>
-                <div>
-                  <p className="contact-info-label">{t('contact.email')}</p>
-                  <p className="contact-info-value">{BRAND_EMAIL}</p>
-                </div>
-              </a>
-              <div className="contact-info-item">
-                <div className="contact-info-icon"><MapPinIcon /></div>
-                <div>
-                  <p className="contact-info-label">{t('contact.address')}</p>
-                  <p className="contact-info-value">Zürich, Switzerland</p>
-                </div>
-              </div>
-            </div>
-
-            {/* social media */}
-            <div className="contact-socials">
-              <p className="contact-socials-label">{t('contact.followUs')}</p>
-              <div className="contact-socials-row">
-                <a
-                  href="https://www.instagram.com/kelugroup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn social-btn--ig"
-                  aria-label="Instagram @kelugroup"
-                >
-                  <InstagramIcon />
-                  <span>@kelugroup</span>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@kelugmbh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn social-btn--tt"
-                  aria-label="TikTok @kelugmbh"
-                >
-                  <TikTokIcon />
-                  <span>@kelugmbh</span>
-                </a>
-              </div>
-            </div>
-
-            {/* CTA to open form */}
-            {!formOpen && (
-              <button className="contact-open-btn" onClick={() => setFormOpen(true)}>
-                {t('contact.openForm')}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
-              </button>
-            )}
+        {/* ── Contact info chips ── */}
+        <div className="contact-chips-row">
+          <a href={`tel:${BRAND_PHONE}`} className="contact-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>{BRAND_PHONE}</span>
+          </a>
+          <a href={`mailto:${BRAND_EMAIL}`} className="contact-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>{BRAND_EMAIL}</span>
+          </a>
+          <div className="contact-chip contact-chip--plain">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Zürich, Switzerland</span>
           </div>
-
-          {/* ── RIGHT: form (slide in) ── */}
-          <div className={`contact-form-wrap${formOpen ? ' contact-form-wrap--open' : ''}`}>
-            <div className="contact-form-header">
-              <h3 className="contact-form-title">{t('contact.formTitle')}</h3>
-              <button
-                className="contact-form-close"
-                onClick={() => setFormOpen(false)}
-                aria-label="Close form"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-              </button>
-            </div>
-
-            <form onSubmit={handleSubmit} noValidate>
-
-              <div className="form-row-2">
-                <div className="form-field">
-                  <label className="form-label" htmlFor="name">{t('contact.form.name')}</label>
-                  <input
-                    id="name" name="name" type="text"
-                    className={`form-input${errors.name && touched.name ? ' form-input--error' : ''}`}
-                    value={fields.name} onChange={handleChange} onBlur={handleBlur}
-                    placeholder={t('contact.form.namePlaceholder')}
-                  />
-                  {errors.name && touched.name && <span className="form-error">{errors.name}</span>}
-                </div>
-                <div className="form-field">
-                  <label className="form-label" htmlFor="email">{t('contact.form.email')}</label>
-                  <input
-                    id="email" name="email" type="email"
-                    className={`form-input${errors.email && touched.email ? ' form-input--error' : ''}`}
-                    value={fields.email} onChange={handleChange} onBlur={handleBlur}
-                    placeholder={t('contact.form.emailPlaceholder')}
-                  />
-                  {errors.email && touched.email && <span className="form-error">{errors.email}</span>}
-                </div>
-              </div>
-
-              <div className="form-field">
-                <label className="form-label" htmlFor="company">{t('contact.form.company')}</label>
-                <input
-                  id="company" name="company" type="text"
-                  className="form-input"
-                  value={fields.company} onChange={handleChange}
-                  placeholder={t('contact.form.companyPlaceholder')}
-                />
-              </div>
-
-              <div className="form-field">
-                <label className="form-label" htmlFor="message">{t('contact.form.message')}</label>
-                <textarea
-                  id="message" name="message"
-                  className="form-input form-textarea"
-                  value={fields.message} onChange={handleChange}
-                  rows={4}
-                  placeholder={t('contact.form.messagePlaceholder')}
-                />
-              </div>
-
-              {status === 'success' && (
-                <p className="form-feedback form-feedback--success">✓ {t('contact.form.success')}</p>
-              )}
-              {status === 'error' && (
-                <p className="form-feedback form-feedback--error">✕ {t('contact.form.error')} {errMsg && `(${errMsg})`}</p>
-              )}
-
-              <button type="submit" className="form-submit-btn" disabled={status === 'loading'}>
-                {status === 'loading' ? t('contact.form.sending') : t('contact.form.send')}
-              </button>
-
-            </form>
-          </div>
-
         </div>
+
+        {/* ── Social buttons ── */}
+        <div className="contact-socials-center">
+          <p className="contact-socials-label">{t('contact.followUs')}</p>
+          <div className="contact-socials-row contact-socials-row--center">
+            <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer"
+               className="social-btn social-btn--ig" aria-label="Instagram @kelugroup">
+              <InstagramIcon /><span>@kelugroup</span>
+            </a>
+            <a href="https://www.tiktok.com/@kelugmbh" target="_blank" rel="noopener noreferrer"
+               className="social-btn social-btn--tt" aria-label="TikTok @kelugmbh">
+              <TikTokIcon /><span>@kelugmbh</span>
+            </a>
+          </div>
+        </div>
+
+        {/* ── Form ── */}
+        <div className="contact-form-card scroll-animate">
+          <h3 className="contact-form-title">{t('contact.formTitle')}</h3>
+
+          <form onSubmit={handleSubmit} noValidate>
+
+            <div className="form-row-2">
+              <div className="form-field">
+                <label className="form-label" htmlFor="name">{t('contact.form.name')}</label>
+                <input
+                  id="name" name="name" type="text"
+                  className={`form-input${errors.name && touched.name ? ' form-input--error' : ''}`}
+                  value={fields.name} onChange={handleChange} onBlur={handleBlur}
+                  placeholder={t('contact.form.namePlaceholder')}
+                />
+                {errors.name && touched.name && <span className="form-error">{errors.name}</span>}
+              </div>
+              <div className="form-field">
+                <label className="form-label" htmlFor="email">{t('contact.form.email')}</label>
+                <input
+                  id="email" name="email" type="email"
+                  className={`form-input${errors.email && touched.email ? ' form-input--error' : ''}`}
+                  value={fields.email} onChange={handleChange} onBlur={handleBlur}
+                  placeholder={t('contact.form.emailPlaceholder')}
+                />
+                {errors.email && touched.email && <span className="form-error">{errors.email}</span>}
+              </div>
+            </div>
+
+            <div className="form-field">
+              <label className="form-label" htmlFor="company">{t('contact.form.company')}</label>
+              <input
+                id="company" name="company" type="text"
+                className="form-input"
+                value={fields.company} onChange={handleChange}
+                placeholder={t('contact.form.companyPlaceholder')}
+              />
+            </div>
+
+            <div className="form-field">
+              <label className="form-label" htmlFor="message">{t('contact.form.message')}</label>
+              <textarea
+                id="message" name="message"
+                className="form-input form-textarea"
+                value={fields.message} onChange={handleChange}
+                rows={4}
+                placeholder={t('contact.form.messagePlaceholder')}
+              />
+            </div>
+
+            {status === 'success' && (
+              <p className="form-feedback form-feedback--success">✓ {t('contact.form.success')}</p>
+            )}
+            {status === 'error' && (
+              <p className="form-feedback form-feedback--error">✕ {t('contact.form.error')} {errMsg && `(${errMsg})`}</p>
+            )}
+
+            <button type="submit" className="form-submit-btn" disabled={status === 'loading'}>
+              {status === 'loading' ? t('contact.form.sending') : t('contact.form.send')}
+            </button>
+
+          </form>
+        </div>
+
       </div>
     </section>
   )
