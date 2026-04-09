@@ -36,7 +36,7 @@ export default function CtaBanner() {
       <div className="cta-final-inner">
         <h2 className="cta-final-title cta-animated-title">
           {t('ctabanner.title').split(' ').map((word, i) => (
-            <span key={i} className="cta-word" style={{ '--word-i': i }}>{word} </span>
+            <span key={i} className="cta-word" style={{ '--word-i': i }}>{word}</span>
           ))}
         </h2>
         <p className="cta-final-desc cta-animated-desc">{t('ctabanner.description')}</p>
