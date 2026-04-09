@@ -1,29 +1,30 @@
 import { useTranslation } from 'react-i18next'
 
+// Placeholder avatars — swap src with your professional photos when ready
 const MEMBERS = [
   {
     key: 'kevin',
-    initials: 'KG',
     name: 'Kevin García',
     roleKey: 'team.kevinRole',
     areasKey: 'team.kevinAreas',
     color: 'var(--color-primary)',
+    avatar: 'https://i.pravatar.cc/200?img=12',
   },
   {
     key: 'luis',
-    initials: 'LP',
     name: 'Luis Pietri',
     roleKey: 'team.luisRole',
     areasKey: 'team.luisAreas',
     color: '#06D6A0',
+    avatar: 'https://i.pravatar.cc/200?img=53',
   },
   {
     key: 'andres',
-    initials: 'AM',
     name: 'Andrés Mastrogiacomo',
     roleKey: 'team.andresRole',
     areasKey: 'team.andresAreas',
     color: '#C89B3C',
+    avatar: 'https://i.pravatar.cc/200?img=68',
   },
 ]
 
@@ -44,9 +45,14 @@ export default function Team() {
           {MEMBERS.map((m) => (
             <div key={m.key} className="team-card scroll-animate" style={{ '--member-color': m.color }}>
 
-              <div className="team-avatar" aria-hidden="true">
-                <span className="team-initials">{m.initials}</span>
-                <div className="team-avatar-ring" />
+              <div className="team-avatar">
+                <img
+                  src={m.avatar}
+                  alt={m.name}
+                  className="team-avatar-photo"
+                  loading="lazy"
+                />
+                <div className="team-avatar-ring" aria-hidden="true" />
               </div>
 
               <h3 className="team-name">{m.name}</h3>

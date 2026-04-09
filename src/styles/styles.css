@@ -352,8 +352,9 @@ a.btn-ph {
 }
 
 .form-submit-btn {
-  height: 48px;
+  height: 52px;
   width: 100%;
+  margin-top: var(--space-4);
   background: var(--color-primary);
   color: #fff;
   border-radius: var(--radius-md);
@@ -1001,7 +1002,12 @@ a.btn-ph {
   .pricing-grid        { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
   .pricing-card--featured { transform: scale(1); }
   .stats-container     { grid-template-columns: repeat(2, 1fr); }
-  .team-grid           { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; }
+  .team-grid           { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; }
+  .team-card           { align-items: flex-start; text-align: left; flex-direction: row; flex-wrap: wrap; gap: var(--space-4); }
+  .team-avatar         { flex-shrink: 0; }
+  .team-name           { flex: 1; min-width: 0; }
+  .team-role-full      { width: 100%; margin-top: calc(-1 * var(--space-3)); }
+  .team-areas          { width: 100%; }
   .contact-layout-new  { grid-template-columns: 1fr; }
   .contact-form-wrap   { transform: translateY(20px); }
   .contact-form-wrap--open { transform: translateY(0); }
@@ -1255,22 +1261,15 @@ a.btn-ph {
   height: 72px;
   margin-bottom: var(--space-1);
 }
-.team-initials {
+.team-avatar-photo {
   width: 72px;
   height: 72px;
-  background: color-mix(in oklch, var(--member-color, var(--color-primary)) 15%, var(--color-surface-2));
-  border: 2px solid color-mix(in oklch, var(--member-color, var(--color-primary)) 30%, transparent);
   border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--member-color, var(--color-primary));
-  letter-spacing: 0.04em;
+  object-fit: cover;
+  border: 3px solid color-mix(in oklch, var(--member-color, var(--color-primary)) 40%, transparent);
   position: relative;
   z-index: 1;
+  display: block;
 }
 .team-avatar-ring {
   position: absolute;
