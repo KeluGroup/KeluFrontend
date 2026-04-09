@@ -63,7 +63,11 @@ export default function App() {
 
   const location = useLocation()
 
-  
+  // Disable browser scroll restoration so reloads always start at the top
+  useEffect(() => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
