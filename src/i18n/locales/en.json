@@ -8,10 +8,10 @@
     "contact":  "Contact"
   },
   "home": {
-    "eyebrow":   "B2B Distribution in Switzerland",
-    "heading":   "The latin Supplier Your",
-    "headingEm": "Restaurant Needs",
-    "body":      "Premium Latin products with fixed deliveries, clear pricing and the service you deserve. No improvisation, no surprises.",
+    "eyebrow":   "Latin Food Distribution · Switzerland",
+    "heading":   "The Latin Supplier Your",
+    "headingEm": "Business Needs",
+    "body":      "Premium Latin products with fixed deliveries, clear pricing and the service you deserve — for restaurants, delis, caterers and anyone who takes Latin food seriously.",
     "cta":       "Schedule a Meeting",
     "ctaSecond": "View TOP 10 Catalogue",
     "scroll":    "Scroll",
@@ -34,7 +34,7 @@
   },
   "solution": {
     "tag":          "The KELU Solution",
-    "title":        "Designed for Latin Restaurants",
+    "title":        "Designed for Your Business",
     "subtitle":     "We're not just another supplier. We're your strategic partner for Latin products.",
     "contentTitle": "Everything You Need, Nothing You Don't",
     "feat1title":   "Smart TOP 10 Catalogue",
@@ -109,7 +109,7 @@
   },
   "stats": {
     "stat1num":   "300+",
-    "stat1label": "Target Restaurants",
+    "stat1label": "Target Businesses",
     "stat2num":   "10",
     "stat2label": "Strategic Products",
     "stat3num":   "4",
@@ -138,9 +138,9 @@
   "team": {
     "tag":      "Our Team",
     "title":    "The People Behind KELU",
-    "subtitle": "A small, dedicated team committed to bringing authentic Latin products to Swiss restaurants.",
+    "subtitle": "A small, dedicated team committed to bringing authentic Latin products to the Swiss market.",
     "kevinRole":  "Sales & Business Development",
-    "kevinAreas": ["Restaurant partnerships", "Commercial strategy", "Pricing & negotiations", "Market expansion"],
+    "kevinAreas": ["Client partnerships", "Commercial strategy", "Pricing & negotiations", "Market expansion"],
     "luisRole":   "Operations & Logistics",
     "luisAreas":  ["Supplier sourcing", "Delivery routes", "Stock management", "Cost optimisation"],
     "andresRole": "Marketing & Technology",

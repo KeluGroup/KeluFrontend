@@ -8,10 +8,10 @@
     "contact":  "Contacto"
   },
   "home": {
-    "eyebrow":   "Distribución B2B en Suiza",
-    "heading":   "El Proveedor latino que tu",
-    "headingEm": "restaurante necesita",
-    "body":      "Productos latinos premium con entregas fijas, precios claros y el servicio que mereces. Sin improvisaciones, sin sorpresas.",
+    "eyebrow":   "Distribución de Comida Latina · Suiza",
+    "heading":   "El Proveedor Latino que tu",
+    "headingEm": "Negocio Necesita",
+    "body":      "Productos latinos premium con entregas fijas, precios claros y el servicio que mereces — para restaurantes, delicatessen, caterers y todo el que se tome en serio la comida latina.",
     "cta":       "Agenda tu Reunión",
     "ctaSecond": "ver catalogo TOP 10",
     "scroll":    "Desplazar",
@@ -55,7 +55,7 @@
   },
   "solution": {
     "tag":          "La Solución KELU",
-    "title":        "Diseñado para restaurantes latinos",
+    "title":        "Diseñado para tu Negocio Latino",
     "subtitle":     "No somos solo otro proveedor. Somos tu socio estratégico para productos latinos.",
     "contentTitle": "Todo lo que necesitas, nada que no necesitas",
     "feat1title":   "Catálogo TOP 10 inteligente",
@@ -130,7 +130,7 @@
   },
   "stats": {
     "stat1num":   "300+",
-    "stat1label": "Restaurantes objetivo",
+    "stat1label": "Negocios objetivo",
     "stat2num":   "10",
     "stat2label": "Productos estratégicos",
     "stat3num":   "4",
@@ -159,9 +159,9 @@
   "team": {
     "tag":      "Nuestro Equipo",
     "title":    "Las Personas detrás de KELU",
-    "subtitle": "Un equipo pequeño y dedicado comprometido a llevar productos latinos auténticos a los restaurantes suizos.",
+    "subtitle": "Un equipo pequeño y dedicado comprometido a llevar productos latinos auténticos al mercado suizo.",
     "kevinRole":  "Ventas & Desarrollo Comercial",
-    "kevinAreas": ["Relaciones con restaurantes", "Estrategia comercial", "Precios y negociaciones", "Expansión de mercado"],
+    "kevinAreas": ["Relaciones con clientes", "Estrategia comercial", "Precios y negociaciones", "Expansión de mercado"],
     "luisRole":   "Operaciones & Logística",
     "luisAreas":  ["Abastecimiento de proveedores", "Rutas de entrega", "Gestión de stock", "Optimización de costes"],
     "andresRole": "Marketing & Tecnología",
