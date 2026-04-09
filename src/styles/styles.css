@@ -2310,6 +2310,7 @@ a.btn-ph {
 }
 
 .contact-form-card {
+  width: 100%;
   max-width: 660px;
   margin-inline: auto;
   background: var(--color-surface);
