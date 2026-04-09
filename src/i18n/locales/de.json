@@ -141,8 +141,8 @@
     "subtitle": "Drei Bereiche, eine Mission: das Beste Lateinamerikas in die Schweiz bringen.",
     "kevinRole":  "Chief Growth & Commercial Officer",
     "kevinAreas": ["B2B-Kundengewinnung", "Kommerzielle Strategie", "Finanzprognosen", "Institutionelle Beziehungen", "Nationale Expansion"],
-    "juliaRole":  "Chief Operations & Supply Officer",
-    "juliaAreas": ["Lieferantenmanagement", "Logistik & Transport", "Bestandskontrolle", "Optimierung der Betriebskosten"],
+    "luisRole":   "Chief Operations & Supply Officer",
+    "luisAreas":  ["Lieferantenmanagement", "Logistik & Transport", "Bestandskontrolle", "Optimierung der Betriebskosten"],
     "andresRole": "Chief Technology Officer",
     "andresAreas": ["Strategisches Marketing", "Branding & Positionierung", "CRM & Kundendatenbank", "Technische Infrastruktur", "Prozessautomatisierung"]
   },

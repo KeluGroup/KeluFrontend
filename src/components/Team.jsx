@@ -27,12 +27,12 @@ const MEMBERS = [
     color: 'var(--color-primary)',
   },
   {
-    key: 'julia',
-    initials: 'JE',
-    name: 'Julia Ettlin',
+    key: 'Luis',
+    initials: 'LP',
+    name: 'Luis Pietri',
     role: 'COSO',
-    roleFullKey: 'team.juliaRole',
-    areasKey: 'team.juliaAreas',
+    roleFullKey: 'team.luisRole',
+    areasKey: 'team.luisAreas',
     color: '#06D6A0',
   },
   {
