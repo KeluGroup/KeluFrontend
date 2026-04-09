@@ -13,7 +13,6 @@ import Team      from './components/Team'
 import Contact   from './components/Contact'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
-import ProductShowcase from './components/ProductShowcase'
 import ScrollProgress from './components/ScrollProgress'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
@@ -38,7 +37,6 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <main id="main-content">
         <Home />
         <Problem />
-        <ProductShowcase />
         <Solution />
         <Pricing />
         <Stats />
