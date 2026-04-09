@@ -13,6 +13,8 @@ import Team      from './components/Team'
 import Contact   from './components/Contact'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import ProductShowcase from './components/ProductShowcase'
+import ScrollProgress from './components/ScrollProgress'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
 import ScrollToHash from './components/ScrollToHash'
@@ -22,6 +24,7 @@ import { SECTIONS } from './config'
 function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
   return (
     <>
+      <ScrollProgress />
       <Navbar
         theme={theme}
         onToggleTheme={onToggleTheme}
@@ -35,6 +38,7 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <main id="main-content">
         <Home />
         <Problem />
+        <ProductShowcase />
         <Solution />
         <Pricing />
         <Stats />
