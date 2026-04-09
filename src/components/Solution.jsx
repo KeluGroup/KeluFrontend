@@ -1,9 +1,38 @@
 import { useTranslation } from 'react-i18next'
 
 const FEATURES = [
-  { icon: '📦', titleKey: 'solution.feat1title', textKey: 'solution.feat1text' },
-  { icon: '💰', titleKey: 'solution.feat2title', textKey: 'solution.feat2text' },
-  { icon: '🚚', titleKey: 'solution.feat3title', textKey: 'solution.feat3text' },
+  {
+    titleKey: 'solution.feat1title',
+    textKey:  'solution.feat1text',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+        <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'solution.feat2title',
+    textKey:  'solution.feat2text',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'solution.feat3title',
+    textKey:  'solution.feat3text',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+    ),
+  },
 ]
 
 const PRODUCTS = [
@@ -48,6 +77,9 @@ export default function Solution() {
           </div>
 
           <div className="solution-visual scroll-animate">
+            {/* decorative circles inside the visual panel */}
+            <span className="visual-blob visual-blob--1" aria-hidden="true" />
+            <span className="visual-blob visual-blob--2" aria-hidden="true" />
             <h3 className="products-title">{t('solution.productsTitle')}</h3>
             <div className="products-grid">
               {PRODUCTS.map((p) => (

@@ -1010,6 +1010,208 @@ a.btn-ph {
 }
 
 /* =====================
+   PROBLEM CARDS — icons + accent border
+   ===================== */
+.problem-card {
+  border-left: 4px solid var(--card-accent, var(--color-primary));
+}
+.problem-card::before { display: none; } /* remove old ✗ pseudo */
+
+.problem-card-icon {
+  width: 52px;
+  height: 52px;
+  background: color-mix(in oklch, var(--card-accent, var(--color-primary)) 12%, var(--color-surface));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-accent, var(--color-primary));
+  margin-bottom: var(--space-4);
+  transition: transform var(--transition-interactive);
+}
+.problem-card:hover .problem-card-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* =====================
+   SOLUTION — blobs inside visual panel
+   ===================== */
+.visual-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.visual-blob--1 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  top: -60px;
+  right: -60px;
+  animation: blobFloat 7s ease-in-out infinite;
+}
+.visual-blob--2 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(6,214,160,0.15) 0%, transparent 70%);
+  bottom: -40px;
+  left: -40px;
+  animation: blobFloat 9s ease-in-out infinite reverse;
+}
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(10px, -15px) scale(1.05); }
+}
+
+/* =====================
+   FEATURE ICON BOX — hover spin
+   ===================== */
+.feature-icon-box {
+  transition: transform var(--transition-interactive), background var(--transition-interactive);
+}
+.feature-item:hover .feature-icon-box {
+  transform: rotate(-8deg) scale(1.1);
+  background: color-mix(in oklch, var(--color-primary) 18%, var(--color-surface));
+}
+
+/* =====================
+   PRICING — featured card glow pulse
+   ===================== */
+.pricing-card--featured {
+  animation: pricingGlow 3s ease-in-out infinite;
+}
+@keyframes pricingGlow {
+  0%, 100% { box-shadow: var(--shadow-lg), 0 0 0 0 color-mix(in oklch, var(--color-primary) 30%, transparent); }
+  50%       { box-shadow: var(--shadow-lg), 0 0 28px 8px color-mix(in oklch, var(--color-primary) 22%, transparent); }
+}
+
+/* =====================
+   STATS — icon wrap + floating dots
+   ===================== */
+.stat-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 0 auto var(--space-4);
+  transition: transform var(--transition-interactive);
+}
+.stat-item:hover .stat-icon-wrap {
+  transform: translateY(-4px) scale(1.06);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* floating dots */
+.stats-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+.stats-dot--1 {
+  width: 260px; height: 260px;
+  top: -80px; left: -60px;
+  animation: dotDrift 10s ease-in-out infinite;
+}
+.stats-dot--2 {
+  width: 180px; height: 180px;
+  bottom: -60px; right: 10%;
+  animation: dotDrift 13s ease-in-out infinite reverse;
+}
+.stats-dot--3 {
+  width: 100px; height: 100px;
+  top: 30%; right: -30px;
+  animation: dotDrift 8s ease-in-out infinite 2s;
+}
+@keyframes dotDrift {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(15px, -20px); }
+  66%       { transform: translate(-10px, 10px); }
+}
+
+/* =====================
+   PROCESS — number circle with icon flip
+   ===================== */
+.process-number {
+  position: relative;
+  overflow: hidden;
+}
+.process-n,
+.process-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.process-n    { opacity: 1;  transform: translateY(0); }
+.process-icon { opacity: 0;  transform: translateY(10px); color: #fff; }
+
+.process-item:hover .process-n    { opacity: 0;  transform: translateY(-10px); }
+.process-item:hover .process-icon { opacity: 1;  transform: translateY(0); }
+
+/* =====================
+   CTA FINAL — floating shapes
+   ===================== */
+.cta-final::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(255,210,63,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: blobFloat 11s ease-in-out infinite;
+}
+
+/* =====================
+   SECTION DIAGONAL DIVIDER
+   ===================== */
+#problem {
+  clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+  padding-top: calc(var(--space-24) + 48px);
+  margin-top: -48px;
+}
+#solution {
+  clip-path: polygon(0 0, 100% 48px, 100% 100%, 0 100%);
+  padding-top: calc(var(--space-24) + 48px);
+  margin-top: -48px;
+}
+#pricing {
+  clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+  padding-top: calc(var(--space-24) + 48px);
+  margin-top: -48px;
+}
+.stats-section {
+  clip-path: polygon(0 0, 100% 48px, 100% 100%, 0 100%);
+  padding-top: calc(var(--space-20) + 48px);
+  margin-top: -48px;
+}
+#process {
+  clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+  padding-top: calc(var(--space-24) + 48px);
+  margin-top: -48px;
+}
+
+/* =====================
+   RESPONSIVE — new additions
+   ===================== */
+@media (max-width: 768px) {
+  #problem, #solution, #pricing, .stats-section, #process {
+    clip-path: none;
+    margin-top: 0;
+    padding-top: var(--space-16);
+  }
+}
+
+/* =====================
    HERO BADGE
    ===================== */
 .hero-badge {
