@@ -1008,3 +1008,37 @@ a.btn-ph {
   .products-grid   { grid-template-columns: 1fr 1fr; }
   .process-content { padding: var(--space-5); }
 }
+
+/* =====================
+   HERO BADGE
+   ===================== */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  color: var(--color-secondary, #FFD23F);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #06D6A0;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  animation: badgeBlink 2s ease-in-out infinite;
+}
+
+@keyframes badgeBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}

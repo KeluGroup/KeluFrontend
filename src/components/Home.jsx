@@ -28,7 +28,10 @@ export default function Home() {
       <div className="home-inner">
 
         <div className="home-copy">
-          <span className="eyebrow">{t('home.eyebrow')}</span>
+          <div className="hero-badge">
+            <span className="badge-dot" aria-hidden="true" />
+            {t('home.eyebrow')}
+          </div>
           <h1 className="hero-heading">
             {t('home.heading').replace(t('home.headingEm'), '')}{' '}
             <em>{t('home.headingEm')}</em>
