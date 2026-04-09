@@ -138,13 +138,13 @@
   "team": {
     "tag":      "Unser Team",
     "title":    "Die Menschen hinter KELU",
-    "subtitle": "Drei Bereiche, eine Mission: das Beste Lateinamerikas in die Schweiz bringen.",
-    "kevinRole":  "Chief Growth & Commercial Officer",
-    "kevinAreas": ["B2B-Kundengewinnung", "Kommerzielle Strategie", "Finanzprognosen", "Institutionelle Beziehungen", "Nationale Expansion"],
-    "luisRole":   "Chief Operations & Supply Officer",
-    "luisAreas":  ["Lieferantenmanagement", "Logistik & Transport", "Bestandskontrolle", "Optimierung der Betriebskosten"],
-    "andresRole": "Chief Technology Officer",
-    "andresAreas": ["Strategisches Marketing", "Branding & Positionierung", "CRM & Kundendatenbank", "Technische Infrastruktur", "Prozessautomatisierung"]
+    "subtitle": "Ein kleines, engagiertes Team, das authentische lateinamerikanische Produkte in Schweizer Restaurants bringt.",
+    "kevinRole":  "Vertrieb & Geschäftsentwicklung",
+    "kevinAreas": ["Restaurantpartnerschaften", "Kommerzielle Strategie", "Preisgestaltung & Verhandlung", "Markterweiterung"],
+    "luisRole":   "Betrieb & Logistik",
+    "luisAreas":  ["Lieferantenbeschaffung", "Lieferrouten", "Bestandsverwaltung", "Kostenoptimierung"],
+    "andresRole": "Marketing & Technologie",
+    "andresAreas": ["Markenidentität", "Digitale Präsenz", "Kundenbeziehungen", "Prozess-Tools"]
   },
   "contact": {
     "tag":       "Kontakt aufnehmen",

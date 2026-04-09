@@ -159,13 +159,13 @@
   "team": {
     "tag":      "Nuestro Equipo",
     "title":    "Las Personas detrás de KELU",
-    "subtitle": "Tres áreas, una misión: llevar lo mejor de Latinoamérica a Suiza.",
-    "kevinRole":  "Chief Growth & Commercial Officer",
-    "kevinAreas": ["Captación B2B", "Estrategia comercial", "Proyección financiera", "Relaciones institucionales", "Desarrollo de expansión nacional"],
-    "luisRole":   "Chief Operations & Supply Officer",
-    "luisAreas":  ["Gestión de proveedores", "Logística y transporte", "Control de inventario", "Optimización de costes operativos"],
-    "andresRole": "Chief Technology Officer",
-    "andresAreas": ["Marketing estratégico", "Branding y posicionamiento", "CRM y base de datos de clientes", "Infraestructura tecnológica", "Automatización de procesos"]
+    "subtitle": "Un equipo pequeño y dedicado comprometido a llevar productos latinos auténticos a los restaurantes suizos.",
+    "kevinRole":  "Ventas & Desarrollo Comercial",
+    "kevinAreas": ["Relaciones con restaurantes", "Estrategia comercial", "Precios y negociaciones", "Expansión de mercado"],
+    "luisRole":   "Operaciones & Logística",
+    "luisAreas":  ["Abastecimiento de proveedores", "Rutas de entrega", "Gestión de stock", "Optimización de costes"],
+    "andresRole": "Marketing & Tecnología",
+    "andresAreas": ["Identidad de marca", "Presencia digital", "Relaciones con clientes", "Herramientas de proceso"]
   },
   "contact": {
     "tag":       "Contáctanos",
