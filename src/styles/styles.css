@@ -60,10 +60,15 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
   align-items: center;
   gap: .5rem;
   text-decoration: none;
-  color: var(--color-text);
+  color: #fff;
   opacity: 1;
   transform: translateY(0);
   transition: opacity .35s ease, transform .35s ease;
+  text-shadow: 0 1px 6px rgba(0,0,0,.35);
+}
+/* Logo SVG always visible on any background */
+.nav-float-logo img {
+  filter: brightness(0) invert(1) drop-shadow(0 1px 4px rgba(0,0,0,.4));
 }
 .nav-float-logo--hide {
   opacity: 0;
@@ -73,7 +78,7 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 .logo-wordmark {
   font-family: var(--font-display);
   font-size: var(--text-lg);
-  color: var(--color-text);
+  color: #fff;
   letter-spacing: -0.02em;
   font-weight: 700;
 }
@@ -149,6 +154,8 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
   transition: opacity .4s ease .45s, transform .4s ease .45s;
 }
 .fullmenu-brand .logo-wordmark { color: #fff; }
+/* Make SVG white inside the dark overlay */
+.fullmenu-brand img { filter: brightness(0) invert(1); }
 .fullmenu--open .fullmenu-brand { opacity: 1; transform: translateY(0); }
 
 /* Nav links */
