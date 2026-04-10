@@ -10,16 +10,13 @@ export default function Home() {
   return (
     <section id="home" className="section" aria-label="Home">
 
-      {/* ── Background Video ── */}
+      {/* ── Background Image ── */}
       <div className="hero-video-wrap" aria-hidden="true">
-        <video
+        <img
           className="hero-video"
-          src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/hero-compressed.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+          src="/hero.png"
+          alt=""
+          fetchpriority="high"
         />
         <div className="hero-video-overlay" />
       </div>
