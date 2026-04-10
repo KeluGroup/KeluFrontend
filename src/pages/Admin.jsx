@@ -1,20 +1,16 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 
-const API_BASE   = import.meta.env.VITE_API_BASE ?? ''
-const API_KEY    = import.meta.env.VITE_API_KEY  ?? ''
-const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS ?? 'kelu-admin'
-const SESSION_KEY = 'kelu_admin_auth'
+const API_BASE    = import.meta.env.VITE_API_BASE ?? ''
+const SESSION_KEY = 'kelu_admin_token'   // stores the HMAC token, not the password
 
 const STATUSES = [
-  { value: 'Nuevo',       label: 'Nuevo',       color: '#6b7280' },
-  { value: 'Contactado',  label: 'Contactado',  color: '#3b82f6' },
-  { value: 'En proceso',  label: 'En proceso',  color: '#f59e0b' },
-  { value: 'Atendido',    label: 'Atendido',    color: '#22c55e' },
+  { value: 'Nuevo',      label: 'Nuevo',      color: '#6b7280' },
+  { value: 'Contactado', label: 'Contactado', color: '#3b82f6' },
+  { value: 'En proceso', label: 'En proceso', color: '#f59e0b' },
+  { value: 'Atendido',   label: 'Atendido',   color: '#22c55e' },
 ]
 
-function statusMeta(value) {
-  return STATUSES.find(s => s.value === value) ?? STATUSES[0]
-}
+function statusMeta(v) { return STATUSES.find(s => s.value === v) ?? STATUSES[0] }
 
 function fmt(iso) {
   if (!iso) return '—'
@@ -24,23 +20,50 @@ function fmt(iso) {
   })
 }
 
-/* ── Password gate ── */
-function PasswordGate({ onAuth }) {
-  const [val, setVal] = useState('')
-  const [err, setErr] = useState(false)
+function adminHeaders() {
+  return {
+    'Content-Type':  'application/json',
+    'x-admin-token': sessionStorage.getItem(SESSION_KEY) ?? '',
+  }
+}
 
-  function submit(e) {
+/* ── Password gate — authenticates against the backend ── */
+function PasswordGate({ onAuth }) {
+  const [val,     setVal]     = useState('')
+  const [err,     setErr]     = useState('')
+  const [loading, setLoading] = useState(false)
+
+  async function submit(e) {
     e.preventDefault()
-    if (val === ADMIN_PASS) { sessionStorage.setItem(SESSION_KEY, '1'); onAuth() }
-    else { setErr(true); setVal('') }
+    if (!val.trim()) return
+    setLoading(true); setErr('')
+    try {
+      const res = await fetch(`${API_BASE}/api/admin/login`, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ password: val }),
+      })
+      if (res.status === 401) { setErr('Contraseña incorrecta'); setVal(''); return }
+      if (!res.ok)            { setErr(`Error del servidor (${res.status})`); return }
+      const { token } = await res.json()
+      sessionStorage.setItem(SESSION_KEY, token)
+      onAuth()
+    } catch {
+      setErr('No se pudo conectar al servidor')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="admin-gate">
       <div className="admin-gate-card">
         <div className="admin-gate-logo">
-          <img src="/logo.svg" alt="Kelu" width="40" height="40" />
-          <span>Admin</span>
+          <img src="/logo.svg" alt="Kelu" width="56" height="56" />
+          <div>
+            <div className="admin-gate-brand">Kelu</div>
+            <div className="admin-gate-subtitle">Panel de administración</div>
+          </div>
         </div>
         <form onSubmit={submit}>
           <input
@@ -49,10 +72,13 @@ function PasswordGate({ onAuth }) {
             placeholder="Contraseña"
             value={val}
             autoFocus
-            onChange={e => { setVal(e.target.value); setErr(false) }}
+            disabled={loading}
+            onChange={e => { setVal(e.target.value); setErr('') }}
           />
-          {err && <p className="admin-gate-err">Contraseña incorrecta</p>}
-          <button type="submit" className="admin-gate-btn">Entrar</button>
+          {err && <p className="admin-gate-err">{err}</p>}
+          <button type="submit" className="admin-gate-btn" disabled={loading}>
+            {loading ? 'Verificando…' : 'Entrar'}
+          </button>
         </form>
       </div>
     </div>
@@ -61,8 +87,8 @@ function PasswordGate({ onAuth }) {
 
 /* ── Status dropdown ── */
 function StatusSelect({ lead, onUpdate }) {
-  const [open, setOpen]   = useState(false)
-  const [busy, setBusy]   = useState(false)
+  const [open, setOpen] = useState(false)
+  const [busy, setBusy] = useState(false)
   const meta = statusMeta(lead.status)
 
   async function pick(value) {
@@ -70,9 +96,9 @@ function StatusSelect({ lead, onUpdate }) {
     setBusy(true); setOpen(false)
     try {
       const res = await fetch(`${API_BASE}/api/admin/leads/${lead.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
-        body: JSON.stringify({ status: value }),
+        method:  'PATCH',
+        headers: adminHeaders(),
+        body:    JSON.stringify({ status: value }),
       })
       if (!res.ok) throw new Error()
       onUpdate(lead.id, value)
@@ -85,11 +111,8 @@ function StatusSelect({ lead, onUpdate }) {
 
   return (
     <div className="status-wrap" style={{ '--status-color': meta.color }}>
-      <button
-        className={`status-badge${busy ? ' status-badge--busy' : ''}`}
-        onClick={() => setOpen(o => !o)}
-        disabled={busy}
-      >
+      <button className={`status-badge${busy ? ' status-badge--busy' : ''}`}
+        onClick={() => setOpen(o => !o)} disabled={busy}>
         <span className="status-dot" />
         {busy ? '…' : meta.label}
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -101,14 +124,11 @@ function StatusSelect({ lead, onUpdate }) {
           <div className="status-backdrop" onClick={() => setOpen(false)} />
           <ul className="status-menu">
             {STATUSES.map(s => (
-              <li
-                key={s.value}
+              <li key={s.value}
                 className={`status-option${s.value === lead.status ? ' status-option--active' : ''}`}
                 style={{ '--opt-color': s.color }}
-                onClick={() => pick(s.value)}
-              >
-                <span className="status-dot" />
-                {s.label}
+                onClick={() => pick(s.value)}>
+                <span className="status-dot" />{s.label}
               </li>
             ))}
           </ul>
@@ -158,28 +178,24 @@ function Dashboard() {
   const load = useCallback(async () => {
     setLoading(true); setError('')
     try {
-      const res = await fetch(`${API_BASE}/api/admin/leads`, {
-        headers: { 'x-api-key': API_KEY },
-      })
+      const res = await fetch(`${API_BASE}/api/admin/leads`, { headers: adminHeaders() })
+      if (res.status === 403) { sessionStorage.removeItem(SESSION_KEY); window.location.reload(); return }
       if (!res.ok) throw new Error(`Error ${res.status}`)
       const data = await res.json()
       setLeads(data.leads ?? [])
-    } catch (e) {
-      setError(e.message)
-    } finally {
-      setLoading(false)
-    }
+    } catch (e) { setError(e.message) }
+    finally     { setLoading(false) }
   }, [])
 
-  useEffect(() => { load() }, [load])
+  useState(() => { load() }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  if (leads.length === 0 && !loading && !error) load()
 
   function handleUpdate(id, newStatus) {
     setLeads(prev => prev.map(l => l.id === id ? { ...l, status: newStatus } : l))
   }
-
   function logout() { sessionStorage.removeItem(SESSION_KEY); window.location.reload() }
 
-  // Counts per status
   const counts = STATUSES.reduce((acc, s) => {
     acc[s.value] = leads.filter(l => (l.status || 'Nuevo') === s.value).length
     return acc
@@ -187,23 +203,20 @@ function Dashboard() {
 
   const filtered = leads.filter(l => {
     const q = search.toLowerCase()
-    const matchSearch = (
-      l.name.toLowerCase().includes(q) ||
-      l.email.toLowerCase().includes(q) ||
-      (l.company ?? '').toLowerCase().includes(q)
-    )
+    const matchSearch = l.name.toLowerCase().includes(q) || l.email.toLowerCase().includes(q) || (l.company ?? '').toLowerCase().includes(q)
     const matchFilter = filter === 'Todos' || (l.status || 'Nuevo') === filter
     return matchSearch && matchFilter
   })
 
   return (
     <div className="admin-wrap">
-
-      {/* Header */}
       <header className="admin-header">
         <div className="admin-header-brand">
-          <img src="/logo.svg" alt="Kelu" width="32" height="32" />
-          <span>Kelu · Admin</span>
+          <img src="/logo.svg" alt="Kelu" width="44" height="44" />
+          <div className="admin-header-titles">
+            <span className="admin-header-name">Kelu</span>
+            <span className="admin-header-sub">Panel de administración</span>
+          </div>
         </div>
         <div className="admin-header-actions">
           <span className="admin-stat-badge">{leads.length} leads</span>
@@ -219,53 +232,35 @@ function Dashboard() {
       </header>
 
       <div className="admin-body">
-
-        {/* Pipeline summary */}
         <div className="admin-pipeline">
           {STATUSES.map(s => (
-            <button
-              key={s.value}
+            <button key={s.value}
               className={`pipeline-chip${filter === s.value ? ' pipeline-chip--active' : ''}`}
               style={{ '--chip-color': s.color }}
-              onClick={() => setFilter(f => f === s.value ? 'Todos' : s.value)}
-            >
+              onClick={() => setFilter(f => f === s.value ? 'Todos' : s.value)}>
               <span className="pipeline-count">{counts[s.value] ?? 0}</span>
               <span className="pipeline-label">{s.label}</span>
             </button>
           ))}
           {filter !== 'Todos' && (
-            <button className="pipeline-clear" onClick={() => setFilter('Todos')}>
-              × Todos
-            </button>
+            <button className="pipeline-clear" onClick={() => setFilter('Todos')}>× Todos</button>
           )}
         </div>
 
-        {/* Search */}
         <div className="admin-search-row">
           <div className="admin-search-wrap">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <input
-              className="admin-search"
-              placeholder="Buscar por nombre, email o empresa…"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
+            <input className="admin-search" placeholder="Buscar por nombre, email o empresa…"
+              value={search} onChange={e => setSearch(e.target.value)} />
           </div>
         </div>
 
-        {/* States */}
-        {loading && (
-          <div className="admin-state">
-            <div className="admin-spinner" />
-            <p>Cargando leads…</p>
-          </div>
-        )}
+        {loading && <div className="admin-state"><div className="admin-spinner" /><p>Cargando leads…</p></div>}
         {!loading && error && (
           <div className="admin-state admin-state--err">
-            <p>⚠ {error}</p>
-            <button onClick={load}>Reintentar</button>
+            <p>⚠ {error}</p><button onClick={load}>Reintentar</button>
           </div>
         )}
         {!loading && !error && filtered.length === 0 && (
@@ -274,21 +269,12 @@ function Dashboard() {
           </div>
         )}
 
-        {/* Desktop table */}
         {!loading && !error && filtered.length > 0 && (
           <>
             <div className="admin-table-wrap">
               <table className="admin-table">
                 <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Fecha y hora</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Empresa</th>
-                    <th>Mensaje</th>
-                    <th>Estado</th>
-                  </tr>
+                  <tr><th>#</th><th>Fecha y hora</th><th>Nombre</th><th>Email</th><th>Empresa</th><th>Mensaje</th><th>Estado</th></tr>
                 </thead>
                 <tbody>
                   {filtered.map((lead, i) => (
@@ -296,23 +282,15 @@ function Dashboard() {
                       <td className="admin-td-idx">{filtered.length - i}</td>
                       <td className="admin-td-date">{fmt(lead.createdAt)}</td>
                       <td><strong>{lead.name}</strong></td>
-                      <td>
-                        <a href={`mailto:${lead.email}`} className="admin-email-link">
-                          {lead.email}
-                        </a>
-                      </td>
+                      <td><a href={`mailto:${lead.email}`} className="admin-email-link">{lead.email}</a></td>
                       <td>{lead.company || <span className="admin-empty">—</span>}</td>
                       <td className="admin-td-msg">{lead.message || <span className="admin-empty">—</span>}</td>
-                      <td>
-                        <StatusSelect lead={lead} onUpdate={handleUpdate} />
-                      </td>
+                      <td><StatusSelect lead={lead} onUpdate={handleUpdate} /></td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-
-            {/* Mobile cards */}
             <div className="admin-cards">
               {filtered.map((lead, i) => (
                 <LeadCard key={lead.id} lead={lead} idx={filtered.length - i} onUpdate={handleUpdate} />
@@ -326,7 +304,7 @@ function Dashboard() {
 }
 
 export default function Admin() {
-  const [authed, setAuthed] = useState(() => sessionStorage.getItem(SESSION_KEY) === '1')
+  const [authed, setAuthed] = useState(() => !!sessionStorage.getItem(SESSION_KEY))
   if (!authed) return <PasswordGate onAuth={() => setAuthed(true)} />
   return <Dashboard />
 }
