@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
 import { BRAND_NAME, SECTIONS } from '../config'
 
 const SunIcon  = () => (
@@ -13,8 +14,9 @@ const MoonIcon = () => (
   </svg>
 )
 
-export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
+export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled, isAboutPage }) {
   const { t, i18n } = useTranslation()
+  const location = useLocation()
 
   const NAV_LINKS = SECTIONS.map(id => ({
     href:  `#${id}`,
@@ -46,11 +48,22 @@ export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, o
             <ul className="navbar-nav" role="list">
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
-                  <a href={href} className={activeSection === href.slice(1) ? 'active' : ''}>
+                  <a
+                    href={isAboutPage ? `/${href}` : href}
+                    className={activeSection === href.slice(1) ? 'active' : ''}
+                  >
                     {label}
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/about"
+                  className={location.pathname === '/about' ? 'active' : ''}
+                >
+                  {t('nav.about')}
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -98,13 +111,20 @@ export default function Navbar({ theme, onToggleTheme, menuOpen, onToggleMenu, o
         {NAV_LINKS.map(({ href, label }) => (
           <a
             key={href}
-            href={href}
+            href={isAboutPage ? `/${href}` : href}
             className={activeSection === href.slice(1) ? 'active' : ''}
             onClick={onCloseMenu}
           >
             {label}
           </a>
         ))}
+        <Link
+          to="/about"
+          className={location.pathname === '/about' ? 'active' : ''}
+          onClick={onCloseMenu}
+        >
+          {t('nav.about')}
+        </Link>
       </div>
     </>
   )

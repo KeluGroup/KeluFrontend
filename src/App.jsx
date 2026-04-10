@@ -9,8 +9,8 @@ import Pricing   from './components/Pricing'
 import Stats     from './components/Stats'
 import Process   from './components/Process'
 import CtaBanner from './components/CtaBanner'
-import Team      from './components/Team'
 import Contact   from './components/Contact'
+import About     from './pages/About'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollProgress from './components/ScrollProgress'
@@ -42,7 +42,6 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Stats />
         <Process />
         <CtaBanner />
-        <Team />
         <Contact />
       </main>
       <Footer />
@@ -127,6 +126,7 @@ export default function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/"        element={<MainLayout {...sharedProps} />} />
+        <Route path="/about"   element={<About   {...sharedProps} />} />
         <Route path="/privacy" element={<Privacy theme={theme} onToggleTheme={toggleTheme} />} />
         <Route path="/terms"   element={<Terms   theme={theme} onToggleTheme={toggleTheme} />} />
       </Routes>
