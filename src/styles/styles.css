@@ -216,24 +216,76 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 .fullmenu-brand {
   display: flex;
   align-items: center;
-  gap: .7rem;
+  gap: 1rem;
   text-decoration: none;
   color: #fff;
   width: fit-content;
   opacity: 0;
-  transform: translateY(-14px);
-  transition: opacity .45s ease .3s, transform .45s cubic-bezier(0.23,1,0.32,1) .3s;
-}
-.fullmenu-brand .logo-wordmark { color: #fff; font-size: 1.3rem; }
-/* Make SVG white inside the dark overlay */
-.fullmenu-brand img {
-  filter: brightness(0) invert(1);
-  transition: transform .6s cubic-bezier(0.34,1.56,0.64,1) .35s;
-  transform: rotate(-15deg) scale(0.7);
+  transform: translateY(-20px);
+  transition: opacity .5s ease .25s, transform .5s cubic-bezier(0.23,1,0.32,1) .25s;
 }
 .fullmenu--open .fullmenu-brand { opacity: 1; transform: translateY(0); }
-/* Logo spins into place — the "dynamic" effect */
-.fullmenu--open .fullmenu-brand img { transform: rotate(0deg) scale(1); }
+
+/* Logo container with glow */
+.fullmenu-logo-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+.fullmenu-logo-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,210,80,.45) 0%, rgba(100,220,130,.25) 50%, transparent 70%);
+  filter: blur(14px);
+  opacity: 0;
+  transition: opacity .5s ease .6s;
+  animation: logoGlowPulse 3s ease-in-out infinite;
+}
+.fullmenu--open .fullmenu-logo-glow { opacity: 1; }
+
+@keyframes logoGlowPulse {
+  0%, 100% { transform: scale(1);   opacity: .75; }
+  50%       { transform: scale(1.2); opacity: 1;   }
+}
+
+.fullmenu-logo-img {
+  width: 100px;
+  height: 100px;
+  filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(255,210,80,.35));
+  transform: rotate(-20deg) scale(0.6);
+  transition: transform .75s cubic-bezier(0.34,1.56,0.64,1) .3s;
+  /* Idle float after open */
+  animation: none;
+}
+.fullmenu--open .fullmenu-logo-img {
+  transform: rotate(0deg) scale(1);
+  animation: logoFloat 4s ease-in-out infinite .8s;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  25%       { transform: translateY(-6px) rotate(1.5deg); }
+  75%       { transform: translateY(4px)  rotate(-1deg); }
+}
+
+/* Wordmark in the menu */
+.fullmenu-wordmark {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity .5s ease .5s, transform .5s cubic-bezier(0.23,1,0.32,1) .5s;
+}
+.fullmenu--open .fullmenu-wordmark { opacity: 1; transform: translateX(0); }
+
+/* Make SVG white inside the dark overlay (fallback) */
+.fullmenu-brand img { filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(255,210,80,.35)); }
 
 /* Nav links */
 .fullmenu-nav {
@@ -343,20 +395,48 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 }
 .fullmenu-lang:hover { background: rgba(255,255,255,.2); }
 
-.fullmenu-theme-btn {
-  width: 36px;
-  height: 36px;
+/* Theme toggle pill */
+.fullmenu-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  padding: .28rem .28rem .28rem .65rem;
+  cursor: pointer;
+  color: rgba(255,255,255,.85);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  transition: background .2s, border-color .2s;
+}
+.fullmenu-theme-toggle:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.35); }
+
+.theme-toggle-track {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,.22);
-  color: rgba(255,255,255,.75);
-  background: rgba(255,255,255,.08);
-  cursor: pointer;
-  transition: background .2s;
+  transition: background .3s;
+  flex-shrink: 0;
 }
-.fullmenu-theme-btn:hover { background: rgba(255,255,255,.18); color: #fff; }
+.fullmenu-theme-toggle--dark .theme-toggle-track { background: rgba(100,180,255,.25); }
+.fullmenu-theme-toggle:not(.fullmenu-theme-toggle--dark) .theme-toggle-track { background: rgba(255,210,60,.3); }
+
+.theme-toggle-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform .4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.fullmenu-theme-toggle:active .theme-toggle-thumb { transform: rotate(30deg); }
+
+.theme-toggle-label { white-space: nowrap; }
 
 @media (max-width: 480px) {
   .fullmenu-bottom { grid-template-columns: 1fr; gap: .75rem; text-align: center; }
