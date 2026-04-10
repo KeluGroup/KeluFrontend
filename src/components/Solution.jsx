@@ -38,21 +38,21 @@ const FEATURES = [
 ]
 
 const PRODUCTS = [
-  { key:'p1', rotate:'-8deg', delay:0,   color:'#F4A261',
+  { key:'p1', rotate:'-6deg', delay:0,   color:'#F4A261',
     img:'https://image.pollinations.ai/prompt/arepa%20venezolana%20corn%20flatbread%20close%20up%20food%20photography%20white%20background%20professional%20studio?width=480&height=480&seed=101&nologo=true' },
-  { key:'p2', rotate:'6deg',  delay:80,  color:'#FFD166',
+  { key:'p2', rotate:'5deg',  delay:120, color:'#FFD166',
     img:'https://image.pollinations.ai/prompt/tequeños%20cheese%20sticks%20venezuelan%20appetizer%20food%20photography%20white%20background%20studio%20crispy?width=480&height=480&seed=202&nologo=true' },
-  { key:'p3', rotate:'-5deg', delay:160, color:'#E9C46A',
+  { key:'p3', rotate:'-4deg', delay:240, color:'#E9C46A',
     img:'https://image.pollinations.ai/prompt/empanada%20colombiana%20fried%20golden%20pastry%20food%20photography%20white%20background%20professional?width=480&height=480&seed=303&nologo=true' },
-  { key:'p4', rotate:'9deg',  delay:240, color:'#9B7653',
+  { key:'p4', rotate:'7deg',  delay:360, color:'#9B7653',
     img:'https://image.pollinations.ai/prompt/yuca%20frita%20fried%20cassava%20sticks%20latin%20food%20photography%20white%20background%20crispy%20golden?width=480&height=480&seed=404&nologo=true' },
-  { key:'p5', rotate:'-7deg', delay:100, color:'#FFB703',
+  { key:'p5', rotate:'-5deg', delay:160, color:'#FFB703',
     img:'https://image.pollinations.ai/prompt/platano%20maduro%20sweet%20fried%20ripe%20plantain%20latin%20food%20photography%20white%20background?width=480&height=480&seed=505&nologo=true' },
-  { key:'p6', rotate:'5deg',  delay:180, color:'#FAFAFA',
+  { key:'p6', rotate:'4deg',  delay:280, color:'#FAFAFA',
     img:'https://image.pollinations.ai/prompt/queso%20blanco%20latino%20fresh%20white%20cheese%20block%20food%20photography%20white%20background%20professional?width=480&height=480&seed=606&nologo=true' },
-  { key:'p7', rotate:'-4deg', delay:260, color:'#06D6A0',
+  { key:'p7', rotate:'-3deg', delay:400, color:'#06D6A0',
     img:'https://image.pollinations.ai/prompt/guasacaca%20aji%20latin%20american%20sauces%20condiments%20food%20photography%20white%20background%20colorful?width=480&height=480&seed=707&nologo=true' },
-  { key:'p8', rotate:'8deg',  delay:340, color:'#FF9F1C',
+  { key:'p8', rotate:'6deg',  delay:520, color:'#FF9F1C',
     img:'https://image.pollinations.ai/prompt/maracuya%20passion%20fruit%20guanabana%20tropical%20fruit%20pulp%20latin%20food%20photography%20white%20background?width=480&height=480&seed=808&nologo=true' },
 ]
 
