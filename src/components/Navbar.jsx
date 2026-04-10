@@ -82,55 +82,47 @@ export default function Navbar({
         aria-modal="true"
         aria-label="Navegación principal"
       >
-        {/* Logo inside overlay */}
-        <a
-          href={homePath}
-          className="fullmenu-brand"
-          onClick={onCloseMenu}
-        >
-          <img src="/logo.svg" alt={BRAND_NAME} width="40" height="40" aria-hidden="true" />
-          <span className="logo-wordmark">{BRAND_NAME}</span>
-        </a>
+        {/* ── Top row: logo left (X is the floating hamburger above) ── */}
+        <div className="fullmenu-top">
+          <a href={homePath} className="fullmenu-brand" onClick={onCloseMenu}>
+            <img src="/logo.svg" alt={BRAND_NAME} width="52" height="52" aria-hidden="true" />
+            <span className="logo-wordmark">{BRAND_NAME}</span>
+          </a>
+        </div>
 
-        {/* Nav links */}
+        {/* ── Center: nav links ── */}
         <nav className="fullmenu-nav" aria-label="Menú principal">
           {NAV_LINKS.map(({ href, label, id, isRoute }, i) => {
             const isActive = isRoute
               ? location.pathname === href
               : activeSection === id
-
             return isRoute ? (
-              <Link
-                key={href}
-                to={href}
+              <Link key={href} to={href}
                 className={`fullmenu-link ${isActive ? 'fullmenu-link--active' : ''}`}
-                style={{ '--i': i }}
-                onClick={onCloseMenu}
-              >
+                style={{ '--i': i }} onClick={onCloseMenu}>
                 <span className="fullmenu-link-inner">{label}</span>
               </Link>
             ) : (
-              <a
-                key={href}
-                href={isAboutPage ? `/${href}` : href}
+              <a key={href} href={isAboutPage ? `/${href}` : href}
                 className={`fullmenu-link ${isActive ? 'fullmenu-link--active' : ''}`}
-                style={{ '--i': i }}
-                onClick={onCloseMenu}
-              >
+                style={{ '--i': i }} onClick={onCloseMenu}>
                 <span className="fullmenu-link-inner">{label}</span>
               </a>
             )
           })}
         </nav>
 
-        {/* Bottom bar: lang + theme + socials */}
+        {/* ── Bottom row: left | center | right ── */}
         <div className="fullmenu-bottom">
-          <button className="fullmenu-lang" onClick={toggleLang} aria-label="Cambiar idioma">
-            {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
-          </button>
-          <button className="fullmenu-theme-btn" onClick={onToggleTheme} aria-label="Cambiar tema">
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-          </button>
+
+          {/* Left: cookies */}
+          <div className="fullmenu-bottom-left">
+            <Link to="/privacy" className="fullmenu-small-link" onClick={onCloseMenu}>
+              Cookie Settings
+            </Link>
+          </div>
+
+          {/* Center: socials */}
           <div className="fullmenu-socials">
             <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <InstagramIcon />
@@ -139,6 +131,17 @@ export default function Navbar({
               <TikTokIcon />
             </a>
           </div>
+
+          {/* Right: lang + theme */}
+          <div className="fullmenu-bottom-right">
+            <button className="fullmenu-lang" onClick={toggleLang} aria-label="Cambiar idioma">
+              {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
+            </button>
+            <button className="fullmenu-theme-btn" onClick={onToggleTheme} aria-label="Cambiar tema">
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
+          </div>
+
         </div>
       </div>
     </>
