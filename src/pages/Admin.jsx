@@ -1,10 +1,20 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const API_BASE    = import.meta.env.VITE_API_BASE ?? ''
-const API_KEY     = import.meta.env.VITE_API_KEY  ?? ''
-const ADMIN_PASS  = import.meta.env.VITE_ADMIN_PASS ?? 'kelu-admin'
-
+const API_BASE   = import.meta.env.VITE_API_BASE ?? ''
+const API_KEY    = import.meta.env.VITE_API_KEY  ?? ''
+const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS ?? 'kelu-admin'
 const SESSION_KEY = 'kelu_admin_auth'
+
+const STATUSES = [
+  { value: 'Nuevo',       label: 'Nuevo',       color: '#6b7280' },
+  { value: 'Contactado',  label: 'Contactado',  color: '#3b82f6' },
+  { value: 'En proceso',  label: 'En proceso',  color: '#f59e0b' },
+  { value: 'Atendido',    label: 'Atendido',    color: '#22c55e' },
+]
+
+function statusMeta(value) {
+  return STATUSES.find(s => s.value === value) ?? STATUSES[0]
+}
 
 function fmt(iso) {
   if (!iso) return '—'
@@ -21,13 +31,8 @@ function PasswordGate({ onAuth }) {
 
   function submit(e) {
     e.preventDefault()
-    if (val === ADMIN_PASS) {
-      sessionStorage.setItem(SESSION_KEY, '1')
-      onAuth()
-    } else {
-      setErr(true)
-      setVal('')
-    }
+    if (val === ADMIN_PASS) { sessionStorage.setItem(SESSION_KEY, '1'); onAuth() }
+    else { setErr(true); setVal('') }
   }
 
   return (
@@ -54,8 +59,67 @@ function PasswordGate({ onAuth }) {
   )
 }
 
-/* ── Lead card (mobile) ── */
-function LeadCard({ lead, idx }) {
+/* ── Status dropdown ── */
+function StatusSelect({ lead, onUpdate }) {
+  const [open, setOpen]   = useState(false)
+  const [busy, setBusy]   = useState(false)
+  const meta = statusMeta(lead.status)
+
+  async function pick(value) {
+    if (value === lead.status) { setOpen(false); return }
+    setBusy(true); setOpen(false)
+    try {
+      const res = await fetch(`${API_BASE}/api/admin/leads/${lead.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
+        body: JSON.stringify({ status: value }),
+      })
+      if (!res.ok) throw new Error()
+      onUpdate(lead.id, value)
+    } catch {
+      alert('No se pudo actualizar el estado.')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="status-wrap" style={{ '--status-color': meta.color }}>
+      <button
+        className={`status-badge${busy ? ' status-badge--busy' : ''}`}
+        onClick={() => setOpen(o => !o)}
+        disabled={busy}
+      >
+        <span className="status-dot" />
+        {busy ? '…' : meta.label}
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      {open && (
+        <>
+          <div className="status-backdrop" onClick={() => setOpen(false)} />
+          <ul className="status-menu">
+            {STATUSES.map(s => (
+              <li
+                key={s.value}
+                className={`status-option${s.value === lead.status ? ' status-option--active' : ''}`}
+                style={{ '--opt-color': s.color }}
+                onClick={() => pick(s.value)}
+              >
+                <span className="status-dot" />
+                {s.label}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  )
+}
+
+/* ── Mobile card ── */
+function LeadCard({ lead, idx, onUpdate }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="admin-card">
@@ -65,25 +129,31 @@ function LeadCard({ lead, idx }) {
           <strong>{lead.name}</strong>
           <span>{lead.email}</span>
         </div>
-        <span className="admin-card-date">{fmt(lead.createdAt)}</span>
-        <span className="admin-card-chevron">{open ? '▲' : '▼'}</span>
+        <div className="admin-card-right">
+          <span className="admin-card-date">{fmt(lead.createdAt)}</span>
+          <span className="admin-card-chevron">{open ? '▲' : '▼'}</span>
+        </div>
       </div>
       {open && (
         <div className="admin-card-body">
           {lead.company && <p><b>Empresa:</b> {lead.company}</p>}
           <p><b>Mensaje:</b> {lead.message || '—'}</p>
+          <div style={{ marginTop: '.5rem' }}>
+            <StatusSelect lead={lead} onUpdate={onUpdate} />
+          </div>
         </div>
       )}
     </div>
   )
 }
 
-/* ── Main dashboard ── */
+/* ── Dashboard ── */
 function Dashboard() {
   const [leads,   setLeads]   = useState([])
   const [loading, setLoading] = useState(true)
   const [error,   setError]   = useState('')
   const [search,  setSearch]  = useState('')
+  const [filter,  setFilter]  = useState('Todos')
 
   const load = useCallback(async () => {
     setLoading(true); setError('')
@@ -103,22 +173,32 @@ function Dashboard() {
 
   useEffect(() => { load() }, [load])
 
+  function handleUpdate(id, newStatus) {
+    setLeads(prev => prev.map(l => l.id === id ? { ...l, status: newStatus } : l))
+  }
+
+  function logout() { sessionStorage.removeItem(SESSION_KEY); window.location.reload() }
+
+  // Counts per status
+  const counts = STATUSES.reduce((acc, s) => {
+    acc[s.value] = leads.filter(l => (l.status || 'Nuevo') === s.value).length
+    return acc
+  }, {})
+
   const filtered = leads.filter(l => {
     const q = search.toLowerCase()
-    return (
+    const matchSearch = (
       l.name.toLowerCase().includes(q) ||
       l.email.toLowerCase().includes(q) ||
       (l.company ?? '').toLowerCase().includes(q)
     )
+    const matchFilter = filter === 'Todos' || (l.status || 'Nuevo') === filter
+    return matchSearch && matchFilter
   })
-
-  function logout() {
-    sessionStorage.removeItem(SESSION_KEY)
-    window.location.reload()
-  }
 
   return (
     <div className="admin-wrap">
+
       {/* Header */}
       <header className="admin-header">
         <div className="admin-header-brand">
@@ -127,10 +207,9 @@ function Dashboard() {
         </div>
         <div className="admin-header-actions">
           <span className="admin-stat-badge">{leads.length} leads</span>
-          <button className="admin-refresh-btn" onClick={load} disabled={loading}
-            title="Actualizar">
+          <button className="admin-refresh-btn" onClick={load} disabled={loading} title="Actualizar">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-              style={{ animation: loading ? 'adminSpin 0.8s linear infinite' : 'none' }}>
+              style={{ animation: loading ? 'adminSpin .8s linear infinite' : 'none' }}>
               <polyline points="23 4 23 10 17 10"/>
               <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
             </svg>
@@ -140,6 +219,27 @@ function Dashboard() {
       </header>
 
       <div className="admin-body">
+
+        {/* Pipeline summary */}
+        <div className="admin-pipeline">
+          {STATUSES.map(s => (
+            <button
+              key={s.value}
+              className={`pipeline-chip${filter === s.value ? ' pipeline-chip--active' : ''}`}
+              style={{ '--chip-color': s.color }}
+              onClick={() => setFilter(f => f === s.value ? 'Todos' : s.value)}
+            >
+              <span className="pipeline-count">{counts[s.value] ?? 0}</span>
+              <span className="pipeline-label">{s.label}</span>
+            </button>
+          ))}
+          {filter !== 'Todos' && (
+            <button className="pipeline-clear" onClick={() => setFilter('Todos')}>
+              × Todos
+            </button>
+          )}
+        </div>
+
         {/* Search */}
         <div className="admin-search-row">
           <div className="admin-search-wrap">
@@ -170,7 +270,7 @@ function Dashboard() {
         )}
         {!loading && !error && filtered.length === 0 && (
           <div className="admin-state">
-            <p>{search ? 'Sin resultados para tu búsqueda.' : 'Aún no hay leads registrados.'}</p>
+            <p>{search || filter !== 'Todos' ? 'Sin resultados.' : 'Aún no hay leads registrados.'}</p>
           </div>
         )}
 
@@ -182,17 +282,19 @@ function Dashboard() {
                 <thead>
                   <tr>
                     <th>#</th>
+                    <th>Fecha y hora</th>
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Empresa</th>
                     <th>Mensaje</th>
-                    <th>Fecha</th>
+                    <th>Estado</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filtered.map((lead, i) => (
                     <tr key={lead.id}>
                       <td className="admin-td-idx">{filtered.length - i}</td>
+                      <td className="admin-td-date">{fmt(lead.createdAt)}</td>
                       <td><strong>{lead.name}</strong></td>
                       <td>
                         <a href={`mailto:${lead.email}`} className="admin-email-link">
@@ -201,7 +303,9 @@ function Dashboard() {
                       </td>
                       <td>{lead.company || <span className="admin-empty">—</span>}</td>
                       <td className="admin-td-msg">{lead.message || <span className="admin-empty">—</span>}</td>
-                      <td className="admin-td-date">{fmt(lead.createdAt)}</td>
+                      <td>
+                        <StatusSelect lead={lead} onUpdate={handleUpdate} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -211,7 +315,7 @@ function Dashboard() {
             {/* Mobile cards */}
             <div className="admin-cards">
               {filtered.map((lead, i) => (
-                <LeadCard key={lead.id} lead={lead} idx={filtered.length - i} />
+                <LeadCard key={lead.id} lead={lead} idx={filtered.length - i} onUpdate={handleUpdate} />
               ))}
             </div>
           </>
@@ -221,10 +325,8 @@ function Dashboard() {
   )
 }
 
-/* ── Page entry ── */
 export default function Admin() {
   const [authed, setAuthed] = useState(() => sessionStorage.getItem(SESSION_KEY) === '1')
-
   if (!authed) return <PasswordGate onAuth={() => setAuthed(true)} />
   return <Dashboard />
 }
