@@ -16,6 +16,7 @@ import WhatsAppButton from './components/WhatsAppButton'
 import ScrollProgress from './components/ScrollProgress'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
+import Admin    from './pages/Admin'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
 import { SECTIONS } from './config'
@@ -131,6 +132,7 @@ export default function App() {
         <Route path="/about"   element={<About   {...sharedProps} />} />
         <Route path="/privacy" element={<Privacy theme={theme} onToggleTheme={toggleTheme} />} />
         <Route path="/terms"   element={<Terms   theme={theme} onToggleTheme={toggleTheme} />} />
+        <Route path="/admin"   element={<Admin />} />
       </Routes>
     </>
   )
