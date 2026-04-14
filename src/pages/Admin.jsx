@@ -104,7 +104,7 @@ function StatusSelect({ lead, onUpdate }) {
     const upward     = spaceBelow < menuHeight
     setPos({
       top:    upward
-                ? rect.top  + window.scrollY - menuHeight - 4
+                ? rect.top    + window.scrollY - menuHeight - 4
                 : rect.bottom + window.scrollY + 4,
       left:   rect.left + window.scrollX,
       width:  rect.width,
@@ -210,22 +210,22 @@ function LeadCard({ lead, idx, onUpdate }) {
 }
 
 
-/* ── Airtable order form tab ── */
-function OrderForm() {
+/* ── Shared Airtable form tab ── */
+function AirtableForm({ title, description, src }) {
   return (
     <div className="admin-order-wrap">
       <div className="admin-order-header">
-        <h2 className="admin-order-title">Nueva solicitud</h2>
-        <p className="admin-order-sub">Completa el formulario para registrar una nueva orden en Airtable.</p>
+        <h2 className="admin-order-title">{title}</h2>
+        <p className="admin-order-sub">{description}</p>
       </div>
       <div className="admin-order-frame">
         <iframe
-          src="https://airtable.com/embed/appeEsPqR4rIsoeyu/pag4wj1jXAH0aEZBo/form"
+          src={src}
           frameBorder="0"
           width="100%"
           height="600"
           style={{ background: 'transparent', border: 'none' }}
-          title="Nueva orden"
+          title={title}
         />
       </div>
     </div>
@@ -273,6 +273,7 @@ function LeadsTab() {
 
   return (
     <>
+      {/* Pipeline filter chips */}
       <div className="admin-pipeline">
         {STATUSES.map(s => (
           <button key={s.value}
@@ -288,23 +289,30 @@ function LeadsTab() {
         )}
       </div>
 
+      {/* Search + Refresh on the same row */}
       <div className="admin-search-row">
         <div className="admin-search-wrap">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
-          <input className="admin-search" placeholder="Buscar por nombre, email o empresa…"
-            value={search} onChange={e => setSearch(e.target.value)} />
+          <input
+            className="admin-search"
+            placeholder="Buscar por nombre, email o empresa…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
         </div>
-        <button className="admin-refresh-btn" onClick={load} disabled={loading} title="Actualizar">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        <button className="admin-refresh-btn" onClick={load} disabled={loading}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
             style={{ animation: loading ? 'adminSpin .8s linear infinite' : 'none' }}>
             <polyline points="23 4 23 10 17 10"/>
             <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
           </svg>
+          {loading ? 'Cargando…' : 'Actualizar'}
         </button>
       </div>
 
+      {/* States */}
       {loading && <div className="admin-state"><div className="admin-spinner" /><p>Cargando leads…</p></div>}
       {!loading && error && (
         <div className="admin-state admin-state--err">
@@ -317,6 +325,7 @@ function LeadsTab() {
         </div>
       )}
 
+      {/* Table */}
       {!loading && !error && filtered.length > 0 && (
         <>
           <div className="admin-table-wrap">
@@ -351,11 +360,47 @@ function LeadsTab() {
 }
 
 
-/* ── Dashboard (tab shell) ── */
+/* ── Dashboard (3-tab shell) ── */
 function Dashboard() {
   const [tab, setTab] = useState('leads')
 
   function logout() { sessionStorage.removeItem(SESSION_KEY); window.location.reload() }
+
+  const TABS = [
+    {
+      id: 'leads',
+      label: 'Leads',
+      icon: (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      ),
+    },
+    {
+      id: 'nuevo-cliente',
+      label: 'Nuevo cliente',
+      icon: (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+          <line x1="12" y1="14" x2="12" y2="20"/><line x1="9" y1="17" x2="15" y2="17"/>
+        </svg>
+      ),
+    },
+    {
+      id: 'nueva-orden',
+      label: 'Nueva orden',
+      icon: (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9"  y1="15" x2="15" y2="15"/>
+        </svg>
+      ),
+    },
+  ]
 
   return (
     <div className="admin-wrap">
@@ -372,32 +417,34 @@ function Dashboard() {
         </div>
       </header>
 
-      {/* Tab bar */}
       <nav className="admin-tabs">
-        <button
-          className={`admin-tab${tab === 'leads' ? ' admin-tab--active' : ''}`}
-          onClick={() => setTab('leads')}>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          Leads
-        </button>
-        <button
-          className={`admin-tab${tab === 'order' ? ' admin-tab--active' : ''}`}
-          onClick={() => setTab('order')}>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/>
-            <line x1="9" y1="15" x2="15" y2="15"/>
-          </svg>
-          Nueva solicitud
-        </button>
+        {TABS.map(t => (
+          <button
+            key={t.id}
+            className={`admin-tab${tab === t.id ? ' admin-tab--active' : ''}`}
+            onClick={() => setTab(t.id)}>
+            {t.icon}
+            {t.label}
+          </button>
+        ))}
       </nav>
 
       <div className="admin-body">
         {tab === 'leads' && <LeadsTab />}
-        {tab === 'order' && <OrderForm />}
+        {tab === 'nuevo-cliente' && (
+          <AirtableForm
+            title="Nuevo cliente"
+            description="Registra un nuevo cliente en Airtable."
+            src="https://airtable.com/embed/appeEsPqR4rIsoeyu/pag4wj1jXAH0aEZBo/form"
+          />
+        )}
+        {tab === 'nueva-orden' && (
+          <AirtableForm
+            title="Nueva orden"
+            description="Registra una nueva orden en Airtable."
+            src="https://airtable.com/embed/appeEsPqR4rIsoeyu/pagALMRwKTPmXNwrJ/form"
+          />
+        )}
       </div>
     </div>
   )
