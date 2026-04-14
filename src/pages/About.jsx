@@ -41,7 +41,6 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
 
         {/* Placeholder for future sections — values, press, milestones, etc. */}
       </main>
-      <Footer />
       <WhatsAppButton />
     </>
   )
