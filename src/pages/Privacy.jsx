@@ -1,21 +1,55 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import PageShell from '../components/PageShell'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ScrollProgress from '../components/ScrollProgress'
 
-export default function Privacy({ theme, onToggleTheme }) {
+export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, scrolled }) {
   const { t } = useTranslation()
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    )
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
+    }, 100)
+    return () => { clearTimeout(timer); io.disconnect() }
+  }, [])
+
   return (
-    <PageShell theme={theme} onToggleTheme={onToggleTheme} title={t('privacy.title')}>
-      <p className="policy-updated">{t('privacy.updated')}</p>
-      <h3>{t('privacy.s1title')}</h3><p>{t('privacy.s1body')}</p>
-      <h3>{t('privacy.s2title')}</h3><p>{t('privacy.s2body')}</p>
-      <h3>{t('privacy.s3title')}</h3><p>{t('privacy.s3body')}</p>
-      <h3>{t('privacy.s4title')}</h3><p>{t('privacy.s4body')}</p>
-      <h3>{t('privacy.s5title')}</h3>
-      <p>
-        {t('privacy.s5body')}{' '}
-        <a href="/#contact" className="policy-link">{t('privacy.s5link')}</a>.
-      </p>
-    </PageShell>
+    <>
+      <ScrollProgress />
+      <Navbar
+        theme={theme}
+        onToggleTheme={onToggleTheme}
+        menuOpen={menuOpen}
+        onToggleMenu={onToggleMenu}
+        onCloseMenu={onCloseMenu}
+        activeSection=""
+        scrolled={scrolled}
+        isAboutPage
+      />
+      <main id="main-content" className="policy-main">
+        <div className="policy-container">
+          <h1 className="policy-title">{t('privacy.title')}</h1>
+          <p className="policy-updated">{t('privacy.updated')}</p>
+          <div className="policy-content">
+            <h3>{t('privacy.s1title')}</h3><p>{t('privacy.s1body')}</p>
+            <h3>{t('privacy.s2title')}</h3><p>{t('privacy.s2body')}</p>
+            <h3>{t('privacy.s3title')}</h3><p>{t('privacy.s3body')}</p>
+            <h3>{t('privacy.s4title')}</h3><p>{t('privacy.s4body')}</p>
+            <h3>{t('privacy.s5title')}</h3>
+            <p>
+              {t('privacy.s5body')}{' '}
+              <a href="/#contact" className="policy-link">{t('privacy.s5link')}</a>.
+            </p>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   )
 }

@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="footer-top">
 
           <div className="footer-brand-block">
-            <a href="#home" className="footer-brand" aria-label="Kelu home">
+            <a href="/#home" className="footer-brand" aria-label="Kelu home">
               <img src="/logo.svg" alt={BRAND_NAME} width="34" height="34" aria-hidden="true" />
               <span className="logo-wordmark">{BRAND_NAME}</span>
             </a>
