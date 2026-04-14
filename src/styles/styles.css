@@ -3278,7 +3278,7 @@ a.btn-ph {
   box-sizing: border-box;
 }
 
-/* Search */
+/* Search + Refresh inline row */
 .admin-search-row {
   display: flex;
   align-items: center;
@@ -3286,19 +3286,37 @@ a.btn-ph {
   padding: .75rem 1.5rem;
 }
 
+/* Keep ALL original search wrap styles, just add flex: 1 */
 .admin-search-wrap {
-  flex: 1;  /* takes all remaining space */
+  flex: 1;                          /* ← new, makes it fill available space */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: .5rem .75rem;
 }
 
 .admin-search-wrap:focus-within { border-color: var(--color-primary); }
-.admin-search-wrap svg { flex-shrink: 0; color: var(--color-text-muted); }
+
+.admin-search-wrap svg {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
 .admin-search {
+  flex: 1;
   border: none;
   outline: none;
+  font-size: .875rem;
   background: transparent;
-  color: var(--color-text);
-  font-size: .9rem;
-  width: 100%;
+  color: #111827;
+}
+
+.admin-search::placeholder {
+  color: #9ca3af;
 }
 
 /* States */
