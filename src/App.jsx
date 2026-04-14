@@ -5,12 +5,12 @@ import SideDots  from './components/SideDots'
 import Home      from './components/Home'
 import Problem   from './components/Problem'
 import Solution  from './components/Solution'
-import Pricing   from './components/Pricing'
-import Stats     from './components/Stats'
 import Process   from './components/Process'
 import CtaBanner from './components/CtaBanner'
 import Contact   from './components/Contact'
-import About     from './pages/About'
+import About       from './pages/About'
+import Benefits    from './pages/Benefits'
+import ContactPage from './pages/ContactPage'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollProgress from './components/ScrollProgress'
@@ -40,8 +40,6 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Home />
         <Problem />
         <Solution />
-        <Pricing />
-        <Stats />
         <Process />
         <CtaBanner />
         <Contact />
@@ -80,6 +78,13 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Scroll to top on every route change (except hash-only navigation)
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  // Re-attach scroll-animate observer whenever the route changes
+  // (MainLayout re-mounts on navigation, producing fresh DOM nodes without 'visible')
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
@@ -87,9 +92,9 @@ export default function App() {
     )
     const timer = setTimeout(() => {
       document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
-    }, 100)
+    }, 120)
     return () => { clearTimeout(timer); io.disconnect() }
-  }, [])
+  }, [location.pathname])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -129,7 +134,9 @@ export default function App() {
       <CursorTrail />
       <Routes>
         <Route path="/"        element={<MainLayout {...sharedProps} />} />
-        <Route path="/about"   element={<About   {...sharedProps} />} />
+        <Route path="/about"    element={<About    {...sharedProps} />} />
+        <Route path="/benefits" element={<Benefits theme={theme} onToggleTheme={toggleTheme} />} />
+        <Route path="/contact"  element={<ContactPage theme={theme} onToggleTheme={toggleTheme} />} />
         <Route path="/privacy" element={<Privacy theme={theme} onToggleTheme={toggleTheme} />} />
         <Route path="/terms"   element={<Terms   theme={theme} onToggleTheme={toggleTheme} />} />
         <Route path="/admin"   element={<Admin />} />

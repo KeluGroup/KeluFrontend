@@ -1,10 +1,11 @@
 {
   "nav": {
     "home":     "Inicio",
+    "whyus":    "¿Por qué nosotros?",
     "problem":  "Problema",
-    "solution": "Solución",
-    "pricing":  "Precios",
+    "solution":  "Solución",
     "process":  "Proceso",
+    "benefits": "Beneficios",
     "contact":  "Contacto",
     "about":    "Nosotros"
   },
@@ -65,6 +66,12 @@
     "feat2text":    "Política escalonada clara: más compras = más descuentos. Del -5% al -15% más beneficios exclusivos.",
     "feat3title":   "Rutas fijas, entregas predecibles",
     "feat3text":    "Zúrich dividido en 4 zonas rentables. Sabes cuándo llegamos, planificas tu stock, eliminas el estrés.",
+    "feat4title":   "Un Socio que Vive la Cocina Latina",
+    "feat4text":    "Nuestro equipo creció con esta comida. Conocemos cada producto, cada plato, cada proveedor. No solo entregamos — asesoramos tus compras.",
+    "compareBeforeLabel": "Sin KeLu",
+    "compareAfterLabel":  "Con KeLu",
+    "ctaSchedule":  "Agenda tu Reunión Gratis",
+    "ctaCatalogue": "Explorar Productos y Precios",
     "productsTitle": "Nuestro TOP 10 Estratégico",
     "p1": "Arepas precocidas",
     "p2": "Tequeños",
@@ -177,6 +184,8 @@
   "contact": {
     "tag":       "Contáctanos",
     "title":     "Trabajemos juntos",
+    "infoTitle": "Empecemos a Trabajar Juntos",
+    "ctaBtn":    "Envíanos un Mensaje",
     "subtitle":  "Si buscas un proveedor confiable de alimentos latinos o quieres explorar oportunidades de colaboración, nos encantaría saber de ti.",
     "followUs":  "Síguenos",
     "openForm":  "Envíanos un mensaje",

@@ -1,7 +1,50 @@
-import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import ProductModal from './ProductModal'
+import { Link } from 'react-router-dom'
 
+/* ── Problem side (mirrors Problem.jsx cards) ── */
+const PROBLEMS = [
+  {
+    key: 'card1',
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="8" y1="11" x2="14" y2="11"/>
+      </svg>
+    ),
+  },
+  {
+    key: 'card2',
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/>
+      </svg>
+    ),
+  },
+  {
+    key: 'card3',
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"/>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
+  },
+  {
+    key: 'card4',
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2"/>
+        <path d="M16 8h4l3 3v5h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+    ),
+  },
+]
+
+/* ── Solution side (4 features matching the 4 problems 1-to-1) ── */
 const FEATURES = [
   {
     titleKey: 'solution.feat1title',
@@ -12,6 +55,18 @@ const FEATURES = [
         <line x1="8" y1="18" x2="21" y2="18"/>
         <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
         <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+    ),
+  },
+  {
+    titleKey: 'solution.feat4title',
+    textKey:  'solution.feat4text',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
   },
@@ -37,120 +92,114 @@ const FEATURES = [
   },
 ]
 
-const PRODUCTS = [
-  { key:'p1', rotate:'-6deg', delay:0,   color:'#F4A261',
-    img:'https://image.pollinations.ai/prompt/arepa%20venezolana%20corn%20flatbread%20close%20up%20food%20photography%20white%20background%20professional%20studio?width=480&height=480&seed=101&nologo=true' },
-  { key:'p2', rotate:'5deg',  delay:120, color:'#FFD166',
-    img:'https://image.pollinations.ai/prompt/tequeños%20cheese%20sticks%20venezuelan%20appetizer%20food%20photography%20white%20background%20studio%20crispy?width=480&height=480&seed=202&nologo=true' },
-  { key:'p3', rotate:'-4deg', delay:240, color:'#E9C46A',
-    img:'https://image.pollinations.ai/prompt/empanada%20colombiana%20fried%20golden%20pastry%20food%20photography%20white%20background%20professional?width=480&height=480&seed=303&nologo=true' },
-  { key:'p4', rotate:'7deg',  delay:360, color:'#9B7653',
-    img:'https://image.pollinations.ai/prompt/yuca%20frita%20fried%20cassava%20sticks%20latin%20food%20photography%20white%20background%20crispy%20golden?width=480&height=480&seed=404&nologo=true' },
-  { key:'p5', rotate:'-5deg', delay:160, color:'#FFB703',
-    img:'https://image.pollinations.ai/prompt/platano%20maduro%20sweet%20fried%20ripe%20plantain%20latin%20food%20photography%20white%20background?width=480&height=480&seed=505&nologo=true' },
-  { key:'p6', rotate:'4deg',  delay:280, color:'#FAFAFA',
-    img:'https://image.pollinations.ai/prompt/queso%20blanco%20latino%20fresh%20white%20cheese%20block%20food%20photography%20white%20background%20professional?width=480&height=480&seed=606&nologo=true' },
-  { key:'p7', rotate:'-3deg', delay:400, color:'#06D6A0',
-    img:'https://image.pollinations.ai/prompt/guasacaca%20aji%20latin%20american%20sauces%20condiments%20food%20photography%20white%20background%20colorful?width=480&height=480&seed=707&nologo=true' },
-  { key:'p8', rotate:'6deg',  delay:520, color:'#FF9F1C',
-    img:'https://image.pollinations.ai/prompt/maracuya%20passion%20fruit%20guanabana%20tropical%20fruit%20pulp%20latin%20food%20photography%20white%20background?width=480&height=480&seed=808&nologo=true' },
-]
-
-function ProductCard({ product, visible, onClick }) {
-  const { t } = useTranslation()
-  const [loaded, setLoaded] = useState(false)
-
-  return (
-    <button
-      className={`product-tag product-tag--photo ${visible ? 'product-tag--visible' : ''}`}
-      style={{ '--fall-rotate': product.rotate, '--fall-delay': `${product.delay}ms` }}
-      onClick={() => onClick(product)}
-      aria-label={t(`solution.${product.key}`)}
-    >
-      <div className="product-photo-wrap">
-        {!loaded && <div className="product-photo-skeleton"><div className="skeleton-shimmer" /></div>}
-        <img
-          src={product.img}
-          alt={t(`solution.${product.key}`)}
-          className={`product-photo ${loaded ? 'product-photo--loaded' : ''}`}
-          onLoad={() => setLoaded(true)}
-          loading="lazy"
-        />
-      </div>
-      <span className="product-name">{t(`solution.${product.key}`)}</span>
-    </button>
-  )
-}
+const CheckIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+)
+const CrossIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+)
+const ArrowIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/>
+    <polyline points="12 5 19 12 12 19"/>
+  </svg>
+)
 
 export default function Solution() {
   const { t } = useTranslation()
-  const [activeProduct, setActiveProduct] = useState(null)
-  const [visible, setVisible] = useState(false)
-  const visualRef = useRef(null)
-
-  useEffect(() => {
-    const el = visualRef.current
-    if (!el) return
-    const io = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect() } },
-      { threshold: 0.1 }
-    )
-    io.observe(el)
-    return () => io.disconnect()
-  }, [])
 
   return (
-    <section id="solution" className="section" aria-label="Solution">
+    <section id="solution" className="section solution-section" aria-label="Solution">
+
+      {/* Subtle background image */}
+      <div className="solution-bg" aria-hidden="true" />
+
       <div className="section-inner">
 
-        <div className="section-header">
+        {/* ── Header ── */}
+        <div className="section-header scroll-animate">
           <span className="section-tag">{t('solution.tag')}</span>
           <h2 className="section-title">{t('solution.title')}</h2>
           <p className="section-sub">{t('solution.subtitle')}</p>
         </div>
 
-        <div className="solution-grid">
+        {/* ── Before / After comparison panel ── */}
+        <div className="solution-compare scroll-animate">
 
-          {/* ── Left: feature text ── */}
-          <div className="solution-content">
-            <h3 className="solution-content-title">{t('solution.contentTitle')}</h3>
-            <div className="solution-features">
-              {FEATURES.map((f) => (
-                <div key={f.titleKey} className="feature-item scroll-animate">
-                  <div className="feature-icon-box" aria-hidden="true">{f.icon}</div>
-                  <div>
-                    <h4 className="feature-title">{t(f.titleKey)}</h4>
-                    <p className="feature-text">{t(f.textKey)}</p>
-                  </div>
-                </div>
+          {/* WITHOUT KeLu */}
+          <div className="compare-col compare-col--before">
+            <div className="compare-col-label compare-col-label--before">
+              <span className="compare-badge compare-badge--before">
+                <CrossIcon /> {t('solution.compareBeforeLabel')}
+              </span>
+            </div>
+            <ul className="compare-list">
+              {PROBLEMS.map(({ key, icon }) => (
+                <li key={key} className="compare-item compare-item--bad">
+                  <span className="compare-item-icon" aria-hidden="true">{icon}</span>
+                  <span>{t(`problem.${key}title`)}</span>
+                </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Arrow divider */}
+          <div className="compare-divider" aria-hidden="true">
+            <div className="compare-arrow-wrap">
+              <ArrowIcon />
             </div>
           </div>
 
-          {/* ── Right: dark green panel with product photos ── */}
-          <div className="solution-visual scroll-animate" ref={visualRef}>
-            <span className="visual-blob visual-blob--1" aria-hidden="true" />
-            <span className="visual-blob visual-blob--2" aria-hidden="true" />
-            <h3 className="products-title">{t('solution.productsTitle')}</h3>
-            <p className="products-hint">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{display:'inline',marginRight:'4px',verticalAlign:'middle'}}>
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-              </svg>
-              Tap a product to learn more
-            </p>
-            <div className="products-grid">
-              {PRODUCTS.map((p) => (
-                <ProductCard key={p.key} product={p} visible={visible} onClick={setActiveProduct} />
-              ))}
+          {/* WITH KeLu */}
+          <div className="compare-col compare-col--after">
+            <div className="compare-col-label compare-col-label--after">
+              <span className="compare-badge compare-badge--after">
+                <CheckIcon /> {t('solution.compareAfterLabel')}
+              </span>
             </div>
+            <ul className="compare-list">
+              {FEATURES.map(({ titleKey }) => (
+                <li key={titleKey} className="compare-item compare-item--good">
+                  <span className="compare-item-check" aria-hidden="true"><CheckIcon /></span>
+                  <span>{t(titleKey)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
         </div>
-      </div>
 
-      {activeProduct && (
-        <ProductModal product={activeProduct} onClose={() => setActiveProduct(null)} />
-      )}
+        {/* ── Feature detail cards ── */}
+        <div className="solution-features-grid">
+          {FEATURES.map((f) => (
+            <div key={f.titleKey} className="feature-item scroll-animate">
+              <div className="feature-icon-box" aria-hidden="true">{f.icon}</div>
+              <div>
+                <h4 className="feature-title">{t(f.titleKey)}</h4>
+                <p className="feature-text">{t(f.textKey)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── CTA row ── */}
+        <div className="solution-cta-row scroll-animate">
+          <Link to="/contact" className="btn-ph btn-ph-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            {t('solution.ctaSchedule')}
+          </Link>
+          <Link to="/benefits" className="btn-ph btn-ph-ghost">
+            {t('solution.ctaCatalogue')}
+          </Link>
+        </div>
+
+      </div>
     </section>
   )
 }

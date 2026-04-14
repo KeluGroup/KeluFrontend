@@ -1,10 +1,11 @@
 {
   "nav": {
     "home":     "Home",
+    "whyus":    "Why Us?",
     "problem":  "Problem",
     "solution": "Solution",
-    "pricing":  "Pricing",
     "process":  "Process",
+    "benefits": "Benefits",
     "contact":  "Contact",
     "about":    "About Us"
   },
@@ -44,6 +45,12 @@
     "feat2text":    "Clear tiered policy: more purchases = more discounts. From -5% to -15% plus exclusive perks.",
     "feat3title":   "Fixed Routes, Predictable Deliveries",
     "feat3text":    "Zürich divided into 4 profitable zones. You know when we arrive, plan your stock, eliminate stress.",
+    "feat4title":   "A Partner Who Speaks Latin Food",
+    "feat4text":    "Our team grew up eating this. We know every product, every dish, every supplier. We don't just deliver — we guide your purchases.",
+    "compareBeforeLabel": "Without KeLu",
+    "compareAfterLabel":  "With KeLu",
+    "ctaSchedule":  "Schedule Free Meeting",
+    "ctaCatalogue": "Explore Products & Pricing",
     "productsTitle": "Our Strategic TOP 10",
     "p1": "Pre-cooked Arepas",
     "p2": "Tequeños",
@@ -156,6 +163,8 @@
   "contact": {
     "tag":       "Get in Touch",
     "title":     "Let's work together",
+    "infoTitle": "Let's Start Working Together",
+    "ctaBtn":    "Send us a Message",
     "subtitle":  "Whether you're looking for a reliable Latin food supplier or want to explore partnership opportunities, we'd love to hear from you.",
     "followUs":  "Follow us",
     "openForm":  "Send us a message",

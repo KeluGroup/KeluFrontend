@@ -1,10 +1,11 @@
 {
   "nav": {
     "home":     "Startseite",
+    "whyus":    "Warum wir?",
     "problem":  "Problem",
     "solution": "Lösung",
-    "pricing":  "Preise",
     "process":  "Prozess",
+    "benefits": "Vorteile",
     "contact":  "Kontakt",
     "about":    "Über uns"
   },
@@ -44,6 +45,12 @@
     "feat2text":    "Klare Staffelpreispolitik: mehr Einkäufe = mehr Rabatte. Von -5% bis -15% plus exklusive Vorteile.",
     "feat3title":   "Feste Routen, planbare Lieferungen",
     "feat3text":    "Zürich in 4 rentable Zonen aufgeteilt. Du weißt, wann wir kommen, planst deinen Bestand und eliminierst Stress.",
+    "feat4title":   "Ein Partner, der lateinamerikanische Küche kennt",
+    "feat4text":    "Unser Team ist mit diesem Essen aufgewachsen. Wir kennen jedes Produkt, jedes Gericht, jeden Lieferanten. Wir liefern nicht nur — wir beraten deine Einkäufe.",
+    "compareBeforeLabel": "Ohne KeLu",
+    "compareAfterLabel":  "Mit KeLu",
+    "ctaSchedule":  "Kostenloses Meeting buchen",
+    "ctaCatalogue": "Produkte & Preise entdecken",
     "productsTitle": "Unser strategisches TOP 10",
     "p1": "Vorgekochte Arepas",
     "p2": "Tequeños",
@@ -156,6 +163,8 @@
   "contact": {
     "tag":       "Kontakt aufnehmen",
     "title":     "Lass uns zusammenarbeiten",
+    "infoTitle": "Lass uns loslegen",
+    "ctaBtn":    "Nachricht senden",
     "subtitle":  "Ob du einen zuverlässigen Lieferanten für lateinamerikanische Lebensmittel suchst oder Partnerschaftsmöglichkeiten erkunden möchtest – wir freuen uns von dir zu hören.",
     "followUs":  "Folge uns",
     "openForm":  "Nachricht senden",

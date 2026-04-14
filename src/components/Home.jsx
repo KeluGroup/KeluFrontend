@@ -35,7 +35,7 @@ export default function Home() {
           </h1>
           <p className="hero-body">{t('home.body')}</p>
           <div className="cta-row">
-            <a href="#contact" className="btn-ph btn-ph-primary" onClick={handleCTAClick}>
+            <a href="/contact" className="btn-ph btn-ph-primary" onClick={handleCTAClick}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
