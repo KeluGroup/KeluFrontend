@@ -120,6 +120,56 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 .nav-hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* =====================
+   FLOATING NAV CONTROLS (lang + theme) — left of hamburger
+   ===================== */
+.nav-controls {
+  position: fixed;
+  top: 1.2rem;
+  /* hamburger: right 1.4rem + width 52px + gap 0.55rem */
+  right: calc(1.4rem + 52px + 0.55rem);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.nav-ctrl-btn {
+  height: 36px;
+  padding: 0 0.8rem;
+  background: rgba(0, 0, 0, .48);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, .18);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  cursor: pointer;
+  transition: background .2s, transform .2s, border-color .2s;
+  white-space: nowrap;
+}
+.nav-ctrl-btn:hover {
+  background: rgba(255, 255, 255, .16);
+  border-color: rgba(255, 255, 255, .35);
+  transform: scale(1.06);
+}
+.nav-ctrl-btn--icon {
+  width: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .nav-controls {
+    top: .85rem;
+    right: calc(.9rem + 46px + .45rem);
+  }
+  .nav-ctrl-btn { height: 32px; font-size: .68rem; padding: 0 .65rem; }
+  .nav-ctrl-btn--icon { width: 32px; padding: 0; }
+}
+
+/* =====================
    FULLSCREEN MENU OVERLAY
    ===================== */
 .fullmenu {

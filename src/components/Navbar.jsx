@@ -55,15 +55,28 @@ export default function Navbar({
 
   return (
     <>
-      {/* ── Floating logo (top-left) — hidden when menu open ── */}
+      {/* ── Floating logo (top-left) — logo only, hidden when menu open ── */}
       <a
         href={homePath}
         className={`nav-float-logo ${menuOpen ? 'nav-float-logo--hide' : ''}`}
         aria-label={`${BRAND_NAME} — Home`}
       >
         <img src="/logo.svg" alt={BRAND_NAME} width="42" height="42" aria-hidden="true" />
-        <span className="logo-wordmark">{BRAND_NAME}</span>
       </a>
+
+      {/* ── Floating controls (lang + theme) — to the left of hamburger ── */}
+      <div className="nav-controls">
+        <button className="nav-ctrl-btn" onClick={toggleLang} aria-label="Cambiar idioma">
+          {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
+        </button>
+        <button
+          className="nav-ctrl-btn nav-ctrl-btn--icon"
+          onClick={onToggleTheme}
+          aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+        >
+          {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
+        </button>
+      </div>
 
       {/* ── Floating hamburger (top-right) — always on top ── */}
       <button
@@ -135,26 +148,8 @@ export default function Navbar({
             </a>
           </div>
 
-          {/* Right: lang + theme */}
-          <div className="fullmenu-bottom-right">
-            <button className="fullmenu-lang" onClick={toggleLang} aria-label="Cambiar idioma">
-              {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
-            </button>
-            <button
-              className={`fullmenu-theme-toggle ${theme === 'dark' ? 'fullmenu-theme-toggle--dark' : ''}`}
-              onClick={onToggleTheme}
-              aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-            >
-              <span className="theme-toggle-track">
-                <span className="theme-toggle-thumb">
-                  {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
-                </span>
-              </span>
-              <span className="theme-toggle-label">
-                {theme === 'dark' ? 'Oscuro' : 'Claro'}
-              </span>
-            </button>
-          </div>
+          {/* Right: empty — lang + theme moved to floating controls near hamburger */}
+          <div className="fullmenu-bottom-right" />
 
         </div>
       </div>
