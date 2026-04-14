@@ -3557,3 +3557,20 @@ a.btn-ph {
   border-radius: 8px;
 }
 .pipeline-clear:hover { background: var(--color-border); }
+
+
+.status-menu {
+  /* position/top/left/z-index now come from inline styles via JS */
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+}
+
+/* Remove this if you had it */
+.status-wrap {
+  /* NO position: relative needed anymore */
+}

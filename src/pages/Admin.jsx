@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 
 const API_BASE    = import.meta.env.VITE_API_BASE ?? ''
 const SESSION_KEY = 'kelu_admin_token'   // stores the HMAC token, not the password
@@ -87,9 +88,30 @@ function PasswordGate({ onAuth }) {
 
 /* ── Status dropdown ── */
 function StatusSelect({ lead, onUpdate }) {
-  const [open, setOpen] = useState(false)
-  const [busy, setBusy] = useState(false)
-  const meta = statusMeta(lead.status)
+  const [open, setOpen]   = useState(false)
+  const [busy, setBusy]   = useState(false)
+  const [pos,  setPos]    = useState({ top: 0, left: 0, width: 0 })
+  const btnRef            = useRef(null)
+  const meta              = statusMeta(lead.status)
+
+  // Recalculate position every time dropdown opens
+  useEffect(() => {
+    if (!open || !btnRef.current) return
+    const rect = btnRef.current.getBoundingClientRect()
+    setPos({
+      top:   rect.bottom + window.scrollY + 4,
+      left:  rect.left   + window.scrollX,
+      width: rect.width,
+    })
+  }, [open])
+
+  // Close on scroll so it doesn't detach
+  useEffect(() => {
+    if (!open) return
+    const close = () => setOpen(false)
+    window.addEventListener('scroll', close, true)
+    return () => window.removeEventListener('scroll', close, true)
+  }, [open])
 
   async function pick(value) {
     if (value === lead.status) { setOpen(false); return }
@@ -109,31 +131,43 @@ function StatusSelect({ lead, onUpdate }) {
     }
   }
 
+  const menu = open && createPortal(
+    <>
+      <div className="status-backdrop" onClick={() => setOpen(false)} />
+      <ul className="status-menu" style={{
+        position: 'absolute',
+        top:      pos.top,
+        left:     pos.left,
+        minWidth: pos.width,
+        zIndex:   9999,
+      }}>
+        {STATUSES.map(s => (
+          <li key={s.value}
+            className={`status-option${s.value === lead.status ? ' status-option--active' : ''}`}
+            style={{ '--opt-color': s.color }}
+            onClick={() => pick(s.value)}>
+            <span className="status-dot" />{s.label}
+          </li>
+        ))}
+      </ul>
+    </>,
+    document.body
+  )
+
   return (
     <div className="status-wrap" style={{ '--status-color': meta.color }}>
-      <button className={`status-badge${busy ? ' status-badge--busy' : ''}`}
-        onClick={() => setOpen(o => !o)} disabled={busy}>
+      <button
+        ref={btnRef}
+        className={`status-badge${busy ? ' status-badge--busy' : ''}`}
+        onClick={() => setOpen(o => !o)}
+        disabled={busy}>
         <span className="status-dot" />
         {busy ? '…' : meta.label}
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </button>
-      {open && (
-        <>
-          <div className="status-backdrop" onClick={() => setOpen(false)} />
-          <ul className="status-menu">
-            {STATUSES.map(s => (
-              <li key={s.value}
-                className={`status-option${s.value === lead.status ? ' status-option--active' : ''}`}
-                style={{ '--opt-color': s.color }}
-                onClick={() => pick(s.value)}>
-                <span className="status-dot" />{s.label}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+      {menu}
     </div>
   )
 }
