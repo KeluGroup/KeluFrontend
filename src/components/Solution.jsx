@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { trackCTAClick } from '../utils/analytics'
 
 /* ── Problem side (mirrors Problem.jsx cards) ── */
 const PROBLEMS = [
@@ -188,13 +189,13 @@ export default function Solution() {
 
         {/* ── CTA row ── */}
         <div className="solution-cta-row scroll-animate">
-          <Link to="/contact" className="btn-ph btn-ph-primary">
+          <Link to="/contact" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick ('solution-contact')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
             {t('solution.ctaSchedule')}
           </Link>
-          <Link to="/benefits" className="btn-ph btn-ph-ghost">
+          <Link to="/benefits" className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick ('solution-catalogue')}>
             {t('solution.ctaCatalogue')}
           </Link>
         </div>

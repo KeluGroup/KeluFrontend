@@ -1,11 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import { trackCTAClick } from '../utils/analytics'
 
 export default function Home() {
   const { t } = useTranslation()
-
-  function handleCTAClick(buttonId) {
-    console.log('CTA clicked:', buttonId)
-  }
 
   return (
     <section id="home" className="section" aria-label="Home">
@@ -35,13 +32,13 @@ export default function Home() {
           </h1>
           <p className="hero-body">{t('home.body')}</p>
           <div className="cta-row">
-          <a href="/contact" className="btn-ph btn-ph-primary" onClick={() => handleCTAClick('contact')}>
+          <a href="/contact" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('contact')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
             {t('home.cta')}
           </a>
-          <a href="/benefits" className="btn-ph btn-ph-ghost" onClick={() => handleCTAClick('top10-catalogue')}>
+          <a href="/benefits" className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick('top10-catalogue')}>
             {t('home.ctaSecond')}
           </a>
           </div>
