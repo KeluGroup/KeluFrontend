@@ -4176,16 +4176,15 @@ a.btn-ph {
   font-weight: 600;
   color: var(--color-text);
 }
-
 .contact-cta-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-6);
-  margin-top: var(--space-14);
-  text-align: center;
+  gap: var(--space-6);        /* space between button → "Follow us" → socials */
+  margin-top: var(--space-10); /* space between the info cards row and the button */
 }
 .contact-cta-note {
+  margin-bottom: calc(-1 * var(--space-3)); /* tighten the note↔socials gap slightly */
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   letter-spacing: 0.05em;
