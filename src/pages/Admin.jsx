@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 const API_BASE    = import.meta.env.VITE_API_BASE ?? ''
-const SESSION_KEY = 'kelu_admin_token'   // stores the HMAC token, not the password
+const SESSION_KEY = 'kelu_admin_token'
 
 const STATUSES = [
   { value: 'Nuevo',      label: 'Nuevo',      color: '#6b7280' },
@@ -28,7 +28,8 @@ function adminHeaders() {
   }
 }
 
-/* ── Password gate — authenticates against the backend ── */
+
+/* ── Password gate ── */
 function PasswordGate({ onAuth }) {
   const [val,     setVal]     = useState('')
   const [err,     setErr]     = useState('')
@@ -86,33 +87,31 @@ function PasswordGate({ onAuth }) {
   )
 }
 
-/* ── Status dropdown ── */
-function StatusSelect({ lead, onUpdate }) {
-  const [open, setOpen]   = useState(false)
-  const [busy, setBusy]   = useState(false)
-  const [pos,  setPos]    = useState({ top: 0, left: 0, width: 0 })
-  const btnRef            = useRef(null)
-  const meta              = statusMeta(lead.status)
 
-  // Recalculate position every time dropdown opens
+/* ── Status dropdown (portal-based) ── */
+function StatusSelect({ lead, onUpdate }) {
+  const [open, setOpen] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [pos,  setPos]  = useState({ top: 0, left: 0, width: 0, upward: false })
+  const btnRef          = useRef(null)
+  const meta            = statusMeta(lead.status)
+
   useEffect(() => {
     if (!open || !btnRef.current) return
-    const rect        = btnRef.current.getBoundingClientRect()
-    const menuHeight  = 160  // approximate height of 4 options
-    const spaceBelow  = window.innerHeight - rect.bottom
-    const openUpward  = spaceBelow < menuHeight
-
+    const rect       = btnRef.current.getBoundingClientRect()
+    const menuHeight = 160
+    const spaceBelow = window.innerHeight - rect.bottom
+    const upward     = spaceBelow < menuHeight
     setPos({
-      top:      openUpward
-                  ? rect.top + window.scrollY - menuHeight - 4   // flip up
-                  : rect.bottom + window.scrollY + 4,             // open down
-      left:     rect.left + window.scrollX,
-      width:    rect.width,
-      upward:   openUpward,
+      top:    upward
+                ? rect.top  + window.scrollY - menuHeight - 4
+                : rect.bottom + window.scrollY + 4,
+      left:   rect.left + window.scrollX,
+      width:  rect.width,
+      upward,
     })
   }, [open])
 
-  // Close on scroll so it doesn't detach
   useEffect(() => {
     if (!open) return
     const close = () => setOpen(false)
@@ -138,7 +137,7 @@ function StatusSelect({ lead, onUpdate }) {
     }
   }
 
-    const menu = open && createPortal(
+  const menu = open && createPortal(
     <>
       <div className="status-backdrop" onClick={() => setOpen(false)} />
       <ul className="status-menu" style={{
@@ -170,10 +169,8 @@ function StatusSelect({ lead, onUpdate }) {
         disabled={busy}>
         <span className="status-dot" />
         {busy ? '…' : meta.label}
-        <svg
-          width="10" height="10" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" strokeWidth="3"
-          style={{ transform: pos.upward && open ? 'rotate(180deg)' : 'none' }}>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
+          style={{ transform: pos.upward && open ? 'rotate(180deg)' : 'none', transition: 'transform .15s' }}>
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </button>
@@ -181,6 +178,7 @@ function StatusSelect({ lead, onUpdate }) {
     </div>
   )
 }
+
 
 /* ── Mobile card ── */
 function LeadCard({ lead, idx, onUpdate }) {
@@ -211,8 +209,32 @@ function LeadCard({ lead, idx, onUpdate }) {
   )
 }
 
-/* ── Dashboard ── */
-function Dashboard() {
+
+/* ── Airtable order form tab ── */
+function OrderForm() {
+  return (
+    <div className="admin-order-wrap">
+      <div className="admin-order-header">
+        <h2 className="admin-order-title">Nueva solicitud</h2>
+        <p className="admin-order-sub">Completa el formulario para registrar una nueva orden en Airtable.</p>
+      </div>
+      <div className="admin-order-frame">
+        <iframe
+          src="https://airtable.com/embed/appeEsPqR4rIsoeyu/pag4wj1jXAH0aEZBo/form"
+          frameBorder="0"
+          width="100%"
+          height="600"
+          style={{ background: 'transparent', border: 'none' }}
+          title="Nueva orden"
+        />
+      </div>
+    </div>
+  )
+}
+
+
+/* ── Leads tab ── */
+function LeadsTab() {
   const [leads,   setLeads]   = useState([])
   const [loading, setLoading] = useState(true)
   const [error,   setError]   = useState('')
@@ -231,14 +253,11 @@ function Dashboard() {
     finally     { setLoading(false) }
   }, [])
 
-  useState(() => { load() }, [])
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  if (leads.length === 0 && !loading && !error) load()
+  useEffect(() => { load() }, [load])
 
   function handleUpdate(id, newStatus) {
     setLeads(prev => prev.map(l => l.id === id ? { ...l, status: newStatus } : l))
   }
-  function logout() { sessionStorage.removeItem(SESSION_KEY); window.location.reload() }
 
   const counts = STATUSES.reduce((acc, s) => {
     acc[s.value] = leads.filter(l => (l.status || 'Nuevo') === s.value).length
@@ -246,11 +265,97 @@ function Dashboard() {
   }, {})
 
   const filtered = leads.filter(l => {
-    const q = search.toLowerCase()
+    const q           = search.toLowerCase()
     const matchSearch = l.name.toLowerCase().includes(q) || l.email.toLowerCase().includes(q) || (l.company ?? '').toLowerCase().includes(q)
     const matchFilter = filter === 'Todos' || (l.status || 'Nuevo') === filter
     return matchSearch && matchFilter
   })
+
+  return (
+    <>
+      <div className="admin-pipeline">
+        {STATUSES.map(s => (
+          <button key={s.value}
+            className={`pipeline-chip${filter === s.value ? ' pipeline-chip--active' : ''}`}
+            style={{ '--chip-color': s.color }}
+            onClick={() => setFilter(f => f === s.value ? 'Todos' : s.value)}>
+            <span className="pipeline-count">{counts[s.value] ?? 0}</span>
+            <span className="pipeline-label">{s.label}</span>
+          </button>
+        ))}
+        {filter !== 'Todos' && (
+          <button className="pipeline-clear" onClick={() => setFilter('Todos')}>× Todos</button>
+        )}
+      </div>
+
+      <div className="admin-search-row">
+        <div className="admin-search-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input className="admin-search" placeholder="Buscar por nombre, email o empresa…"
+            value={search} onChange={e => setSearch(e.target.value)} />
+        </div>
+        <button className="admin-refresh-btn" onClick={load} disabled={loading} title="Actualizar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            style={{ animation: loading ? 'adminSpin .8s linear infinite' : 'none' }}>
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+        </button>
+      </div>
+
+      {loading && <div className="admin-state"><div className="admin-spinner" /><p>Cargando leads…</p></div>}
+      {!loading && error && (
+        <div className="admin-state admin-state--err">
+          <p>⚠ {error}</p><button onClick={load}>Reintentar</button>
+        </div>
+      )}
+      {!loading && !error && filtered.length === 0 && (
+        <div className="admin-state">
+          <p>{search || filter !== 'Todos' ? 'Sin resultados.' : 'Aún no hay leads registrados.'}</p>
+        </div>
+      )}
+
+      {!loading && !error && filtered.length > 0 && (
+        <>
+          <div className="admin-table-wrap">
+            <table className="admin-table">
+              <thead>
+                <tr><th>#</th><th>Fecha y hora</th><th>Nombre</th><th>Email</th><th>Empresa</th><th>Mensaje</th><th>Estado</th></tr>
+              </thead>
+              <tbody>
+                {filtered.map((lead, i) => (
+                  <tr key={lead.id}>
+                    <td className="admin-td-idx">{filtered.length - i}</td>
+                    <td className="admin-td-date">{fmt(lead.createdAt)}</td>
+                    <td><strong>{lead.name}</strong></td>
+                    <td><a href={`mailto:${lead.email}`} className="admin-email-link">{lead.email}</a></td>
+                    <td>{lead.company || <span className="admin-empty">—</span>}</td>
+                    <td className="admin-td-msg">{lead.message || <span className="admin-empty">—</span>}</td>
+                    <td><StatusSelect lead={lead} onUpdate={handleUpdate} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="admin-cards">
+            {filtered.map((lead, i) => (
+              <LeadCard key={lead.id} lead={lead} idx={filtered.length - i} onUpdate={handleUpdate} />
+            ))}
+          </div>
+        </>
+      )}
+    </>
+  )
+}
+
+
+/* ── Dashboard (tab shell) ── */
+function Dashboard() {
+  const [tab, setTab] = useState('leads')
+
+  function logout() { sessionStorage.removeItem(SESSION_KEY); window.location.reload() }
 
   return (
     <div className="admin-wrap">
@@ -263,89 +368,41 @@ function Dashboard() {
           </div>
         </div>
         <div className="admin-header-actions">
-          <span className="admin-stat-badge">{leads.length} leads</span>
-          <button className="admin-refresh-btn" onClick={load} disabled={loading} title="Actualizar">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-              style={{ animation: loading ? 'adminSpin .8s linear infinite' : 'none' }}>
-              <polyline points="23 4 23 10 17 10"/>
-              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-            </svg>
-          </button>
           <button className="admin-logout-btn" onClick={logout}>Salir</button>
         </div>
       </header>
 
+      {/* Tab bar */}
+      <nav className="admin-tabs">
+        <button
+          className={`admin-tab${tab === 'leads' ? ' admin-tab--active' : ''}`}
+          onClick={() => setTab('leads')}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Leads
+        </button>
+        <button
+          className={`admin-tab${tab === 'order' ? ' admin-tab--active' : ''}`}
+          onClick={() => setTab('order')}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/>
+            <line x1="9" y1="15" x2="15" y2="15"/>
+          </svg>
+          Nueva solicitud
+        </button>
+      </nav>
+
       <div className="admin-body">
-        <div className="admin-pipeline">
-          {STATUSES.map(s => (
-            <button key={s.value}
-              className={`pipeline-chip${filter === s.value ? ' pipeline-chip--active' : ''}`}
-              style={{ '--chip-color': s.color }}
-              onClick={() => setFilter(f => f === s.value ? 'Todos' : s.value)}>
-              <span className="pipeline-count">{counts[s.value] ?? 0}</span>
-              <span className="pipeline-label">{s.label}</span>
-            </button>
-          ))}
-          {filter !== 'Todos' && (
-            <button className="pipeline-clear" onClick={() => setFilter('Todos')}>× Todos</button>
-          )}
-        </div>
-
-        <div className="admin-search-row">
-          <div className="admin-search-wrap">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input className="admin-search" placeholder="Buscar por nombre, email o empresa…"
-              value={search} onChange={e => setSearch(e.target.value)} />
-          </div>
-        </div>
-
-        {loading && <div className="admin-state"><div className="admin-spinner" /><p>Cargando leads…</p></div>}
-        {!loading && error && (
-          <div className="admin-state admin-state--err">
-            <p>⚠ {error}</p><button onClick={load}>Reintentar</button>
-          </div>
-        )}
-        {!loading && !error && filtered.length === 0 && (
-          <div className="admin-state">
-            <p>{search || filter !== 'Todos' ? 'Sin resultados.' : 'Aún no hay leads registrados.'}</p>
-          </div>
-        )}
-
-        {!loading && !error && filtered.length > 0 && (
-          <>
-            <div className="admin-table-wrap">
-              <table className="admin-table">
-                <thead>
-                  <tr><th>#</th><th>Fecha y hora</th><th>Nombre</th><th>Email</th><th>Empresa</th><th>Mensaje</th><th>Estado</th></tr>
-                </thead>
-                <tbody>
-                  {filtered.map((lead, i) => (
-                    <tr key={lead.id}>
-                      <td className="admin-td-idx">{filtered.length - i}</td>
-                      <td className="admin-td-date">{fmt(lead.createdAt)}</td>
-                      <td><strong>{lead.name}</strong></td>
-                      <td><a href={`mailto:${lead.email}`} className="admin-email-link">{lead.email}</a></td>
-                      <td>{lead.company || <span className="admin-empty">—</span>}</td>
-                      <td className="admin-td-msg">{lead.message || <span className="admin-empty">—</span>}</td>
-                      <td><StatusSelect lead={lead} onUpdate={handleUpdate} /></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="admin-cards">
-              {filtered.map((lead, i) => (
-                <LeadCard key={lead.id} lead={lead} idx={filtered.length - i} onUpdate={handleUpdate} />
-              ))}
-            </div>
-          </>
-        )}
+        {tab === 'leads' && <LeadsTab />}
+        {tab === 'order' && <OrderForm />}
       </div>
     </div>
   )
 }
+
 
 export default function Admin() {
   const [authed, setAuthed] = useState(() => !!sessionStorage.getItem(SESSION_KEY))

@@ -3574,3 +3574,64 @@ a.btn-ph {
 .status-wrap {
   /* NO position: relative needed anymore */
 }
+
+/* ── Tab bar ── */
+.admin-tabs {
+  display: flex;
+  gap: .25rem;
+  padding: .75rem 1.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.admin-tab {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  color: #6b7280;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+  margin-bottom: -1px;
+}
+
+.admin-tab:hover { color: #1f4e3d; }
+
+.admin-tab--active {
+  color: #1f4e3d;
+  border-bottom-color: #1f4e3d;
+}
+
+/* ── Order form ── */
+.admin-order-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.admin-order-header {
+  margin-bottom: 1.25rem;
+}
+
+.admin-order-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f4e3d;
+  margin-bottom: .25rem;
+}
+
+.admin-order-sub {
+  font-size: .875rem;
+  color: #6b7280;
+}
+
+.admin-order-frame {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
