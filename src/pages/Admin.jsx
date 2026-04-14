@@ -97,11 +97,18 @@ function StatusSelect({ lead, onUpdate }) {
   // Recalculate position every time dropdown opens
   useEffect(() => {
     if (!open || !btnRef.current) return
-    const rect = btnRef.current.getBoundingClientRect()
+    const rect        = btnRef.current.getBoundingClientRect()
+    const menuHeight  = 160  // approximate height of 4 options
+    const spaceBelow  = window.innerHeight - rect.bottom
+    const openUpward  = spaceBelow < menuHeight
+
     setPos({
-      top:   rect.bottom + window.scrollY + 4,
-      left:  rect.left   + window.scrollX,
-      width: rect.width,
+      top:      openUpward
+                  ? rect.top + window.scrollY - menuHeight - 4   // flip up
+                  : rect.bottom + window.scrollY + 4,             // open down
+      left:     rect.left + window.scrollX,
+      width:    rect.width,
+      upward:   openUpward,
     })
   }, [open])
 
@@ -131,7 +138,7 @@ function StatusSelect({ lead, onUpdate }) {
     }
   }
 
-  const menu = open && createPortal(
+    const menu = open && createPortal(
     <>
       <div className="status-backdrop" onClick={() => setOpen(false)} />
       <ul className="status-menu" style={{
@@ -163,7 +170,10 @@ function StatusSelect({ lead, onUpdate }) {
         disabled={busy}>
         <span className="status-dot" />
         {busy ? '…' : meta.label}
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+        <svg
+          width="10" height="10" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" strokeWidth="3"
+          style={{ transform: pos.upward && open ? 'rotate(180deg)' : 'none' }}>
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </button>
