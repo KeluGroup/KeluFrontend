@@ -41,7 +41,9 @@ export default function Home() {
               </svg>
               {t('home.cta')}
             </a>
-            <div className="btn-ph btn-ph-ghost">{t('home.ctaSecond')}</div>
+            <a href="/benefits" className="btn-ph btn-ph-ghost">
+              {t('home.ctaSecond')}
+            </a>
           </div>
           <div className="scroll-cue" aria-hidden="true">
             <span>{t('home.scroll')}</span>
