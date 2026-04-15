@@ -2291,14 +2291,15 @@ a.btn-ph {
   padding: var(--space-12) var(--space-6) var(--space-8);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-10);
 }
 
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--space-8);
+/* 3-column main grid */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
 }
 
 .footer-brand-block {
@@ -2312,6 +2313,32 @@ a.btn-ph {
   font-size: var(--text-sm);
   color: rgba(255,255,255,0.6);
   line-height: 1.7;
+}
+
+/* Contact mini links below address */
+.footer-contact-mini {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+.footer-contact-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: var(--text-xs);
+  transition: color var(--transition-interactive);
+}
+.footer-contact-line:hover { color: rgba(255,255,255,0.9); }
+
+/* Social column — centre */
+.footer-social-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: stretch;
 }
 
 .footer-nav-group {
@@ -2398,14 +2425,13 @@ a.btn-ph {
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-4) var(--space-5);
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius-xl);
   color: rgba(255,255,255,0.80);
   text-decoration: none;
   transition: background var(--transition-interactive), border-color var(--transition-interactive), color var(--transition-interactive), transform var(--transition-interactive);
-  min-width: 200px;
 }
 .footer-social-card:hover {
   background: rgba(255,255,255,0.14);
@@ -2465,13 +2491,22 @@ a.btn-ph {
   .contact-big-cta-btn { font-size: var(--text-base); padding: var(--space-5) var(--space-6); }
 }
 
+/* Contact section — no forced 100vh since content is now compact */
+#contact.section { min-height: auto; padding-bottom: var(--space-20); }
+
+@media (max-width: 900px) {
+  .footer-main-grid { grid-template-columns: 1fr 1fr; }
+  .footer-social-col { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: var(--space-3); }
+  .footer-social-card { flex: 1; min-width: 180px; }
+}
 @media (max-width: 600px) {
-  .footer-top { flex-direction: column; }
+  .footer-main-grid { grid-template-columns: 1fr; }
+  .footer-social-col { flex-direction: column; }
+  .footer-social-card { width: 100%; }
   .footer-nav-group { flex-direction: column; gap: var(--space-6); }
   .footer-links { text-align: left; flex-direction: row; flex-wrap: wrap; gap: var(--space-3) var(--space-5); }
   .footer-links--legal { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); padding-left: 0; padding-top: var(--space-4); }
   .footer-bottom { flex-direction: column; gap: var(--space-4); align-items: flex-start; }
-  .footer-social-card { min-width: 160px; padding: var(--space-3) var(--space-5); }
 }
 
 /* =====================
