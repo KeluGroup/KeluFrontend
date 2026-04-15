@@ -129,6 +129,7 @@
     "tag":      "How It Works",
     "title":    "Simple, Direct, Effective",
     "subtitle": "In 4 steps you go from searching for suppliers to having fixed weekly deliveries",
+    "stepLabel":  "Step",
     "step1title": "Schedule Your Meeting",
     "step1desc":  "We talk for 30 minutes. We understand your menu, volume and needs. No commitment, no pressure.",
     "step2title": "Receive Your Proposal",

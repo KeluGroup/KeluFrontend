@@ -62,7 +62,7 @@ export default function Process() {
                 <span className="process-icon">{STEP_ICONS[i]}</span>
               </div>
               <div className="process-content">
-                <div className="process-step-num-label">Paso {n}</div>
+                <div className="process-step-num-label">{t('process.stepLabel')} {n}</div>
                 <h3 className="process-step-title">{t(`process.step${n}title`)}</h3>
                 <p className="process-step-desc">{t(`process.step${n}desc`)}</p>
               </div>

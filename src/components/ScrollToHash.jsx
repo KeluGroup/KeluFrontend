@@ -16,8 +16,9 @@ export default function ScrollToHash() {
     const timer = setTimeout(() => {
       const el = document.querySelector(hash)
       if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 80
-        window.scrollTo({ top, behavior: 'smooth' })
+        // Scroll to the exact top of the section — sections have enough
+        // top padding (space-20 ≈ 80px) so content clears the floating logo
+        window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
       }
     }, 100)
 

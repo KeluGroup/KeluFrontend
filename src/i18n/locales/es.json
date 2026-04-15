@@ -150,6 +150,7 @@
     "tag":      "Cómo funciona",
     "title":    "Simple, Directo, Efectivo",
     "subtitle": "En 4 pasos pasas de buscar proveedores a tener entregas semanales fijas",
+    "stepLabel":  "Paso",
     "step1title": "Agenda tu reunión",
     "step1desc":  "Hablamos 30 minutos. Entendemos tu carta, volumen y necesidades. Sin compromiso, sin presión.",
     "step2title": "Recibe tu propuesta",
