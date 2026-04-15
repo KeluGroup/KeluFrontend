@@ -3786,8 +3786,8 @@ a.btn-ph {
   display: flex;
   align-items: center;
   gap: .5rem;
-  background: #fff;
-  border: 1px solid #d1d5db;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: .5rem .75rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -3811,11 +3811,11 @@ a.btn-ph {
   outline: none;
   font-size: .875rem;
   background: transparent;
-  color: #111827;
+  color: var(--color-text);
 }
 
 .admin-search::placeholder {
-  color: #9ca3af;
+  color: var(--color-text-faint);
 }
 
 /* States */
@@ -4110,8 +4110,8 @@ a.btn-ph {
   display: flex;
   gap: .25rem;
   padding: .75rem 1.5rem 0;
-  border-bottom: 1px solid #e5e7eb;
-  background: #fff;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .admin-tab {
@@ -4121,8 +4121,8 @@ a.btn-ph {
   padding: .5rem 1rem;
   font-size: .875rem;
   font-weight: 500;
-  color: #6b7280;
-  border: none;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
   border-bottom: 2px solid transparent;
   background: none;
   cursor: pointer;
@@ -4130,11 +4130,11 @@ a.btn-ph {
   margin-bottom: -1px;
 }
 
-.admin-tab:hover { color: #1f4e3d; }
+.admin-tab:hover { color: var(--color-primary); }
 
 .admin-tab--active {
-  color: #1f4e3d;
-  border-bottom-color: #1f4e3d;
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 /* ── Order form ── */
