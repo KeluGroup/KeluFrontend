@@ -6,6 +6,8 @@ import Home      from './components/Home'
 import Problem   from './components/Problem'
 import Solution  from './components/Solution'
 import Process   from './components/Process'
+import Stats     from './components/Stats'
+import Team      from './components/Team'
 import CtaBanner from './components/CtaBanner'
 import Contact   from './components/Contact'
 import About       from './pages/About'
@@ -40,7 +42,9 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Home />
         <Problem />
         <Solution />
+        <Stats />
         <Process />
+        <Team />
         <CtaBanner />
         <Contact />
       </main>
