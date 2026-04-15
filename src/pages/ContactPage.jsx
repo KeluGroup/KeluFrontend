@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link }                from 'react-router-dom'
 import { useTranslation }      from 'react-i18next'
 import { BRAND_NAME, BRAND_PHONE, BRAND_EMAIL } from '../config'
-
-/* ── Icons ── */
-const SunIcon  = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-const MoonIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ScrollProgress from '../components/ScrollProgress'
 
 /* ── Form config ── */
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
@@ -39,7 +38,7 @@ const TikTokIcon = () => (
   </svg>
 )
 
-export default function ContactPage({ theme, onToggleTheme }) {
+export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, scrolled }) {
   const { t, i18n }       = useTranslation()
   const [fields, setFields]   = useState(INITIAL)
   const [errors, setErrors]   = useState(INITIAL_ERRORS)
@@ -47,13 +46,20 @@ export default function ContactPage({ theme, onToggleTheme }) {
   const [status, setStatus]   = useState('idle')
   const [errMsg, setErrMsg]   = useState('')
 
-  const toggleLang = () => {
-    const cycle = { en: 'de', de: 'es', es: 'en' }
-    i18n.changeLanguage(cycle[i18n.language] ?? 'en')
-  }
-
-  /* scroll-animate observer */
   useEffect(() => {
+    window.scrollTo(0, 0)
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    )
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
+    }, 100)
+    return () => { clearTimeout(timer); io.disconnect() }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
     const io = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
@@ -105,27 +111,17 @@ export default function ContactPage({ theme, onToggleTheme }) {
 
   return (
     <>
-      {/* ── Top bar ── */}
-      <header className="benefits-topbar">
-        <Link to="/" className="benefits-back">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M19 12H5M12 5l-7 7 7 7"/>
-          </svg>
-          {t('shell.back')}
-        </Link>
-        <Link to="/" className="benefits-brand" aria-label={BRAND_NAME}>
-          <img src="/logo-color.svg" alt={BRAND_NAME} width="40" height="40" />
-        </Link>
-        <div className="benefits-topbar-actions">
-          <button className="nav-ctrl-btn" onClick={toggleLang} aria-label="Cambiar idioma">
-            {{ en: 'DE', de: 'ES', es: 'EN' }[i18n.language] ?? 'DE'}
-          </button>
-          <button className="nav-ctrl-btn nav-ctrl-btn--icon" onClick={onToggleTheme}
-            aria-label={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}>
-            {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
-          </button>
-        </div>
-      </header>
+      <ScrollProgress />
+      <Navbar
+        theme={theme}
+        onToggleTheme={onToggleTheme}
+        menuOpen={menuOpen}
+        onToggleMenu={onToggleMenu}
+        onCloseMenu={onCloseMenu}
+        activeSection=""
+        scrolled={scrolled}
+        
+      />
 
       <main className="contact-page-main">
 
@@ -276,6 +272,7 @@ export default function ContactPage({ theme, onToggleTheme }) {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   )
 }

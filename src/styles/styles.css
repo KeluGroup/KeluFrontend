@@ -508,6 +508,7 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 .fullmenu-bottom-left {
   display: flex;
   align-items: center;
+  gap: var(--space-2);
 }
 .fullmenu-small-link {
   color: rgba(255,255,255,.45);
@@ -2089,7 +2090,9 @@ a.btn-ph {
 /* =====================
    CONTACT REDESIGN
    ===================== */
-.contact-section { background: var(--color-bg); }
+.contact-section { 
+  background: var(--color-bg);
+  padding-top: clamp(80px, 10vw, 120px); }
 
 .contact-layout-new {
   display: grid;
@@ -4539,7 +4542,7 @@ a.btn-ph {
   z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
-  padding: var(--space-16) var(--space-6) var(--space-24);
+  padding: clamp(80px, 10vw, 120px) var(--space-6) var(--space-24);
 }
 .contact-page-header {
   text-align: center;
@@ -4648,8 +4651,18 @@ a.btn-ph {
   .contact-page-info { position: static; }
   .cpi-deco { display: none; }
 }
+
 @media (max-width: 540px) {
-  .contact-page-inner { padding: var(--space-10) var(--space-4) var(--space-16); }
+  /* Contact page */
+  .contact-page-inner {
+    padding: clamp(80px, 10vw, 120px) var(--space-4) var(--space-16);
+  }
+
+  /* Any section-inner that's the first content on a page */
+  .team-section .section-inner,
+  .section:first-of-type .section-inner {
+    padding-top: clamp(80px, 10vw, 120px);
+  }
 }
 
 /* =====================

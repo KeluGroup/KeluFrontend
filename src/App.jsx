@@ -153,13 +153,13 @@ export default function App() {
       <ScrollToHash />
       <CursorTrail />
       <Routes>
-        <Route path="/"        element={<MainLayout {...sharedProps} />} />
-        <Route path="/about"    element={<About    {...sharedProps} />} />
-        <Route path="/benefits" element={<Benefits theme={theme} onToggleTheme={toggleTheme} />} />
-        <Route path="/contact"  element={<ContactPage theme={theme} onToggleTheme={toggleTheme} />} />
-        <Route path="/privacy" element={<Privacy theme={theme} onToggleTheme={toggleTheme} />} />
-        <Route path="/terms"   element={<Terms   theme={theme} onToggleTheme={toggleTheme} />} />
-        <Route path="/admin"   element={<Admin />} />
+        <Route path="/"        element={<MainLayout    {...sharedProps} />} />
+        <Route path="/about"   element={<About         {...sharedProps} />} />
+        <Route path="/benefits" element={<Benefits     {...sharedProps} />} />
+        <Route path="/contact"  element={<ContactPage  {...sharedProps} />} />
+        <Route path="/privacy"  element={<Privacy      {...sharedProps} />} />
+        <Route path="/terms"    element={<Terms        {...sharedProps} />} />
+        <Route path="/admin"    element={<Admin />} />
       </Routes>
     </>
   )

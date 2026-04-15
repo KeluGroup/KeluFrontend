@@ -140,6 +140,10 @@ export default function Navbar({
             <Link to="/privacy" className="fullmenu-small-link" onClick={onCloseMenu}>
               Cookie Settings
             </Link>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.7rem' }}>·</span>
+            <Link to="/terms" className="fullmenu-small-link" onClick={onCloseMenu}>
+              Terms
+            </Link>
           </div>
 
           {/* Center: socials */}
