@@ -2431,19 +2431,49 @@ a.btn-ph {
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-4) var(--space-5);
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius-xl);
-  color: rgba(255,255,255,0.80);
-  text-decoration: none;
-  transition: background var(--transition-interactive), border-color var(--transition-interactive), color var(--transition-interactive), transform var(--transition-interactive);
-}
-.footer-social-card:hover {
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,0.30);
   color: #fff;
-  transform: translateY(-3px);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease;
 }
+
+/* Instagram — brand gradient */
+.footer-social-card--instagram {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+  box-shadow: 0 4px 20px rgba(221,42,123,0.30);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.footer-social-card--instagram:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 36px rgba(221,42,123,0.55);
+}
+
+/* TikTok — brand black + teal/red duotone */
+.footer-social-card--tiktok {
+  background: linear-gradient(135deg, #010101 0%, #1a1a1a 100%);
+  border: 1px solid rgba(105,201,208,0.30);
+  box-shadow: 0 4px 20px rgba(105,201,208,0.15);
+}
+.footer-social-card--tiktok:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 36px rgba(105,201,208,0.35);
+  border-color: rgba(105,201,208,0.55);
+}
+.footer-social-card--tiktok svg { color: #69C9D0; }
+
+/* Shimmer sweep on hover */
+.footer-social-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.footer-social-card:hover::after { transform: translateX(100%); }
+
 .footer-social-card-name {
   font-size: var(--text-base);
   font-weight: 700;
@@ -2451,7 +2481,7 @@ a.btn-ph {
 }
 .footer-social-card-handle {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.50);
+  color: rgba(255,255,255,0.65);
   display: block;
 }
 .footer-social-card svg { flex-shrink: 0; }
@@ -2497,9 +2527,9 @@ a.btn-ph {
 }
 
 /* ── Merged contact + CTA section ── */
-/* Override the #contact { background: var(--color-bg) } rule with higher specificity */
+/* Override the #contact background — deep navy/indigo to contrast the green footer */
 #contact.contact-merged {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(140deg, #0f1b35 0%, #1a2a50 45%, #0d2137 100%);
   min-height: auto;
 }
 .contact-merged-inner {

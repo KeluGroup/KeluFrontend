@@ -60,7 +60,7 @@ export default function Footer() {
               href="https://www.instagram.com/kelugroup"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-social-card"
+              className="footer-social-card footer-social-card--instagram"
               aria-label="Instagram @kelugroup"
             >
               <InstagramIcon />
@@ -73,7 +73,7 @@ export default function Footer() {
               href="https://www.tiktok.com/@kelugmbh"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-social-card"
+              className="footer-social-card footer-social-card--tiktok"
               aria-label="TikTok @kelugmbh"
             >
               <TikTokIcon />
