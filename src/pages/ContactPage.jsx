@@ -120,6 +120,7 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
         onCloseMenu={onCloseMenu}
         activeSection=""
         scrolled={scrolled}
+        isAboutPage
         
       />
 

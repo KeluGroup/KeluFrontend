@@ -30,6 +30,7 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
         onCloseMenu={onCloseMenu}
         activeSection=""
         scrolled={scrolled}
+        isAboutPage
         
       />
       <main id="main-content" className="policy-main">
