@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next'
 import { BRAND_NAME, BRAND_YEAR } from '../config'
 
 const InstagramIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
   </svg>
 )
 const TikTokIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
   </svg>
 )
@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="site-footer" role="contentinfo">
       <div className="footer-inner-new">
 
-        {/* Top row: brand + address | links */}
+        {/* Top row: brand + address | nav links */}
         <div className="footer-top">
 
           <div className="footer-brand-block">
@@ -54,19 +54,38 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom row: copyright | social icons */}
-        <div className="footer-bottom">
-          <p className="footer-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
-          <div className="footer-social">
-            <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer"
-               className="footer-icon-btn" aria-label="Instagram @kelugroup">
+        {/* ── Social media band ── */}
+        <div className="footer-social-band">
+          <p className="footer-social-label">{t('contact.followUs')}</p>
+          <div className="footer-social-btns">
+            <a
+              href="https://www.instagram.com/kelugroup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-card"
+              aria-label="Instagram @kelugroup"
+            >
               <InstagramIcon />
+              <span className="footer-social-card-name">Instagram</span>
+              <span className="footer-social-card-handle">@kelugroup</span>
             </a>
-            <a href="https://www.tiktok.com/@kelugmbh" target="_blank" rel="noopener noreferrer"
-               className="footer-icon-btn" aria-label="TikTok @kelugmbh">
+            <a
+              href="https://www.tiktok.com/@kelugmbh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-card"
+              aria-label="TikTok @kelugmbh"
+            >
               <TikTokIcon />
+              <span className="footer-social-card-name">TikTok</span>
+              <span className="footer-social-card-handle">@kelugmbh</span>
             </a>
           </div>
+        </div>
+
+        {/* Bottom row: copyright */}
+        <div className="footer-bottom">
+          <p className="footer-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
         </div>
 
       </div>
