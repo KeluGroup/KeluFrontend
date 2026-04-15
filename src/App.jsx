@@ -43,7 +43,6 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Solution />
         <Stats />
         <Process />
-        <CtaBanner />
         <Contact />
       </main>
       <Footer />
