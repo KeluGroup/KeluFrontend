@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { trackCTAClick } from '../utils/analytics'
+import { useHashSync } from '../hooks/useHashSync'
 
 export default function Home() {
+  useHashSync('section[id], .contact-merged[id], .process-section[id]')
   const { t } = useTranslation()
 
   return (

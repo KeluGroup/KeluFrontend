@@ -45,7 +45,7 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
             <h3>{t('terms.s6title')}</h3>
             <p>
               {t('terms.s6body')}{' '}
-              <a href="/#contact" className="policy-link">{t('terms.s6link')}</a>.
+              <a href="/contact" className="policy-link">{t('terms.s6link')}</a>.
             </p>
           </div>
         </div>

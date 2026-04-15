@@ -45,7 +45,7 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
             <h3>{t('privacy.s5title')}</h3>
             <p>
               {t('privacy.s5body')}{' '}
-              <a href="/#contact" className="policy-link">{t('privacy.s5link')}</a>.
+              <a href="/contact" className="policy-link">{t('privacy.s5link')}</a>.
             </p>
           </div>
         </div>
