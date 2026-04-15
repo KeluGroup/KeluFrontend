@@ -2608,11 +2608,19 @@ a.btn-ph {
 
 @media (max-width: 900px) {
   .footer-main-grid { grid-template-columns: 1fr 1fr; }
-  .footer-social-col { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: var(--space-3); }
+  /* Brand left / nav right in row 1 — social full-width in row 2 */
+  .footer-brand-block { grid-column: 1; grid-row: 1; }
+  .footer-nav-group   { grid-column: 2; grid-row: 1; }
+  .footer-social-col  { grid-column: 1 / -1; grid-row: 2; flex-direction: row; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  .footer-social-label { width: 100%; text-align: left; }
   .footer-social-card { flex: 1; min-width: 180px; }
 }
 @media (max-width: 600px) {
   .footer-main-grid { grid-template-columns: 1fr; }
+  /* Reset explicit placements from the 900px breakpoint */
+  .footer-brand-block { grid-column: auto; grid-row: auto; }
+  .footer-nav-group   { grid-column: auto; grid-row: auto; }
+  .footer-social-col  { grid-column: auto; grid-row: auto; }
   .footer-social-col { flex-direction: column; }
   .footer-social-card { width: 100%; }
   .footer-nav-group { flex-direction: column; gap: var(--space-6); }
@@ -4358,6 +4366,17 @@ a.btn-ph {
   gap: var(--space-4);
   margin-top: var(--space-12);
   flex-wrap: wrap;
+}
+
+/* Ghost button on light backgrounds (solution section = white bg) */
+.solution-cta-row .btn-ph-ghost {
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.solution-cta-row .btn-ph-ghost:hover {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 /* Extra-large button variant */

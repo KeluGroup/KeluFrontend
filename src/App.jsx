@@ -84,16 +84,35 @@ export default function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [location.pathname])
 
-  // Re-attach scroll-animate observer whenever the route changes
-  // (MainLayout re-mounts on navigation, producing fresh DOM nodes without 'visible')
+  // Re-attach scroll-animate observer whenever the route changes.
+  // MainLayout re-mounts on navigation so all .scroll-animate elements lose
+  // their 'visible' class and start at opacity:0.  We need to:
+  //   1. Immediately mark any element already in the viewport as visible
+  //      (IntersectionObserver only fires on *changes*, so elements that are
+  //       fully in view the moment they are observed may not get a callback in
+  //       all browsers — we handle those imperatively instead).
+  //   2. Let the observer handle everything that scrolls into view later.
+  // Using threshold:0 and rootMargin:'0px' (no clipping) ensures nothing is
+  // missed at the top or bottom of the fold.
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0, rootMargin: '0px' }
     )
+
     const timer = setTimeout(() => {
-      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
-    }, 120)
+      document.querySelectorAll('.scroll-animate').forEach(el => {
+        // If the element's top edge is already above the bottom of the
+        // viewport, it is in view — make it visible right away instead of
+        // waiting for an observer callback that might never come.
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('visible')
+        } else {
+          io.observe(el)
+        }
+      })
+    }, 250)
+
     return () => { clearTimeout(timer); io.disconnect() }
   }, [location.pathname])
 
