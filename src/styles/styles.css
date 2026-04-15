@@ -2426,53 +2426,67 @@ a.btn-ph {
   flex-wrap: wrap;
   justify-content: center;
 }
+/* Base card — glass style */
 .footer-social-card {
   display: flex;
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-4) var(--space-5);
   border-radius: var(--radius-xl);
-  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease;
+  transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
-/* Instagram — brand gradient */
+/* Instagram — rose/pink left border accent + icon */
 .footer-social-card--instagram {
-  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
-  box-shadow: 0 4px 20px rgba(221,42,123,0.30);
-  border: 1px solid rgba(255,255,255,0.15);
+  border-left: 3px solid #e1306c;
+}
+.footer-social-card--instagram svg {
+  color: #e1306c;
+  filter: drop-shadow(0 0 6px rgba(225,48,108,0.5));
 }
 .footer-social-card--instagram:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 36px rgba(221,42,123,0.55);
+  background: rgba(225,48,108,0.12);
+  border-color: rgba(225,48,108,0.45);
+  box-shadow: 0 6px 28px rgba(225,48,108,0.20);
+  transform: translateY(-4px) scale(1.02);
+  color: #fff;
 }
 
-/* TikTok — brand black + teal/red duotone */
+/* TikTok — teal left border accent + icon */
 .footer-social-card--tiktok {
-  background: linear-gradient(135deg, #010101 0%, #1a1a1a 100%);
-  border: 1px solid rgba(105,201,208,0.30);
-  box-shadow: 0 4px 20px rgba(105,201,208,0.15);
+  border-left: 3px solid #69C9D0;
+}
+.footer-social-card--tiktok svg {
+  color: #69C9D0;
+  filter: drop-shadow(0 0 6px rgba(105,201,208,0.5));
 }
 .footer-social-card--tiktok:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 36px rgba(105,201,208,0.35);
-  border-color: rgba(105,201,208,0.55);
+  background: rgba(105,201,208,0.10);
+  border-color: rgba(105,201,208,0.45);
+  box-shadow: 0 6px 28px rgba(105,201,208,0.18);
+  transform: translateY(-4px) scale(1.02);
+  color: #fff;
 }
-.footer-social-card--tiktok svg { color: #69C9D0; }
 
 /* Shimmer sweep on hover */
 .footer-social-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.08) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
 }
-.footer-social-card:hover::after { transform: translateX(100%); }
+.footer-social-card:hover::after { transform: translateX(120%); }
 
 .footer-social-card-name {
   font-size: var(--text-base);
@@ -2481,7 +2495,7 @@ a.btn-ph {
 }
 .footer-social-card-handle {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.45);
   display: block;
 }
 .footer-social-card svg { flex-shrink: 0; }
@@ -2527,9 +2541,9 @@ a.btn-ph {
 }
 
 /* ── Merged contact + CTA section ── */
-/* Override the #contact background — deep navy/indigo to contrast the green footer */
+/* Contact — very dark olive/forest, same colour family as footer but much deeper */
 #contact.contact-merged {
-  background: linear-gradient(140deg, #0f1b35 0%, #1a2a50 45%, #0d2137 100%);
+  background: linear-gradient(160deg, #060e07 0%, #0b1a0d 50%, #091508 100%);
   min-height: auto;
 }
 .contact-merged-inner {
