@@ -37,11 +37,20 @@ export default function Footer() {
             </address>
           </div>
 
-          <ul className="footer-links" role="list">
-            <li><Link to="/about">{t('nav.about')}</Link></li>
-            <li><Link to="/privacy">{t('footer.privacy')}</Link></li>
-            <li><Link to="/terms">{t('footer.terms')}</Link></li>
-          </ul>
+          <div className="footer-nav-group">
+            <ul className="footer-links" role="list">
+              <li><a href="/#home">{t('nav.home')}</a></li>
+              <li><a href="/#solution">{t('nav.solution')}</a></li>
+              <li><a href="/#process">{t('nav.process')}</a></li>
+              <li><Link to="/benefits">{t('nav.benefits')}</Link></li>
+              <li><Link to="/contact">{t('nav.contact')}</Link></li>
+            </ul>
+            <ul className="footer-links footer-links--legal" role="list">
+              <li><Link to="/about">{t('nav.about')}</Link></li>
+              <li><Link to="/privacy">{t('footer.privacy')}</Link></li>
+              <li><Link to="/terms">{t('footer.terms')}</Link></li>
+            </ul>
+          </div>
 
         </div>
 
