@@ -37,7 +37,7 @@ export default function Navbar({
 
   const NAV_LINKS = [
     { href: '#home',      label: t('nav.home'),     id: 'home',     isRoute: false },
-    { href: '#problem',   label: t('nav.whyus'),    id: 'problem',  isRoute: false },
+    { href: '#solution',   label: t('nav.whyus'),    id: 'problem',  isRoute: false },
     { href: '/benefits',  label: t('nav.benefits'), id: 'benefits', isRoute: true  },
     { href: '/contact',   label: t('nav.contact'),  id: 'contact',  isRoute: true  },
     { href: '/about',     label: t('nav.about'),    id: 'about',    isRoute: true  },

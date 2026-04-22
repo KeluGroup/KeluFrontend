@@ -39,14 +39,14 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <SideDots activeSection={activeSection} />
       <main id="main-content">
         <Home />
-        <Problem />
+
         <Solution />
         <Stats />
         <Process />
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton />
+      
     </>
   )
 }

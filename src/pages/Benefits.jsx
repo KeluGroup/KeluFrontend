@@ -165,7 +165,7 @@ export default function Benefits({ theme, onToggleTheme, menuOpen, onToggleMenu,
                       return text ? <li key={i}>{text}</li> : null
                     })}
                   </ul>
-                  <a href="/#contact" className="tier-cta">{t(`pricing.${key}cta`)}</a>
+                  <a href="/contact" className="tier-cta">{t(`pricing.${key}cta`)}</a>
                 </div>
               ))}
             </div>
