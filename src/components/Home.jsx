@@ -38,7 +38,7 @@ export default function Home() {
             <Link to="/benefits" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-catalogue')}>
               {t('home.ctaSecond')}
             </Link>
-            <a href="/#process" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-contact')}>
+            <a href="/#process" className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick('hero-contact')}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>

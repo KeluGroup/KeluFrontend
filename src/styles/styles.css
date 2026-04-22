@@ -669,7 +669,7 @@ main{padding-top:0}
 .cta-row{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-12)}
 .btn-ph{height:48px;padding:0 var(--space-6);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;display:flex;align-items:center;gap:var(--space-2);letter-spacing:.02em}
 .btn-ph-primary{background:#fff;color:var(--color-primary)}
-.btn-ph-ghost{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.85)}
+.btn-ph-ghost{background:rgba(255,255,255,0.1);border:1px solid #58a558cc;color:rgba(255,255,255,0.85)}
 .home-visual{display:flex;flex-direction:column;gap:var(--space-4)}
 .ph-block{background:rgba(255,255,255,0.07);border:1px dashed rgba(255,255,255,0.2);border-radius:var(--radius-2xl);padding:var(--space-8);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--space-3)}
 .ph-block svg{color:rgba(157,181,159,0.5)}
