@@ -196,12 +196,6 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                 </div>
               </div>
 
-              {/* Decorative food emojis */}
-              <div className="cpi-deco" aria-hidden="true">
-                <span>🫓</span><span>🧀</span><span>🌶️</span>
-                <span>🥑</span><span>🍌</span><span>🥟</span>
-              </div>
-
             </aside>
 
             {/* Right — form */}

@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar'
 import Team from '../components/Team'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
-import WhatsAppButton from '../components/WhatsAppButton'
 
 export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, scrolled }) {
   const { t } = useTranslation()
@@ -42,7 +41,6 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
         {/* Placeholder for future sections — values, press, milestones, etc. */}
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   )
 }

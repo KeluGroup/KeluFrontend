@@ -37,15 +37,16 @@ export default function Navbar({
 
   const NAV_LINKS = [
     { href: '#home',      label: t('nav.home'),     id: 'home',     isRoute: false },
-    { href: '#solution',   label: t('nav.whyus'),    id: 'problem',  isRoute: false },
-    { href: '/benefits',  label: t('nav.benefits'), id: 'benefits', isRoute: true  },
+    { href: '/products',  label: t('nav.products'), id: 'products', isRoute: true  },
     { href: '/contact',   label: t('nav.contact'),  id: 'contact',  isRoute: true  },
     { href: '/about',     label: t('nav.about'),    id: 'about',    isRoute: true  },
   ]
 
   const toggleLang = () => {
-    const cycle = { en: 'de', de: 'es', es: 'en' }
-    i18n.changeLanguage(cycle[i18n.language] ?? 'en')
+      const cycle = { en: 'de', de: 'es', es: 'en' }
+      const next = cycle[i18n.language] ?? 'en'
+      i18n.changeLanguage(next)
+      localStorage.setItem('kelu-lang', next) 
   }
 
   // Lock body scroll when menu is open
@@ -138,7 +139,7 @@ export default function Navbar({
           {/* Left: cookies */}
           <div className="fullmenu-bottom-left">
             <Link to="/privacy" className="fullmenu-small-link" onClick={onCloseMenu}>
-              Cookie Settings
+              Privacy
             </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.7rem' }}>·</span>
             <Link to="/terms" className="fullmenu-small-link" onClick={onCloseMenu}>

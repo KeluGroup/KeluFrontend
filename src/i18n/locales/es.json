@@ -5,7 +5,7 @@
     "problem":  "Problema",
     "solution":  "Solución",
     "process":  "Proceso",
-    "benefits": "Beneficios",
+    "products": "Nuestros Productos",
     "contact":  "Contacto",
     "about":    "Nosotros"
   },
@@ -84,8 +84,8 @@
     "modalHistory": "Tradición e Historia",
     "modalPairing": "Cómo servirlo",
     "modalClose": "Cerrar",
-    "ctaDesc": "Interested in our full range? Get in touch with us and we'll provide you with a complete product catalogue tailored to your needs.",
-    "ctaButton": "Request a Quote",
+    "ctaDesc": "¿Le interesa nuestra gama completa? Póngase en contacto con nosotros y le proporcionaremos un catálogo de productos completo adaptado a sus necesidades.",
+    "ctaButton": "Solicitar presupuesto",
     "modal_p1_history": "Un alimento básico venezolano y colombiano con más de 3.000 años de historia. Esta torta de maíz a la plancha es el pan de cada día de la región andina, consumida en todas las comidas.",
     "modal_p1_pairing": "Caraotas negras, carne mechada, aguacate, queso blanco, huevo frito. La base perfecta para cualquier relleno que inspire tu cocina.",
     "modal_p2_history": "Nacidos en Los Teques, Venezuela. Estos palitos de queso son el alma de cada fiesta venezolana, servidos como entrante en celebraciones desde hace generaciones.",
@@ -216,7 +216,8 @@
     "copy": "Todos los derechos reservados.",
     "privacy": "Privacidad",
     "terms":   "Términos",
-    "sitemap": "Mapa del sitio"
+    "sitemap": "Mapa del sitio",
+    "cookies": "Cookie Policy"
   },
   "privacy": {
     "title":   "Política de Privacidad",
@@ -252,5 +253,30 @@
   },
   "shell": {
     "back": "Volver al sitio"
-  }
+  },
+  "cookiePolicy": {
+  "lastUpdated": "Última actualización: abril de 2026",
+  "title": "Política de Cookies",
+  "whatAreTitle": "¿Qué son las cookies?",
+  "whatAreText": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Ayudan al sitio a recordar sus preferencias y a comprender cómo interactúa con nuestro contenido.",
+  "howWeUseTitle": "Cómo usamos las cookies",
+  "howWeUseText": "Kelu GmbH utiliza cookies únicamente para mejorar su experiencia de navegación y entender cómo los visitantes usan nuestro sitio. No utilizamos cookies con fines publicitarios ni vendemos datos a terceros.",
+  "typesTitle": "Tipos de cookies que utilizamos",
+  "typesEssentialLabel": "Cookies esenciales",
+  "typesEssentialText": "Son necesarias para el correcto funcionamiento del sitio y no pueden desactivarse. Incluyen la gestión de sesiones y tokens de seguridad.",
+  "typesAnalyticsLabel": "Cookies analíticas",
+  "typesAnalyticsText": "Utilizamos Google Analytics (GA4) para entender cómo los visitantes navegan por nuestro sitio (páginas visitadas, tiempo en el sitio, fuente de referencia). Los datos son anonimizados y agregados. No se recopila información de identificación personal.",
+  "typesPreferenceLabel": "Cookies de preferencia",
+  "typesPreferenceText": "Almacenamos su preferencia de idioma y tema (claro/oscuro) localmente para que el sitio recuerde su configuración entre visitas.",
+  "thirdPartyTitle": "Cookies de terceros",
+  "thirdPartyText": "Google Analytics establece sus propias cookies (_ga, _ga_*) para distinguir usuarios y sesiones. Estas cookies están regidas por la Política de Privacidad de Google. Puede desactivar el seguimiento de Google Analytics en cualquier momento a través de",
+  "thirdPartyLinkLabel": "la herramienta de exclusión de Google",
+  "managingTitle": "Gestión de cookies",
+  "managingText": "Puede controlar y eliminar cookies en cualquier momento desde la configuración de su navegador. Tenga en cuenta que desactivar ciertas cookies puede afectar la funcionalidad del sitio. Para más información, visite",
+  "rightsTitle": "Sus derechos (RGPD y nDSG)",
+  "rightsText": "Si se encuentra en la UE o Suiza, tiene derecho a acceder, corregir o solicitar la eliminación de sus datos personales.",
+  "rightsLinkLabel": "página de contacto",
+  "changesTitle": "Cambios en esta política",
+  "changesText": "Podemos actualizar esta Política de Cookies de vez en cuando. Cualquier cambio se publicará en esta página con la fecha actualizada en la parte superior."
+}
 }

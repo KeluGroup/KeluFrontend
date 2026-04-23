@@ -5,7 +5,7 @@
     "problem":  "Problem",
     "solution": "Solution",
     "process":  "Process",
-    "benefits": "Benefits",
+    "products": "Our Products",
     "contact":  "Contact",
     "about":    "About Us"
   },
@@ -195,7 +195,8 @@
     "copy":    "All rights reserved.",
     "privacy": "Privacy",
     "terms":   "Terms",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "cookies": "Cookie Policy"
   },
   "privacy": {
     "title":   "Privacy Policy",
@@ -231,5 +232,33 @@
   },
   "shell": {
     "back": "Back to site"
-  }
+  },
+
+  "cookiePolicy": {
+  "lastUpdated": "Last updated: April 2026",
+  "title": "Cookie Policy",
+  "whatAreTitle": "What Are Cookies",
+  "whatAreText": "Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences and understand how you interact with our content.",
+  "howWeUseTitle": "How We Use Cookies",
+  "howWeUseText": "Kelu GmbH uses cookies solely to improve your browsing experience and understand how visitors use our site. We do not use cookies for advertising or sell any data to third parties.",
+  "typesTitle": "Types of Cookies We Use",
+  "typesEssentialLabel": "Essential cookies",
+  "typesEssentialText": "Required for the site to function correctly. These cannot be disabled. They include session management and security tokens.",
+  "typesAnalyticsLabel": "Analytics cookies",
+  "typesAnalyticsText": "We use Google Analytics (GA4) to understand how visitors navigate our site (pages visited, time on site, referral source). This data is anonymised and aggregated. No personally identifiable information is collected.",
+  "typesPreferenceLabel": "Preference cookies",
+  "typesPreferenceText": "We store your language and theme (light/dark) preference locally so the site remembers your settings between visits.",
+  "thirdPartyTitle": "Third-Party Cookies",
+  "thirdPartyText": "Google Analytics sets its own cookies (_ga, _ga_*) to distinguish users and sessions. These cookies are governed by Google's Privacy Policy. You can opt out of Google Analytics tracking at any time via",
+  "thirdPartyLinkLabel": "Google's opt-out tool",
+  "managingTitle": "Managing Cookies",
+  "managingText": "You can control and delete cookies through your browser settings at any time. Note that disabling certain cookies may affect the functionality of the site. For more information, visit",
+  "rightsTitle": "Your Rights (GDPR & nDSG)",
+  "rightsText": "If you are located in the EU or Switzerland, you have the right to access, correct, or request deletion of any personal data we hold.",
+  "rightsLinkLabel": "Contact page",
+  "changesTitle": "Changes to This Policy",
+  "changesText": "We may update this Cookie Policy from time to time. Any changes will be posted on this page with an updated date at the top."
+}
+
+
 }

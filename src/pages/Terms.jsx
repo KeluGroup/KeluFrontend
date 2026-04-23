@@ -42,11 +42,7 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
             <h3>{t('terms.s3title')}</h3><p>{t('terms.s3body')}</p>
             <h3>{t('terms.s4title')}</h3><p>{t('terms.s4body')}</p>
             <h3>{t('terms.s5title')}</h3><p>{t('terms.s5body')}</p>
-            <h3>{t('terms.s6title')}</h3>
-            <p>
-              {t('terms.s6body')}{' '}
-              <a href="/contact" className="policy-link">{t('terms.s6link')}</a>.
-            </p>
+
           </div>
         </div>
       </main>

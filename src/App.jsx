@@ -10,13 +10,14 @@ import Stats     from './components/Stats'
 import CtaBanner from './components/CtaBanner'
 import Contact   from './components/Contact'
 import About       from './pages/About'
-import Benefits    from './pages/Benefits'
+import Products    from './pages/Products'
 import ContactPage from './pages/ContactPage'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollProgress from './components/ScrollProgress'
 import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
+import CookiePolicy from './pages/CookiePolicy'
 import Admin    from './pages/Admin'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
@@ -155,10 +156,11 @@ export default function App() {
       <Routes>
         <Route path="/"        element={<MainLayout    {...sharedProps} />} />
         <Route path="/about"   element={<About         {...sharedProps} />} />
-        <Route path="/benefits" element={<Benefits     {...sharedProps} />} />
+        <Route path="/products" element={<Products     {...sharedProps} />} />
         <Route path="/contact"  element={<ContactPage  {...sharedProps} />} />
         <Route path="/privacy"  element={<Privacy      {...sharedProps} />} />
         <Route path="/terms"    element={<Terms        {...sharedProps} />} />
+        <Route path="/cookies" element={<CookiePolicy {...sharedProps} />} />
         <Route path="/admin"    element={<Admin />} />
       </Routes>
     </>

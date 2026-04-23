@@ -5,7 +5,7 @@
     "problem":  "Problem",
     "solution": "Lösung",
     "process":  "Prozess",
-    "benefits": "Vorteile",
+    "products": "Unsere Produkte",
     "contact":  "Kontakt",
     "about":    "Über uns"
   },
@@ -51,7 +51,7 @@
     "compareAfterLabel":  "Mit KeLu",
     "ctaSchedule":  "Kostenloses Meeting buchen",
     "ctaCatalogue": "Produkte & Preise entdecken",
-    "ctaDesc": "Interested in our full range? Get in touch with us and we'll provide you with a complete product catalogue tailored to your needs.",
+    "ctaDesc": "Interessiert an unserem vollständigen Sortiment? Kontaktieren Sie uns und wir stellen Ihnen einen vollständigen Produktkatalog zusammen, der auf Ihre Bedürfnisse zugeschnitten ist.",
     "productsTitle": "Unser Produkte",
     "p1": "Vorgekochte Arepas",
     "p2": "Tequeños",
@@ -64,7 +64,7 @@
     "modalHistory": "Tradition & Geschichte",
     "modalPairing": "So wird es serviert",
     "modalClose": "Schließen",
-    "ctaButton": "Request a Quote",
+    "ctaButton": "Angebot anfordern",
     "modal_p1_history": "Ein 3.000 Jahre altes Grundnahrungsmittel der venezolanischen und kolumbianischen Küche. Dieser gegrillte Maiskuchen ist das tägliche Brot der Andenregion und wird zu jeder Mahlzeit gegessen.",
     "modal_p1_pairing": "Schwarze Bohnen, zerzupftes Rindfleisch, Avocado, Weißkäse, Spiegelei. Die perfekte Basis für jede Füllung.",
     "modal_p2_history": "Aus Los Teques, Venezuela. Diese mit Käse gefüllten Brotsticks sind die Seele jeder venezolanischen Party und werden seit Generationen als geliebte Vorspeise bei Feiern serviert.",
@@ -195,7 +195,8 @@
     "copy":    "Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
     "terms":   "Nutzungsbedingungen",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "cookies": "Cookie Policy"
   },
   "privacy": {
     "title":   "Datenschutzerklärung",
@@ -231,5 +232,30 @@
   },
   "shell": {
     "back": "Zurück zur Website"
-  }
+  },
+  "cookiePolicy": {
+  "lastUpdated": "Zuletzt aktualisiert: April 2026",
+  "title": "Cookie-Richtlinie",
+  "whatAreTitle": "Was sind Cookies?",
+  "whatAreText": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Sie helfen der Website, Ihre Einstellungen zu speichern und zu verstehen, wie Sie mit unseren Inhalten interagieren.",
+  "howWeUseTitle": "Wie wir Cookies verwenden",
+  "howWeUseText": "Kelu GmbH verwendet Cookies ausschliesslich, um Ihr Surferlebnis zu verbessern und zu verstehen, wie Besucher unsere Website nutzen. Wir verwenden keine Cookies für Werbezwecke und verkaufen keine Daten an Dritte.",
+  "typesTitle": "Arten von Cookies, die wir verwenden",
+  "typesEssentialLabel": "Notwendige Cookies",
+  "typesEssentialText": "Diese sind für den ordnungsgemässen Betrieb der Website erforderlich und können nicht deaktiviert werden. Sie umfassen Sitzungsverwaltung und Sicherheits-Token.",
+  "typesAnalyticsLabel": "Analyse-Cookies",
+  "typesAnalyticsText": "Wir verwenden Google Analytics (GA4), um zu verstehen, wie Besucher unsere Website nutzen (besuchte Seiten, Verweildauer, Herkunftsquelle). Die Daten werden anonymisiert und aggregiert. Es werden keine personenbezogenen Daten erfasst.",
+  "typesPreferenceLabel": "Präferenz-Cookies",
+  "typesPreferenceText": "Wir speichern Ihre Sprach- und Designeinstellungen (Hell/Dunkel) lokal, damit die Website Ihre Präferenzen zwischen Besuchen beibehält.",
+  "thirdPartyTitle": "Cookies von Drittanbietern",
+  "thirdPartyText": "Google Analytics setzt eigene Cookies (_ga, _ga_*), um Nutzer und Sitzungen zu unterscheiden. Diese Cookies unterliegen der Datenschutzrichtlinie von Google. Sie können das Google Analytics-Tracking jederzeit deaktivieren über",
+  "thirdPartyLinkLabel": "Googles Opt-out-Tool",
+  "managingTitle": "Cookies verwalten",
+  "managingText": "Sie können Cookies jederzeit über Ihre Browsereinstellungen kontrollieren und löschen. Beachten Sie, dass das Deaktivieren bestimmter Cookies die Funktionalität der Website beeinträchtigen kann. Weitere Informationen finden Sie unter",
+  "rightsTitle": "Ihre Rechte (DSGVO & DSG)",
+  "rightsText": "Wenn Sie sich in der EU oder der Schweiz befinden, haben Sie das Recht, auf Ihre personenbezogenen Daten zuzugreifen, diese zu korrigieren oder deren Löschung zu beantragen.",
+  "rightsLinkLabel": "Kontaktseite",
+  "changesTitle": "Änderungen dieser Richtlinie",
+  "changesText": "Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Datum oben veröffentlicht."
+}
 }
