@@ -25,6 +25,14 @@ export default function ProductModal({ product, onClose }) {
       onClick={onClose}
     >
       <div className="modal-card" onClick={e => e.stopPropagation()}>
+
+        {/* Blurred product background */}
+        <div
+          className="modal-bg-blur"
+          style={{ backgroundImage: `url(${product.img})` }}
+          aria-hidden="true"
+        />
+
         <button
           className="modal-close-btn"
           onClick={onClose}
@@ -36,16 +44,10 @@ export default function ProductModal({ product, onClose }) {
           </svg>
         </button>
 
-        <div className="modal-hero">
-          <span className="modal-emoji" aria-hidden="true">{product.emoji}</span>
-          <div className="modal-hero-deco" aria-hidden="true" />
-        </div>
-
         <h2 className="modal-product-name">{t(`solution.${product.key}`)}</h2>
 
         <div className="modal-section">
           <div className="modal-section-header">
-            <span className="modal-section-icon" aria-hidden="true">🌎</span>
             <h3 className="modal-section-title">{t('solution.modalHistory')}</h3>
           </div>
           <p className="modal-body-text">{t(`solution.modal_${product.key}_history`)}</p>
@@ -53,11 +55,11 @@ export default function ProductModal({ product, onClose }) {
 
         <div className="modal-section">
           <div className="modal-section-header">
-            <span className="modal-section-icon" aria-hidden="true">🍽️</span>
             <h3 className="modal-section-title">{t('solution.modalPairing')}</h3>
           </div>
           <p className="modal-body-text">{t(`solution.modal_${product.key}_pairing`)}</p>
         </div>
+
       </div>
     </div>
   )

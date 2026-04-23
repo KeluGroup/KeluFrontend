@@ -53,36 +53,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Social media (centre) */}
-          <div className="footer-social-col">
-            <p className="footer-social-label">{t('contact.followUs')}</p>
-            <a
-              href="https://www.instagram.com/kelugroup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-card footer-social-card--instagram"
-              aria-label="Instagram @kelugroup"
-            >
-              <InstagramIcon />
-              <span>
-                <span className="footer-social-card-name">Instagram</span>
-                <span className="footer-social-card-handle">@kelugroup</span>
-              </span>
-            </a>
-            <a
-              href="https://www.tiktok.com/@kelugmbh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-card footer-social-card--tiktok"
-              aria-label="TikTok @kelugmbh"
-            >
-              <TikTokIcon />
-              <span>
-                <span className="footer-social-card-name">TikTok</span>
-                <span className="footer-social-card-handle">@kelugmbh</span>
-              </span>
-            </a>
-          </div>
+          
 
           {/* Col 3 — Nav + legal */}
           <div className="footer-nav-group">
