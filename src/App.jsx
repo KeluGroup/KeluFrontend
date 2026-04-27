@@ -159,7 +159,6 @@ export default function App() {
       <ScrollToHash />
       <CursorTrail />
       <CookieBanner />
-      <WhatsAppButton />
       <Routes>
         <Route path="/"         element={<MainLayout    {...sharedProps} />} />
         <Route path="/about"    element={<About         {...sharedProps} />} />

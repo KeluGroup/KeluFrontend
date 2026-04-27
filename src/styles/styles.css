@@ -5099,6 +5099,12 @@ a.btn-ph {
   flex-shrink: 0;
 }
 
+.footer-thin-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .footer-thin-social {
   color: rgba(255, 255, 255, 0.72);
   display: flex;
