@@ -278,5 +278,17 @@
   "rightsLinkLabel": "página de contacto",
   "changesTitle": "Cambios en esta política",
   "changesText": "Podemos actualizar esta Política de Cookies de vez en cuando. Cualquier cambio se publicará en esta página con la fecha actualizada en la parte superior."
+},
+
+"cookies": {
+  "bannerLabel": "Consentimiento de cookies",
+  "bannerText": "Usamos cookies para analizar el tráfico del sitio y mejorar su experiencia.",
+  "bannerLinkLabel": "Política de Cookies",
+  "accept": "Aceptar",
+  "decline": "Rechazar",
+  "settingsLabel": "Configuración de cookies"
 }
+
+
+
 }

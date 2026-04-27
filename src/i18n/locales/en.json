@@ -258,7 +258,18 @@
   "rightsLinkLabel": "Contact page",
   "changesTitle": "Changes to This Policy",
   "changesText": "We may update this Cookie Policy from time to time. Any changes will be posted on this page with an updated date at the top."
+},
+
+
+"cookies": {
+  "bannerLabel": "Cookie consent",
+  "bannerText": "We use cookies to analyse site traffic and improve your experience.",
+  "bannerLinkLabel": "Cookie Policy",
+  "accept": "Accept",
+  "decline": "Decline",
+  "settingsLabel": "Cookie settings"
 }
+
 
 
 }

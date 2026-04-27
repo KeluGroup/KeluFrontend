@@ -257,5 +257,16 @@
   "rightsLinkLabel": "Kontaktseite",
   "changesTitle": "Änderungen dieser Richtlinie",
   "changesText": "Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Datum oben veröffentlicht."
+},
+
+"cookies": {
+  "bannerLabel": "Cookie-Einwilligung",
+  "bannerText": "Wir verwenden Cookies, um den Website-Traffic zu analysieren und Ihre Erfahrung zu verbessern.",
+  "bannerLinkLabel": "Cookie-Richtlinie",
+  "accept": "Akzeptieren",
+  "decline": "Ablehnen",
+  "settingsLabel": "Cookie-Einstellungen"
 }
+
+
 }

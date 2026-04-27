@@ -19,6 +19,7 @@ import Privacy  from './pages/Privacy'
 import Terms    from './pages/Terms'
 import CookiePolicy from './pages/CookiePolicy'
 import Admin    from './pages/Admin'
+import CookieBanner from './components/CookieBanner'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
 import { SECTIONS } from './config'
@@ -153,6 +154,7 @@ export default function App() {
     <>
       <ScrollToHash />
       <CursorTrail />
+      <CookieBanner /> 
       <Routes>
         <Route path="/"        element={<MainLayout    {...sharedProps} />} />
         <Route path="/about"   element={<About         {...sharedProps} />} />
