@@ -16,13 +16,24 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('consent', 'default', {
-          analytics_storage: 'denied',
-          ad_storage: 'denied',
-          wait_for_update: 2000
+          ad_storage:           'denied',  // Google Ads cookies
+          analytics_storage:    'denied',  // GA4 cookies
+          ad_user_data:         'denied',  // sending user data to Google Ads
+          ad_personalization:   'denied',  // personalised ads
+          functionality_storage:'denied',  // site functionality cookies (language etc.)
+          security_storage:     'granted', // ← always granted, needed for security/login
+          wait_for_update:       2000      // wait 2s for CookieBanner to update consent
         });
         var saved = localStorage.getItem('kelu-cookie-consent');
         if (saved === 'granted') {
-          gtag('consent', 'update', { analytics_storage: 'granted' });
+          gtag('consent', 'update', {
+            ad_storage:           'denied',  // keep ads denied — you don't run ads
+            analytics_storage:    'granted', // ← only this gets granted on accept
+            ad_user_data:         'denied',
+            ad_personalization:   'denied',
+            functionality_storage:'granted', // language/theme prefs
+            security_storage:     'granted',
+          });
         }
       </script>
 

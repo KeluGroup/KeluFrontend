@@ -50,12 +50,25 @@ export default function CookieBanner() {
   }, [isBlocked])
 
   const pushConsent = (granted) => {
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      event: 'cookie_consent_update',
-      analytics_storage: granted ? 'granted' : 'denied',
-      ad_storage: 'denied',
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event:                'cookie_consent_update',
+    analytics_storage:    granted ? 'granted' : 'denied',
+    ad_storage:           'denied',        // always denied — no ads
+    ad_user_data:         'denied',
+    ad_personalization:   'denied',
+    functionality_storage: granted ? 'granted' : 'denied',
+    security_storage:     'granted',       // always granted
     })
+
+    if (granted) {
+      window.dataLayer.push({
+        event:     'consent_pageview',
+        page_path:  window.location.pathname,
+        page_title: document.title,
+      })
+    }
+
   }
 
   const handleAccept = () => {
@@ -65,9 +78,42 @@ export default function CookieBanner() {
     setSettled(true)
   }
 
+  const clearGACookies = () => {
+    // GA4 sets these cookies — delete them on decline
+    const cookies = ['_ga', '_gid', '_gat']
+    const domains = [window.location.hostname, `.${window.location.hostname}`]
+
+    cookies.forEach(name => {
+      domains.forEach(domain => {
+        // Try all path combinations
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`
+      })
+    })
+
+    // Also delete GA4 measurement ID specific cookies (_ga_XXXXXXX)
+    document.cookie.split(';').forEach(cookie => {
+      const name = cookie.trim().split('=')[0]
+      if (name.startsWith('_ga_')) {
+        domains.forEach(domain => {
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`
+        })
+      }
+    })
+  }
+
+
   const handleDecline = () => {
+    const wasGranted = localStorage.getItem('kelu-cookie-consent') === 'granted'
+
     localStorage.setItem('kelu-cookie-consent', 'denied')
     pushConsent(false)
+
+    // If user is downgrading from accepted → declined
+    // clear GA cookies so tracking stops immediately
+    if (wasGranted) {
+      clearGACookies()
+    }
+
     setVisible(false)
     setSettled(true)
   }
