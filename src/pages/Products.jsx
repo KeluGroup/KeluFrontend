@@ -5,7 +5,6 @@ import Masonry from 'react-masonry-css'
 
 import { BRAND_NAME } from '../config'
 import ProductModal from '../components/ProductModal'
-import DeliveryMap from '../components/DeliveryMap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
@@ -222,8 +221,7 @@ export default function Benefits({
           </div>
         </section>
 
-        {/* ══ SECTION 3 — Mapa de cobertura ══════════════════════ */}
-        <DeliveryMap />
+
 
       </main>
 
