@@ -44,6 +44,8 @@ export default function Footer() {
           <nav className="footer-thin-nav" aria-label="Footer navigation">
             <Link to="/about">{t('nav.about')}</Link>
             <span aria-hidden="true">·</span>
+            <Link to="/faq">FAQ</Link>
+            <span aria-hidden="true">·</span>
             <Link to="/privacy">{t('footer.privacy')}</Link>
             <span aria-hidden="true">·</span>
             <Link to="/cookies">{t('footer.cookies')}</Link>  {/* ← add this */}

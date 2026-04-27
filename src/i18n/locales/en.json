@@ -65,6 +65,8 @@
     "modalClose": "Close",
     "ctaDesc": "Interested in our full range? Get in touch with us and we'll provide you with a complete product catalogue tailored to your needs.",
     "ctaButton": "Request a Quote",
+    "catalogueBtn": "Download Catalogue",
+    "catalogueSoon": "Catalogue coming soon — contact us for a personalised version",
     "modal_p1_history": "A 3,000-year-old staple of Venezuelan and Colombian cuisine. This grilled corn cake is the daily bread of the Andean region, eaten at every meal of the day.",
     "modal_p1_pairing": "Black beans, shredded beef, avocado, white cheese, fried egg. The perfect base for any filling your kitchen inspires.",
     "modal_p2_history": "Born in Los Teques, Venezuela. These cheese-stuffed bread twists are the soul of every Venezuelan party, served as a beloved appetiser at celebrations for generations.",
@@ -268,8 +270,40 @@
   "accept": "Accept",
   "decline": "Decline",
   "settingsLabel": "Cookie settings"
+},
+
+"deliveryMap": {
+  "tag": "Delivery Coverage",
+  "title": "We Come to You",
+  "subtitle": "Currently operating in Zürich. Expanding to cover all of Switzerland.",
+  "currentLabel": "Active — Zürich",
+  "currentDesc": "4 weekly delivery zones covering the Zürich metropolitan area.",
+  "expandLabel": "Coming Soon — Switzerland",
+  "expandDesc": "National expansion in progress. Contact us if you're outside Zürich."
+},
+
+"faq": {
+  "tag": "FAQ",
+  "title": "Frequently Asked Questions",
+  "subtitle": "Everything you need to know before placing your first order.",
+  "q1": "What is the minimum order?",
+  "a1": "Our minimum order is 500 CHF per delivery. This applies to all clients regardless of tier.",
+  "q2": "How often do you deliver?",
+  "a2": "We operate fixed weekly routes by zone. Once onboarded, you receive a confirmed delivery day each week — no surprises, no chasing.",
+  "q3": "Which areas do you currently serve?",
+  "a3": "We currently serve the Zürich area across 4 delivery zones. We are expanding to cover all of Switzerland — reach out if you're outside Zürich and we'll work something out.",
+  "q4": "How do I become a client?",
+  "a4": "Contact us via the form or WhatsApp. We'll schedule a 30-minute call to understand your needs and send you a personalised catalogue with pricing.",
+  "q5": "What payment methods do you accept?",
+  "a5": "We accept bank transfer (IBAN). Payment terms and invoicing frequency are agreed during onboarding.",
+  "q6": "Can I get a product catalogue?",
+  "a6": "Yes. We prepare a tailored catalogue for each client based on their menu and volume. Request it via the contact page or download our general catalogue above.",
+  "q7": "Do you handle temperature-sensitive products?",
+  "a7": "Yes. Frozen products (arepas, fruit pulps, etc.) are delivered with appropriate cold chain packaging to ensure quality on arrival.",
+  "q8": "What discounts are available?",
+  "a8": "Our tiered pricing rewards consistency: 500–2,499 CHF/month = −5%, 2,500–4,999 CHF/month = −10%, 5,000+ CHF/month = −15%, plus exclusive perks for strategic clients.",
+  "contactCta": "Still have questions?",
+  "contactBtn": "Talk to us"
 }
-
-
 
 }

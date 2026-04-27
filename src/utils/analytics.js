@@ -1,5 +1,5 @@
 // GA4 Measurement ID — replace with your real ID from analytics.google.com
-const GA_ID = 'G-XXXXXXXXXX'
+const GA_ID = 'G-XR2YDWHQWQ'
 
 function gtag(...args) {
   if (typeof window !== 'undefined' && window.gtag) {

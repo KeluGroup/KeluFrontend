@@ -5400,3 +5400,280 @@ a.btn-ph {
     justify-content: flex-end;
   }
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   404 — Not Found
+══════════════════════════════════════════════════════════════ */
+.not-found-main {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: var(--color-bg);
+}
+.not-found-inner {
+  text-align: center;
+  max-width: 480px;
+}
+.not-found-code {
+  display: block;
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  line-height: 1;
+  opacity: 0.15;
+}
+.not-found-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+}
+.not-found-body {
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.not-found-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+.not-found-btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.not-found-btn--primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+.not-found-btn--ghost {
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text);
+}
+.not-found-btn--ghost:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-1px); }
+
+
+/* ══════════════════════════════════════════════════════════════
+   FAQ Page
+══════════════════════════════════════════════════════════════ */
+.faq-main {
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+.faq-container {
+  max-width: 780px;
+  margin-inline: auto;
+  padding: calc(68px + 2.5rem) 1.5rem 5rem;
+}
+.faq-header {
+  margin-bottom: 3rem;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--color-divider);
+}
+.faq-item {
+  border-bottom: 1px solid var(--color-divider);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  text-align: left;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform 0.25s ease;
+}
+.faq-item--open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  padding: 0 0 1.25rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  animation: fadeSlideIn 0.2s ease;
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.faq-cta {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.faq-cta-text {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   Catalogue download button
+══════════════════════════════════════════════════════════════ */
+.catalogue-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.catalogue-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-interactive), border-color var(--transition-interactive);
+}
+.catalogue-download-btn:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.7);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   Delivery Map Section
+══════════════════════════════════════════════════════════════ */
+.delivery-map-section {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+}
+.delivery-map-inner {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  justify-content: flex-start !important;
+}
+.delivery-map-header {
+  margin-bottom: 2.5rem;
+}
+.delivery-map-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .delivery-map-body { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* SVG map */
+.swiss-map-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-surface-2);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+.swiss-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.swiss-map-country {
+  fill: var(--color-accent-light);
+  fill-opacity: 0.3;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+}
+.swiss-map-zone {
+  fill: var(--color-primary);
+  fill-opacity: 0.25;
+}
+.swiss-map-zone-ring {
+  fill: var(--color-primary);
+  fill-opacity: 0.08;
+  stroke: var(--color-primary);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+.swiss-map-city circle {
+  fill: var(--color-text-faint);
+  stroke: var(--color-surface);
+  stroke-width: 1.5;
+}
+.swiss-map-city text {
+  fill: var(--color-text-muted);
+  font-size: 10px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.swiss-map-city--current circle {
+  fill: var(--color-primary);
+  stroke: var(--color-surface);
+  stroke-width: 2;
+}
+.swiss-map-city--current text {
+  fill: var(--color-primary);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Legend */
+.delivery-map-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.dml-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.dml-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.dml-dot--current { background: var(--color-primary); }
+.dml-dot--future  {
+  background: transparent;
+  border: 2px dashed var(--color-text-faint);
+}
+.dml-item strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+.dml-item p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

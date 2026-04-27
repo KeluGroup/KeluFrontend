@@ -3,7 +3,8 @@ import { trackWhatsAppClick } from '../utils/analytics'
 
 export default function WhatsAppButton() {
   const phoneDigits = BRAND_PHONE.replace(/\D/g, '')
-  const href = `https://wa.me/${phoneDigits}`
+  const msg = encodeURIComponent('Hola KELU, me interesa información sobre sus productos y servicios para mi negocio.')
+  const href = `https://wa.me/${phoneDigits}?text=${msg}`
 
   return (
     <a

@@ -51,8 +51,10 @@
     "compareAfterLabel":  "Mit KeLu",
     "ctaSchedule":  "Kostenloses Meeting buchen",
     "ctaCatalogue": "Produkte & Preise entdecken",
-    "ctaDesc": "Interessiert an unserem vollständigen Sortiment? Kontaktieren Sie uns und wir stellen Ihnen einen vollständigen Produktkatalog zusammen, der auf Ihre Bedürfnisse zugeschnitten ist.",
-    "productsTitle": "Unser Produkte",
+    "catalogueBtn": "Katalog herunterladen",
+    "catalogueSoon": "Katalog demnächst verfügbar — kontaktieren Sie uns für eine personalisierte Version",
+    "ctaDesc":"Interessiert an unserem vollständigen Sortiment? Kontaktieren Sie uns und wir stellen Ihnen einen vollständigen Produktkatalog zusammen, der auf Ihre Bedürfnisse zugeschnitten ist.",
+    "productsTitle": "Unsere Produkte",
     "p1": "Vorgekochte Arepas",
     "p2": "Tequeños",
     "p3": "Empanadas",
@@ -266,7 +268,40 @@
   "accept": "Akzeptieren",
   "decline": "Ablehnen",
   "settingsLabel": "Cookie-Einstellungen"
-}
+},
 
+"deliveryMap": {
+  "tag": "Liefergebiet",
+  "title": "Wir kommen zu Ihnen",
+  "subtitle": "Aktuell in Zürich aktiv. Expansion auf die gesamte Schweiz in Vorbereitung.",
+  "currentLabel": "Aktiv — Zürich",
+  "currentDesc": "4 wöchentliche Lieferzonen im Grossraum Zürich.",
+  "expandLabel": "Bald — gesamte Schweiz",
+  "expandDesc": "Nationale Expansion in Vorbereitung. Kontaktieren Sie uns ausserhalb Zürichs."
+},
+
+"faq": {
+  "tag": "FAQ",
+  "title": "Häufige Fragen",
+  "subtitle": "Alles, was Sie wissen müssen, bevor Sie Ihre erste Bestellung aufgeben.",
+  "q1": "Was ist die Mindestbestellmenge?",
+  "a1": "Unsere Mindestbestellung beträgt 500 CHF pro Lieferung, unabhängig vom Kundenstatus.",
+  "q2": "Wie oft liefern Sie?",
+  "a2": "Wir betreiben feste Wochenrouten pro Zone. Nach der Registrierung erhalten Sie einen festen Liefertag — verlässlich und planbar.",
+  "q3": "Welche Gebiete bedienen Sie aktuell?",
+  "a3": "Wir bedienen derzeit das Stadtgebiet Zürich in 4 Lieferzonen. Wir expandieren auf die ganze Schweiz — kontaktieren Sie uns, falls Sie ausserhalb Zürichs sind.",
+  "q4": "Wie werde ich Kunde?",
+  "a4": "Kontaktieren Sie uns über das Formular oder WhatsApp. Wir vereinbaren ein 30-minütiges Gespräch, um Ihre Bedürfnisse zu verstehen, und senden Ihnen einen persönlichen Katalog.",
+  "q5": "Welche Zahlungsmethoden akzeptieren Sie?",
+  "a5": "Wir akzeptieren Banküberweisung (IBAN). Zahlungsbedingungen und Abrechnungsintervall werden beim Onboarding vereinbart.",
+  "q6": "Kann ich einen Produktkatalog erhalten?",
+  "a6": "Ja. Wir erstellen für jeden Kunden einen massgeschneiderten Katalog basierend auf Speisekarte und Volumen. Anfrage über die Kontaktseite oder Download oben.",
+  "q7": "Liefern Sie temperaturempfindliche Produkte?",
+  "a7": "Ja. Tiefkühlprodukte (Arepas, Fruchtpulpen usw.) werden mit geeigneter Kühlkette geliefert, um die Qualität bei der Ankunft zu gewährleisten.",
+  "q8": "Welche Rabatte sind verfügbar?",
+  "a8": "Unsere Staffelpreise belohnen Treue: 500–2.499 CHF/Monat = −5%, 2.500–4.999 CHF/Monat = −10%, 5.000+ CHF/Monat = −15%, plus exklusive Vorteile für strategische Kunden.",
+  "contactCta": "Noch Fragen?",
+  "contactBtn": "Schreiben Sie uns"
+}
 
 }

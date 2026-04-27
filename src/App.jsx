@@ -15,10 +15,12 @@ import ContactPage from './pages/ContactPage'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollProgress from './components/ScrollProgress'
-import Privacy  from './pages/Privacy'
-import Terms    from './pages/Terms'
+import Privacy    from './pages/Privacy'
+import Terms      from './pages/Terms'
 import CookiePolicy from './pages/CookiePolicy'
-import Admin    from './pages/Admin'
+import FAQ        from './pages/FAQ'
+import NotFound   from './pages/NotFound'
+import Admin      from './pages/Admin'
 import CookieBanner from './components/CookieBanner'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
@@ -156,16 +158,19 @@ export default function App() {
     <>
       <ScrollToHash />
       <CursorTrail />
-      <CookieBanner /> 
+      <CookieBanner />
+      <WhatsAppButton />
       <Routes>
-        <Route path="/"        element={<MainLayout    {...sharedProps} />} />
-        <Route path="/about"   element={<About         {...sharedProps} />} />
-        <Route path="/products" element={<Products     {...sharedProps} />} />
-        <Route path="/contact"  element={<ContactPage  {...sharedProps} />} />
-        <Route path="/privacy"  element={<Privacy      {...sharedProps} />} />
-        <Route path="/terms"    element={<Terms        {...sharedProps} />} />
-        <Route path="/cookies" element={<CookiePolicy {...sharedProps} />} />
+        <Route path="/"         element={<MainLayout    {...sharedProps} />} />
+        <Route path="/about"    element={<About         {...sharedProps} />} />
+        <Route path="/products" element={<Products      {...sharedProps} />} />
+        <Route path="/contact"  element={<ContactPage   {...sharedProps} />} />
+        <Route path="/faq"      element={<FAQ           {...sharedProps} />} />
+        <Route path="/privacy"  element={<Privacy       {...sharedProps} />} />
+        <Route path="/terms"    element={<Terms         {...sharedProps} />} />
+        <Route path="/cookies"  element={<CookiePolicy  {...sharedProps} />} />
         <Route path="/admin"    element={<Admin />} />
+        <Route path="*"         element={<NotFound      {...sharedProps} />} />
       </Routes>
     </>
   )

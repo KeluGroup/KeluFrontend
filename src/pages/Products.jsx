@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-css'
 
 import { BRAND_NAME } from '../config'
 import ProductModal from '../components/ProductModal'
+import DeliveryMap from '../components/DeliveryMap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
@@ -199,16 +200,30 @@ export default function Benefits({
         <section className="catalogue-cta-section" aria-label="Solicitar presupuesto">
           <div className="catalogue-cta-inner">
             <p className="catalogue-cta-desc">{t('solution.ctaDesc')}</p>
-            <Link to="/contact" className="catalogue-cta-btn" onClick={trackCatalogueRequest}>
-              {t('solution.ctaButton')}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </Link>
+            <div className="catalogue-cta-actions">
+              <Link to="/contact" className="catalogue-cta-btn" onClick={trackCatalogueRequest}>
+                {t('solution.ctaButton')}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Link>
+              <button className="catalogue-download-btn" title={t('solution.catalogueSoon')} onClick={() => window.location.href='/contact'}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                {t('solution.catalogueBtn')}
+              </button>
+            </div>
           </div>
         </section>
+
+        {/* ══ SECTION 3 — Mapa de cobertura ══════════════════════ */}
+        <DeliveryMap />
 
       </main>
 

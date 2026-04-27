@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//g//**)",
+      "Read(//h//**)",
+      "Bash(npm install *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\\", \"C:\\\\Program Files\", \"C:\\\\Program Files \\(x86\\)\", \"$env:LOCALAPPDATA\", \"$env:APPDATA\" -Filter \"node.exe\" -Recurse -ErrorAction SilentlyContinue -Depth 3 | Select-Object FullName -First 5)",
+      "PowerShell(cmd /c \"node --version 2>&1 && npm --version 2>&1\")"
+    ]
+  }
+}

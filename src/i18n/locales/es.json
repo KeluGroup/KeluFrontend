@@ -72,7 +72,7 @@
     "compareAfterLabel":  "Con KeLu",
     "ctaSchedule":  "Agenda tu Reunión Gratis",
     "ctaCatalogue": "Explorar Productos y Precios",
-    "productsTitle": "Nuestro Productos",
+    "productsTitle": "Nuestros Productos",
     "p1": "Arepas precocidas",
     "p2": "Tequeños",
     "p3": "Empanadas",
@@ -84,7 +84,9 @@
     "modalHistory": "Tradición e Historia",
     "modalPairing": "Cómo servirlo",
     "modalClose": "Cerrar",
-    "ctaDesc": "¿Le interesa nuestra gama completa? Póngase en contacto con nosotros y le proporcionaremos un catálogo de productos completo adaptado a sus necesidades.",
+    "catalogueBtn": "Descargar Catálogo",
+    "catalogueSoon": "Catálogo próximamente — contáctanos para una versión personalizada",
+    "ctaDesc":"¿Le interesa nuestra gama completa? Póngase en contacto con nosotros y le proporcionaremos un catálogo de productos completo adaptado a sus necesidades.",
     "ctaButton": "Solicitar presupuesto",
     "modal_p1_history": "Un alimento básico venezolano y colombiano con más de 3.000 años de historia. Esta torta de maíz a la plancha es el pan de cada día de la región andina, consumida en todas las comidas.",
     "modal_p1_pairing": "Caraotas negras, carne mechada, aguacate, queso blanco, huevo frito. La base perfecta para cualquier relleno que inspire tu cocina.",
@@ -287,8 +289,40 @@
   "accept": "Aceptar",
   "decline": "Rechazar",
   "settingsLabel": "Configuración de cookies"
+},
+
+"deliveryMap": {
+  "tag": "Cobertura de Entrega",
+  "title": "Llegamos a Ti",
+  "subtitle": "Actualmente operamos en Zúrich. En expansión para cubrir toda Suiza.",
+  "currentLabel": "Activo — Zúrich",
+  "currentDesc": "4 zonas de entrega semanal cubriendo el área metropolitana de Zúrich.",
+  "expandLabel": "Próximamente — Suiza",
+  "expandDesc": "Expansión nacional en progreso. Contáctanos si estás fuera de Zúrich."
+},
+
+"faq": {
+  "tag": "FAQ",
+  "title": "Preguntas Frecuentes",
+  "subtitle": "Todo lo que necesitas saber antes de hacer tu primer pedido.",
+  "q1": "¿Cuál es el pedido mínimo?",
+  "a1": "El pedido mínimo es de 500 CHF por entrega, aplicable a todos los clientes independientemente del nivel.",
+  "q2": "¿Con qué frecuencia entregan?",
+  "a2": "Operamos rutas fijas semanales por zona. Una vez registrado, recibes un día de entrega confirmado cada semana — sin sorpresas, sin perseguir al repartidor.",
+  "q3": "¿Qué zonas cubren actualmente?",
+  "a3": "Actualmente servimos el área de Zúrich en 4 zonas de entrega. Nos estamos expandiendo para cubrir toda Suiza — contáctanos si estás fuera de Zúrich y encontraremos una solución.",
+  "q4": "¿Cómo me convierto en cliente?",
+  "a4": "Contáctanos por el formulario o por WhatsApp. Agendaremos una llamada de 30 minutos para entender tus necesidades y enviarte un catálogo personalizado con precios.",
+  "q5": "¿Qué métodos de pago aceptan?",
+  "a5": "Aceptamos transferencia bancaria (IBAN). Los términos de pago y la frecuencia de facturación se acuerdan durante la incorporación.",
+  "q6": "¿Puedo obtener un catálogo de productos?",
+  "a6": "Sí. Preparamos un catálogo personalizado para cada cliente según su menú y volumen. Solicítalo por la página de contacto o descarga nuestro catálogo general arriba.",
+  "q7": "¿Manejan productos que requieren cadena de frío?",
+  "a7": "Sí. Los productos congelados (arepas, pulpas de fruta, etc.) se entregan con embalaje adecuado para mantener la calidad durante el transporte.",
+  "q8": "¿Qué descuentos están disponibles?",
+  "a8": "Nuestros precios por niveles premian la constancia: 500–2.499 CHF/mes = −5%, 2.500–4.999 CHF/mes = −10%, 5.000+ CHF/mes = −15%, más beneficios exclusivos para clientes estratégicos.",
+  "contactCta": "¿Tienes más preguntas?",
+  "contactBtn": "Háblanos"
 }
-
-
 
 }
