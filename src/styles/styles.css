@@ -4816,7 +4816,7 @@ a.btn-ph {
 
 /* Each masonry column */
 .products-masonry-col {
-  padding-left: 8px;
+  padding-left: 14px;
   background-clip: padding-box;
 }
 
@@ -4825,54 +4825,58 @@ a.btn-ph {
   margin-bottom: 16px;
 }
 
-/* Each tile */
+/* Each tile — collage style */
 .product-tile {
   display: block;
   position: relative;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   border: none;
   padding: 0;
   background: none;
   cursor: pointer;
-  border-radius: var(--radius-md);
+  border-radius: 6px;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.4s ease var(--fall-delay, 0ms),
-              transform 0.4s ease var(--fall-delay, 0ms);
+  transform: translateY(20px) rotate(var(--tile-tilt, 0deg));
+  transition: opacity 0.45s ease var(--fall-delay, 0ms),
+              transform 0.45s ease var(--fall-delay, 0ms),
+              box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
 }
 
 .product-tile--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotate(var(--tile-tilt, 0deg));
 }
 
-/* Image fills tile completely */
+.product-tile:hover {
+  transform: translateY(-5px) rotate(0deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.30);
+  z-index: 2;
+}
+
+/* Imagen en tamaño natural — sin recorte, sin fondo */
 .product-tile-img {
   display: block;
   width: 100%;
   height: auto;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
 .product-tile-img--loaded {
   opacity: 1;
 }
 
-.product-tile:hover .product-tile-img {
-  transform: scale(1.03);
-}
-
-/* Name shown only on hover as overlay */
+/* Nombre del producto — siempre visible */
 .product-tile-label {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0.75rem 0.75rem 0.6rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  padding: 0.6rem 0.75rem 0.55rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
   color: #fff;
   font-size: var(--text-xs);
   font-weight: 600;
@@ -4881,6 +4885,10 @@ a.btn-ph {
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
+}
+
+.product-tile-label--always {
+  opacity: 1;
 }
 
 .product-tile:hover .product-tile-label {
@@ -4953,10 +4961,10 @@ a.btn-ph {
 .catalogue-footer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  /* change to center if you want centered */
+  align-items: flex-start;
   gap: 1.25rem;
-  margin-top: 3rem;      /* was 2rem — increase for more breathing room */
-  padding-bottom: 2rem;  /* space at the bottom of the section too */
+  margin-top: 3rem;
+  padding-bottom: 2rem;
 }
 
 .catalogue-desc {
@@ -4966,6 +4974,56 @@ a.btn-ph {
   max-width: 480px;
   margin: 0;
   line-height: 1.7;
+}
+
+/* ── Section 2: Solicitar presupuesto — blurred background ── */
+.catalogue-cta-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1.5rem;
+}
+
+/* Blurred background via pseudo-element — no difumina el contenido */
+.catalogue-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: url('/products/latin-food.jpg') center / cover no-repeat;
+  filter: blur(14px);
+  transform: scale(1.08);
+}
+
+/* Overlay oscuro para legibilidad */
+.catalogue-cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+}
+
+/* Contenido encima del blur */
+.catalogue-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.catalogue-cta-desc {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--text-base);
+  max-width: 560px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .catalogue-cta-section { padding: 3.5rem 1.25rem; }
 }
 
 

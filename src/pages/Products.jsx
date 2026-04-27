@@ -8,22 +8,20 @@ import ProductModal from '../components/ProductModal'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
+import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
  
 
 
 /* ── Products data ── */
 const PRODUCTS = [
-  { key: 'p1', rotate: '-6deg', delay: 0,   color: '#F4A261', img: 'https://image.pollinations.ai/prompt/arepa%20venezolana%20corn%20flatbread%20close%20up%20food%20photography%20white%20background%20professional%20studio?width=480&height=480&seed=101&nologo=true' },
-  { key: 'p2', rotate: '5deg',  delay: 120, color: '#FFD166', img: 'https://image.pollinations.ai/prompt/tequeños%20cheese%20sticks%20venezuelan%20appetizer%20food%20photography%20white%20background%20studio%20crispy?width=480&height=480&seed=202&nologo=true' },
-  { key: 'p3', rotate: '-4deg', delay: 127, color: '#E9C46A', img: 'https://image.pollinations.ai/prompt/empanada%20colombiana%20fried%20golden%20pastry%20food%20photography%20white%20background%20professional?width=480&height=480&seed=303&nologo=true' },
-  { key: 'p4', rotate: '7deg',  delay: 245, color: '#9B7653', img: 'https://image.pollinations.ai/prompt/yuca%20frita%20fried%20cassava%20sticks%20latin%20food%20photography%20white%20background%20crispy%20golden?width=480&height=480&seed=404&nologo=true' },
-  { key: 'p5', rotate: '-5deg', delay: 248, color: '#FFB703', img: 'https://image.pollinations.ai/prompt/platano%20maduro%20sweet%20fried%20ripe%20plantain%20latin%20food%20photography%20white%20background?width=480&height=480&seed=505&nologo=true' },
-  { key: 'p6', rotate: '4deg',  delay: 280, color: '#FAFAFA', img: 'https://image.pollinations.ai/prompt/queso%20blanco%20latino%20fresh%20white%20cheese%20block%20food%20photography%20white%20background%20professional?width=480&height=480&seed=606&nologo=true' },
-  { key: 'p7', rotate: '-3deg', delay: 400, color: '#06D6A0', img: 'https://image.pollinations.ai/prompt/guasacaca%20aji%20latin%20american%20sauces%20condiments%20food%20photography%20white%20background%20colorful?width=480&height=480&seed=707&nologo=true' },
-  { key: 'p8', rotate: '6deg',  delay: 520, color: '#FF9F1C', img: 'https://image.pollinations.ai/prompt/maracuya%20passion%20fruit%20guanabana%20tropical%20fruit%20pulp%20latin%20food%20photography%20white%20background?width=480&height=480&seed=808&nologo=true' },
-  { key: 'p9', rotate: '6deg',  delay: 520, color: '#FF9F1C', img: 'https://image.pollinations.ai/prompt/maracuya%20passion%20fruit%20guanabana%20tropical%20fruit%20pulp%20latin%20food%20photography%20white%20background?width=480&height=480&seed=808&nologo=true' },
-  { key: 'p10', rotate: '7deg',  delay: 569, color: '#9B7653', img: 'https://image.pollinations.ai/prompt/yuca%20frita%20fried%20cassava%20sticks%20latin%20food%20photography%20white%20background%20crispy%20golden?width=480&height=480&seed=404&nologo=true' },
-
+  { key: 'p1', tilt: '-2deg',   delay: 0,   img: '/products/arepas.png' },
+  { key: 'p2', tilt:  '1.5deg', delay: 100, img: '/products/tequenos.jpg' },
+  { key: 'p3', tilt: '-1deg',   delay: 150, img: '/products/empanada-carne.jpg' },
+  { key: 'p4', tilt:  '2deg',   delay: 250, img: '/products/yuca-sticks.webp' },
+  { key: 'p5', tilt: '-1.5deg', delay: 350, img: '/products/pan-de-bono.jpg' },
+  { key: 'p6', tilt: '-2deg',   delay: 450, img: '/products/tequenos-chocolate.jpg' },
+  { key: 'p7', tilt:  '1.5deg', delay: 550, img: '/products/fruit-pulps.png' },
+  { key: 'p8', tilt: '-1deg',   delay: 650, img: '/products/empanadas-pollo.jpg' },
 ]
 
 const TIERS = [
@@ -35,10 +33,10 @@ const FEATURE_COUNT = 5
 
 // Masonry breakpoints (cols per width)
 const MASONRY_BREAKPOINTS = {
-  default: 5,  // large desktop
-  1100: 3,     // tablet / small desktop
-  768: 2,      // large phones
-  0: 1,        // small phones
+  default: 4,  // desktop ancho
+  1200: 3,     // desktop normal
+  700: 2,      // tablet
+  0: 1,        // móvil
 }
 
 
@@ -50,8 +48,11 @@ function ProductCard({ product, visible, onClick }) {
   return (
     <button
       className={`product-tile ${visible ? 'product-tile--visible' : ''}`}
-      style={{ '--fall-delay': `${product.delay}ms` }}
-      onClick={() => onClick(product)}
+      style={{
+        '--fall-delay': `${product.delay}ms`,
+        '--tile-tilt':  product.tilt,
+      }}
+      onClick={() => { onClick(product); trackProductView(product.key, product.key) }}
       aria-label={t(`solution.${product.key}`)}
     >
       {!loaded && (
@@ -66,8 +67,7 @@ function ProductCard({ product, visible, onClick }) {
         onLoad={() => setLoaded(true)}
         loading="lazy"
       />
-      {/* Name only on hover */}
-      <span className="product-tile-label">
+      <span className="product-tile-label product-tile-label--always">
         {t(`solution.${product.key}`)}
       </span>
     </button>
@@ -192,33 +192,23 @@ export default function Benefits({
               </Masonry>
             </div>
 
-            <div className="catalogue-footer">
-              <p className="catalogue-desc">
-                {t('solution.ctaDesc')}
-              </p>
-              <Link to="/contact" className="catalogue-cta-btn">
-                {t('solution.ctaButton')}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </Link>
-            </div>
-
-
           </div>
         </section>
 
-        {/* ── Divider ── */}
-        <div className="benefits-divider" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"
-              fill="var(--color-surface)"
-            />
-          </svg>
-        </div>
+        {/* ══ SECTION 2 — Solicitar presupuesto ══════════════════ */}
+        <section className="catalogue-cta-section" aria-label="Solicitar presupuesto">
+          <div className="catalogue-cta-inner">
+            <p className="catalogue-cta-desc">{t('solution.ctaDesc')}</p>
+            <Link to="/contact" className="catalogue-cta-btn" onClick={trackCatalogueRequest}>
+              {t('solution.ctaButton')}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </Link>
+          </div>
+        </section>
 
       </main>
 
