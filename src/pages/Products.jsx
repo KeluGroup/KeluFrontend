@@ -14,14 +14,14 @@ import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
 
 /* ── Products data ── */
 const PRODUCTS = [
-  { key: 'p1', tilt: '-2deg',   delay: 0,   img: '/products/arepas.png' },
-  { key: 'p2', tilt:  '1.5deg', delay: 100, img: '/products/tequenos.jpg' },
-  { key: 'p3', tilt: '-1deg',   delay: 150, img: '/products/empanada-carne.jpg' },
-  { key: 'p4', tilt:  '2deg',   delay: 250, img: '/products/yuca-sticks.webp' },
-  { key: 'p5', tilt: '-1.5deg', delay: 350, img: '/products/pan-de-bono.jpg' },
-  { key: 'p6', tilt: '-2deg',   delay: 450, img: '/products/tequenos-chocolate.jpg' },
-  { key: 'p7', tilt:  '1.5deg', delay: 550, img: '/products/fruit-pulps.png' },
-  { key: 'p8', tilt: '-1deg',   delay: 650, img: '/products/empanadas-pollo.jpg' },
+  { key: 'p1', label: 'Arepas',                tilt: '-2deg',   delay: 0,   img: '/products/arepas.png',            featured: true },
+  { key: 'p2', label: 'Tequeños',              tilt:  '1.5deg', delay: 100, img: '/products/tequenos.jpg' },
+  { key: 'p3', label: 'Empanadas',             tilt: '-1deg',   delay: 150, img: '/products/empanada-carne.jpg' },
+  { key: 'p4', label: 'Yuca Sticks',           tilt:  '2deg',   delay: 250, img: '/products/yuca-sticks.webp' },
+  { key: 'p5', label: 'Pan de Bono',           tilt: '-1.5deg', delay: 350, img: '/products/pan-de-bono.jpg' },
+  { key: 'p6', label: 'Tequeños de Chocolate', tilt: '-2deg',   delay: 450, img: '/products/tequenos-chocolate.jpg' },
+  { key: 'p7', label: 'Pulpas de Fruta',       tilt:  '1.5deg', delay: 550, img: '/products/fruit-pulps.png' },
+  { key: 'p8', label: 'Salsas',                tilt: '-1deg',   delay: 650, img: '/products/empanadas-pollo.jpg' },
 ]
 
 const TIERS = [
@@ -47,13 +47,13 @@ function ProductCard({ product, visible, onClick }) {
 
   return (
     <button
-      className={`product-tile ${visible ? 'product-tile--visible' : ''}`}
+      className={`product-tile ${visible ? 'product-tile--visible' : ''}${product.featured ? ' product-tile--featured' : ''}`}
       style={{
         '--fall-delay': `${product.delay}ms`,
         '--tile-tilt':  product.tilt,
       }}
-      onClick={() => { onClick(product); trackProductView(product.key, product.key) }}
-      aria-label={t(`solution.${product.key}`)}
+      onClick={() => { onClick(product); trackProductView(product.key, product.label) }}
+      aria-label={product.label}
     >
       {!loaded && (
         <div className="product-photo-skeleton">
@@ -62,13 +62,13 @@ function ProductCard({ product, visible, onClick }) {
       )}
       <img
         src={product.img}
-        alt={t(`solution.${product.key}`)}
+        alt={product.label}
         className={`product-tile-img ${loaded ? 'product-tile-img--loaded' : ''}`}
         onLoad={() => setLoaded(true)}
         loading="lazy"
       />
       <span className="product-tile-label product-tile-label--always">
-        {t(`solution.${product.key}`)}
+        {product.label}
       </span>
     </button>
   )

@@ -4850,6 +4850,11 @@ a.btn-ph {
   transform: translateY(0) rotate(var(--tile-tilt, 0deg));
 }
 
+.product-tile--featured .product-tile-img {
+  min-height: 280px;
+  object-fit: cover;
+}
+
 .product-tile:hover {
   transform: translateY(-5px) rotate(0deg);
   box-shadow: 0 10px 30px rgba(0,0,0,0.30);
@@ -4989,7 +4994,7 @@ a.btn-ph {
   position: absolute;
   inset: -30px;
   background: url('/products/latin-food.jpg') center / cover no-repeat;
-  filter: blur(14px);
+  filter: blur(7px);
   transform: scale(1.08);
 }
 
