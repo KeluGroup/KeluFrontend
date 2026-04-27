@@ -8,13 +8,12 @@ export default function CookieBanner() {
   const { t } = useTranslation()
   const location = useLocation()
   const [visible, setVisible] = useState(false)
-  const [settled, setSettled] = useState(false)
 
   const isBlocked = BLOCKED_ROUTES.some(r =>
     location.pathname.startsWith(r)
   )
 
-  // ── Watch footer and set --footer-clearance CSS var ──
+  // Watch footer and set --footer-clearance CSS var
   useEffect(() => {
     const footer = document.querySelector('footer')
     if (!footer) return
@@ -22,11 +21,10 @@ export default function CookieBanner() {
     const update = () => {
       const footerRect = footer.getBoundingClientRect()
       const viewportH  = window.innerHeight
-      // How many px of the footer are currently visible
       const visible    = Math.max(0, viewportH - footerRect.top)
       document.documentElement.style.setProperty(
         '--footer-clearance',
-        `${visible + 12}px`   // 12px extra breathing room
+        `${visible + 12}px`
       )
     }
 
@@ -42,55 +40,38 @@ export default function CookieBanner() {
   useEffect(() => {
     if (isBlocked) return
     const consent = localStorage.getItem('kelu-cookie-consent')
-    if (!consent) {
-      setVisible(true)
-    } else {
-      setSettled(true)
-    }
+    if (!consent) setVisible(true)
   }, [isBlocked])
 
   const pushConsent = (granted) => {
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({
-    event:                'cookie_consent_update',
-    analytics_storage:    granted ? 'granted' : 'denied',
-    ad_storage:           'denied',        // always denied — no ads
-    ad_user_data:         'denied',
-    ad_personalization:   'denied',
-    functionality_storage: granted ? 'granted' : 'denied',
-    security_storage:     'granted',       // always granted
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event:                 'cookie_consent_update',
+      analytics_storage:     granted ? 'granted' : 'denied',
+      ad_storage:            'denied',
+      ad_user_data:          'denied',
+      ad_personalization:    'denied',
+      functionality_storage: granted ? 'granted' : 'denied',
+      security_storage:      'granted',
     })
 
     if (granted) {
       window.dataLayer.push({
-        event:     'consent_pageview',
+        event:      'consent_pageview',
         page_path:  window.location.pathname,
         page_title: document.title,
       })
     }
-
-  }
-
-  const handleAccept = () => {
-    localStorage.setItem('kelu-cookie-consent', 'granted')
-    pushConsent(true)
-    setVisible(false)
-    setSettled(true)
   }
 
   const clearGACookies = () => {
-    // GA4 sets these cookies — delete them on decline
     const cookies = ['_ga', '_gid', '_gat']
     const domains = [window.location.hostname, `.${window.location.hostname}`]
-
     cookies.forEach(name => {
       domains.forEach(domain => {
-        // Try all path combinations
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`
       })
     })
-
-    // Also delete GA4 measurement ID specific cookies (_ga_XXXXXXX)
     document.cookie.split(';').forEach(cookie => {
       const name = cookie.trim().split('=')[0]
       if (name.startsWith('_ga_')) {
@@ -101,68 +82,43 @@ export default function CookieBanner() {
     })
   }
 
+  const handleAccept = () => {
+    localStorage.setItem('kelu-cookie-consent', 'granted')
+    pushConsent(true)
+    setVisible(false)
+  }
 
   const handleDecline = () => {
     const wasGranted = localStorage.getItem('kelu-cookie-consent') === 'granted'
-
     localStorage.setItem('kelu-cookie-consent', 'denied')
     pushConsent(false)
-
-    // If user is downgrading from accepted → declined
-    // clear GA cookies so tracking stops immediately
-    if (wasGranted) {
-      clearGACookies()
-    }
-
+    if (wasGranted) clearGACookies()
     setVisible(false)
-    setSettled(true)
   }
 
-  const handleReopen = () => {
-    setVisible(true)
-    setSettled(false)
-  }
-
-  if (isBlocked) return null
+  if (!visible || isBlocked) return null
 
   return (
-    <>
-      {/* ── Floating cookie settings button ── */}
-      {settled && !visible && (
-        <button
-          className="cookie-settings-btn"
-          onClick={handleReopen}
-          aria-label={t('cookies.settingsLabel')}
-          title={t('cookies.settingsLabel')}
-        >
-          🍪
-        </button>
-      )}
-
-      {/* ── Banner ── */}
-      {visible && (
-        <div className="cookie-banner" role="dialog" aria-live="polite"
-          aria-label={t('cookies.bannerLabel')}>
-          <div className="cookie-banner-inner">
-            <div className="cookie-banner-text">
-              <p>
-                {t('cookies.bannerText')}{' '}
-                <Link to="/cookies" className="cookie-banner-link">
-                  {t('cookies.bannerLinkLabel')}
-                </Link>.
-              </p>
-            </div>
-            <div className="cookie-banner-actions">
-              <button className="cookie-btn cookie-btn--decline" onClick={handleDecline}>
-                {t('cookies.decline')}
-              </button>
-              <button className="cookie-btn cookie-btn--accept" onClick={handleAccept}>
-                {t('cookies.accept')}
-              </button>
-            </div>
-          </div>
+    <div className="cookie-banner" role="dialog" aria-live="polite"
+      aria-label={t('cookies.bannerLabel')}>
+      <div className="cookie-banner-inner">
+        <div className="cookie-banner-text">
+          <p>
+            {t('cookies.bannerText')}{' '}
+            <Link to="/cookies" className="cookie-banner-link">
+              {t('cookies.bannerLinkLabel')}
+            </Link>.
+          </p>
         </div>
-      )}
-    </>
+        <div className="cookie-banner-actions">
+          <button className="cookie-btn cookie-btn--decline" onClick={handleDecline}>
+            {t('cookies.decline')}
+          </button>
+          <button className="cookie-btn cookie-btn--accept" onClick={handleAccept}>
+            {t('cookies.accept')}
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
