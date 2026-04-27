@@ -27,6 +27,17 @@ import CursorTrail  from './components/CursorTrail'
 import { SECTIONS } from './config'
 import { trackPageView } from './utils/analytics'
 
+const PAGE_TITLES = {
+  '/':        'KELU GmbH – Proveedor Latino B2B en Suiza | Arepas, Tequeños, Empanadas Zúrich',
+  '/about':   'About Us | Kelu Group',
+  '/products':'Products | Kelu Group',
+  '/contact': 'Contact | Kelu Group',
+  '/privacy': 'Privacy Policy | Kelu Group',
+  '/terms':   'Terms & Conditions | Kelu Group',
+  '/cookies': 'Cookie Policy | Kelu Group',
+  '/admin':   'Admin | Kelu Group',
+  "/faq":     'FAQ | Kelu Group',
+}
 
 function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
   return (
@@ -67,6 +78,11 @@ export default function App() {
   const [scrolled,      setScrolled]      = useState(false)
 
   const location = useLocation()
+
+  useEffect(() => {
+    const title = PAGE_TITLES[location.pathname] ?? 'Kelu Group'
+    document.title = title
+  }, [location.pathname])
 
   // Disable browser scroll restoration so reloads always start at the top
   useEffect(() => {
