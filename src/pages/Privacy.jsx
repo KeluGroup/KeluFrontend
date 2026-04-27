@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -40,9 +41,14 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
           <div className="policy-content">
             <h3>{t('privacy.s1title')}</h3><p>{t('privacy.s1body')}</p>
             <h3>{t('privacy.s2title')}</h3><p>{t('privacy.s2body')}</p>
-            <h3>{t('privacy.s3title')}</h3><p>{t('privacy.s3body')}</p>
+            <h3>{t('privacy.s3title')}</h3>
+            <p>
+              {t('privacy.s3body')}{' '}
+              <Link to="/cookies" className="policy-link">{t('footer.cookies')}</Link>.
+            </p>
             <h3>{t('privacy.s4title')}</h3><p>{t('privacy.s4body')}</p>
-            
+            <h3>{t('privacy.s5title')}</h3>
+            <p>{t('privacy.s5body')} <Link to="/contact" className="policy-link">{t('privacy.s5link')}</Link>.</p>
           </div>
         </div>
       </main>
