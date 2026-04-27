@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, lazy, Suspense } from 'react'
+
+const SwissMapModal = lazy(() => import('./SwissMapModal'))
 
 function parseNumStr(str) {
   const m = String(str).match(/^(\d+)(.*)$/)
@@ -70,6 +72,7 @@ const STATS = ['stat1', 'stat2', 'stat3', 'stat4']
 
 export default function Stats() {
   const { t } = useTranslation()
+  const [mapOpen, setMapOpen] = useState(false)
 
   return (
     <section className="stats-section" aria-label="Stats">
@@ -79,16 +82,35 @@ export default function Stats() {
       <span className="stats-dot stats-dot--3" aria-hidden="true" />
 
       <div className="stats-container">
-        {STATS.map((key, i) => (
-          <div key={key} className="stat-item scroll-animate">
-            <div className="stat-icon-wrap" aria-hidden="true">{ICONS[i]}</div>
-            <div className="stat-big-num">
-              <CountUp value={t(`stats.${key}num`)} />
+        {STATS.map((key, i) => {
+          const isZones = key === 'stat3'
+          return isZones ? (
+            <button
+              key={key}
+              className="stat-item stat-item--clickable scroll-animate"
+              onClick={() => setMapOpen(true)}
+              aria-label="View delivery zones map"
+            >
+              <div className="stat-icon-wrap" aria-hidden="true">{ICONS[i]}</div>
+              <div className="stat-big-num"><CountUp value={t(`stats.${key}num`)} /></div>
+              <div className="stat-big-label">{t(`stats.${key}label`)}</div>
+              <span className="stat-view-map">View map →</span>
+            </button>
+          ) : (
+            <div key={key} className="stat-item scroll-animate">
+              <div className="stat-icon-wrap" aria-hidden="true">{ICONS[i]}</div>
+              <div className="stat-big-num"><CountUp value={t(`stats.${key}num`)} /></div>
+              <div className="stat-big-label">{t(`stats.${key}label`)}</div>
             </div>
-            <div className="stat-big-label">{t(`stats.${key}label`)}</div>
-          </div>
-        ))}
+          )
+        })}
       </div>
+
+      {mapOpen && (
+        <Suspense fallback={null}>
+          <SwissMapModal onClose={() => setMapOpen(false)} />
+        </Suspense>
+      )}
 
       {/* Trust strip */}
       <div className="stats-trust-strip">
