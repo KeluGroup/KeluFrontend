@@ -5,6 +5,7 @@ import { BRAND_NAME, BRAND_PHONE, BRAND_EMAIL } from '../config'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
+import { trackFormSubmit, trackCTAClick } from '../utils/analytics'
 
 /* ── Form config ── */
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
@@ -100,11 +101,13 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
         body: JSON.stringify({ ...fields, company: fields.company || null }),
       })
       if (!res.ok) throw new Error(`Server error: ${res.status}`)
+      trackFormSubmit(true)
       setStatus('success')
       setFields(INITIAL)
       setTouched({ name: false, email: false })
       setErrors(INITIAL_ERRORS)
     } catch (err) {
+      trackFormSubmit(false)
       setStatus('error'); setErrMsg(err.message)
     }
   }

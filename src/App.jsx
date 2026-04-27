@@ -22,6 +22,7 @@ import Admin    from './pages/Admin'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
 import { SECTIONS } from './config'
+import { trackPageView } from './utils/analytics'
 
 
 function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, activeSection, scrolled }) {
@@ -80,9 +81,10 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Scroll to top on every route change (except hash-only navigation)
+  // Scroll to top + track page view on every route change
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    trackPageView(location.pathname, document.title)
   }, [location.pathname])
 
   // Re-attach scroll-animate observer whenever the route changes.
