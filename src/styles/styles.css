@@ -4736,7 +4736,11 @@ a.btn-ph {
 
 /* ── Sections ── */
 .benefits-section {
-  padding: var(--space-20) 0;
+  padding: 0 0 var(--space-16);
+}
+.benefits-section .section-inner {
+  padding-top: calc(68px + var(--space-8));
+  justify-content: flex-start;
 }
 .benefits-section--pricing {
   background: var(--color-surface);
