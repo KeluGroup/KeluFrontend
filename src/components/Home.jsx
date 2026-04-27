@@ -44,9 +44,6 @@ export default function Home() {
               </svg>
               {t('home.cta')}
             </a>
-            <Link to="/faq" className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick('hero-faq')}>
-              FAQ
-            </Link>
           </div>
 
         </div>
