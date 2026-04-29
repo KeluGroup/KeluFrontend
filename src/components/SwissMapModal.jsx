@@ -60,6 +60,7 @@ const CANTONS = [
 ]
 
 function ModalContent({ onClose }) {
+  const { t } = useTranslation()
   const [hovered, setHovered] = useState(null)
 
   useEffect(() => {
@@ -85,9 +86,9 @@ function ModalContent({ onClose }) {
       <div className="smap-panel" onClick={e => e.stopPropagation()}>
 
         <div className="smap-header">
-          <div>
-            <h2 className="smap-title">Nationwide Delivery Coverage</h2>
-            <p className="smap-subtitle">All 26 Swiss cantons. One reliable partner.</p>
+          <div style={{ flex: 1, textAlign: 'center' }}>
+            <h2 className="smap-title">{t('map.title')}</h2>
+            <p className="smap-subtitle">{t('map.subtitle')}</p>
           </div>
           <button className="smap-close" onClick={onClose} aria-label="Close map">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -121,7 +122,14 @@ function ModalContent({ onClose }) {
             {hovered || ' '}
           </div>
 
-          <p className="smap-svg-label">🇨🇭 We deliver across Switzerland</p>
+          <p className="smap-svg-label">
+            <svg width="18" height="18" viewBox="0 0 20 20" aria-label="Swiss flag" role="img" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '6px' }}>
+              <rect width="20" height="20" fill="#FF0000"/>
+              <rect x="8.5" y="3.5" width="3" height="13" fill="white"/>
+              <rect x="3.5" y="8.5" width="13" height="3" fill="white"/>
+            </svg>
+            {t('map.svgLabel')}
+          </p>
         </div>
 
       </div>

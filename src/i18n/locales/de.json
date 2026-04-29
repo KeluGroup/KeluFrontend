@@ -124,10 +124,15 @@
     "stat1label": "Zielbetriebe",
     "stat2num":   "10",
     "stat2label": "Strategische Produkte",
-    "stat3num":   "4",
-    "stat3label": "Lieferzonen",
+    "stat3num":   "",
+    "stat3label": "Schweizweite Lieferung",
     "stat4num":   "90",
     "stat4label": "Tage bis zu Ergebnissen"
+  },
+  "map": {
+    "title":    "Schweizweite Lieferabdeckung",
+    "subtitle": "Alle 26 Schweizer Kantone. Ein verlässlicher Partner.",
+    "svgLabel": "Wir liefern in der ganzen Schweiz"
   },
   "process": {
     "tag":      "So funktioniert es",

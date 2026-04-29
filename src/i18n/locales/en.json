@@ -124,10 +124,15 @@
     "stat1label": "Target Businesses",
     "stat2num":   "10",
     "stat2label": "Strategic Products",
-    "stat3num":   "4",
-    "stat3label": "Delivery Zones",
+    "stat3num":   "",
+    "stat3label": "Nationwide Delivery",
     "stat4num":   "90",
     "stat4label": "Days to Results"
+  },
+  "map": {
+    "title":    "Nationwide Delivery Coverage",
+    "subtitle": "All 26 Swiss cantons. One reliable partner.",
+    "svgLabel": "We deliver across Switzerland"
   },
   "process": {
     "tag":      "How It Works",
