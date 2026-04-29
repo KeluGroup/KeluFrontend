@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     vitePrerenderPlugin({
-      prerenderScript: './src/main.jsx',   // ← add this
+      prerenderScript: './src/main.jsx',
       additionalPrerenderRoutes: [
         '/',
         '/products',
@@ -16,4 +16,15 @@ export default defineConfig({
       ],
     }),
   ],
+
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-i18n':  ['i18next', 'react-i18next'],
+        },
+      },
+    },
+  },
 })
