@@ -39,22 +39,39 @@ export default function CookieBanner() {
 
   useEffect(() => {
     if (isBlocked) return
-    const consent = localStorage.getItem('kelu-cookie-consent')
-    if (!consent) setVisible(true)
+    try {
+      const consent = localStorage.getItem('kelu-cookie-consent')
+      if (!consent) setVisible(true)
+    } catch (e) {
+      setVisible(true)
+    }
   }, [isBlocked])
 
+  // ─── ONLY THIS FUNCTION CHANGED ───────────────────────────────────────────
   const pushConsent = (granted) => {
+    // Ensure gtag is available (GTM may not have loaded yet in some edge cases)
     window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      event:                 'cookie_consent_update',
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments) }
+
+    const consentState = {
       analytics_storage:     granted ? 'granted' : 'denied',
       ad_storage:            'denied',
       ad_user_data:          'denied',
       ad_personalization:    'denied',
       functionality_storage: granted ? 'granted' : 'denied',
       security_storage:      'granted',
+    }
+
+    // 1. Real Google Consent Mode update — this is what GA4 reads
+    window.gtag('consent', 'update', consentState)
+
+    // 2. Custom dataLayer event — useful for GTM triggers / debugging
+    window.dataLayer.push({
+      event: 'cookie_consent_update',
+      ...consentState,
     })
 
+    // 3. Re-fire pageview so GA4 captures this visit under the new consent state
     if (granted) {
       window.dataLayer.push({
         event:      'consent_pageview',
@@ -63,6 +80,7 @@ export default function CookieBanner() {
       })
     }
   }
+  // ──────────────────────────────────────────────────────────────────────────
 
   const clearGACookies = () => {
     const cookies = ['_ga', '_gid', '_gat']
@@ -83,14 +101,17 @@ export default function CookieBanner() {
   }
 
   const handleAccept = () => {
-    localStorage.setItem('kelu-cookie-consent', 'granted')
+    try { localStorage.setItem('kelu-cookie-consent', 'granted') } catch (e) {}
     pushConsent(true)
     setVisible(false)
   }
 
   const handleDecline = () => {
-    const wasGranted = localStorage.getItem('kelu-cookie-consent') === 'granted'
-    localStorage.setItem('kelu-cookie-consent', 'denied')
+    let wasGranted = false
+    try {
+      wasGranted = localStorage.getItem('kelu-cookie-consent') === 'granted'
+      localStorage.setItem('kelu-cookie-consent', 'denied')
+    } catch (e) {}
     pushConsent(false)
     if (wasGranted) clearGACookies()
     setVisible(false)

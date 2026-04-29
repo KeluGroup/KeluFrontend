@@ -70,8 +70,7 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
 
 export default function App() {
   const [theme, setTheme] = useState(() =>
-    localStorage.getItem('theme') ??
-    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    localStorage.getItem('theme') ?? 'light'
   )
   const [menuOpen,      setMenuOpen]      = useState(false)
   const [activeSection, setActiveSection] = useState('home')
