@@ -92,7 +92,6 @@ export default function Stats() {
               aria-label="View delivery zones map"
             >
               <div className="stat-icon-wrap" aria-hidden="true">{ICONS[i]}</div>
-              <div className="stat-big-num"><CountUp value={t(`stats.${key}num`)} /></div>
               <div className="stat-big-label">{t(`stats.${key}label`)}</div>
               <span className="stat-view-map">View map →</span>
             </button>

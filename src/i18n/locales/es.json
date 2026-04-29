@@ -145,10 +145,15 @@
     "stat1label": "Negocios objetivo",
     "stat2num":   "10",
     "stat2label": "Productos estratégicos",
-    "stat3num":   "4",
-    "stat3label": "Zonas de entrega",
+    "stat3num":   "",
+    "stat3label": "Entrega Nacional",
     "stat4num":   "90",
     "stat4label": "Días para ver resultados"
+  },
+  "map": {
+    "title":    "Cobertura de entrega nacional",
+    "subtitle": "Los 26 cantones suizos. Un socio de confianza.",
+    "svgLabel": "Entregamos en toda Suiza"
   },
   "process": {
     "tag":      "Cómo funciona",
