@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { vitePrerenderPlugin } from 'vite-prerender-plugin'
 
 export default defineConfig({
   server: {
@@ -8,18 +7,16 @@ export default defineConfig({
       usePolling: true,
       interval: 300,
     },
+    proxy: {
+      '/api': {
+        target: 'https://api.kelugroup.ch',
+        changeOrigin: true,
+      },
+    },
   },
-  plugins: [
-    react(),
-    vitePrerenderPlugin({
-      prerenderScript: './src/main.jsx',
-      additionalPrerenderRoutes: [
-        '/',
-        '/products',
-        '/about',
-        '/contact',
-        '/faq',
-      ],
-    }),
-  ],
+  plugins: [react()],
+  define: {
+    __BRAND_NAME__: JSON.stringify('Kelu'),
+  },
 })
+

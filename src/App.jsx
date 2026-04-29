@@ -70,8 +70,10 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
 
 export default function App() {
   const [theme, setTheme] = useState(() =>
-    localStorage.getItem('theme') ?? 'light'
-  )
+  typeof localStorage !== 'undefined'
+    ? localStorage.getItem('theme') ?? 'light'
+    : 'light'
+)
   const [menuOpen,      setMenuOpen]      = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled,      setScrolled]      = useState(false)
