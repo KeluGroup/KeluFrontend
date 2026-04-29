@@ -3026,40 +3026,6 @@ a.btn-ph {
   margin-bottom: var(--space-1);
 }
 
-/* =====================
-   STATS — delivery trust strip
-   ===================== */
-.stats-trust-strip {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-6);
-  flex-wrap: wrap;
-  margin-top: var(--space-10);
-  padding-top: var(--space-8);
-  border-top: 1px solid rgba(255,255,255,0.12);
-}
-.stats-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: rgba(255,255,255,0.8);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-.stats-trust-check {
-  width: 22px;
-  height: 22px;
-  background: rgba(6,214,160,0.2);
-  border: 1.5px solid #06D6A0;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #06D6A0;
-  font-size: 0.65rem;
-  flex-shrink: 0;
-}
 
 /* =====================
    CTA BANNER — portal rings
@@ -3577,7 +3543,6 @@ a.btn-ph {
   .modal-card { padding: var(--space-6); }
   .portal-ring--4, .portal-ring--5 { display: none; }
   .whatsapp-fab { bottom: 80px; right: var(--space-4); width: 50px; height: 50px; }
-  .stats-trust-strip { gap: var(--space-4); }
   .process-bg-circle--1 { width: 300px; height: 300px; }
   .problem-bg-emoji { display: none; }
   .showcase-section { clip-path: none; margin-top: 0; margin-bottom: 0; padding-top: var(--space-16); padding-bottom: var(--space-16); }
@@ -3587,7 +3552,6 @@ a.btn-ph {
 }
 
 @media (max-width: 480px) {
-  .stats-trust-strip { flex-direction: column; align-items: center; }
   .food-chip-label { display: none; }
 }
 /* =====================
@@ -5690,18 +5654,25 @@ a.btn-ph {
 ══════════════════════════════════════════════════════════════ */
 .stat-item--clickable {
   background: none;
-  border: none;
+  border: 2px solid transparent;
   font: inherit;
   color: inherit;
   cursor: pointer;
   position: relative;
   border-radius: var(--radius-lg);
-  transition: background var(--transition-interactive);
+  transition: background var(--transition-interactive), transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   padding: 0.5rem 1rem;
   margin: -0.5rem -1rem;
 }
 .stat-item--clickable:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12), 0 8px 28px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+.stat-item--clickable:active {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 .stat-view-map {
   display: block;
@@ -5749,6 +5720,9 @@ a.btn-ph {
   overflow: hidden;
   animation: smapSlideUp 0.25s cubic-bezier(0.16,1,0.3,1);
 }
+.smap-panel--stat {
+  /* matches .smap-panel base — same dimensions as the map modal */
+}
 @keyframes smapSlideUp {
   from { transform: translateY(24px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
@@ -5766,10 +5740,40 @@ a.btn-ph {
   font-size: var(--text-lg);
   color: var(--color-text);
   margin-bottom: 0.2rem;
+  text-align: center;
 }
 .smap-subtitle {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+  text-align: center;
+}
+.smap-stat-list-item--link {
+  cursor: pointer;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+.smap-stat-list-item--link:hover {
+  color: var(--color-primary);
+}
+.smap-stat-list-item--link:hover .smap-stat-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+.smap-stat-arrow {
+  margin-left: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+@keyframes showcaseHighlight {
+  0%   { outline: 3px solid rgba(45,106,63,0); }
+  20%  { outline: 3px solid rgba(45,106,63,0.7); }
+  100% { outline: 3px solid rgba(45,106,63,0); }
+}
+.showcase-card--highlight {
+  animation: showcaseHighlight 1.8s ease-out forwards;
+  outline-offset: 4px;
+  border-radius: var(--radius-xl, 12px);
 }
 .smap-close {
   flex-shrink: 0;
@@ -5836,6 +5840,44 @@ a.btn-ph {
 @media (max-width: 480px) {
   .smap-map-wrap { padding: 1rem 0.5rem 0.25rem; }
   .smap-svg { max-width: 100%; }
+}
+.smap-stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 420px;
+}
+.smap-stat-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.smap-stat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+.smap-stat-flavor-text {
+  max-width: 480px;
+  text-align: center;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  padding: 0.5rem 0 2rem;
+  margin: 0;
 }
 
 @keyframes langDropIn {

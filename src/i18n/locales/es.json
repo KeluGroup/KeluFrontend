@@ -141,18 +141,32 @@
     "tier3cta": "Contáctanos"
   },
   "stats": {
-    "stat1num":   "300+",
-    "stat1label": "Negocios objetivo",
-    "stat2num":   "10",
-    "stat2label": "Productos estratégicos",
+    "stat1num":   "",
+    "stat1label": "Servicios Ofrecidos",
+    "stat1popup1": "B2B Market",
+    "stat1popup2": "Servicio de Catering",
+    "stat1popup3": "Eventos",
+    "stat2num":   "",
+    "stat2label": "Productos Más Vendidos",
+    "stat2popup1": "Tequeños",
+    "stat2popup2": "Palitos de Yuca",
+    "stat2popup3": "Arepas",
     "stat3num":   "",
     "stat3label": "Entrega Nacional",
-    "stat4num":   "90",
-    "stat4label": "Días para ver resultados"
+    "stat4num":   "",
+    "stat4label": "Sabor Latino Auténtico",
+    "stat4popup": "Especias intensas, recetas caseras e ingredientes cultivados directamente en Latinoamérica — esa es la base de cada producto que ofrecemos. Sin atajos, sin sustitutos. Solo lo auténtico, directo a tu cocina.",
+    "statViewMore": "Ver →",
+    "servicesModalTitle": "Nuestros Servicios",
+    "servicesModalSubtitle": "Soluciones a medida para tu negocio",
+    "productsModalTitle": "Productos Más Vendidos",
+    "productsModalSubtitle": "Los favoritos de nuestros clientes",
+    "flavorModalTitle": "Sabor Latino Auténtico",
+    "flavorModalSubtitle": "Directo de la fuente a tu cocina"
   },
   "map": {
     "title":    "Cobertura de entrega nacional",
-    "subtitle": "Los 26 cantones suizos. Un socio de confianza.",
+    "subtitle": "26 cantones suizos. Un socio de confianza.",
     "svgLabel": "Entregamos en toda Suiza"
   },
   "process": {

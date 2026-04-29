@@ -120,18 +120,32 @@
     "tier3cta": "Contact Us"
   },
   "stats": {
-    "stat1num":   "300+",
-    "stat1label": "Target Businesses",
-    "stat2num":   "10",
-    "stat2label": "Strategic Products",
+    "stat1num":   "",
+    "stat1label": "Offered Services",
+    "stat1popup1": "B2B Market",
+    "stat1popup2": "Catering Service",
+    "stat1popup3": "Events",
+    "stat2num":   "",
+    "stat2label": "Best Seller Products",
+    "stat2popup1": "Tequeños",
+    "stat2popup2": "Yuca Sticks",
+    "stat2popup3": "Arepas",
     "stat3num":   "",
     "stat3label": "Nationwide Delivery",
-    "stat4num":   "90",
-    "stat4label": "Days to Results"
+    "stat4num":   "",
+    "stat4label": "Authentic Latin Flavor",
+    "stat4popup": "Bold spices, homestyle recipes, and ingredients grown at the source across Latin America — that is the foundation of every product we carry. No shortcuts, no substitutes. Just the real thing, direct to your kitchen.",
+    "statViewMore": "View →",
+    "servicesModalTitle": "Our Services",
+    "servicesModalSubtitle": "Tailored solutions for your business",
+    "productsModalTitle": "Best Seller Products",
+    "productsModalSubtitle": "Our customers' favourite picks",
+    "flavorModalTitle": "Authentic Latin Flavor",
+    "flavorModalSubtitle": "Straight from the source to your kitchen"
   },
   "map": {
     "title":    "Nationwide Delivery Coverage",
-    "subtitle": "All 26 Swiss cantons. One reliable partner.",
+    "subtitle": "26 Swiss cantons. One reliable partner.",
     "svgLabel": "We deliver across Switzerland"
   },
   "process": {

@@ -120,18 +120,32 @@
     "tier3cta": "Kontakt aufnehmen"
   },
   "stats": {
-    "stat1num":   "300+",
-    "stat1label": "Zielbetriebe",
-    "stat2num":   "10",
-    "stat2label": "Strategische Produkte",
+    "stat1num":   "",
+    "stat1label": "Angebotene Dienstleistungen",
+    "stat1popup1": "B2B Market",
+    "stat1popup2": "Catering Service",
+    "stat1popup3": "Events",
+    "stat2num":   "",
+    "stat2label": "Bestseller-Produkte",
+    "stat2popup1": "Tequeños",
+    "stat2popup2": "Yuca-Sticks",
+    "stat2popup3": "Arepas",
     "stat3num":   "",
     "stat3label": "Schweizweite Lieferung",
-    "stat4num":   "90",
-    "stat4label": "Tage bis zu Ergebnissen"
+    "stat4num":   "",
+    "stat4label": "Authentisches lateinamerikanisches Aroma",
+    "stat4popup": "Kräftige Gewürze, traditionelle Rezepte und Zutaten, die direkt in Lateinamerika angebaut werden — das ist die Basis jedes Produkts, das wir führen. Keine Abkürzungen, keine Ersatzstoffe. Nur das Echte, direkt in deine Küche.",
+    "statViewMore": "Ansehen →",
+    "servicesModalTitle": "Unsere Dienstleistungen",
+    "servicesModalSubtitle": "Massgeschneiderte Lösungen für deinen Betrieb",
+    "productsModalTitle": "Bestseller-Produkte",
+    "productsModalSubtitle": "Die Favoriten unserer Kunden",
+    "flavorModalTitle": "Authentisches lateinamerikanisches Aroma",
+    "flavorModalSubtitle": "Direkt von der Quelle in deine Küche"
   },
   "map": {
     "title":    "Schweizweite Lieferabdeckung",
-    "subtitle": "Alle 26 Schweizer Kantone. Ein verlässlicher Partner.",
+    "subtitle": "26 Schweizer Kantone. Ein zuverlässiger Partner.",
     "svgLabel": "Wir liefern in der ganzen Schweiz"
   },
   "process": {

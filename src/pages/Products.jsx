@@ -47,6 +47,7 @@ function ProductCard({ product, visible, onClick }) {
 
   return (
     <button
+      id={`product-${product.key}`}
       className={`product-tile ${visible ? 'product-tile--visible' : ''}${product.featured ? ' product-tile--featured' : ''}`}
       style={{
         '--fall-delay': `${product.delay}ms`,
@@ -110,7 +111,15 @@ export default function Benefits({
   }, [])
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    const hash = window.location.hash
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 400)
+    } else {
+      window.scrollTo(0, 0)
+    }
     const io = new IntersectionObserver(
       entries =>
         entries.forEach(e => {

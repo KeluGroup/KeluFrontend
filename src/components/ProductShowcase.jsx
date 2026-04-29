@@ -76,6 +76,7 @@ function ProductCard({ product, visible, index }) {
 
   return (
     <div
+      id={`showcase-product-${product.key}`}
       className={`showcase-card ${visible ? 'showcase-card--visible' : ''}`}
       style={{
         '--fall-rotate': product.rotate,
