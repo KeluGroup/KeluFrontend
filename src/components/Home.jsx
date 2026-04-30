@@ -12,11 +12,14 @@ export default function Home() {
 
       {/* ── Background Image ── */}
       <div className="hero-video-wrap" aria-hidden="true">
-        <img
+        <video
           className="hero-video"
-          src="/hero.png"
-          alt=""
-          fetchPriority="high"
+          src="/assets/video_sample_tequenos.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
         />
         <div className="hero-video-overlay" />
       </div>

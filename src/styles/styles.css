@@ -22,8 +22,8 @@
   --shadow-md:0 4px 12px rgba(24,79,37,0.10),0 2px 6px rgba(24,79,37,0.06);
   --shadow-lg:0 12px 32px rgba(24,79,37,0.14),0 4px 12px rgba(24,79,37,0.08);
   --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
-  --font-display:'Instrument Serif',Georgia,serif;
-  --font-body:'Satoshi','Work Sans',sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
   --content-wide:1200px;
 }
 [data-theme="dark"] {
@@ -662,7 +662,7 @@ main{padding-top:0}
 
 .hero-heading em{
   font-style:italic;
-  color:var(--color-accent-light)
+  color:#fff
 }
 
 .hero-body{font-size:var(--text-lg);color:rgba(255,255,255,0.65);line-height:1.7;max-width:46ch;margin-bottom:var(--space-10)}
@@ -1000,6 +1000,7 @@ a.btn-ph {
 }
 
 .hero-video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3015,7 +3016,6 @@ a.btn-ph {
   background: radial-gradient(circle, color-mix(in oklch, #06D6A0 4%, transparent) 0%, transparent 70%);
   animation: dotDrift 14s ease-in-out infinite 3s;
 }
-
 .process-step-num-label {
   font-size: var(--text-xs);
   font-weight: 700;
@@ -4160,15 +4160,10 @@ a.btn-ph {
 .solution-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1920&q=40&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.05;
+  overflow: hidden;
   z-index: 0;
   pointer-events: none;
 }
-[data-theme="dark"] .solution-bg { opacity: 0.08; }
-.solution-section .section-inner { position: relative; z-index: 1; }
 
 /* Contact — warm restaurant ambiance */
 .contact-bg {
