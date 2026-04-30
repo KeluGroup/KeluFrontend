@@ -30,7 +30,8 @@ export default function Home() {
             {t('home.eyebrow')}
           </div>
           <h1 className="hero-heading">
-            {t('home.heading').replace(t('home.headingEm'), '')}{' '}
+            {t('home.heading')}{' '}
+            <span className="hero-heading-span">{t('home.headingSpan')}</span>{' '}
             <em>{t('home.headingEm')}</em>
           </h1>
           <p className="hero-body">{t('home.body')}</p>
@@ -38,10 +39,7 @@ export default function Home() {
             <Link to="/products" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-catalogue')}>
               {t('home.ctaSecond')}
             </Link>
-            <a href="/#process" className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick('hero-process')}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+            <a href="/#solution" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-services')}>
               {t('home.cta')}
             </a>
           </div>

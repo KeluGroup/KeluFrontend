@@ -17,7 +17,7 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     )
     const timer = setTimeout(() => {
-      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
+      document.querySelectorAll('.scroll-animate, .anim-fade, .anim-right').forEach(el => io.observe(el))
     }, 100)
     return () => { clearTimeout(timer); io.disconnect() }
   }, [])
