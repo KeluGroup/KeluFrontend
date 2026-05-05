@@ -25,6 +25,8 @@ import Admin      from './pages/Admin'
 import CookieBanner from './components/CookieBanner'
 import ScrollToHash from './components/ScrollToHash'
 import CursorTrail  from './components/CursorTrail'
+import ValuePillars from './components/ValuePillars'
+import MenuIdeas     from './components/MenuIdeas'
 import { SECTIONS } from './config'
 import { trackPageView } from './utils/analytics'
 
@@ -57,10 +59,11 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
       <SideDots activeSection={activeSection} />
       <main id="main-content">
         <Home />
-
+        <ValuePillars />
         <Solution />
         <Stats />
         <Process />
+        <MenuIdeas />
         <Contact />
       </main>
       <Footer />

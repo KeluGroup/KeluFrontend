@@ -11,17 +11,20 @@
     "about":    "About Us"
   },
   "home": {
-    "eyebrow":   "Latin Food Distribution · Switzerland",
-    "heading":   "Bringing",
-    "headingSpan": "Latin Flavour",
-    "headingEm": "to the Heart of Europe",
-    "body":      "Premium Latin products with fixed deliveries, clear pricing and the service you deserve — for restaurants, delis, caterers and anyone who takes Latin food seriously.",
-    "cta":       "Our Services",
-    "ctaSecond": "Discover Our Products",
-    "scroll":    "Scroll",
-    "heroLabel": "Hero Visual / Media",
-    "imgLabel":  "Image",
-    "contentLabel": "Content"
+    "eyebrow":       "Latin Food Distribution · Switzerland",
+    "heading":       "Bringing",
+    "headingSpan":   "Latin Flavour",
+    "headingEm":     "to the Heart of Europe",
+    "body":          "Premium Latin products with fixed deliveries, clear pricing and the service you deserve — for restaurants, delis, caterers and anyone who takes Latin food seriously.",
+    "cta":           "Our Services",
+    "ctaSecond":     "Discover Our Products",
+    "scroll":        "Scroll",
+    "heroLabel":     "Hero Visual / Media",
+    "imgLabel":      "Image",
+    "contentLabel":  "Content",
+    "trustB2b":      "B2B Distribution",
+    "trustSwiss":    "Swiss Standards",
+    "trustDelivery": "Nationwide Delivery"
   },
   "services": {
     "tag":        "What We Offer",
@@ -68,7 +71,7 @@
     "feat1title":   "Smart Catalogue",
     "feat1text":    "Only high-turnover products you actually sell: arepas, tequeños, empanadas, yuca, plantain, Latin cheeses, sauces and fruit pulps.",
     "feat2title":   "Prices You Earn, Not Negotiate",
-    "feat2text":    "Clear tiered policy: more purchases = more discounts. From -5% to -15% plus exclusive perks.",
+    "feat2text":    "Clear tiered pricing: the more you buy, the more you save. Exclusive volume benefits with no hidden conditions.",
     "feat3title":   "Fixed Routes, Predictable Deliveries",
     "feat3text":    "Zürich divided into 4 profitable zones. You know when we arrive, plan your stock, eliminate stress.",
     "feat4title":   "A Partner Who Speaks Latin Food",
@@ -251,11 +254,46 @@
     }
   },
   "footer": {
+    "tagline": "The Latin flavour Switzerland is waiting for.",
     "copy":    "All rights reserved.",
     "privacy": "Privacy",
     "terms":   "Terms",
     "sitemap": "Sitemap",
     "cookies": "Cookie Policy"
+  },
+  "pillars": {
+    "tag":        "Our Value Proposition",
+    "title":      "Why the Best Choose Kelu",
+    "sub":        "Three reasons why restaurants and caterers across Switzerland trust us.",
+    "onetitle":   "Freshness from the Source",
+    "onetext":    "Products imported directly from Latin America. No middlemen, full authenticity preserved.",
+    "twotitle":   "Authentic & Artisanal",
+    "twotext":    "Traditional recipes passed down through generations. The real flavour that sets your menu apart.",
+    "threetitle": "Reliable Distribution",
+    "threetext":  "Fixed routes across Switzerland, transparent pricing and a team that understands your business."
+  },
+  "products": {
+    "viewMore": "View details"
+  },
+  "productStrip": {
+    "tag":   "Our Catalogue",
+    "title": "Latin Flavour for Your Menu",
+    "sub":   "Arepas, tequeños, empanadas and more — ready to transform your menu.",
+    "cta":   "View full catalogue"
+  },
+  "menuIdeas": {
+    "tag":       "Menu Inspiration",
+    "title":     "How Our Clients Use Them",
+    "sub":       "Tried-and-tested ideas from restaurants and caterers in Zürich.",
+    "onetag":    "Brunch",
+    "onetitle":  "Latin Brunch",
+    "onedesc":   "Filled arepas, pan de bono and passion fruit pulp. A brunch your clients won't forget.",
+    "twotag":    "Bar & Appetiser",
+    "twotitle":  "Irresistible Happy Hour",
+    "twodesc":   "Crispy tequeños, empanadas and artisanal sauces. The perfect appetiser for any bar or event.",
+    "threetag":  "Desserts",
+    "threetitle":"Dessert with Character",
+    "threedesc": "Chocolate tequeños and guanábana pulp. A sweet finish with genuine Latin identity."
   },
   "privacy": {
     "title":   "Privacy Policy",

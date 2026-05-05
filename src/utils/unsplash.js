@@ -12,10 +12,10 @@ export const UNSPLASH_QUERIES = {
 }
 
 export const SERVICE_QUERIES = {
-  one:   'food wholesale distribution warehouse fresh produce restaurant supply',
+  one:   'zurich switzerland outdoor market stalls fresh produce street',
   two:   'elegant catering buffet professional event food service plated',
-  three: 'street food festival outdoor market gastronomy crowd pop-up',
-  four:  'chef restaurant consulting kitchen menu culinary professional',
+  three: 'arepas empanadas latin american food colorful platter colombian venezuelan',
+  four:  'professional chef kitchen cooking white apron restaurant stove',
 }
 
 export async function fetchUnsplashPhoto(query) {

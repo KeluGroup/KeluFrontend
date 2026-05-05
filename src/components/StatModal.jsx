@@ -25,7 +25,7 @@ function ModalContent({ title, subtitle, ariaLabel, children, onClose, panelClas
       <div className={`smap-panel${panelClass ? ` ${panelClass}` : ''}`} onClick={e => e.stopPropagation()}>
 
         <div className="smap-header">
-          <div style={{ flex: 1, textAlign: 'center' }}>
+          <div>
             <h2 className="smap-title">{title}</h2>
             {subtitle && <p className="smap-subtitle">{subtitle}</p>}
           </div>

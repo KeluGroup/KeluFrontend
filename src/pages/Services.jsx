@@ -20,8 +20,8 @@ const ChevronIcon = ({ open }) => (
 const SERVICES = [
   {
     key: 'one',
-    img: '/products/latin-food.jpg',
-    imgPos: 'center 40%',
+    img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=70&auto=format&fit=crop',
+    imgPos: 'center 50%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -32,8 +32,8 @@ const SERVICES = [
   },
   {
     key: 'two',
-    img: '/products/tequenos.jpg',
-    imgPos: 'center 35%',
+    img: '/products/catering-spread.jpg',
+    imgPos: 'center 50%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -45,7 +45,7 @@ const SERVICES = [
   },
   {
     key: 'three',
-    img: '/products/empanadas-pollo.jpg',
+    img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=70&auto=format&fit=crop',
     imgPos: 'center 50%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -60,8 +60,8 @@ const SERVICES = [
   },
   {
     key: 'four',
-    img: '/products/salsas.jpg',
-    imgPos: 'center 45%',
+    img: '/products/consultoria-spread.jpg',
+    imgPos: 'center 40%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

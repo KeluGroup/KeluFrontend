@@ -1,53 +1,29 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import Masonry from 'react-masonry-css'
 
-import { BRAND_NAME } from '../config'
 import ProductModal from '../components/ProductModal'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
 import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
-import { fetchAllProductImages } from '../utils/unsplash'
- 
 
 
 /* ── Products data ── */
 const PRODUCTS = [
-  { key: 'p1', label: 'Arepas',                tilt: '-2deg',   delay: 0,   img: '/products/arepas.png',            featured: true },
-  { key: 'p2', label: 'Tequeños',              tilt:  '1.5deg', delay: 100, img: '/products/tequenos.jpg' },
-  { key: 'p3', label: 'Empanadas',             tilt: '-1deg',   delay: 150, img: '/products/empanada-carne.jpg' },
-  { key: 'p4', label: 'Yuca Sticks',           tilt:  '2deg',   delay: 250, img: '/products/yuca-sticks.webp' },
-  { key: 'p5', label: 'Pan de Bono',           tilt: '-1.5deg', delay: 350, img: '/products/pan-de-bono.jpg' },
-  { key: 'p6', label: 'Tequeños de Chocolate', tilt: '-2deg',   delay: 450, img: '/products/tequenos-chocolate.jpg' },
-  { key: 'p7', label: 'Pulpas de Fruta',       tilt:  '1.5deg', delay: 550, img: '/products/fruit-pulps.png' },
-  { key: 'p8', label: 'Salsas',                tilt: '-1deg',   delay: 650, img: '/products/salsas.jpg' },
+  { key: 'p1', label: 'Arepas',                img: '/products/arepas.png' },
+  { key: 'p2', label: 'Tequeños',              img: '/products/tequenos.jpg' },
+  { key: 'p3', label: 'Empanadas',             img: '/products/empanada-carne.jpg' },
+  { key: 'p4', label: 'Yuca Sticks',           img: '/products/yuca-sticks.webp' },
+  { key: 'p5', label: 'Pan de Bono',           img: '/products/pan-de-bono.jpg' },
+  { key: 'p6', label: 'Tequeños de Chocolate', img: '/products/tequenos-chocolate.jpg' },
+  { key: 'p7', label: 'Pulpas de Fruta',       img: '/products/fruit-pulps.png' },
+  { key: 'p8', label: 'Salsas',                img: '/products/salsas.jpg' },
 ]
-
-const DELAY_TIME = 150
-
-const TIERS = [
-  { key: 'tier1', featured: false },
-  { key: 'tier2', featured: true },
-  { key: 'tier3', featured: false },
-]
-const FEATURE_COUNT = 5
-
-// Masonry breakpoints (cols per width)
-const MASONRY_BREAKPOINTS = {
-  default: 4,  // desktop ancho
-  1200: 3,     // desktop normal
-  700: 2,      // tablet
-  0: 1,        // móvil
-}
 
 
 /* ── Product card ── */
-function ProductCard({ product, visible, onClick }) {
-  const { t } = useTranslation()
-  const [loaded, setLoaded] = useState(false)
-
+function ProductCard({ product, onClick }) {
   const handleClick = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const originX = (rect.left + rect.width / 2) - window.innerWidth / 2
@@ -56,29 +32,29 @@ function ProductCard({ product, visible, onClick }) {
     trackProductView(product.key, product.label)
   }
 
+  const { t } = useTranslation()
+
   return (
     <button
       id={`product-${product.key}`}
-      className={`product-tile ${visible ? 'product-tile--visible' : ''}${product.featured ? ' product-tile--featured' : ''}`}
-      style={{ '--fall-delay': `${product.delay}ms` }}
+      className="product-card-btn"
       onClick={handleClick}
       aria-label={product.label}
     >
-      {!loaded && (
-        <div className="product-photo-skeleton">
-          <div className="skeleton-shimmer" />
+      <div className="product-card-img-wrap">
+        <img src={product.img} alt={product.label} className="product-card-img" loading="lazy" />
+        <div className="product-card-overlay" aria-hidden="true" />
+        <div className="product-card-footer">
+          <span className="product-card-label">{product.label}</span>
+          <span className="product-card-cta">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            {t('products.viewMore')}
+          </span>
         </div>
-      )}
-      <img
-        src={product.img}
-        alt={product.label}
-        className={`product-tile-img ${loaded ? 'product-tile-img--loaded' : ''}`}
-        onLoad={() => setLoaded(true)}
-        loading="lazy"
-      />
-      <span className="product-tile-label product-tile-label--always">
-        {product.label}
-      </span>
+      </div>
     </button>
   )
 }
@@ -95,15 +71,6 @@ export default function Benefits({
 }) {
   const { t } = useTranslation()
   const [activeProduct, setActiveProduct] = useState(null)
-  const [visible, setVisible] = useState(false)
-  const [unsplashImgs, setUnsplashImgs] = useState({})
-  const visualRef = useRef(null)
-
-  useEffect(() => {
-    fetchAllProductImages().then(imgs => {
-      if (Object.keys(imgs).length > 0) setUnsplashImgs(imgs)
-    })
-  }, [])
 
   // scroll-animate observer
   useEffect(() => {
@@ -153,11 +120,6 @@ export default function Benefits({
     }
   }, [])
 
-  // product fall animation — trigger immediately on mount
-  useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 80)
-    return () => clearTimeout(t)
-  }, [])
 
   return (
     <>
@@ -183,31 +145,14 @@ export default function Benefits({
               <p className="section-sub">{t('solution.subtitle')}</p>
             </div>
 
-            <p className="products-hint" >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
-                style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }}>
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
-                <line x1="12" y1="16" x2="12.01" y2="16"/>
-              </svg>
-              Tap a product to learn more
-            </p>
-
-            <div ref={visualRef}>
-              <Masonry
-                breakpointCols={MASONRY_BREAKPOINTS}
-                className="products-masonry"
-                columnClassName="products-masonry-col"
-              >
-                {PRODUCTS.map(p => (
-                  <ProductCard
-                    key={p.key}
-                    product={{ ...p, img: unsplashImgs[p.key] || p.img }}
-                    visible={visible}
-                    onClick={setActiveProduct}
-                  />
-                ))}
-              </Masonry>
+            <div className="product-strip-grid scroll-animate">
+              {PRODUCTS.map(p => (
+                <ProductCard
+                  key={p.key}
+                  product={p}
+                  onClick={setActiveProduct}
+                />
+              ))}
             </div>
 
           </div>
