@@ -140,7 +140,7 @@ export default function Benefits({
               <p className="section-sub">{t('solution.subtitle')}</p>
             </div>
 
-            <p className="products-hint" >
+            <p className="products-hint scroll-animate" >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                 strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
                 style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }}>
