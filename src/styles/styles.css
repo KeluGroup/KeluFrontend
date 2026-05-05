@@ -2100,6 +2100,13 @@ a.btn-ph {
   }
   .team-story-photo { order: -1; }
   .team-photo-placeholder { aspect-ratio: 3/2; }
+
+  .hero-heading {
+    font-size: clamp(1.5rem, 5.5vw, 2.25rem);  /* smaller max — was too large */
+    line-height: 1.2;
+    overflow-wrap: break-word;   /* break long compound words if needed */
+    word-break: break-word;
+  }
 }
 
 /* =====================
