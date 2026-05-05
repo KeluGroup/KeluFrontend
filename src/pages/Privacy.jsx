@@ -47,8 +47,6 @@ export default function Terms({ theme, onToggleTheme, menuOpen, onToggleMenu, on
               <Link to="/cookies" className="policy-link">{t('footer.cookies')}</Link>.
             </p>
             <h3>{t('privacy.s4title')}</h3><p>{t('privacy.s4body')}</p>
-            <h3>{t('privacy.s5title')}</h3>
-            <p>{t('privacy.s5body')} <Link to="/contact" className="policy-link">{t('privacy.s5link')}</Link>.</p>
           </div>
         </div>
       </main>
