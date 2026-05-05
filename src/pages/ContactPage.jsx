@@ -7,13 +7,16 @@ import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
 import { trackFormSubmit, trackCTAClick } from '../utils/analytics'
 
+
 /* ── Form config ── */
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 const API_KEY  = import.meta.env.VITE_API_KEY  ?? ''
 const INITIAL  = { name: '', email: '', company: '', service: '', message: '' }
-const INITIAL_ERRORS = { name: '', email: '' }
+const INITIAL_ERRORS = { name: '', email: '', service: '', message: '' }
+const VALID_SERVICES = ['B2B', 'Catering', 'Events', 'Consulting']
 
-function validateName(v)  {
+
+function validateName(v) {
   if (!v.trim()) return 'Name is required'
   if (v.trim().length < 3) return 'At least 3 characters'
   if (!/^[\p{L}\s'\-\.]+$/u.test(v.trim())) return 'Invalid characters'
@@ -24,6 +27,16 @@ function validateEmail(v) {
   if (!/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,10}$/.test(v.trim())) return 'Enter a valid email'
   return ''
 }
+function validateService(v) {
+  if (!v || !VALID_SERVICES.includes(v)) return 'Please select a service'
+  return ''
+}
+function validateMessage(v) {
+  if (!v.trim()) return 'Message is required'
+  if (v.trim().length < 10) return 'At least 10 characters'
+  return ''
+}
+
 
 /* ── Social icons ── */
 const InstagramIcon = () => (
@@ -39,25 +52,15 @@ const TikTokIcon = () => (
   </svg>
 )
 
+
 export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, scrolled }) {
-  const { t, i18n }       = useTranslation()
+  const { t }             = useTranslation()
   const [fields, setFields]   = useState(INITIAL)
   const [errors, setErrors]   = useState(INITIAL_ERRORS)
-  const [touched, setTouched] = useState({ name: false, email: false })
+  const [touched, setTouched] = useState({ name: false, email: false, service: false, message: false })
   const [status, setStatus]   = useState('idle')
   const [errMsg, setErrMsg]   = useState('')
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    )
-    const timer = setTimeout(() => {
-      document.querySelectorAll('.scroll-animate').forEach(el => io.observe(el))
-    }, 100)
-    return () => { clearTimeout(timer); io.disconnect() }
-  }, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -70,26 +73,36 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
     }, 100)
     return () => { clearTimeout(timer); io.disconnect() }
   }, [])
+
 
   function handleChange(e) {
     const { name, value } = e.target
     setFields(p => ({ ...p, [name]: value }))
-    if (name === 'name'  && touched.name)  setErrors(p => ({ ...p, name:  validateName(value) }))
-    if (name === 'email' && touched.email) setErrors(p => ({ ...p, email: validateEmail(value) }))
+    if (name === 'name'    && touched.name)    setErrors(p => ({ ...p, name:    validateName(value) }))
+    if (name === 'email'   && touched.email)   setErrors(p => ({ ...p, email:   validateEmail(value) }))
+    if (name === 'service')                    setErrors(p => ({ ...p, service: validateService(value) }))
+    if (name === 'message' && touched.message) setErrors(p => ({ ...p, message: validateMessage(value) }))
   }
+
   function handleBlur(e) {
     const { name, value } = e.target
     setTouched(p => ({ ...p, [name]: true }))
-    if (name === 'name')  setErrors(p => ({ ...p, name:  validateName(value) }))
-    if (name === 'email') setErrors(p => ({ ...p, email: validateEmail(value) }))
+    if (name === 'name')    setErrors(p => ({ ...p, name:    validateName(value) }))
+    if (name === 'email')   setErrors(p => ({ ...p, email:   validateEmail(value) }))
+    if (name === 'service') setErrors(p => ({ ...p, service: validateService(value) }))
+    if (name === 'message') setErrors(p => ({ ...p, message: validateMessage(value) }))
   }
+
   function validate() {
     const ne = validateName(fields.name)
     const ee = validateEmail(fields.email)
-    setErrors({ name: ne, email: ee })
-    setTouched({ name: true, email: true })
-    return !ne && !ee
+    const se = validateService(fields.service)
+    const me = validateMessage(fields.message)
+    setErrors({ name: ne, email: ee, service: se, message: me })
+    setTouched({ name: true, email: true, service: true, message: true })
+    return !ne && !ee && !se && !me
   }
+
   async function handleSubmit(e) {
     e.preventDefault()
     if (!validate()) return
@@ -104,13 +117,14 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
       trackFormSubmit(true)
       setStatus('success')
       setFields(INITIAL)
-      setTouched({ name: false, email: false })
+      setTouched({ name: false, email: false, service: false, message: false })
       setErrors(INITIAL_ERRORS)
     } catch (err) {
       trackFormSubmit(false)
       setStatus('error'); setErrMsg(err.message)
     }
   }
+
 
   return (
     <>
@@ -124,12 +138,10 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
         activeSection=""
         scrolled={scrolled}
         isAboutPage
-        
       />
 
       <main className="contact-page-main">
 
-        {/* Atmospheric background */}
         <div className="contact-page-bg" aria-hidden="true" />
 
         <div className="contact-page-inner">
@@ -245,8 +257,8 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                     <label className="form-label" htmlFor="cp-service">{t('contact.form.service')}</label>
                     <select
                       id="cp-service" name="service"
-                      className="form-input form-select"
-                      value={fields.service} onChange={handleChange}
+                      className={`form-input form-select${errors.service && touched.service ? ' form-input--error' : ''}`}
+                      value={fields.service} onChange={handleChange} onBlur={handleBlur}
                     >
                       <option value="">{t('contact.form.servicePlaceholder')}</option>
                       <option value="B2B">{t('contact.form.serviceOne')}</option>
@@ -254,17 +266,19 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                       <option value="Events">{t('contact.form.serviceThree')}</option>
                       <option value="Consulting">{t('contact.form.serviceFour')}</option>
                     </select>
+                    {errors.service && touched.service && <span className="form-error">{errors.service}</span>}
                   </div>
 
                   <div className="form-field">
                     <label className="form-label" htmlFor="cp-message">{t('contact.form.message')}</label>
                     <textarea
                       id="cp-message" name="message"
-                      className="form-input form-textarea"
-                      value={fields.message} onChange={handleChange}
+                      className={`form-input form-textarea${errors.message && touched.message ? ' form-input--error' : ''}`}
+                      value={fields.message} onChange={handleChange} onBlur={handleBlur}
                       rows={5}
                       placeholder={t('contact.form.messagePlaceholder')}
                     />
+                    {errors.message && touched.message && <span className="form-error">{errors.message}</span>}
                   </div>
 
                   {status === 'success' && (
