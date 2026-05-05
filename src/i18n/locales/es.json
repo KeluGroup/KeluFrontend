@@ -80,8 +80,8 @@
     "p4": "Yuca frita",
     "p5": "Plátano maduro",
     "p6": "Queso latino",
-    "p7": "Salsas base",
-    "p8": "Pulpa de fruta",
+    "p7": "Pulpa de fruta", 
+    "p8": "Salsas base",
     "modalHistory": "Tradición e Historia",
     "modalPairing": "Cómo servirlo",
     "modalClose": "Cerrar",
@@ -101,10 +101,10 @@
     "modal_p5_pairing": "Arroz con caraotas, pabellón criollo, o con crema agria y queso blanco desmenuzado.",
     "modal_p6_history": "Los quesos blancos como el queso blanco y el queso de mano tienen raíces en la colonización española fusionada con tradiciones indígenas y africanas. Hoy son un ingrediente esencial en la gastronomía latinoamericana.",
     "modal_p6_pairing": "Fundido dentro de arepas, frito como queso frito, o desmenuzado sobre sopas, caraotas y ensaladas frescas.",
-    "modal_p7_history": "Las salsas latinoamericanas — guasacaca, ají, hogao — son el alma de la cocina. Transmitidas de generación en generación como secretos familiares, transforman ingredientes simples en platos memorables.",
-    "modal_p7_pairing": "Acompañante universal: carnes a la plancha, arepas, empanadas, yuca, arroz — no hay nada que no mejore con una buena salsa latina.",
-    "modal_p8_history": "La extraordinaria biodiversidad de Latinoamérica nos da maracuyá, guanábana, lulo y tamarindo. Las pulpas congeladas preservan todo su sabor tropical auténtico.",
-    "modal_p8_pairing": "Jugos naturales, smoothies, cócteles, postres y bases para salsas y marinadas. El sabor del trópico en cada preparación."
+    "modal_p8_history": "Las salsas latinoamericanas — guasacaca, ají, hogao — son el alma de la cocina. Transmitidas de generación en generación como secretos familiares, transforman ingredientes simples en platos memorables.",
+    "modal_p8_pairing": "Acompañante universal: carnes a la plancha, arepas, empanadas, yuca, arroz — no hay nada que no mejore con una buena salsa latina.",
+    "modal_p7_history": "La extraordinaria biodiversidad de Latinoamérica nos da maracuyá, guanábana, lulo y tamarindo. Las pulpas congeladas preservan todo su sabor tropical auténtico.",
+    "modal_p7_pairing": "Jugos naturales, smoothies, cócteles, postres y bases para salsas y marinadas. El sabor del trópico en cada preparación."
   },
   "pricing": {
     "tag":      "Política de Precios Clara",

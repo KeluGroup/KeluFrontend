@@ -21,8 +21,10 @@ const PRODUCTS = [
   { key: 'p5', label: 'Pan de Bono',           tilt: '-1.5deg', delay: 350, img: '/products/pan-de-bono.jpg' },
   { key: 'p6', label: 'Tequeños de Chocolate', tilt: '-2deg',   delay: 450, img: '/products/tequenos-chocolate.jpg' },
   { key: 'p7', label: 'Pulpas de Fruta',       tilt:  '1.5deg', delay: 550, img: '/products/fruit-pulps.png' },
-  { key: 'p8', label: 'Salsas',                tilt: '-1deg',   delay: 650, img: '/products/empanadas-pollo.jpg' },
+  { key: 'p8', label: 'Salsas',                tilt: '-1deg',   delay: 650, img: '/products/salsas.jpg' },
 ]
+
+const DELAY_TIME = 150
 
 const TIERS = [
   { key: 'tier1', featured: false },
@@ -50,8 +52,7 @@ function ProductCard({ product, visible, onClick }) {
       id={`product-${product.key}`}
       className={`product-tile ${visible ? 'product-tile--visible' : ''}${product.featured ? ' product-tile--featured' : ''}`}
       style={{
-        '--fall-delay': `${product.delay}ms`,
-        '--tile-tilt':  product.tilt,
+        '--fall-delay': `${DELAY_TIME}ms`
       }}
       onClick={() => { onClick(product); trackProductView(product.key, product.label) }}
       aria-label={product.label}

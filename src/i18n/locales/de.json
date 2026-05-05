@@ -62,8 +62,8 @@
     "p4": "Frittierte Yuca",
     "p5": "Reife Kochbanane",
     "p6": "Lateinamerikanischer Käse",
-    "p7": "Basissaucen",
-    "p8": "Fruchtpulpe",
+    "p7": "Fruchtpulpe", 
+    "p8": "Basissaucen",
     "modalHistory": "Tradition & Geschichte",
     "modalPairing": "So wird es serviert",
     "modalClose": "Schließen",
@@ -80,10 +80,10 @@
     "modal_p5_pairing": "Schwarze Bohnen und Reis, Pabellón Criollo oder mit einem Klecks Sauerrahm und zerkrümeltem Weißkäse.",
     "modal_p6_history": "Weißkäse wie Queso Blanco und Queso de Mano gehen auf den spanischen Kolonialismus zurück, vermischt mit indigenen und afrikanischen Traditionen. Heute ein unverzichtbarer Bestandteil der lateinamerikanischen Gastronomie.",
     "modal_p6_pairing": "Geschmolzen in Arepas, frittiert als Queso Frito oder zerkrümelt über Suppen, Bohnen und frische Salate.",
-    "modal_p7_history": "Lateinamerikanische Saucen — Guasacaca, Ají, Hogao — sind die Seele der Küche. Als Familiengeheimnisse von Generation zu Generation weitergegeben, verwandeln sie einfache Zutaten in unvergessliche Gerichte.",
-    "modal_p7_pairing": "Universelle Begleitung: Grillgerichte, Arepas, Empanadas, Yuca, Reis — es gibt nichts, das sich mit einer guten lateinamerikanischen Sauce nicht verbessern lässt.",
-    "modal_p8_history": "Lateinamerikas außergewöhnliche Artenvielfalt liefert Maracuyá (Passionsfrucht), Guanábana (Stachelannone), Lulo und Tamarinde. Schockgefrorene Pulpen bewahren ihren authentischen tropischen Geschmack.",
-    "modal_p8_pairing": "Natürliche Säfte, Smoothies, Cocktails, Desserts und Saucen- und Marinadenbases. Der Geschmack der Tropen in jeder Zubereitung."
+    "modal_p8_history": "Lateinamerikanische Saucen — Guasacaca, Ají, Hogao — sind die Seele der Küche. Als Familiengeheimnisse von Generation zu Generation weitergegeben, verwandeln sie einfache Zutaten in unvergessliche Gerichte.",
+    "modal_p8_pairing": "Universelle Begleitung: Grillgerichte, Arepas, Empanadas, Yuca, Reis — es gibt nichts, das sich mit einer guten lateinamerikanischen Sauce nicht verbessern lässt.",
+    "modal_p7_history": "Lateinamerikas außergewöhnliche Artenvielfalt liefert Maracuyá (Passionsfrucht), Guanábana (Stachelannone), Lulo und Tamarinde. Schockgefrorene Pulpen bewahren ihren authentischen tropischen Geschmack.",
+    "modal_p7_pairing": "Natürliche Säfte, Smoothies, Cocktails, Desserts und Saucen- und Marinadenbases. Der Geschmack der Tropen in jeder Zubereitung."
   },
   "pricing": {
     "tag":      "Klare Preispolitik",
