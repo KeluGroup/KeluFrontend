@@ -40,6 +40,17 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:68px}
 body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg)}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#home, .home {
+  overflow: hidden; /* already in your CSS but double-check it's applied */
+  max-width: 100vw;
+}
+
 img,picture,svg{display:block;max-width:100%}
 h1,h2,h3{text-wrap:balance;line-height:1.1}
 p,li{text-wrap:pretty;max-width:72ch}
@@ -7243,6 +7254,8 @@ a.btn-ph {
   }
 }
 
+
+
 @media (max-width: 768px) {
   .services-section--header .section-tag {
     margin-top: var(--space-6);   /* ~24px gap from navbar */
@@ -7270,10 +7283,7 @@ a.btn-ph {
     background: var(--color-surface-2);
   }
 
-  /* Prevent body bleed-through while scroll-animate elements are invisible */
-  body:has(.about-page-main) {
-    padding-bottom: 0 !important;
-  }
+
 }
 
 
