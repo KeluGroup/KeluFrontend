@@ -2695,10 +2695,10 @@ a.btn-ph {
 }
 
 
+
 @media (max-width: 768px) {
   .services-page-main,
-  .contact-page-main,
-  .about-page-main {
+  .contact-page-main {
     padding-top: var(--navbar-height, 24px);
   }
 }

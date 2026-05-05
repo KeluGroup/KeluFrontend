@@ -36,7 +36,7 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
         isAboutPage
       />
       
-      <main id="main-content" className="about-page-main">
+      <main id="main-content">
         <Team />
       </main>
       <Footer />
