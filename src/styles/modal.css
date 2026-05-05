@@ -89,6 +89,28 @@
   .modal-hero { height: 200px; }
 }
 
+@media (min-width: 900px) {
+  .modal-card {
+    max-width: 760px;
+    flex-direction: row;
+    max-height: 82dvh;
+  }
+  .modal-hero {
+    width: 340px;
+    min-width: 340px;
+    height: 100%;
+  }
+  .modal-product-name {
+    font-size: var(--text-2xl);
+    padding: 0 1.5rem;
+  }
+  .modal-content {
+    padding: 2rem 2rem 2rem;
+    justify-content: center;
+  }
+  .modal-body-text { font-size: 0.9375rem; line-height: 1.7; }
+}
+
 .modal-hero-img {
   position: absolute;
   top: 0;
