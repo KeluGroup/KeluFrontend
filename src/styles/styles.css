@@ -2694,6 +2694,18 @@ a.btn-ph {
   }
 }
 
+
+@media (max-width: 768px) {
+  main,
+  .contact-page-main,
+  .about-page-main,
+  .home-main,
+  [class*="-page-main"],
+  [class*="-main"] {
+    padding-top: var(--navbar-height, 24px);
+  }
+}
+
 /* =====================
    HERO BADGE
    ===================== */
