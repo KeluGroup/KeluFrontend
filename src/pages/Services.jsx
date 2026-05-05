@@ -157,43 +157,39 @@ export default function Services({
                 return (
                   <article
                     key={s.key}
-                    className={`service-card${isOpen ? ' service-card--open' : ''}`}
+                    className={`service-tile${isOpen ? ' service-tile--open' : ''}`}
                     style={{ '--card-delay': `${i * 90}ms` }}
                   >
-                    {/* ── Image header ── */}
-                    <div className="service-card-img-wrap">
+                    {/* ── Image — same visual as product-tile ── */}
+                    <button
+                      className="service-tile-top"
+                      onClick={() => toggle(s.key)}
+                      aria-expanded={isOpen}
+                      aria-label={t(`services.${s.key}`)}
+                    >
                       <img
                         src={cardImgs[s.key] || s.img}
                         alt=""
                         aria-hidden="true"
-                        className="service-card-img"
+                        className="service-tile-img"
                         style={{ objectPosition: s.imgPos }}
                         loading="lazy"
                       />
-                      <div className="service-card-img-overlay" aria-hidden="true" />
-                      {/* Icon floats over image bottom-left */}
-                      <div className="service-card-icon-badge">{s.icon}</div>
-                    </div>
+                      <div className="service-tile-overlay" aria-hidden="true" />
+                      <div className="service-tile-label">
+                        <span className="service-tile-icon" aria-hidden="true">{s.icon}</span>
+                        <h2 className="service-tile-name">{t(`services.${s.key}`)}</h2>
+                      </div>
+                    </button>
 
-                    {/* ── Body ── */}
-                    <div className="service-card-body">
-                      <h2 className="service-card-title">{t(`services.${s.key}`)}</h2>
-                      <p className="service-card-desc">{t(`services.${s.key}Desc`)}</p>
-
-                      <button
-                        className="service-card-toggle"
-                        onClick={() => toggle(s.key)}
-                        aria-expanded={isOpen}
-                      >
-                        <span>{t(isOpen ? 'services.collapse' : 'services.expand')}</span>
-                        <ChevronIcon open={isOpen} />
-                      </button>
-
-                      <div
-                        className={`service-card-detail${isOpen ? ' service-card-detail--open' : ''}`}
-                        aria-hidden={!isOpen}
-                      >
-                        <div className="service-card-detail-inner">
+                    {/* ── Expandable body ── */}
+                    <div
+                      className={`service-tile-body${isOpen ? ' service-tile-body--open' : ''}`}
+                      aria-hidden={!isOpen}
+                    >
+                      <div className="service-tile-body-inner">
+                        <p className="service-tile-desc">{t(`services.${s.key}Desc`)}</p>
+                        <div className="service-tile-details">
                           {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
                             <div key={idx} className="service-detail-item">
                               <span className="service-detail-dot" aria-hidden="true" />
