@@ -7272,7 +7272,7 @@ a.btn-ph {
 
   /* Prevent body bleed-through while scroll-animate elements are invisible */
   body:has(.about-page-main) {
-    background-color: var(--color-surface-2);
+    padding-bottom: 0 !important;
   }
 }
 
