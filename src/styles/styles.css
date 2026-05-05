@@ -769,6 +769,23 @@ main{padding-top:0}
 @media(max-width:768px){.form-row-2{grid-template-columns:1fr}}
 @media(max-width:480px){.hero-heading{max-width:100%}.cta-row{flex-direction:column}}
 
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: clamp(2rem, 7.5vw, 2.5rem);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .hero-body {
+    font-size: 0.9rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+}
+
 /* CTA anchor button — reset link styles so it looks like the btn-ph */
 a.btn-ph {
   text-decoration: none;
@@ -2699,6 +2716,19 @@ a.btn-ph {
   animation: badgeFadeIn 0.8s ease-out both, badgeShimmer 4s ease-in-out 1s infinite;
   position: relative;
   overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .hero-badge {
+    font-size: 0.65rem;           /* smaller text */
+    padding: 0.3rem 0.75rem;      /* tighter padding */
+    letter-spacing: 0.05em;       /* slightly tighter tracking */
+    gap: 0.3rem;
+    margin-bottom: var(--space-4);
+    max-width: 100%;
+    white-space: nowrap;          /* keep on one line */
+  }
 }
 
 /* shimmer sweep across the badge */
