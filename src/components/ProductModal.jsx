@@ -1,36 +1,48 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import '../styles/modal.css'
 
 export default function ProductModal({ product, onClose }) {
   const { t } = useTranslation()
+  const [closing, setClosing] = useState(false)
+
+  const handleClose = () => {
+    setClosing(true)
+    setTimeout(onClose, 260)
+  }
 
   useEffect(() => {
-    const handleEsc = (e) => { if (e.key === 'Escape') onClose() }
+    const handleEsc = (e) => { if (e.key === 'Escape') handleClose() }
     document.addEventListener('keydown', handleEsc)
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', handleEsc)
       document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [])
 
   if (!product) return null
 
-  // Translation key helpers
   const name    = t(`solution.${product.key}`, { defaultValue: product.label })
   const history = t(`solution.modal_${product.key}_history`, { defaultValue: '' })
   const pairing = t(`solution.modal_${product.key}_pairing`, { defaultValue: '' })
 
+  const ox = product.originX ?? 0
+  const oy = product.originY ?? 0
+
   return (
     <div
-      className="modal-overlay"
+      className={`modal-overlay${closing ? ' modal-overlay--closing' : ''}`}
       role="dialog"
       aria-modal="true"
       aria-label={name}
-      onClick={onClose}
+      onClick={handleClose}
     >
-      <div className="modal-card" onClick={e => e.stopPropagation()}>
+      <div
+        className={`modal-card${closing ? ' modal-card--closing' : ''}`}
+        style={{ '--origin-x': `${ox}px`, '--origin-y': `${oy}px` }}
+        onClick={e => e.stopPropagation()}
+      >
 
         {/* Hero: full-width image + gradient + title */}
         <div className="modal-hero">
@@ -46,7 +58,7 @@ export default function ProductModal({ product, onClose }) {
         {/* Close button */}
         <button
           className="modal-close-btn"
-          onClick={onClose}
+          onClick={handleClose}
           aria-label={t('solution.modalClose', { defaultValue: 'Close' })}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"

@@ -9,6 +9,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
 import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
+import { fetchAllProductImages } from '../utils/unsplash'
  
 
 
@@ -47,14 +48,20 @@ function ProductCard({ product, visible, onClick }) {
   const { t } = useTranslation()
   const [loaded, setLoaded] = useState(false)
 
+  const handleClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const originX = (rect.left + rect.width / 2) - window.innerWidth / 2
+    const originY = (rect.top + rect.height / 2) - window.innerHeight / 2
+    onClick({ ...product, originX, originY })
+    trackProductView(product.key, product.label)
+  }
+
   return (
     <button
       id={`product-${product.key}`}
       className={`product-tile ${visible ? 'product-tile--visible' : ''}${product.featured ? ' product-tile--featured' : ''}`}
-      style={{
-        '--fall-delay': `${DELAY_TIME}ms`
-      }}
-      onClick={() => { onClick(product); trackProductView(product.key, product.label) }}
+      style={{ '--fall-delay': `${product.delay}ms` }}
+      onClick={handleClick}
       aria-label={product.label}
     >
       {!loaded && (
@@ -89,7 +96,14 @@ export default function Benefits({
   const { t } = useTranslation()
   const [activeProduct, setActiveProduct] = useState(null)
   const [visible, setVisible] = useState(false)
+  const [unsplashImgs, setUnsplashImgs] = useState({})
   const visualRef = useRef(null)
+
+  useEffect(() => {
+    fetchAllProductImages().then(imgs => {
+      if (Object.keys(imgs).length > 0) setUnsplashImgs(imgs)
+    })
+  }, [])
 
   // scroll-animate observer
   useEffect(() => {
@@ -139,21 +153,10 @@ export default function Benefits({
     }
   }, [])
 
-  // product fall animation
+  // product fall animation — trigger immediately on mount
   useEffect(() => {
-    const el = visualRef.current
-    if (!el) return
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          io.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-    io.observe(el)
-    return () => io.disconnect()
+    const t = setTimeout(() => setVisible(true), 80)
+    return () => clearTimeout(t)
   }, [])
 
   return (
@@ -197,7 +200,12 @@ export default function Benefits({
                 columnClassName="products-masonry-col"
               >
                 {PRODUCTS.map(p => (
-                  <ProductCard key={p.key} product={p} visible={visible} onClick={setActiveProduct} />
+                  <ProductCard
+                    key={p.key}
+                    product={{ ...p, img: unsplashImgs[p.key] || p.img }}
+                    visible={visible}
+                    onClick={setActiveProduct}
+                  />
                 ))}
               </Masonry>
             </div>

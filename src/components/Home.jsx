@@ -42,9 +42,9 @@ export default function Home() {
             <Link to="/products" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-catalogue')}>
               {t('home.ctaSecond')}
             </Link>
-            <a href="/#solution" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-services')}>
+            <Link to="/services" className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-services')}>
               {t('home.cta')}
-            </a>
+            </Link>
           </div>
 
         </div>

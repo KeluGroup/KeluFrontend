@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useRef, useState, lazy, Suspense } from 'react'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const SwissMapModal = lazy(() => import('./SwissMapModal'))
 const StatModal     = lazy(() => import('./StatModal'))
@@ -163,14 +163,27 @@ export default function Stats() {
                 ))}
               </ul>
             ) : (
-              <ul className="smap-stat-list">
-                {[1, 2, 3].map(n => (
-                  <li key={n} className="smap-stat-list-item">
-                    <span className="smap-stat-dot" aria-hidden="true" />
-                    {t(`stats.${POPUP_STAT[openModal]}popup${n}`)}
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className="smap-stat-list">
+                  {[1, 2, 3].map(n => (
+                    <li key={n} className="smap-stat-list-item">
+                      <span className="smap-stat-dot" aria-hidden="true" />
+                      {t(`stats.${POPUP_STAT[openModal]}popup${n}`)}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/services"
+                  className="smap-stat-services-link"
+                  onClick={() => setOpenModal(null)}
+                >
+                  {t('stats.servicesModalCta')}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </Link>
+              </>
             )}
           </StatModal>
         </Suspense>

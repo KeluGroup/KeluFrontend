@@ -11,6 +11,7 @@ import CtaBanner from './components/CtaBanner'
 import Contact   from './components/Contact'
 import About       from './pages/About'
 import Products    from './pages/Products'
+import Services    from './pages/Services'
 import ContactPage from './pages/ContactPage'
 import Footer    from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -28,9 +29,10 @@ import { SECTIONS } from './config'
 import { trackPageView } from './utils/analytics'
 
 const PAGE_TITLES = {
-  '/':        'KELU GmbH – Proveedor Latino B2B en Suiza | Arepas, Tequeños, Empanadas Zúrich',
-  '/about':   'About Us | Kelu Group',
-  '/products':'Products | Kelu Group',
+  '/':         'KELU GmbH – Proveedor Latino B2B en Suiza | Arepas, Tequeños, Empanadas Zúrich',
+  '/about':    'About Us | Kelu Group',
+  '/products': 'Products | Kelu Group',
+  '/services': 'Services | Kelu Group',
   '/contact': 'Contact | Kelu Group',
   '/privacy': 'Privacy Policy | Kelu Group',
   '/terms':   'Terms & Conditions | Kelu Group',
@@ -180,6 +182,7 @@ export default function App() {
         <Route path="/"         element={<MainLayout    {...sharedProps} />} />
         <Route path="/about"    element={<About         {...sharedProps} />} />
         <Route path="/products" element={<Products      {...sharedProps} />} />
+        <Route path="/services" element={<Services      {...sharedProps} />} />
         <Route path="/contact"  element={<ContactPage   {...sharedProps} />} />
         <Route path="/faq"      element={<FAQ           {...sharedProps} />} />
         <Route path="/privacy"  element={<Privacy       {...sharedProps} />} />
