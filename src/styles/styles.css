@@ -2696,12 +2696,9 @@ a.btn-ph {
 
 
 @media (max-width: 768px) {
-  main,
+  .services-page-main,
   .contact-page-main,
-  .about-page-main,
-  .home-main,
-  [class*="-page-main"],
-  [class*="-main"] {
+  .about-page-main {
     padding-top: var(--navbar-height, 24px);
   }
 }
@@ -7233,4 +7230,34 @@ a.btn-ph {
 
 .services-cta-btn svg { transition: transform var(--transition-interactive); }
 .services-cta-btn:hover svg { transform: translateX(4px); }
+
+@media (max-width: 768px) {
+  .nav-float-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-float {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section--header .section-tag {
+    margin-top: var(--space-6);   /* ~24px gap from navbar */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Services — push first section down */
+  .services-section--header {
+    padding-top: var(--space-8);
+  }
+
+  /* About — push team section down */
+  .team-section {
+    padding-top: var(--space-8);
+  }
+}
 

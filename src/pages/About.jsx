@@ -35,10 +35,9 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
         scrolled={scrolled}
         isAboutPage
       />
-      <main id="main-content">
+      
+      <main id="main-content" className="about-page-main">
         <Team />
-
-        {/* Placeholder for future sections — values, press, milestones, etc. */}
       </main>
       <Footer />
     </>
