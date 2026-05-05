@@ -406,6 +406,10 @@
   "a8": "Nuestros precios por niveles premian la constancia: 500–2.499 CHF/mes = −5%, 2.500–4.999 CHF/mes = −10%, 5.000+ CHF/mes = −15%, más beneficios exclusivos para clientes estratégicos.",
   "contactCta": "¿Tienes más preguntas?",
   "contactBtn": "Háblanos"
+},
+
+"recepts":{
+  "ctaBtn" : "ideas de recetas"
 }
 
 }

@@ -397,6 +397,10 @@
   "a8": "Unsere Staffelpreise belohnen Treue: 500–2.499 CHF/Monat = −5%, 2.500–4.999 CHF/Monat = −10%, 5.000+ CHF/Monat = −15%, plus exklusive Vorteile für strategische Kunden.",
   "contactCta": "Noch Fragen?",
   "contactBtn": "Schreiben Sie uns"
+},
+
+"recepts":{
+  "ctaBtn" : "rezeptideen entdecken"
 }
 
 }

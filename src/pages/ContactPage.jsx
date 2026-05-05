@@ -249,10 +249,10 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                       value={fields.service} onChange={handleChange}
                     >
                       <option value="">{t('contact.form.servicePlaceholder')}</option>
-                      <option value="b2b">{t('contact.form.serviceOne')}</option>
-                      <option value="catering">{t('contact.form.serviceTwo')}</option>
-                      <option value="eventos">{t('contact.form.serviceThree')}</option>
-                      <option value="consultoria">{t('contact.form.serviceFour')}</option>
+                      <option value="B2B">{t('contact.form.serviceOne')}</option>
+                      <option value="Catering">{t('contact.form.serviceTwo')}</option>
+                      <option value="Events">{t('contact.form.serviceThree')}</option>
+                      <option value="Consulting">{t('contact.form.serviceFour')}</option>
                     </select>
                   </div>
 
