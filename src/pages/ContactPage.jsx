@@ -10,7 +10,7 @@ import { trackFormSubmit, trackCTAClick } from '../utils/analytics'
 /* ── Form config ── */
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 const API_KEY  = import.meta.env.VITE_API_KEY  ?? ''
-const INITIAL  = { name: '', email: '', company: '', message: '' }
+const INITIAL  = { name: '', email: '', company: '', service: '', message: '' }
 const INITIAL_ERRORS = { name: '', email: '' }
 
 function validateName(v)  {
@@ -98,7 +98,7 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
       const res = await fetch(`${API_BASE}/api/formsubmit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
-        body: JSON.stringify({ ...fields, company: fields.company || null }),
+        body: JSON.stringify({ ...fields, company: fields.company || null, service: fields.service || null }),
       })
       if (!res.ok) throw new Error(`Server error: ${res.status}`)
       trackFormSubmit(true)
@@ -239,6 +239,21 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                       value={fields.company} onChange={handleChange}
                       placeholder={t('contact.form.companyPlaceholder')}
                     />
+                  </div>
+
+                  <div className="form-field">
+                    <label className="form-label" htmlFor="cp-service">{t('contact.form.service')}</label>
+                    <select
+                      id="cp-service" name="service"
+                      className="form-input form-select"
+                      value={fields.service} onChange={handleChange}
+                    >
+                      <option value="">{t('contact.form.servicePlaceholder')}</option>
+                      <option value="b2b">{t('contact.form.serviceOne')}</option>
+                      <option value="catering">{t('contact.form.serviceTwo')}</option>
+                      <option value="eventos">{t('contact.form.serviceThree')}</option>
+                      <option value="consultoria">{t('contact.form.serviceFour')}</option>
+                    </select>
                   </div>
 
                   <div className="form-field">
