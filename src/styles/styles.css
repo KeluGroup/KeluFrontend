@@ -5140,8 +5140,8 @@ a.btn-ph {
   }
 
   /* Any section-inner that's the first content on a page */
-  .team-section .section-inner,
-  .section:first-of-type .section-inner {
+  .team-section ,
+  .section:first-of-type  {
     padding-top: clamp(80px, 10vw, 120px);
   }
 }
@@ -7256,8 +7256,30 @@ a.btn-ph {
   }
 
   /* About — push team section down */
-  .team-section {
-    padding-top: var(--space-8);
+
+}
+
+/* Mirror exactly what .services-page-main and .contact-page-main do */
+.about-page-main {
+  background: var(--color-surface-2);
+  padding-top: clamp(var(--space-16), 12vw, var(--space-24)); /* 64px → 96px */
+}
+
+@media (max-width: 768px) {
+  .about-page-main {
+    background: var(--color-surface-2);
+  }
+
+  /* Prevent body bleed-through while scroll-animate elements are invisible */
+  body:has(.about-page-main) {
+    background-color: var(--color-surface-2);
   }
 }
 
+
+
+@media (max-width: 768px) {
+  .team-section {
+    padding-top: calc(var(--navbar-height, 64px) + var(--space-8));
+  }
+}

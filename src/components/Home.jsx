@@ -14,7 +14,7 @@ export default function Home() {
       <div className="hero-video-wrap" aria-hidden="true">
         <video
           className="hero-video"
-          src="/assets/video_sample_tequenos.mp4"
+          src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/video_sample_tequenos.mp4"
           autoPlay
           muted
           loop

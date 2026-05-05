@@ -9,7 +9,6 @@ import ScrollProgress from '../components/ScrollProgress'
 export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu, scrolled }) {
   const { t } = useTranslation()
 
-  // Scroll to top on mount + set up scroll-animate observer
   useEffect(() => {
     window.scrollTo(0, 0)
     const io = new IntersectionObserver(
@@ -35,8 +34,7 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
         scrolled={scrolled}
         isAboutPage
       />
-      
-      <main id="main-content">
+      <main id="main-content" className="about-page-main">
         <Team />
       </main>
       <Footer />
