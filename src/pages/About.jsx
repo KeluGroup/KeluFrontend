@@ -11,6 +11,12 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
 
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    // Subtle scroll nudge on load
+    const nudge = setTimeout(() => {
+      window.scrollTo({ top: 1, behavior: 'smooth' })
+    }, 300)
+
     const io = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
@@ -18,7 +24,8 @@ export default function About({ theme, onToggleTheme, menuOpen, onToggleMenu, on
     const timer = setTimeout(() => {
       document.querySelectorAll('.scroll-animate, .anim-fade, .anim-right').forEach(el => io.observe(el))
     }, 100)
-    return () => { clearTimeout(timer); io.disconnect() }
+
+    return () => { clearTimeout(nudge); clearTimeout(timer); io.disconnect() }
   }, [])
 
   return (
