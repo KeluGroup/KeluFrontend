@@ -1,18 +1,23 @@
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY
 
-// Specific search query per product key for best results
 export const UNSPLASH_QUERIES = {
-  p1: 'arepas venezolanas colombianas corn cake filled',
-  p2: 'tequenos cheese sticks fried bread venezuelan',
-  p3: 'empanadas colombianas latin fried pastry',
-  p4: 'yuca frita cassava fries fried sticks',
-  p5: 'pan de bono colombian cheese bread rolls',
-  p6: 'chocolate churros dessert pastry dark chocolate',
-  p7: 'tropical fruit pulp passion fruit mango colorful',
-  p8: 'salsa guacamole chimichurri latin sauce bowls',
+  p1: 'arepa venezuelan colombian stuffed corn flatbread',
+  p2: 'tequeños cheese fingers fried dough snack',
+  p3: 'empanada latin fried pastry golden crispy',
+  p4: 'cassava yuca fries golden fried sticks',
+  p5: 'pan de bono cheese bread colombia baked rolls',
+  p6: 'chocolate tequeños churros dark cocoa dessert',
+  p7: 'tropical passion fruit mango pulp colorful smoothie',
+  p8: 'guacamole chimichurri salsa verde bowl fresh',
 }
 
-// Returns the Unsplash regular image URL for a given query, or null if unavailable
+export const SERVICE_QUERIES = {
+  one:   'food wholesale distribution warehouse fresh produce restaurant supply',
+  two:   'elegant catering buffet professional event food service plated',
+  three: 'street food festival outdoor market gastronomy crowd pop-up',
+  four:  'chef restaurant consulting kitchen menu culinary professional',
+}
+
 export async function fetchUnsplashPhoto(query) {
   if (!ACCESS_KEY) return null
   try {
@@ -26,11 +31,21 @@ export async function fetchUnsplashPhoto(query) {
   }
 }
 
-// Fetches all product images in parallel — returns a map of { key: url }
 export async function fetchAllProductImages() {
   if (!ACCESS_KEY) return {}
   const entries = await Promise.all(
     Object.entries(UNSPLASH_QUERIES).map(async ([key, query]) => {
+      const url = await fetchUnsplashPhoto(query)
+      return [key, url]
+    })
+  )
+  return Object.fromEntries(entries.filter(([, url]) => url))
+}
+
+export async function fetchAllServiceImages() {
+  if (!ACCESS_KEY) return {}
+  const entries = await Promise.all(
+    Object.entries(SERVICE_QUERIES).map(async ([key, query]) => {
       const url = await fetchUnsplashPhoto(query)
       return [key, url]
     })

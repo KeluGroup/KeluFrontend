@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
-import { fetchUnsplashPhoto } from '../utils/unsplash'
+import { fetchAllServiceImages } from '../utils/unsplash'
 
 const ChevronIcon = ({ open }) => (
   <svg
@@ -16,13 +16,6 @@ const ChevronIcon = ({ open }) => (
     <polyline points="6 9 12 15 18 9" />
   </svg>
 )
-
-const SERVICE_QUERIES = {
-  one:   'zurich outdoor market switzerland street vendors fresh food',
-  two:   'catering buffet elegant service food table professional',
-  three: 'food festival pop-up outdoor gastronomy street food event',
-  four:  'business consulting meeting professional strategy office',
-}
 
 const SERVICES = [
   {
@@ -93,13 +86,7 @@ export default function Services({
   const [cardImgs, setCardImgs] = useState({})
 
   useEffect(() => {
-    Promise.all(
-      Object.entries(SERVICE_QUERIES).map(async ([key, query]) => {
-        const url = await fetchUnsplashPhoto(query)
-        return [key, url]
-      })
-    ).then(entries => {
-      const imgs = Object.fromEntries(entries.filter(([, url]) => url))
+    fetchAllServiceImages().then(imgs => {
       if (Object.keys(imgs).length > 0) setCardImgs(imgs)
     })
   }, [])
