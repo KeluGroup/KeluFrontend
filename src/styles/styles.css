@@ -4991,7 +4991,6 @@ a.btn-ph {
 .contact-page-bg {
   position: fixed;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=60&auto=format&fit=crop');
   background-size: cover;
   background-position: center 40%;
   opacity: 0.10;
