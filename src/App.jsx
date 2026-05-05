@@ -63,7 +63,7 @@ function MainLayout({ theme, onToggleTheme, menuOpen, onToggleMenu, onCloseMenu,
         <Solution />
         <Stats />
         <Process />
-        <MenuIdeas />
+
         <Contact />
       </main>
       <Footer />

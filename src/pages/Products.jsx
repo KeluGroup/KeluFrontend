@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import ProductModal from '../components/ProductModal'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import MenuIdeas     from '../components/MenuIdeas'
 import ScrollProgress from '../components/ScrollProgress'
 import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
 
@@ -46,13 +47,7 @@ function ProductCard({ product, onClick }) {
         <div className="product-card-overlay" aria-hidden="true" />
         <div className="product-card-footer">
           <span className="product-card-label">{product.label}</span>
-          <span className="product-card-cta">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            {t('products.viewMore')}
-          </span>
+          
         </div>
       </div>
     </button>
@@ -145,6 +140,16 @@ export default function Benefits({
               <p className="section-sub">{t('solution.subtitle')}</p>
             </div>
 
+            <p className="products-hint scroll-animate" >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+                style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }}>
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Tap a product to learn more
+            </p>
+
             <div className="product-strip-grid scroll-animate">
               {PRODUCTS.map(p => (
                 <ProductCard
@@ -156,6 +161,10 @@ export default function Benefits({
             </div>
 
           </div>
+        </section>
+
+        <section>
+          <MenuIdeas />
         </section>
 
         {/* ══ SECTION 2 — Solicitar presupuesto ══════════════════ */}

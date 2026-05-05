@@ -399,6 +399,10 @@
   "a8": "Our tiered pricing rewards consistency: 500–2,499 CHF/month = −5%, 2,500–4,999 CHF/month = −10%, 5,000+ CHF/month = −15%, plus exclusive perks for strategic clients.",
   "contactCta": "Still have questions?",
   "contactBtn": "Talk to us"
+},
+
+"recepts":{
+  "ctaBtn" : "recipe ideas"
 }
 
 }

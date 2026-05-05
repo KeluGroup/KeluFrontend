@@ -86,7 +86,7 @@ export default function Solution() {
           <div className="solution-img-col scroll-animate">
             <div className="solution-img-frame">
               <img
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&q=80&auto=format&fit=crop"
+                src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/Discover_Venezuelas_beloved_street_food_treasure....jpg"
                 alt=""
                 aria-hidden="true"
                 className="solution-img-photo"
