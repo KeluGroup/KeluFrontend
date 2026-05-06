@@ -137,25 +137,6 @@ export default function Services({
           </div>
         </section>
 
-        {/* ══ TRUST STRIP ═════════════════════════════════════════════ */}
-        <section className="services-trust-strip" aria-label="Trust indicators">
-          <div className="section-inner">
-            <div className="services-trust-row scroll-animate">
-              {[
-                { m: t('services.trustM1'), l: t('services.trustL1') },
-                { m: t('services.trustM2'), l: t('services.trustL2') },
-                { m: t('services.trustM3'), l: t('services.trustL3') },
-                { m: t('services.trustM4'), l: t('services.trustL4') },
-              ].map((item, i) => (
-                <div key={i} className="services-trust-item">
-                  <span className="services-trust-metric">{item.m}</span>
-                  <span className="services-trust-label">{item.l}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ══ CARDS ═══════════════════════════════════════════════════ */}
         <section className="services-section" aria-label="Our Services">
           <div className="section-inner">
@@ -177,6 +158,7 @@ export default function Services({
                           className="service-card-img"
                           style={{ objectPosition: s.imgPos }}
                           loading="lazy"
+                          fetchpriority="high"
                         />
                         <div className="service-card-img-overlay" aria-hidden="true" />
                         <div className="service-card-icon-badge">{s.icon}</div>
