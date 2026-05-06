@@ -3,6 +3,8 @@ import { initReactI18next } from 'react-i18next'
 import en from './locales/en.json'
 import de from './locales/de.json'
 import es from './locales/es.json'
+import fr from './locales/fr.json'
+import it from './locales/it.json'
 
 // Read saved language on init, fallback to browser language, then 'en'
 const savedLang =
@@ -13,7 +15,7 @@ const savedLang =
 i18n
   .use(initReactI18next)
   .init({
-    resources: { en: { translation: en }, de: { translation: de }, es: { translation: es } },
+    resources: { en: { translation: en }, de: { translation: de }, es: { translation: es }, fr: { translation: fr }, it: { translation: it } },
     lng: savedLang ?? 'es',         // ← use saved value on startup
     fallbackLng: 'en',
     interpolation: { escapeValue: false },

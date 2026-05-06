@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
-import { fetchAllServiceImages } from '../utils/unsplash'
 
 const ChevronIcon = ({ open }) => (
   <svg
@@ -45,8 +44,8 @@ const SERVICES = [
   },
   {
     key: 'three',
-    img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=70&auto=format&fit=crop',
-    imgPos: 'center 50%',
+    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=70&auto=format&fit=crop',
+    imgPos: 'center 40%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -60,14 +59,28 @@ const SERVICES = [
   },
   {
     key: 'four',
-    img: '/products/consultoria-spread.jpg',
-    imgPos: 'center 40%',
+    img: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800&q=70&auto=format&fit=crop',
+    imgPos: 'center 30%',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
         <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    ),
+  },
+  {
+    key: 'five',
+    featured: true,
+    img: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1200&q=70&auto=format&fit=crop',
+    imgPos: 'center 40%',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
       </svg>
     ),
   },
@@ -83,13 +96,6 @@ export default function Services({
 }) {
   const { t } = useTranslation()
   const [openId, setOpenId] = useState(null)
-  const [cardImgs, setCardImgs] = useState({})
-
-  useEffect(() => {
-    fetchAllServiceImages().then(imgs => {
-      if (Object.keys(imgs).length > 0) setCardImgs(imgs)
-    })
-  }, [])
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -131,12 +137,79 @@ export default function Services({
           </div>
         </section>
 
+        {/* ══ TRUST STRIP ═════════════════════════════════════════════ */}
+        <section className="services-trust-strip" aria-label="Trust indicators">
+          <div className="section-inner">
+            <div className="services-trust-row scroll-animate">
+              {[
+                { m: t('services.trustM1'), l: t('services.trustL1') },
+                { m: t('services.trustM2'), l: t('services.trustL2') },
+                { m: t('services.trustM3'), l: t('services.trustL3') },
+                { m: t('services.trustM4'), l: t('services.trustL4') },
+              ].map((item, i) => (
+                <div key={i} className="services-trust-item">
+                  <span className="services-trust-metric">{item.m}</span>
+                  <span className="services-trust-label">{item.l}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ══ CARDS ═══════════════════════════════════════════════════ */}
         <section className="services-section" aria-label="Our Services">
           <div className="section-inner">
             <div className="services-grid">
               {SERVICES.map((s, i) => {
                 const isOpen = openId === s.key
+                if (s.featured) {
+                  return (
+                    <article
+                      key={s.key}
+                      className={`service-card service-card--featured${isOpen ? ' service-card--open' : ''}`}
+                      style={{ '--card-delay': `${i * 90}ms` }}
+                    >
+                      <div className="service-card-img-wrap service-card-img-wrap--featured">
+                        <img
+                          src={s.img}
+                          alt=""
+                          aria-hidden="true"
+                          className="service-card-img"
+                          style={{ objectPosition: s.imgPos }}
+                          loading="lazy"
+                        />
+                        <div className="service-card-img-overlay" aria-hidden="true" />
+                        <div className="service-card-icon-badge">{s.icon}</div>
+                      </div>
+                      <div className="service-card-body service-card-body--featured">
+                        <span className="service-featured-badge">{t('services.fiveBadge')}</span>
+                        <h2 className="service-card-title">{t(`services.${s.key}`)}</h2>
+                        <p className="service-card-desc">{t(`services.${s.key}Desc`)}</p>
+                        <button
+                          className="service-card-toggle"
+                          onClick={() => toggle(s.key)}
+                          aria-expanded={isOpen}
+                        >
+                          <span>{t(isOpen ? 'services.collapse' : 'services.expand')}</span>
+                          <ChevronIcon open={isOpen} />
+                        </button>
+                        <div
+                          className={`service-card-detail${isOpen ? ' service-card-detail--open' : ''}`}
+                          aria-hidden={!isOpen}
+                        >
+                          <div className="service-card-detail-inner service-card-detail-inner--grid">
+                            {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
+                              <div key={idx} className="service-detail-item">
+                                <span className="service-detail-dot" aria-hidden="true" />
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  )
+                }
                 return (
                   <article
                     key={s.key}
@@ -146,7 +219,7 @@ export default function Services({
                     {/* ── Image header ── */}
                     <div className="service-card-img-wrap">
                       <img
-                        src={cardImgs[s.key] || s.img}
+                        src={s.img}
                         alt=""
                         aria-hidden="true"
                         className="service-card-img"
@@ -194,7 +267,6 @@ export default function Services({
 
         {/* ══ CTA ═════════════════════════════════════════════════════ */}
         <section className="services-cta-section" aria-label="Call to action">
-          {/* Background image with blur */}
           <img
             src="/products/empanada-carne.jpg"
             alt=""
@@ -207,14 +279,20 @@ export default function Services({
             <span className="services-cta-tag">{t('services.ctaTag')}</span>
             <h2 className="services-cta-title">{t('services.ctaTitle')}</h2>
             <p className="services-cta-desc">{t('services.ctaDesc')}</p>
-            <Link to="/contact" className="services-cta-btn">
-              {t('services.ctaBtn')}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </Link>
+            <div className="services-cta-actions">
+              <Link to="/contact" className="services-cta-btn">
+                {t('services.ctaBtn')}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Link>
+              <Link to="/products" className="services-cta-btn services-cta-btn--outline">
+                {t('services.ctaBtn2')}
+              </Link>
+            </div>
+            <p className="services-cta-note">{t('services.ctaNote')}</p>
           </div>
         </section>
 

@@ -30,9 +30,11 @@ const TikTokIcon = () => (
 
 // ── Language data ──────────────────────────────────────────────────────────
 const LANGS = [
-  { code: 'de', label: 'Deutsch', iso: 'de' },
-  { code: 'en', label: 'English', iso: 'gb' },
-  { code: 'es', label: 'Español', iso: 'es' },
+  { code: 'de', label: 'Deutsch',  iso: 'de' },
+  { code: 'en', label: 'English',  iso: 'gb' },
+  { code: 'es', label: 'Español',  iso: 'es' },
+  { code: 'fr', label: 'Français', iso: 'fr' },
+  { code: 'it', label: 'Italiano', iso: 'it' },
 ]
 
 const ITEM_H   = 52

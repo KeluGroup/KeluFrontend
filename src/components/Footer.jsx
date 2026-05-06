@@ -24,59 +24,68 @@ export default function Footer() {
     <footer className="footer-thin" role="contentinfo">
       <div className="footer-thin-inner">
 
-        {/* Left — brand + address */}
-        <div className="footer-thin-brand-block">
-          <a href="/#home" className="footer-thin-brand" aria-label="Kelu home">
-            <img
-              src="/logo.svg"
-              alt={BRAND_NAME}
-              width="28"
-              height="28"
-              style={{ background: '#fff', borderRadius: '6px', padding: '2px' }}
-            />
-            <span className="footer-thin-wordmark">{BRAND_NAME}</span>
-          </a>
-          
-          <address className="footer-thin-address">
-            Kelu GmbH<br />
-            Langfurren 14, 8057 Zürich
-          </address>
+        {/* Top row */}
+        <div className="footer-top-row">
+
+          {/* Brand */}
+          <div className="footer-thin-brand-block">
+            <a href="/#home" className="footer-thin-brand" aria-label="Kelu home">
+              <img
+                src="/logo.svg"
+                alt={BRAND_NAME}
+                width="28"
+                height="28"
+                style={{ background: '#fff', borderRadius: '6px', padding: '2px' }}
+              />
+              <span className="footer-thin-wordmark">{BRAND_NAME}</span>
+            </a>
+            <p className="footer-thin-tagline">{t('footer.tagline')}</p>
+            <address className="footer-thin-address">
+              Kelu GmbH · Langfurren 14, 8057 Zürich<br />
+              <a href="mailto:info@kelugroup.ch" className="footer-email-link">info@kelugroup.ch</a>
+            </address>
+          </div>
+
+          {/* Nav + Socials */}
+          <div className="footer-right-col">
+            <nav className="footer-thin-nav" aria-label="Footer navigation">
+              <Link to="/about">{t('nav.about')}</Link>
+              <span aria-hidden="true">·</span>
+              <Link to="/faq">FAQ</Link>
+              <span aria-hidden="true">·</span>
+              <Link to="/privacy">{t('footer.privacy')}</Link>
+              <span aria-hidden="true">·</span>
+              <Link to="/cookies">{t('footer.cookies')}</Link>
+              <span aria-hidden="true">·</span>
+              <Link to="/terms">{t('footer.terms')}</Link>
+            </nav>
+            <div className="footer-thin-socials">
+              <a
+                href="https://www.instagram.com/kelugroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-thin-social"
+                aria-label="Instagram @kelugroup"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href="https://www.tiktok.com/@kelugmbh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-thin-social"
+                aria-label="TikTok @kelugmbh"
+              >
+                <TikTokIcon />
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        {/* Center — copyright (swapped) */}
-        <p className="footer-thin-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
-
-        {/* Right — nav + Instagram (swapped) */}
-        <div className="footer-thin-right">
-          <nav className="footer-thin-nav" aria-label="Footer navigation">
-            <Link to="/about">{t('nav.about')}</Link>
-            <span aria-hidden="true">·</span>
-            <Link to="/faq">FAQ</Link>
-            <span aria-hidden="true">·</span>
-            <Link to="/privacy">{t('footer.privacy')}</Link>
-            <span aria-hidden="true">·</span>
-            <Link to="/cookies">{t('footer.cookies')}</Link>  {/* ← add this */}
-          </nav>
-          <div className="footer-thin-socials">
-            <a
-              href="https://www.instagram.com/kelugroup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-thin-social"
-              aria-label="Instagram @kelugroup"
-            >
-              <InstagramIcon />
-            </a>
-            <a
-              href="https://www.tiktok.com/@kelugmbh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-thin-social"
-              aria-label="TikTok @kelugmbh"
-            >
-              <TikTokIcon />
-            </a>
-          </div>
+        {/* Bottom bar — copyright */}
+        <div className="footer-bottom-bar">
+          <p className="footer-thin-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
         </div>
 
       </div>
