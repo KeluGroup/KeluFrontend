@@ -198,17 +198,17 @@
   },
   "process": {
     "tag":      "Cómo funciona",
-    "title":    "Simple, Directo, Efectivo",
-    "subtitle": "En 4 pasos pasas de buscar proveedores a tener entregas semanales fijas",
+    "title":    "Simple. Fiable. Eficiente.",
+    "subtitle": "Un proceso sencillo de 4 pasos diseñado para un suministro confiable y operaciones fluidas.",
     "stepLabel":  "Paso",
-    "step1title": "Agenda tu reunión",
-    "step1desc":  "Hablamos 30 minutos. Entendemos tu carta, volumen y necesidades. Sin compromiso, sin presión.",
-    "step2title": "Recibe tu propuesta",
-    "step2desc":  "Te enviamos un catálogo personalizado con precios basados en tu nivel de compra. Todo claro desde el día uno.",
-    "step3title": "Primera entrega",
-    "step3desc":  "Coordinamos tu primera entrega en la ruta fija de tu zona. Prueba productos y servicio sin riesgo.",
+    "step1title": "Programa tu consulta",
+    "step1desc":  "Empezamos con una conversación rápida para entender tu menú, necesidades de productos y volúmenes esperados. Sin presión, sin compromisos — solo una comprensión clara de cómo podemos apoyar tu negocio.",
+    "step2title": "Recibe tu propuesta personalizada",
+    "step2desc":  "Según tus necesidades, preparamos un catálogo de productos personalizado con precios transparentes y ventajas por volumen. Condiciones claras desde el primer día.",
+    "step3title": "Tu primera entrega",
+    "step3desc":  "Coordinamos tu primera entrega a través de la ruta de distribución fija de tu zona. Prueba los productos, experimenta el servicio y evalúa todo con confianza.",
     "step4title": "Entregas recurrentes",
-    "step4desc":  "Te integramos en nuestra ruta semanal. Stock predecible, descuentos crecientes, tranquilidad garantizada."
+    "step4desc":  "Una vez integrado, tu negocio se une a nuestro programa de entregas recurrentes — dándote stock predecible, consistencia operativa y mejores márgenes a medida que crecen tus pedidos."
   },
   "ctabanner": {
     "title":       "Hagamos crecer tu negocio juntos",

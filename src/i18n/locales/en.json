@@ -189,17 +189,17 @@
   },
   "process": {
     "tag":      "How It Works",
-    "title":    "Simple, Direct, Effective",
-    "subtitle": "In 4 steps you go from searching for suppliers to having fixed weekly deliveries",
+    "title":    "Simple. Reliable. Efficient.",
+    "subtitle": "A simple 4-step process designed for reliable supply and smooth operations.",
     "stepLabel":  "Step",
-    "step1title": "Schedule Your Meeting",
-    "step1desc":  "We talk for 30 minutes. We understand your menu, volume and needs. No commitment, no pressure.",
-    "step2title": "Receive Your Proposal",
-    "step2desc":  "We send you a personalised catalogue with prices based on your purchase level. Everything clear from day one.",
-    "step3title": "First Delivery",
-    "step3desc":  "We coordinate your first delivery on your zone's fixed route. Try products and service risk-free.",
+    "step1title": "Schedule Your Consultation",
+    "step1desc":  "We start with a quick conversation to understand your menu, product needs and expected volumes. No pressure, no obligations — just a clear understanding of how we can support your business.",
+    "step2title": "Receive Your Tailored Proposal",
+    "step2desc":  "Based on your needs, we prepare a personalised product catalogue with transparent pricing and volume-based advantages. Clear terms from day one.",
+    "step3title": "Your First Delivery",
+    "step3desc":  "We coordinate your first delivery through your area's fixed distribution route. Test the products, experience the service and evaluate everything with confidence.",
     "step4title": "Recurring Deliveries",
-    "step4desc":  "We add you to our weekly route. Predictable stock, growing discounts, guaranteed peace of mind."
+    "step4desc":  "Once onboarded, your business joins our recurring delivery schedule — giving you predictable stock, operational consistency and better margins as your orders grow."
   },
   "ctabanner": {
     "title":       "Let's Grow Your Business Together",

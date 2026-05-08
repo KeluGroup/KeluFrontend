@@ -198,17 +198,17 @@
   },
   "process": {
     "tag":      "Come funziona",
-    "title":    "Semplice, Diretto, Efficace",
-    "subtitle": "In 4 passi passi dalla ricerca di fornitori alle consegne settimanali fisse",
+    "title":    "Semplice. Affidabile. Efficiente.",
+    "subtitle": "Un semplice processo in 4 fasi progettato per una fornitura affidabile e operazioni fluide.",
     "stepLabel":  "Passo",
-    "step1title": "Prenota il tuo incontro",
-    "step1desc":  "Parliamo 30 minuti. Capiamo il tuo menu, volume e necessità. Senza impegno, senza pressioni.",
-    "step2title": "Ricevi la tua proposta",
-    "step2desc":  "Ti inviamo un catalogo personalizzato con prezzi basati sul tuo livello di acquisto. Tutto chiaro dal primo giorno.",
-    "step3title": "Prima consegna",
-    "step3desc":  "Coordiniamo la tua prima consegna sul percorso fisso della tua zona. Prova prodotti e servizio senza rischi.",
+    "step1title": "Prenota la tua consulenza",
+    "step1desc":  "Iniziamo con una breve conversazione per capire il tuo menu, le esigenze di prodotto e i volumi previsti. Nessuna pressione, nessun obbligo — solo una chiara comprensione di come possiamo supportare la tua attività.",
+    "step2title": "Ricevi la tua proposta su misura",
+    "step2desc":  "In base alle tue esigenze, prepariamo un catalogo prodotti personalizzato con prezzi trasparenti e vantaggi basati sul volume. Condizioni chiare fin dal primo giorno.",
+    "step3title": "La tua prima consegna",
+    "step3desc":  "Coordiniamo la tua prima consegna attraverso il percorso di distribuzione fisso della tua area. Prova i prodotti, vivi il servizio e valuta tutto con fiducia.",
     "step4title": "Consegne ricorrenti",
-    "step4desc":  "Ti integriamo nel nostro percorso settimanale. Stock prevedibile, sconti crescenti, tranquillità garantita."
+    "step4desc":  "Una volta integrato, la tua attività entra nel nostro programma di consegne ricorrenti — offrendoti stock prevedibile, coerenza operativa e margini migliori man mano che i tuoi ordini crescono."
   },
   "ctabanner": {
     "title":       "Facciamo crescere la tua attività insieme",

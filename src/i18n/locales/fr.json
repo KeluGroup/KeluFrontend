@@ -189,17 +189,17 @@
   },
   "process": {
     "tag":      "Comment ça marche",
-    "title":    "Simple, Direct, Efficace",
-    "subtitle": "En 4 étapes, vous passez de la recherche de fournisseurs à des livraisons hebdomadaires fixes",
+    "title":    "Simple. Fiable. Efficace.",
+    "subtitle": "Un processus simple en 4 étapes conçu pour un approvisionnement fiable et des opérations fluides.",
     "stepLabel":  "Étape",
-    "step1title": "Planifiez votre réunion",
-    "step1desc":  "Nous parlons 30 minutes. Nous comprenons votre carte, votre volume et vos besoins. Sans engagement, sans pression.",
-    "step2title": "Recevez votre proposition",
-    "step2desc":  "Nous vous envoyons un catalogue personnalisé avec des prix basés sur votre niveau d'achat. Tout est clair dès le premier jour.",
-    "step3title": "Première livraison",
-    "step3desc":  "Nous coordonnons votre première livraison sur la route fixe de votre zone. Testez les produits et le service sans risque.",
+    "step1title": "Planifiez votre consultation",
+    "step1desc":  "Nous commençons par une courte conversation pour comprendre votre carte, vos besoins en produits et vos volumes prévus. Sans pression, sans engagement — juste une compréhension claire de la façon dont nous pouvons soutenir votre entreprise.",
+    "step2title": "Recevez votre proposition sur mesure",
+    "step2desc":  "En fonction de vos besoins, nous préparons un catalogue de produits personnalisé avec une tarification transparente et des avantages basés sur le volume. Des conditions claires dès le premier jour.",
+    "step3title": "Votre première livraison",
+    "step3desc":  "Nous coordonnons votre première livraison via la route de distribution fixe de votre région. Testez les produits, découvrez le service et évaluez tout en toute confiance.",
     "step4title": "Livraisons récurrentes",
-    "step4desc":  "Nous vous intégrons dans notre route hebdomadaire. Stock prévisible, remises croissantes, tranquillité garantie."
+    "step4desc":  "Une fois intégré, votre entreprise rejoint notre calendrier de livraisons récurrentes — vous offrant un stock prévisible, une cohérence opérationnelle et de meilleures marges à mesure que vos commandes augmentent."
   },
   "ctabanner": {
     "title":       "Faisons grandir votre entreprise ensemble",

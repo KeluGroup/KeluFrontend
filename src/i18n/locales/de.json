@@ -189,17 +189,17 @@
   },
   "process": {
     "tag":      "So funktioniert es",
-    "title":    "Einfach, Direkt, Effektiv",
-    "subtitle": "In 4 Schritten von der Lieferantensuche zu festen wöchentlichen Lieferungen",
+    "title":    "Einfach. Zuverlässig. Effizient.",
+    "subtitle": "Ein einfacher 4-Schritte-Prozess für zuverlässige Versorgung und reibungslosen Betrieb.",
     "stepLabel":  "Schritt",
-    "step1title": "Meeting vereinbaren",
-    "step1desc":  "Wir sprechen 30 Minuten. Wir verstehen deine Karte, dein Volumen und deine Bedürfnisse. Kein Commitment, kein Druck.",
-    "step2title": "Angebot erhalten",
-    "step2desc":  "Wir senden dir einen personalisierten Katalog mit Preisen basierend auf deinem Bestellvolumen. Alles klar von Tag eins.",
-    "step3title": "Erste Lieferung",
-    "step3desc":  "Wir koordinieren deine erste Lieferung auf der festen Route deiner Zone. Produkte und Service risikofrei testen.",
+    "step1title": "Beratungsgespräch vereinbaren",
+    "step1desc":  "Wir beginnen mit einem kurzen Gespräch, um dein Menü, deinen Produktbedarf und das erwartete Volumen zu verstehen. Kein Druck, keine Verpflichtungen — nur ein klares Verständnis davon, wie wir dein Unternehmen unterstützen können.",
+    "step2title": "Massgeschneidertes Angebot erhalten",
+    "step2desc":  "Basierend auf deinen Bedürfnissen erstellen wir einen personalisierten Produktkatalog mit transparenten Preisen und volumenbasierten Vorteilen. Klare Konditionen von Tag eins.",
+    "step3title": "Deine erste Lieferung",
+    "step3desc":  "Wir koordinieren deine erste Lieferung über die feste Distributionsroute deiner Region. Teste die Produkte, erlebe den Service und bewerte alles mit Vertrauen.",
     "step4title": "Regelmäßige Lieferungen",
-    "step4desc":  "Wir integrieren dich in unsere Wochenroute. Planbarer Bestand, wachsende Rabatte, garantierte Ruhe."
+    "step4desc":  "Nach dem Onboarding wird dein Unternehmen in unseren regelmäßigen Lieferplan integriert — mit planbarem Bestand, betrieblicher Konstanz und besseren Margen bei wachsenden Bestellungen."
   },
   "ctabanner": {
     "title":       "Lass uns dein Geschäft gemeinsam wachsen lassen",

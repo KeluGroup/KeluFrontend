@@ -54,18 +54,18 @@ export default function Process() {
           <p className="section-sub">{t('process.subtitle')}</p>
         </div>
 
-        <div className="process-timeline">
+        <div className="process-grid">
           {STEPS.map((n, i) => (
-            <div key={n} className="process-item scroll-animate">
-              <div className="process-number" aria-hidden="true">
-                <span className="process-n">{n}</span>
-                <span className="process-icon">{STEP_ICONS[i]}</span>
+            <div key={n} className="process-card scroll-animate" style={{ '--card-delay': `${i * 100}ms` }}>
+              <div className="process-card-accent" aria-hidden="true">
+                {String(n).padStart(2, '0')}
               </div>
-              <div className="process-content">
-                <div className="process-step-num-label">{t('process.stepLabel')} {n}</div>
-                <h3 className="process-step-title">{t(`process.step${n}title`)}</h3>
-                <p className="process-step-desc">{t(`process.step${n}desc`)}</p>
+              <div className="process-card-icon" aria-hidden="true">
+                {STEP_ICONS[i]}
               </div>
+              <div className="process-card-label">{t('process.stepLabel')} {n}</div>
+              <h3 className="process-step-title">{t(`process.step${n}title`)}</h3>
+              <p className="process-step-desc">{t(`process.step${n}desc`)}</p>
             </div>
           ))}
         </div>
