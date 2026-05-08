@@ -3,17 +3,19 @@ import { useTranslation } from 'react-i18next'
 const PILLARS = [
   {
     key: 'one',
-    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=70&auto=format&fit=crop',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/importred%20from%20the%20source.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
-        <path d="M12 6v6l4 2"/>
+        <rect x="1" y="3" width="15" height="13" rx="2"/>
+        <path d="M16 8h4l3 3v5h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
       </svg>
     ),
   },
   {
     key: 'two',
-    img: '/products/arepas.png',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/artesanal.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -22,13 +24,11 @@ const PILLARS = [
   },
   {
     key: 'three',
-    img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=70&auto=format&fit=crop',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/Outsourcing%20Log%C3%ADstico_%20A%20Solu%C3%A7%C3%A3o%20para%20Impulsionar%E2%80%A6.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="1" y="3" width="15" height="13" rx="2"/>
-        <path d="M16 8h4l3 3v5h-7V8z"/>
-        <circle cx="5.5" cy="18.5" r="2.5"/>
-        <circle cx="18.5" cy="18.5" r="2.5"/>
+        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+        <path d="M12 6v6l4 2"/>
       </svg>
     ),
   },

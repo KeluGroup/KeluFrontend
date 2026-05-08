@@ -85,17 +85,15 @@
   },
   "solution": {
     "tag":          "La Soluzione KELU",
-    "title":        "Progettato per la Tua Attività",
-    "subtitle":     "Non siamo solo un altro fornitore. Siamo il tuo partner strategico per i prodotti latini.",
+    "title":        "Perché lavorare con KeLu",
+    "subtitle":     "Siamo più di un distributore — siamo il tuo partner strategico per prodotti latinoamericani autentici di cui la tua attività può fidarsi.",
     "contentTitle": "Tutto quello che ti serve, nulla di superfluo",
-    "feat1title":   "Catalogo intelligente",
-    "feat1text":    "Solo prodotti ad alta rotazione che vendi davvero: arepas, tequeños, empanadas, yuca, platano, formaggi latini, salse e polpe di frutta.",
-    "feat2title":   "Prezzi che si guadagnano, non si negoziano",
-    "feat2text":    "Politica a scaglioni chiara: più acquisti, più risparmi. Vantaggi esclusivi per volume senza clausole nascoste.",
-    "feat3title":   "Percorsi fissi, consegne prevedibili",
-    "feat3text":    "Zurigo divisa in 4 zone redditizie. Sai quando arriviamo, pianifichi le scorte, elimini lo stress.",
-    "feat4title":   "Un Partner che Vive la Cucina Latina",
-    "feat4text":    "Il nostro team è cresciuto con questo cibo. Conosciamo ogni prodotto, ogni piatto, ogni fornitore. Non solo consegniamo — consigliamo i tuoi acquisti.",
+    "feat2title":   "Prodotti selezionati che si vendono davvero",
+    "feat2text":    "Nessun catalogo sovradimensionato pieno di prodotti a bassa rotazione. Ci concentriamo su prodotti comprovati ad alta domanda che i tuoi clienti già amano.",
+    "feat3title":   "Un team che vive la cucina latina",
+    "feat3text":    "Non è commercio all'ingrosso generico. Siamo cresciuti con questi prodotti, queste ricette e questa cultura — aiutandoti ad acquistare in modo più intelligente, non solo più economico.",
+    "feat4title":   "Prezzi trasparenti pensati per la crescita",
+    "feat4text":    "Prezzi chiari e scalabili pensati per supportare la tua crescita. Più ordini, migliori sono i tuoi margini — senza commissioni nascoste, trattative complicate o costi a sorpresa.",
     "compareBeforeLabel": "Senza KeLu",
     "compareAfterLabel":  "Con KeLu",
     "ctaSchedule":  "Prenota la tua Riunione Gratuita",
@@ -282,15 +280,15 @@
     "cookies": "Cookie Policy"
   },
   "pillars": {
-    "tag":        "La Nostra Proposta di Valore",
-    "title":      "Perché i Migliori Scelgono Kelu",
+    "tag":        "La Soluzione KELU",
+    "title":      "Perché lavorare con KeLu",
     "sub":        "Tre motivi per cui ristoranti e catering in tutta la Svizzera si fidano di noi.",
     "onetitle":   "Freschezza dall'Origine",
-    "onetext":    "Prodotti importati direttamente dall'America Latina. Senza intermediari, con tutta l'autenticità intatta.",
+    "onetext":    "Prodotti importati direttamente dalla fonte senza intermediari — preservando freschezza, qualità e autenticità.",
     "twotitle":   "Autentico e Artigianale",
-    "twotext":    "Ricette tradizionali di generazioni. Il vero sapore che differenzia il tuo menu e fidelizza i tuoi clienti.",
+    "twotext":    "Ricette tradizionali elaborate nel corso delle generazioni — sapori autentici che fanno risaltare il tuo menu.",
     "threetitle": "Distribuzione Affidabile",
-    "threetext":  "Percorsi fissi in tutta la Svizzera, prezzi trasparenti e un team specializzato nella tua attività."
+    "threetext":  "Percorsi di consegna fissi in tutta la Svizzera, prezzi trasparenti e un servizio affidabile costruito intorno alla tua attività."
   },
   "products": {
     "viewMore": "Vedi dettagli"
