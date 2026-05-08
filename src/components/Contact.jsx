@@ -101,9 +101,6 @@ export default function Contact() {
       </div>
 
       <div className="cta-final-inner contact-merged-inner">
-        {/* Tag */}
-        <span className="contact-merged-tag">{t('contact.tag')}</span>
-
         {/* Main headline */}
         <h2 className="cta-final-title cta-animated-title">
           {t('ctabanner.title').split(' ').map((word, i) => (
