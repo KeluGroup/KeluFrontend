@@ -678,7 +678,8 @@ main{padding-top:0}
 }
 
 .hero-body{font-size:var(--text-lg);color:rgba(255,255,255,0.65);line-height:1.7;max-width:46ch;margin-bottom:var(--space-10)}
-.cta-row{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-12)}
+.cta-row{display:flex;gap:var(--space-3);flex-wrap:nowrap;margin-bottom:var(--space-12)}
+.cta-row .btn-ph{flex:1;justify-content:center}
 .btn-ph{height:48px;padding:0 var(--space-6);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;display:flex;align-items:center;gap:var(--space-2);letter-spacing:.02em}
 
 .btn-ph-primary {
@@ -779,7 +780,8 @@ main{padding-top:0}
 .footer-links a:hover{color:rgba(255,255,255,0.85)}
 @media(max-width:900px){.home-inner{grid-template-columns:1fr}.home-visual{display:none}.two-col{grid-template-columns:1fr}.contact-layout{grid-template-columns:1fr}}
 @media(max-width:768px){.form-row-2{grid-template-columns:1fr}}
-@media(max-width:480px){.hero-heading{max-width:100%}.cta-row{flex-direction:column}}
+@media(max-width:480px){.hero-heading{max-width:100%}}
+@media(max-width:480px){.cta-row .btn-ph{padding:0 var(--space-3);font-size:var(--text-xs)}}
 
 
 @media (max-width: 768px) {

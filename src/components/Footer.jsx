@@ -39,10 +39,10 @@ export default function Footer() {
               />
               <span className="footer-thin-wordmark">{BRAND_NAME}</span>
             </a>
-            <p className="footer-thin-tagline">{t('footer.tagline')}</p>
             <address className="footer-thin-address">
-              Kelu GmbH · Langfurren 14, 8057 Zürich<br />
-              <a href="mailto:info@kelugroup.ch" className="footer-email-link">info@kelugroup.ch</a>
+              Kelu GmbH<br />
+              Langfurren 14, 8057 Zürich<br />
+              info@kelugroup.ch
             </address>
           </div>
 
