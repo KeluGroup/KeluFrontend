@@ -31,16 +31,16 @@ export default function Footer() {
           <div className="footer-thin-brand-block">
             <a href="/#home" className="footer-thin-brand" aria-label="Kelu home">
               <img
-                src="/logo.svg"
+                src="/logo-color.svg"
                 alt={BRAND_NAME}
                 width="28"
                 height="28"
-                style={{ background: '#fff', borderRadius: '6px', padding: '2px' }}
+                className="footer-logo-img"
               />
               <span className="footer-thin-wordmark">{BRAND_NAME}</span>
             </a>
             <address className="footer-thin-address">
-              Kelu GmbH<br />
+              KeLu GmbH<br />
               Langfurren 14, 8057 Zürich<br />
               info@kelugroup.ch
             </address>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Bottom bar — copyright */}
         <div className="footer-bottom-bar">
-          <p className="footer-thin-copy">© {BRAND_YEAR} Kelu GmbH. {t('footer.copy')}</p>
+          <p className="footer-thin-copy">© {BRAND_YEAR} KeLu GmbH. {t('footer.copy')}</p>
         </div>
 
       </div>

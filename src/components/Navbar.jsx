@@ -204,7 +204,7 @@ export default function Navbar({
           <a href={homePath} className="fullmenu-brand" onClick={onCloseMenu}>
             <div className="fullmenu-logo-wrap">
               <div className="fullmenu-logo-glow" aria-hidden="true" />
-              <img src="/logo.svg" alt={BRAND_NAME} width="100" height="100" className="fullmenu-logo-img" />
+              <img src="/logo-color.svg" alt={BRAND_NAME} width="100" height="100" className="fullmenu-logo-img" />
             </div>
             <span className="fullmenu-wordmark">{BRAND_NAME}</span>
           </a>

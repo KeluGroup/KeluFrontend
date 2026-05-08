@@ -100,6 +100,19 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
           drop-shadow(0 0 20px rgba(255,255,255,.4))
           drop-shadow(0 3px 6px rgba(0,0,0,.2));
 }
+
+/* Footer logo — same glow as navbar logo */
+[data-theme="dark"] .footer-logo-img {
+  filter: brightness(0) invert(1)
+          drop-shadow(0 0 8px rgba(255,255,255,.6))
+          drop-shadow(0 0 20px rgba(255,255,255,.3))
+          drop-shadow(0 3px 6px rgba(0,0,0,.5));
+}
+[data-theme="light"] .footer-logo-img {
+  filter: drop-shadow(0 0 8px rgba(255,255,255,.7))
+          drop-shadow(0 0 20px rgba(255,255,255,.4))
+          drop-shadow(0 3px 6px rgba(0,0,0,.2));
+}
 @keyframes logoFloat {
   0%,100% { transform: translateY(0)    rotate(0deg);   }
   30%      { transform: translateY(-4px) rotate(-3deg);  }
@@ -361,7 +374,10 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 .fullmenu-logo-img {
   width: 100px;
   height: 100px;
-  filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(255,210,80,.35));
+  filter: brightness(0) invert(1)
+          drop-shadow(0 0 8px rgba(255,255,255,.6))
+          drop-shadow(0 0 20px rgba(255,255,255,.3))
+          drop-shadow(0 3px 6px rgba(0,0,0,.5));
   transform: rotate(-20deg) scale(0.6);
   transition: transform .75s cubic-bezier(0.34,1.56,0.64,1) .3s;
   animation: none;
