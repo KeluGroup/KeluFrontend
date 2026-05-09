@@ -148,7 +148,6 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
 
           {/* ── Page header ── */}
           <div className="contact-page-header scroll-animate">
-            <span className="section-tag">{t('contact.tag')}</span>
             <h1 className="section-title">{t('contact.title')}</h1>
             <p className="section-sub">{t('contact.subtitle')}</p>
           </div>

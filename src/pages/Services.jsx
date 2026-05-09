@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
-
-const ChevronIcon = ({ open }) => (
-  <svg
-    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-    aria-hidden="true"
-    style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.28s ease' }}
-  >
-    <polyline points="6 9 12 15 18 9" />
-  </svg>
-)
 
 const SERVICES = [
   {
@@ -44,8 +33,8 @@ const SERVICES = [
   },
   {
     key: 'three',
-    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=70&auto=format&fit=crop',
-    imgPos: 'center 40%',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/events.jpg',
+    imgPos: 'center center',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -64,9 +53,8 @@ const SERVICES = [
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-        <line x1="12" y1="17" x2="12.01" y2="17"/>
+        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+        <line x1="6" y1="17" x2="18" y2="17"/>
       </svg>
     ),
   },
@@ -95,7 +83,6 @@ export default function Services({
   scrolled,
 }) {
   const { t } = useTranslation()
-  const [openId, setOpenId] = useState(null)
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -107,8 +94,6 @@ export default function Services({
     }, 100)
     return () => { clearTimeout(timer); io.disconnect() }
   }, [])
-
-  const toggle = (key) => setOpenId(prev => prev === key ? null : key)
 
   return (
     <>
@@ -141,12 +126,11 @@ export default function Services({
           <div className="section-inner">
             <div className="services-grid">
               {SERVICES.map((s, i) => {
-                const isOpen = openId === s.key
                 if (s.featured) {
                   return (
                     <article
                       key={s.key}
-                      className={`service-card service-card--featured${isOpen ? ' service-card--open' : ''}`}
+                      className="service-card service-card--featured"
                       style={{ '--card-delay': `${i * 90}ms` }}
                     >
                       <div className="service-card-img-wrap service-card-img-wrap--featured">
@@ -163,29 +147,14 @@ export default function Services({
                         <div className="service-card-icon-badge">{s.icon}</div>
                       </div>
                       <div className="service-card-body service-card-body--featured">
-                        <span className="service-featured-badge">{t('services.fiveBadge')}</span>
                         <h2 className="service-card-title">{t(`services.${s.key}`)}</h2>
-                        <p className="service-card-desc">{t(`services.${s.key}Desc`)}</p>
-                        <button
-                          className="service-card-toggle"
-                          onClick={() => toggle(s.key)}
-                          aria-expanded={isOpen}
-                        >
-                          <span>{t(isOpen ? 'services.collapse' : 'services.expand')}</span>
-                          <ChevronIcon open={isOpen} />
-                        </button>
-                        <div
-                          className={`service-card-detail${isOpen ? ' service-card-detail--open' : ''}`}
-                          aria-hidden={!isOpen}
-                        >
-                          <div className="service-card-detail-inner service-card-detail-inner--grid">
-                            {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
-                              <div key={idx} className="service-detail-item">
-                                <span className="service-detail-dot" aria-hidden="true" />
-                                <span>{item}</span>
-                              </div>
-                            ))}
-                          </div>
+                        <div className="service-card-detail-inner">
+                          {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
+                            <div key={idx} className="service-detail-item">
+                              <span className="service-detail-dot" aria-hidden="true" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </article>
@@ -194,10 +163,9 @@ export default function Services({
                 return (
                   <article
                     key={s.key}
-                    className={`service-card${isOpen ? ' service-card--open' : ''}`}
+                    className="service-card"
                     style={{ '--card-delay': `${i * 90}ms` }}
                   >
-                    {/* ── Image header ── */}
                     <div className="service-card-img-wrap">
                       <img
                         src={s.img}
@@ -211,32 +179,15 @@ export default function Services({
                       <div className="service-card-icon-badge">{s.icon}</div>
                     </div>
 
-                    {/* ── Body ── */}
                     <div className="service-card-body">
                       <h2 className="service-card-title">{t(`services.${s.key}`)}</h2>
-                      <p className="service-card-desc">{t(`services.${s.key}Desc`)}</p>
-
-                      <button
-                        className="service-card-toggle"
-                        onClick={() => toggle(s.key)}
-                        aria-expanded={isOpen}
-                      >
-                        <span>{t(isOpen ? 'services.collapse' : 'services.expand')}</span>
-                        <ChevronIcon open={isOpen} />
-                      </button>
-
-                      <div
-                        className={`service-card-detail${isOpen ? ' service-card-detail--open' : ''}`}
-                        aria-hidden={!isOpen}
-                      >
-                        <div className="service-card-detail-inner">
-                          {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
-                            <div key={idx} className="service-detail-item">
-                              <span className="service-detail-dot" aria-hidden="true" />
-                              <span>{item}</span>
-                            </div>
-                          ))}
-                        </div>
+                      <div className="service-card-detail-inner">
+                        {t(`services.${s.key}Detail`).split(' · ').map((item, idx) => (
+                          <div key={idx} className="service-detail-item">
+                            <span className="service-detail-dot" aria-hidden="true" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </article>
