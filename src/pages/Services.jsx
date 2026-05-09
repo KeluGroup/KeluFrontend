@@ -130,7 +130,6 @@ export default function Services({
         <section className="services-section services-section--header" aria-label="Services header">
           <div className="section-inner">
             <div className="section-header scroll-animate">
-              <span className="section-tag">{t('services.tag')}</span>
               <h1 className="section-title">{t('services.title')}</h1>
               <p className="section-sub">{t('services.subtitle')}</p>
             </div>
@@ -244,31 +243,18 @@ export default function Services({
                 )
               })}
             </div>
-          </div>
-        </section>
 
-        {/* ══ CTA ═════════════════════════════════════════════════════ */}
-        <section className="services-cta-section" aria-label="Call to action">
-          <img
-            src="/products/empanada-carne.jpg"
-            alt=""
-            aria-hidden="true"
-            className="services-cta-bg-img"
-          />
-          <div className="services-cta-bg-overlay" aria-hidden="true" />
-
-          <div className="services-cta-inner scroll-animate">
-            <span className="services-cta-tag">{t('services.ctaTag')}</span>
-            <h2 className="services-cta-title">{t('services.ctaTitle')}</h2>
-            <p className="services-cta-desc">{t('services.ctaDesc')}</p>
-            <Link to="/contact" className="services-cta-btn">
-              {t('services.ctaBtn')}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </Link>
+            <div className="services-section-cta scroll-animate">
+              <p className="section-sub">{t('services.ctaDesc')}</p>
+              <Link to="/contact" className="catalogue-cta-btn">
+                {t('services.ctaBtn')}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Link>
+            </div>
           </div>
         </section>
 

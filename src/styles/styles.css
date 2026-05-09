@@ -5483,7 +5483,6 @@ a.btn-ph {
   content: '';
   position: absolute;
   inset: -30px;
-  background: url('/products/latin-food.jpg') center / cover no-repeat;
   filter: blur(7px);
   transform: scale(1.08);
 }
@@ -5519,6 +5518,25 @@ a.btn-ph {
 
 @media (max-width: 600px) {
   .catalogue-cta-section { padding: 3.5rem 1.25rem; }
+}
+
+.products-section-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.services-section-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 
@@ -6866,12 +6884,7 @@ a.btn-ph {
 }
 
 .services-section--header .section-header {
-  text-align: center;
   margin-bottom: 0;
-}
-
-.services-section--header .section-sub {
-  margin-inline: auto;
 }
 
 /* ── Trust strip ──────────────────────── */

@@ -15,7 +15,6 @@ export default function MenuIdeas() {
       <div className="section-inner">
 
         <div className="section-header scroll-animate">
-          <span className="section-tag">{t('menuIdeas.tag')}</span>
           <h2 className="section-title">{t('menuIdeas.title')}</h2>
           <p className="section-sub">{t('menuIdeas.sub')}</p>
         </div>

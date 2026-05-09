@@ -26,13 +26,13 @@ export default function ProductStrip() {
         </div>
 
         <div className="product-strip-grid scroll-animate">
-          {PRODUCTS.map(({ key, label, img }) => (
+          {PRODUCTS.map(({ key, img }) => (
             <Link key={key} to={`/products#product-${key}`} className="product-strip-item">
               <div className="product-strip-img-wrap">
-                <img src={img} alt={label} className="product-strip-img" loading="lazy" />
+                <img src={img} alt={t(`productStrip.${key}`)} className="product-strip-img" loading="lazy" />
                 <div className="product-strip-img-overlay" aria-hidden="true" />
               </div>
-              <span className="product-strip-label">{label}</span>
+              <span className="product-strip-label">{t(`productStrip.${key}`)}</span>
             </Link>
           ))}
         </div>

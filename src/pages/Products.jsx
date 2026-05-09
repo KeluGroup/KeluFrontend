@@ -25,29 +25,29 @@ const PRODUCTS = [
 
 /* ── Product card ── */
 function ProductCard({ product, onClick }) {
+  const { t } = useTranslation()
+  const label = t(`productStrip.${product.key}`)
+
   const handleClick = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const originX = (rect.left + rect.width / 2) - window.innerWidth / 2
     const originY = (rect.top + rect.height / 2) - window.innerHeight / 2
     onClick({ ...product, originX, originY })
-    trackProductView(product.key, product.label)
+    trackProductView(product.key, label)
   }
-
-  const { t } = useTranslation()
 
   return (
     <button
       id={`product-${product.key}`}
       className="product-card-btn"
       onClick={handleClick}
-      aria-label={product.label}
+      aria-label={label}
     >
       <div className="product-card-img-wrap">
-        <img src={product.img} alt={product.label} className="product-card-img" loading="lazy" />
+        <img src={product.img} alt={label} className="product-card-img" loading="lazy" />
         <div className="product-card-overlay" aria-hidden="true" />
         <div className="product-card-footer">
-          <span className="product-card-label">{product.label}</span>
-          
+          <span className="product-card-label">{label}</span>
         </div>
       </div>
     </button>
@@ -135,7 +135,6 @@ export default function Benefits({
         <section className="benefits-section" aria-label="Catalogue">
           <div className="section-inner">
             <div className="section-header scroll-animate">
-              <span className="section-tag">{t('solution.tag')}</span>
               <h2 className="section-title">{t('solution.productsTitle')}</h2>
               <p className="section-sub">{t('solution.subtitle')}</p>
             </div>
@@ -160,39 +159,24 @@ export default function Benefits({
               ))}
             </div>
 
-          </div>
-        </section>
-
-        <section>
-          <MenuIdeas />
-        </section>
-
-        {/* ══ SECTION 2 — Solicitar presupuesto ══════════════════ */}
-        <section className="catalogue-cta-section" aria-label="Solicitar presupuesto">
-          <div className="catalogue-cta-inner">
-            <p className="catalogue-cta-desc">{t('solution.ctaDesc')}</p>
-            <div className="catalogue-cta-actions">
+            <div className="products-section-cta scroll-animate">
+              <p className="section-sub">{t('productStrip.ctaDesc')}</p>
               <Link to="/contact" className="catalogue-cta-btn" onClick={trackCatalogueRequest}>
-                {t('solution.ctaButton')}
+                {t('productStrip.ctaButton')}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"/>
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
               </Link>
-              <button className="catalogue-download-btn" title={t('solution.catalogueSoon')} onClick={() => window.location.href='/contact'}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                {t('solution.catalogueBtn')}
-              </button>
             </div>
+
           </div>
         </section>
 
+        <section>
+          <MenuIdeas />
+        </section>
 
 
       </main>
