@@ -3256,7 +3256,7 @@ a.btn-ph {
 .contact-form-card {
   width: 100%;
   max-width: 660px;
-  margin-inline: auto;
+  margin-inline: 0 auto;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
@@ -5034,13 +5034,14 @@ a.btn-ph {
   text-align: left;
 }
 
-/* Two-col layout */
+/* Base (mobile): single column, form on top */
 .contact-page-layout {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-10);
   align-items: start;
 }
+
 
 /* Left info aside */
 .contact-page-info { position: sticky; top: 96px; }
@@ -5136,14 +5137,7 @@ a.btn-ph {
 /* Responsive contact page */
 @media (max-width: 900px) {
   .contact-page-layout { grid-template-columns: 1fr; }
-  .contact-page-form {
-    order: 1;   /* form first */
-  }
   .contact-page-info { position: static; }
-  
-  .contact-page-info {
-    order: 2;   /* info block second */
-  }
   .cpi-deco { display: none; }
 }
 
@@ -5671,6 +5665,17 @@ a.btn-ph {
 
 .footer-email-link:hover {
   color: #fff;
+}
+
+/* Desktop: align nav with email address row */
+@media (min-width: 641px) {
+  .footer-top-row {
+    align-items: stretch;
+  }
+
+  .footer-right-col {
+    justify-content: flex-end;
+  }
 }
 
 /* Mobile */

@@ -23,9 +23,10 @@ export default function ProductModal({ product, onClose }) {
 
   if (!product) return null
 
-  const name    = t(`solution.${product.key}`, { defaultValue: product.label })
-  const history = t(`solution.modal_${product.key}_history`, { defaultValue: '' })
-  const pairing = t(`solution.modal_${product.key}_pairing`, { defaultValue: '' })
+  const name         = t(`solution.${product.key}`, { defaultValue: product.label })
+  const history      = t(`solution.modal_${product.key}_history`, { defaultValue: '' })
+  const pairing      = t(`solution.modal_${product.key}_pairing`, { defaultValue: '' })
+  const pairingTitle = t(`solution.modal_${product.key}_pairingTitle`, { defaultValue: t('solution.modalPairing') })
 
   const ox = product.originX ?? 0
   const oy = product.originY ?? 0
@@ -78,7 +79,7 @@ export default function ProductModal({ product, onClose }) {
           )}
           {pairing && (
             <div className="modal-section">
-              <h3 className="modal-section-title">{t('solution.modalPairing')}</h3>
+              <h3 className="modal-section-title">{pairingTitle}</h3>
               <p className="modal-body-text">{pairing}</p>
             </div>
           )}

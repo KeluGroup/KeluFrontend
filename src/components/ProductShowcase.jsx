@@ -9,7 +9,7 @@ const PRODUCTS = [
     nameKey: 'solution.p1',
     rotate: '-8deg',
     delay: 0,
-    img: 'https://image.pollinations.ai/prompt/arepa%20venezolana%20corn%20flatbread%20close%20up%20food%20photography%20white%20background%20professional%20studio?width=480&height=480&seed=101&nologo=true',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepas%204%20variedades.jpg',
     color: '#F4A261',
   },
   {
@@ -57,7 +57,7 @@ const PRODUCTS = [
     nameKey: 'solution.p7',
     rotate: '-4deg',
     delay: 260,
-    img: 'https://image.pollinations.ai/prompt/guasacaca%20aji%20latin%20american%20sauces%20condiments%20food%20photography%20white%20background%20colorful?width=480&height=480&seed=707&nologo=true',
+    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/pulp%20fruits.jpg',
     color: '#06D6A0',
   },
   {

@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const PRODUCTS = [
-  { key: 'p1', label: 'Arepas',               img: '/products/arepas.png' },
+  { key: 'p1', label: 'Arepas',               img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepas%204%20variedades.jpg' },
   { key: 'p2', label: 'Tequeños',             img: '/products/tequenos.jpg' },
   { key: 'p3', label: 'Empanadas',            img: '/products/empanada-carne.jpg' },
   { key: 'p4', label: 'Yuca Sticks',          img: '/products/yuca-sticks.webp' },
   { key: 'p5', label: 'Pan de Bono',          img: '/products/pan-de-bono.jpg' },
   { key: 'p6', label: 'Teq. Chocolate',       img: '/products/tequenos-chocolate.jpg' },
-  { key: 'p7', label: 'Pulpas de Fruta',      img: '/products/fruit-pulps.png' },
+  { key: 'p7', label: 'Pulpas de Fruta',      img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/pulp%20fruits.jpg' },
   { key: 'p8', label: 'Salsas',               img: '/products/salsas.jpg' },
 ]
 
