@@ -163,27 +163,17 @@ export default function Stats() {
                 ))}
               </ul>
             ) : (
-              <>
-                <ul className="smap-stat-list">
+              <Link to="/services" onClick={() => setOpenModal(null)} style={{ display: 'block', textDecoration: 'none' }}>
+                <ul className="smap-stat-list" style={{ width: '420px', height: '240.78px' }}>
                   {[1, 2, 3].map(n => (
-                    <li key={n} className="smap-stat-list-item">
+                    <li key={n} className="smap-stat-list-item smap-stat-list-item--link" role="button" tabIndex={0}>
                       <span className="smap-stat-dot" aria-hidden="true" />
                       {t(`stats.${POPUP_STAT[openModal]}popup${n}`)}
+                      <span className="smap-stat-arrow" aria-hidden="true">→</span>
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/services"
-                  className="smap-stat-services-link"
-                  onClick={() => setOpenModal(null)}
-                >
-                  {t('stats.servicesModalCta')}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                    <polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </Link>
-              </>
+              </Link>
             )}
           </StatModal>
         </Suspense>

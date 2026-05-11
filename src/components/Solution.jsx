@@ -91,7 +91,6 @@ export default function Solution() {
       <div className="section-inner">
 
         <div className="section-header scroll-animate">
-          <span className="section-tag">{t('solution.tag')}</span>
           <h2 className="section-title">{t('solution.title')}</h2>
           <p className="section-sub">{t('solution.subtitle')}</p>
         </div>

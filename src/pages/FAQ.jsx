@@ -50,7 +50,6 @@ export default function FAQ({ theme, onToggleTheme, menuOpen, onToggleMenu, onCl
       <main className="faq-main">
         <div className="faq-container">
           <div className="faq-header">
-            <span className="section-tag">{t('faq.tag')}</span>
             <h1 className="section-title">{t('faq.title')}</h1>
             <p className="section-sub">{t('faq.subtitle')}</p>
           </div>

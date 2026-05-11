@@ -49,7 +49,6 @@ export default function Process() {
       <div className="section-inner">
 
         <div className="section-header">
-          <span className="section-tag">{t('process.tag')}</span>
           <h2 className="section-title">{t('process.title')}</h2>
           <p className="section-sub">{t('process.subtitle')}</p>
         </div>

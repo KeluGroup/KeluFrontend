@@ -179,7 +179,7 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                   </div>
                   <div>
                     <div className="cpi-label">{t('contact.address')}</div>
-                    <div className="cpi-value">Zürich, Switzerland</div>
+                    <div className="cpi-value">Langfurren 14, 8057 Zürich</div>
                   </div>
                 </div>
               </div>
