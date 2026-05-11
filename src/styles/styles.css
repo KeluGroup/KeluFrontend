@@ -6967,7 +6967,9 @@ a.btn-ph {
 
 @media (max-width: 700px) {
   .services-grid { grid-template-columns: 1fr; gap: var(--space-5); }
-  .services-grid > .service-card { grid-column: auto; }
+  .services-grid > .service-card,
+  .services-grid > .service-card:nth-child(4),
+  .services-grid > .service-card:nth-child(5) { grid-column: auto; width: 100%; }
 }
 
 /* ── Card ─────────────────────────────── */
@@ -7099,8 +7101,8 @@ a.btn-ph {
 
 .service-card-detail-inner {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  flex-wrap: wrap;
+  gap: 6px;
   padding: var(--space-4) 0 var(--space-2);
   border-top: 1px solid var(--color-divider);
   margin-top: var(--space-3);
@@ -7235,24 +7237,25 @@ a.btn-ph {
 }
 
 .service-detail-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  line-height: 1.55;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  padding: 3px 10px;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
-.service-detail-dot {
-  flex-shrink: 0;
-  width: 5px;
-  height: 5px;
-  margin-top: 0.5em;
-  border-radius: 50%;
-  background: var(--color-primary);
+[data-theme="dark"] .service-detail-item {
+  color: var(--color-accent-light);
+  border-color: var(--color-border);
 }
 
-[data-theme="dark"] .service-detail-dot { background: var(--color-accent-light); }
+.service-detail-dot { display: none; }
 
 /* ── Featured card (Retail & Chains) ─── */
 .service-card--featured {
