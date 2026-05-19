@@ -13,7 +13,7 @@ const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 const API_KEY  = import.meta.env.VITE_API_KEY  ?? ''
 const INITIAL  = { name: '', email: '', company: '', service: '', message: '' }
 const INITIAL_ERRORS = { name: '', email: '', service: '', message: '' }
-const VALID_SERVICES = ['B2B', 'Catering', 'Events', 'Consulting']
+const VALID_SERVICES = ['B2B', 'Catering', 'Events', 'Consulting', 'Retail and Major Chains']
 
 
 function validateName(v) {
@@ -190,6 +190,7 @@ export default function ContactPage({ theme, onToggleTheme, menuOpen, onToggleMe
                       <option value="Catering">{t('contact.form.serviceTwo')}</option>
                       <option value="Events">{t('contact.form.serviceThree')}</option>
                       <option value="Consulting">{t('contact.form.serviceFour')}</option>
+                      <option value="Retail and Major Chains">{t('contact.form.serviceFive')}</option>
                     </select>
                     {errors.service && touched.service && <span className="form-error">{errors.service}</span>}
                   </div>

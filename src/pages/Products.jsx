@@ -27,6 +27,7 @@ const PRODUCTS = [
 function ProductCard({ product, onClick }) {
   const { t } = useTranslation()
   const label = t(`productStrip.${product.key}`)
+  const name         = t(`solution.${product.key}`, { defaultValue: product.label })
 
   const handleClick = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -47,7 +48,7 @@ function ProductCard({ product, onClick }) {
         <img src={product.img} alt={label} className="product-card-img" loading="lazy" />
         <div className="product-card-overlay" aria-hidden="true" />
         <div className="product-card-footer">
-          <span className="product-card-label">{label}</span>
+          <span className="product-card-label">{name}</span>
         </div>
       </div>
     </button>

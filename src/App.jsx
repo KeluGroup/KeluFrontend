@@ -30,7 +30,7 @@ import { SECTIONS } from './config'
 import { trackPageView } from './utils/analytics'
 
 const PAGE_TITLES = {
-  '/':         'KELU GmbH – Proveedor Latino B2B en Suiza | Arepas, Tequeños, Empanadas Zúrich',
+  '/':         'KELU GmbH – Proveedor Latino B2B en Suiza',
   '/about':    'About Us | Kelu Group',
   '/products': 'Products | Kelu Group',
   '/services': 'Services | Kelu Group',
