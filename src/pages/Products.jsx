@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import ProductModal from '../components/ProductModal'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import MenuIdeas     from '../components/MenuIdeas'
 import ScrollProgress from '../components/ScrollProgress'
 import { trackProductView, trackCatalogueRequest } from '../utils/analytics'
 
@@ -175,9 +174,6 @@ export default function Benefits({
           </div>
         </section>
 
-        <section>
-          <MenuIdeas />
-        </section>
 
 
       </main>
