@@ -20,7 +20,7 @@ export default function Team() {
           <div className="story-right anim-right">
             <div className="founders-photo-wrap">
               <img
-                src="/team-founders.jpg"
+               src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/DSC00078.JPG"
                 alt="Los tres fundadores de KELU frente a Swiss Leaders, Zürich"
                 className="founders-photo"
                 loading="lazy"
