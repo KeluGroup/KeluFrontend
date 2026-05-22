@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './i18n/index.js'
+import 'flag-icons/css/flag-icons.min.css'
 import './styles/styles.css'
 import App from './App'
 
