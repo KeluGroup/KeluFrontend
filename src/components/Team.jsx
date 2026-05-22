@@ -19,15 +19,20 @@ export default function Team() {
           </div>
           <div className="story-right anim-right">
             <div className="founders-photo-wrap">
-              <img
-               src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/DSC00078.JPG"
-                alt="Los tres fundadores de KELU frente a Swiss Leaders, Zürich"
-                className="founders-photo"
-                loading="lazy"
-              />
+              <div className="founders-badge">
+                <span className="founders-badge-line" />
+                <span>Equipo Fundador</span>
+              </div>
+              <div className="founders-photo-inner">
+                <img
+                  src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/DSC00078.JPG"
+                  alt="Los tres fundadores de KELU frente a Swiss Leaders, Zürich"
+                  className="founders-photo"
+                  loading="lazy"
+                />
+              </div>
               <div className="founders-caption">
-                <span>Luis · Andrés · Kevin</span>
-                <span className="founders-caption-sub">Swiss Leaders, Zürich 🇨🇭</span>
+                <span>Kevin · Andrés · Luis</span>
               </div>
             </div>
           </div>

@@ -5656,6 +5656,11 @@ a.btn-ph {
   line-height: 1.7;
   padding-left: 2px;
 }
+.footer-che {
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
 
 .footer-email-link {
   color: rgba(255, 255, 255, 0.6);
@@ -6743,41 +6748,128 @@ a.btn-ph {
   flex-direction: column;
   justify-content: center;
 }
+/* === FOUNDERS PHOTO — professional editorial look === */
 .founders-photo-wrap {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
+  position: relative;
 }
+
+/* Decorative accent lines (top-left corner) */
+.founders-photo-wrap::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 56px;
+  height: 56px;
+  border-top: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px 0 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Decorative accent lines (bottom-right corner) */
+.founders-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  right: -12px;
+  width: 56px;
+  height: 56px;
+  border-bottom: 3px solid var(--color-primary);
+  border-right: 3px solid var(--color-primary);
+  border-radius: 0 0 4px 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Inner container for overlay positioning */
+.founders-photo-inner {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 32px rgba(0,0,0,0.12),
+    0 32px 64px rgba(0,0,0,0.10);
+}
+
 .founders-photo {
   width: 100%;
   border-radius: var(--radius-xl);
   object-fit: cover;
-  aspect-ratio: 16 / 9;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--color-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-position: 38% 58%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  /* Small zoom to centre founders, cropping excess building */
+  transform: scale(1.18);
+  /* Professional editorial: balanced contrast, less light on faces */
+  filter: contrast(1.22) brightness(0.81) saturate(0.87);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.5s ease;
 }
-.founders-photo:hover {
-  transform: scale(1.01);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.15);
+
+/* Brand tint + cinematic vignette overlay */
+.founders-photo-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  /* Brand green tint (12%) + edge vignette */
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.22) 100%),
+    linear-gradient(135deg, rgba(30,107,60,0.13) 0%, rgba(30,107,60,0.06) 60%, transparent 100%);
+  mix-blend-mode: normal;
+  pointer-events: none;
 }
+
+/* Badge "Equipo Fundador" — encima de la foto */
+.founders-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.founders-badge-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.founders-badge span:last-child {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Caption — outside the photo, below it */
 .founders-caption {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-1);
-  text-align: center;
+  padding-top: var(--space-3);
 }
+
 .founders-caption span:first-child {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-text);
-  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.founders-caption-sub {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
+
+/* Hover: slight extra zoom */
+.founders-photo-inner:hover .founders-photo {
+  transform: scale(1.22);
+  filter: contrast(1.20) brightness(0.90) saturate(0.92);
 }
 @media (max-width: 768px) {
   .story-grid {

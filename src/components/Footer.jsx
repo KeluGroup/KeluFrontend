@@ -26,7 +26,7 @@ export default function Footer() {
               <span className="footer-thin-wordmark">{BRAND_NAME}</span>
             </a>
             <address className="footer-thin-address">
-              KeLu GmbH<br />
+              KeLu GmbH · <span className="footer-che">CHE-189.376.134</span><br />
               Langfurren 14, 8057 Zürich<br />
               info@kelugroup.ch
             </address>
