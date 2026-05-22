@@ -1,7 +1,6 @@
 // GA4 Measurement ID — replace with your real ID from analytics.google.com
 const GA_ID = 'G-XR2YDWHQWQ'
 
-<<<<<<< Updated upstream
 function gtag(...args) {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag(...args)
@@ -53,9 +52,3 @@ export function trackCatalogueRequest() {
     category: 'lead',
   })
 }
-=======
-export function trackCTAClick(buttonId) {
-  // Ready to swap for GA4/datalayer whenever needed:
-  // window.dataLayer?.push({ event: 'cta_click', button_id: buttonId })
-}
->>>>>>> Stashed changes

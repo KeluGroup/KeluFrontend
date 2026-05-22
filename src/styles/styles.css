@@ -6743,41 +6743,118 @@ a.btn-ph {
   flex-direction: column;
   justify-content: center;
 }
+/* === FOUNDERS PHOTO — professional editorial look === */
 .founders-photo-wrap {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
+  position: relative;
 }
+
+/* Decorative accent lines (top-left corner) */
+.founders-photo-wrap::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 56px;
+  height: 56px;
+  border-top: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px 0 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Decorative accent lines (bottom-right corner) */
+.founders-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  right: -12px;
+  width: 56px;
+  height: 56px;
+  border-bottom: 3px solid var(--color-primary);
+  border-right: 3px solid var(--color-primary);
+  border-radius: 0 0 4px 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Inner container for overlay positioning */
+.founders-photo-inner {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 32px rgba(0,0,0,0.12),
+    0 32px 64px rgba(0,0,0,0.10);
+}
+
 .founders-photo {
   width: 100%;
   border-radius: var(--radius-xl);
   object-fit: cover;
-  aspect-ratio: 16 / 9;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--color-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 4 / 3;
+  display: block;
+  /* Professional photo enhancement: subtle contrast + saturation lift */
+  filter: contrast(1.06) brightness(1.03) saturate(1.08);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.5s ease;
 }
-.founders-photo:hover {
-  transform: scale(1.01);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.15);
+
+/* Cinematic vignette + bottom gradient overlay */
+.founders-photo-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.18) 100%),
+    linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 45%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
+
+/* Caption overlaid on photo (bottom) */
 .founders-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-4) var(--space-5);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-1);
+  gap: 2px;
   text-align: center;
+  z-index: 3;
 }
+
 .founders-caption span:first-child {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-text);
-  letter-spacing: 0.06em;
+  color: #ffffff;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
+
 .founders-caption-sub {
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Hover: subtle zoom in + overlay fades slightly */
+.founders-photo-inner:hover .founders-photo {
+  transform: scale(1.03);
+  filter: contrast(1.08) brightness(1.05) saturate(1.12);
+}
+.founders-photo-inner:hover::after {
+  opacity: 0.85;
 }
 @media (max-width: 768px) {
   .story-grid {
