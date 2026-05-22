@@ -6796,10 +6796,11 @@ a.btn-ph {
   width: 100%;
   border-radius: var(--radius-xl);
   object-fit: cover;
+  object-position: center 62%;
   aspect-ratio: 4 / 3;
   display: block;
-  /* Professional photo enhancement: subtle contrast + saturation lift */
-  filter: contrast(1.06) brightness(1.03) saturate(1.08);
+  /* Professional editorial: high contrast, controlled brightness, slight desaturation */
+  filter: contrast(1.18) brightness(0.88) saturate(0.90);
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.5s ease;
 }
@@ -6851,7 +6852,7 @@ a.btn-ph {
 /* Hover: subtle zoom in + overlay fades slightly */
 .founders-photo-inner:hover .founders-photo {
   transform: scale(1.03);
-  filter: contrast(1.08) brightness(1.05) saturate(1.12);
+  filter: contrast(1.20) brightness(0.90) saturate(0.92);
 }
 .founders-photo-inner:hover::after {
   opacity: 0.85;

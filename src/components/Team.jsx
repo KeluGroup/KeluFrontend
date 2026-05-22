@@ -27,7 +27,7 @@ export default function Team() {
                   loading="lazy"
                 />
                 <div className="founders-caption">
-                  <span>Luis · Andrés · Kevin</span>
+                  <span>Kevin · Andrés · Luis</span>
                   <span className="founders-caption-sub">Swiss Leaders, Zürich 🇨🇭</span>
                 </div>
               </div>
