@@ -21,7 +21,7 @@ export default function Team() {
             <div className="founders-photo-wrap">
               <div className="founders-badge">
                 <span className="founders-badge-line" />
-                <span>Equipo Fundador</span>
+                <span>{t('team.foundersBadge')}</span>
               </div>
               <div className="founders-photo-inner">
                 <img

@@ -202,6 +202,7 @@
   },
   "team": {
     "tag":      "Notre Équipe",
+    "foundersBadge": "Équipe Fondatrice",
     "title":    "Les Personnes derrière KELU",
     "subtitle": "Trois amis. Deux pays. Une mission commune.",
     "storyTag":   "Notre Histoire",
