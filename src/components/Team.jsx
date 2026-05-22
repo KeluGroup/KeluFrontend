@@ -26,10 +26,9 @@ export default function Team() {
                   className="founders-photo"
                   loading="lazy"
                 />
-                <div className="founders-caption">
-                  <span>Kevin · Andrés · Luis</span>
-                  <span className="founders-caption-sub">Swiss Leaders, Zürich 🇨🇭</span>
-                </div>
+              </div>
+              <div className="founders-caption">
+                <span>Kevin · Andrés · Luis</span>
               </div>
             </div>
           </div>

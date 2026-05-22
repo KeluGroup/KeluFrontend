@@ -6796,66 +6796,47 @@ a.btn-ph {
   width: 100%;
   border-radius: var(--radius-xl);
   object-fit: cover;
-  object-position: center 62%;
+  object-position: center 58%;
   aspect-ratio: 4 / 3;
   display: block;
+  /* Small zoom to centre founders, cropping excess building */
+  transform: scale(1.18);
   /* Professional editorial: high contrast, controlled brightness, slight desaturation */
   filter: contrast(1.18) brightness(0.88) saturate(0.90);
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.5s ease;
 }
 
-/* Cinematic vignette + bottom gradient overlay */
+/* Cinematic vignette only (no bottom gradient — caption is outside) */
 .founders-photo-inner::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: var(--radius-xl);
-  background:
-    radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.18) 100%),
-    linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 45%);
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.20) 100%);
   pointer-events: none;
-  transition: opacity 0.4s ease;
 }
 
-/* Caption overlaid on photo (bottom) */
+/* Caption — outside the photo, below it */
 .founders-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-4) var(--space-5);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2px;
-  text-align: center;
-  z-index: 3;
+  padding-top: var(--space-3);
 }
 
 .founders-caption span:first-child {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-.founders-caption-sub {
-  font-size: var(--text-xs);
-  color: rgba(255,255,255,0.80);
-  letter-spacing: 0.04em;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-/* Hover: subtle zoom in + overlay fades slightly */
+/* Hover: slight extra zoom */
 .founders-photo-inner:hover .founders-photo {
-  transform: scale(1.03);
+  transform: scale(1.22);
   filter: contrast(1.20) brightness(0.90) saturate(0.92);
-}
-.founders-photo-inner:hover::after {
-  opacity: 0.85;
 }
 @media (max-width: 768px) {
   .story-grid {
