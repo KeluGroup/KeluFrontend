@@ -18,18 +18,16 @@ export default function Team() {
             <p className="anim-fade">{t('team.storyP3')}</p>
           </div>
           <div className="story-right anim-right">
-            <div className="founder-cards">
-              <div className="founder-card">
-                <div className="founder-avatar">L</div>
-                <div className="founder-info"><h4>Luis</h4><span>{t('team.founderVenezuela')}</span></div>
-              </div>
-              <div className="founder-card">
-                <div className="founder-avatar">A</div>
-                <div className="founder-info"><h4>Andrés</h4><span>{t('team.founderVenezuela')}</span></div>
-              </div>
-              <div className="founder-card">
-                <div className="founder-avatar">K</div>
-                <div className="founder-info"><h4>Kevin</h4><span>{t('team.founderColombia')}</span></div>
+            <div className="founders-photo-wrap">
+              <img
+                src="/team-founders.jpg"
+                alt="Los tres fundadores de KELU frente a Swiss Leaders, Zürich"
+                className="founders-photo"
+                loading="lazy"
+              />
+              <div className="founders-caption">
+                <span>Luis · Andrés · Kevin</span>
+                <span className="founders-caption-sub">Swiss Leaders, Zürich 🇨🇭</span>
               </div>
             </div>
           </div>
