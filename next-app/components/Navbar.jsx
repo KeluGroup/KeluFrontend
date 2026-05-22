@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { BRAND_NAME } from '../config'
 
-// ── Icons ──────────────────────────────────────────────────────────────────//
+// ── Icons ──────────────────────────────────────────────────────────────────
 const SunIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="12" cy="12" r="5"/>
@@ -136,12 +136,13 @@ export default function Navbar({
   const pathname = usePathname()
   const router = useRouter()
 
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => { setMounted(true) }, [])
-
+  // ── derive before hooks that depend on it ──
   const urlLocale = pathname?.split('/')[1]
   const locale = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
+
+  // ── ALL hooks before any early return ──
+  //const [mounted, setMounted] = useState(false)
+  //useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     if (VALID_LOCALES.includes(urlLocale) && i18n.language !== urlLocale) {
@@ -151,21 +152,24 @@ export default function Navbar({
     }
   }, [pathname])
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  // ── safe to return early now ──
+  //if (!mounted) return null
+
   const isHomePage = pathname === '/' || /^\/[a-z]{2}(\/)?$/.test(pathname)
 
   const NAV_LINKS = [
-    { href: `/${locale}`,     label: t('nav.home'),     id: 'home',     isRoute: false },
+    { href: `/${locale}`,          label: t('nav.home'),     id: 'home',     isRoute: false },
     { href: `/${locale}/products`, label: t('nav.products'), id: 'products', isRoute: true  },
     { href: `/${locale}/services`, label: t('nav.services'), id: 'services', isRoute: true  },
     { href: `/${locale}/contact`,  label: t('nav.contact'),  id: 'contact',  isRoute: true  },
     { href: `/${locale}/about`,    label: t('nav.about'),    id: 'about',    isRoute: true  },
     { href: `/${locale}/faq`,      label: 'FAQ',             id: 'faq',      isRoute: true  },
   ]
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
 
   const handleHomeClick = (e) => {
     e.preventDefault()
@@ -181,7 +185,7 @@ export default function Navbar({
     <>
       {/* ── Floating logo ── */}
       <Link
-        href={isHomePage ? `/${locale}` : `/${locale}`}
+        href={`/${locale}`}
         onClick={handleHomeClick}
         className={`nav-float-logo ${menuOpen ? 'nav-float-logo--hide' : ''}`}
         aria-label={`${BRAND_NAME} — Home`}
@@ -220,7 +224,7 @@ export default function Navbar({
       >
         <div className="fullmenu-top">
           <Link
-            href={isHomePage ? `/${locale}` : `/${locale}`}
+            href={`/${locale}`}
             onClick={handleHomeClick}
             className="fullmenu-brand"
           >
