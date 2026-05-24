@@ -6846,7 +6846,6 @@ a.btn-ph {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
-  .story-right { order: -1; }
 }
 
 /* =====================
