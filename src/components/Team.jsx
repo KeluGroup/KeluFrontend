@@ -19,13 +19,9 @@ export default function Team() {
           </div>
           <div className="story-right anim-right">
             <div className="founders-photo-wrap">
-              <div className="founders-badge">
-                <span className="founders-badge-line" />
-                <span>{t('team.foundersBadge')}</span>
-              </div>
               <div className="founders-photo-inner">
                 <img
-                  src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/DSC00078.JPG"
+                  src="https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/teampic.JPG"
                   alt="Los tres fundadores de KELU frente a Swiss Leaders, Zürich"
                   className="founders-photo"
                   loading="lazy"
