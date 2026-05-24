@@ -8,7 +8,7 @@ export default function Home() {
   const { t } = useTranslation()
 
   return (
-    <section id="home" className="section" aria-label="Home">
+    <section id="home" className="section hero-section" aria-label="Home">
 
       {/* ── Background Image ── */}
       <div className="hero-video-wrap" aria-hidden="true">
