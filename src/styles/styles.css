@@ -6715,7 +6715,7 @@ a.btn-ph {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
-  align-items: start;
+  align-items: center;
 }
 .story-left {
   display: flex;
@@ -6802,8 +6802,6 @@ a.btn-ph {
   transform: scale(1.08);
   /* Professional editorial: balanced contrast, less light on faces */
   filter: contrast(1.22) brightness(0.81) saturate(0.87);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.5s ease;
 }
 
 /* Brand tint + cinematic vignette overlay */
@@ -6836,11 +6834,6 @@ a.btn-ph {
   text-transform: uppercase;
 }
 
-/* Hover: slight extra zoom */
-.founders-photo-inner:hover .founders-photo {
-  transform: scale(1.22);
-  filter: contrast(1.20) brightness(0.90) saturate(0.92);
-}
 @media (max-width: 768px) {
   .story-grid {
     grid-template-columns: 1fr;
@@ -6937,6 +6930,12 @@ a.btn-ph {
 
 .services-section--header .section-inner {
   padding-bottom: var(--space-4);
+}
+
+@media (min-width: 769px) {
+  .services-section--header .section-inner {
+    padding-top: calc(68px + var(--space-8));
+  }
 }
 
 .services-section--header .section-header {
@@ -7497,19 +7496,12 @@ a.btn-ph {
 }
 
 @media (max-width: 768px) {
-  /* Services — push first section down */
-  .services-section--header {
-    padding-top: var(--space-8);
-  }
-
   /* About — push team section down */
 
 }
 
-/* Mirror exactly what .services-page-main and .contact-page-main do */
 .about-page-main {
   background: var(--color-surface-2);
-  padding-top: clamp(var(--space-16), 12vw, var(--space-24)); /* 64px → 96px */
 }
 
 @media (max-width: 768px) {
@@ -7522,8 +7514,3 @@ a.btn-ph {
 
 
 
-@media (max-width: 768px) {
-  .team-section {
-    padding-top: calc(var(--navbar-height, 64px) + var(--space-8));
-  }
-}

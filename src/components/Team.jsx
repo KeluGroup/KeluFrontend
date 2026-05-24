@@ -6,8 +6,7 @@ export default function Team() {
   return (
     <section id="team" className="section team-section" aria-label="Team">
       <section id="story">
-        <p className="story-eyebrow anim-fade">{t('team.title')}</p>
-        <div className="story-grid">
+<div className="story-grid">
           <div className="story-left">
             <h2 className="anim-fade">
               {t('team.storyHeadingLine1')}<br />
