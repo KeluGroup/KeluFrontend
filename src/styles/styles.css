@@ -648,9 +648,9 @@ a,button,[role="button"]{transition:color var(--transition-interactive),backgrou
 /* No top navbar bar — no padding needed */
 main{padding-top:0}
 .section{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
-#home{background:var(--color-primary);position:relative;overflow:hidden}
-#home::before{content:'';position:absolute;top:-15%;right:-5%;width:55vw;height:55vw;background:radial-gradient(circle,rgba(157,181,159,0.1) 0%,transparent 68%);pointer-events:none}
-#home::after{content:'';position:absolute;bottom:5%;left:-8%;width:35vw;height:35vw;background:radial-gradient(circle,rgba(24,79,37,0.3) 0%,transparent 70%);pointer-events:none}
+#home{background:linear-gradient(150deg,var(--color-primary) 0%,var(--color-secondary) 55%,color-mix(in oklch,var(--color-secondary) 30%,var(--color-bg)) 100%);position:relative;overflow:hidden;isolation:isolate}
+#home::before{content:'';position:absolute;top:-15%;right:-5%;width:55vw;height:55vw;background:radial-gradient(circle,rgba(157,181,159,0.1) 0%,transparent 68%);pointer-events:none;z-index:-1}
+#home::after{content:'';position:absolute;bottom:5%;left:-8%;width:35vw;height:35vw;background:radial-gradient(circle,rgba(24,79,37,0.3) 0%,transparent 70%);pointer-events:none;z-index:-1}
 
 .home-inner{
   width: 100%;
@@ -665,7 +665,7 @@ main{padding-top:0}
   min-height:calc(100vh - 68px);
   min-height:calc(100svh - 68px);
   position:relative;
-  z-index:2
+  z-index:1
 }
 
 .home-copy{
@@ -1059,16 +1059,12 @@ a.btn-ph {
   position: relative;
   overflow: hidden;
 }
-/* section#home has specificity 1-0-1 > #home 1-0-0, overriding the fallback color */
-section#home.hero-section {
-  background: none;
-}
 
 /* ── Video fills the section ── */
 .hero-video-wrap {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-video {
