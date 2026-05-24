@@ -22,8 +22,9 @@
   --shadow-md:0 4px 12px rgba(24,79,37,0.10),0 2px 6px rgba(24,79,37,0.06);
   --shadow-lg:0 12px 32px rgba(24,79,37,0.14),0 4px 12px rgba(24,79,37,0.08);
   --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Inter',system-ui,sans-serif;
+  --font-display:'Dosis',sans-serif;
+  --font-body:'Dosis',sans-serif;
+  --font-serif:'Dosis',sans-serif;
   --content-wide:1200px;
 }
 [data-theme="dark"] {
@@ -7515,5 +7516,17 @@ a.btn-ph {
 
 }
 
-
+/* =====================
+   FOOTER FONT PRESERVATION
+   Dosis is applied globally; these rules restore the original
+   Playfair Display / Inter stack inside the footer only.
+   ===================== */
+.site-footer,
+.site-footer * {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.site-footer .footer-wordmark,
+.site-footer .logo-wordmark {
+  font-family: 'Playfair Display', Georgia, serif;
+}
 
