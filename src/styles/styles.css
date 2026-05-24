@@ -7493,6 +7493,9 @@ a.btn-ph {
   .services-section--header .section-tag {
     margin-top: var(--space-6);   /* ~24px gap from navbar */
   }
+  .services-section--header .section-inner {
+    padding-top: calc(68px + var(--space-8));
+  }
 }
 
 @media (max-width: 768px) {
