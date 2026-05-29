@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", ".next"]
+}

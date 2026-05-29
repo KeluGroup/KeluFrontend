@@ -1,0 +1,64 @@
+import Link from 'next/link'
+import { useTranslations, useLocale } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
+import { BRAND_NAME } from '../config'
+
+const LOCALES = ['de', 'en', 'es', 'fr', 'it']
+
+export default function PageShell({ title, children, theme, onToggleTheme }) {
+  const t = useTranslations()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const toggleLang = () => {
+    const next = locale === 'en' ? 'de' : 'en'
+    const newPath = pathname.replace(`/${locale}`, `/${next}`)
+    router.push(newPath)
+  }
+
+  return (
+    <>
+      <header className="navbar" role="banner">
+        <div className="navbar-inner">
+          <Link href={`/${locale}`} className="navbar-logo" aria-label={`${BRAND_NAME} — Back to home`}>
+            <img
+              src="/logo.svg"
+              alt={BRAND_NAME}
+              width="34"
+              height="34"
+              aria-hidden="true"
+            />
+            <span className="logo-wordmark">{BRAND_NAME}</span>
+          </Link>
+
+          <Link href={`/${locale}`} className="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            {t('shell.back')}
+          </Link>
+
+          <div className="navbar-actions">
+            <button className="lang-switcher" onClick={toggleLang} aria-label="Switch language">
+              {locale === 'en' ? 'DE' : 'EN'}
+            </button>
+            <button className="icon-btn" onClick={onToggleTheme} aria-label="Toggle theme">
+              {theme === 'dark'
+                ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                : <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              }
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main className="policy-main">
+        <div className="policy-container">
+          <h1 className="policy-title">{title}</h1>
+          <div className="policy-content">{children}</div>
+        </div>
+      </main>
+    </>
+  )
+}

@@ -1,19 +1,24 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "buildCommand": "cd next-app && npm run build",
+  "outputDirectory": "next-app/.next",
+  "installCommand": "cd next-app && npm install",
+  "framework": "nextjs",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/_next/static/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-VjDZQS61F4K9YCi/SCbrJngPQL4CD0xmSh5UagxkgL4=' 'sha256-1z1E9fxwm2kp/lnDRF0QeGg6s9jb2GgERi/UJxzZF4I=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://api.fontshare.com; connect-src 'self' https://api.kelugroup.ch; img-src 'self' data: https:; media-src 'self' https://*.public.blob.vercel-storage.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
