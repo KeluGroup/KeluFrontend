@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
 const VALID_LOCALES = ['de', 'en', 'es', 'fr', 'it']
@@ -25,7 +25,7 @@ function FAQItem({ question, answer }) {
 }
 
 export default function FaqPage() {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const pathname = usePathname()
 
   const urlLocale = pathname?.split('/')[1]

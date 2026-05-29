@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const PILLARS = [
   {
@@ -35,7 +35,7 @@ const PILLARS = [
 ]
 
 export default function ValuePillars() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section className="pillars-section" aria-label="Value Pillars">

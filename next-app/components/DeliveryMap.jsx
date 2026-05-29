@@ -1,20 +1,20 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const SWISS_PATH =
   'M 168 42 L 240 22 L 300 20 L 355 30 L 398 52 L 435 85 L 455 115 L 450 150 L 420 180 L 375 210 L 355 250 L 330 265 L 295 255 L 265 245 L 248 238 L 228 248 L 205 258 L 175 248 L 148 228 L 115 210 L 85 210 L 55 225 L 30 215 L 28 195 L 50 178 L 72 155 L 88 128 L 100 95 L 130 62 L 155 45 Z'
 
 const CITIES = [
-  { id: 'zurich',    label: 'Zürich',    x: 292, y: 70,  current: true  },
-  { id: 'bern',      label: 'Bern',      x: 185, y: 112, current: false },
-  { id: 'basel',     label: 'Basel',     x: 178, y: 50,  current: false },
-  { id: 'lucerne',   label: 'Lucerne',   x: 258, y: 102, current: false },
-  { id: 'stgallen',  label: 'St. Gallen',x: 372, y: 62,  current: false },
-  { id: 'lugano',    label: 'Lugano',    x: 338, y: 252, current: false },
-  { id: 'geneva',    label: 'Geneva',    x: 48,  y: 215, current: false },
+  { id: 'zurich',    label: 'Zürich',     x: 292, y: 70,  current: true  },
+  { id: 'bern',      label: 'Bern',       x: 185, y: 112, current: false },
+  { id: 'basel',     label: 'Basel',      x: 178, y: 50,  current: false },
+  { id: 'lucerne',   label: 'Lucerne',    x: 258, y: 102, current: false },
+  { id: 'stgallen',  label: 'St. Gallen', x: 372, y: 62,  current: false },
+  { id: 'lugano',    label: 'Lugano',     x: 338, y: 252, current: false },
+  { id: 'geneva',    label: 'Geneva',     x: 48,  y: 215, current: false },
 ]
 
 export default function DeliveryMap() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section className="delivery-map-section">
@@ -33,14 +33,11 @@ export default function DeliveryMap() {
               aria-label="Map of Switzerland showing KELU delivery coverage"
               role="img"
             >
-              {/* Country fill */}
               <path d={SWISS_PATH} className="swiss-map-country" />
 
-              {/* Zürich delivery zone glow */}
               <circle cx="292" cy="70" r="48" className="swiss-map-zone-ring" />
               <circle cx="292" cy="70" r="34" className="swiss-map-zone" />
 
-              {/* Cities */}
               {CITIES.map(c => (
                 <g key={c.id} className={`swiss-map-city ${c.current ? 'swiss-map-city--current' : ''}`}>
                   <circle cx={c.x} cy={c.y} r={c.current ? 6 : 4} />

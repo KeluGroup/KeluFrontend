@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const STEP_ICONS = [
   /* 1 — schedule */
@@ -35,7 +35,7 @@ const STEP_ICONS = [
 const STEPS = [1, 2, 3, 4]
 
 export default function Process() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section id="process" className="section process-section" aria-label="Process">

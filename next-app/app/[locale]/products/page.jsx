@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import { Suspense, lazy } from 'react'
 import { trackProductView, trackCatalogueRequest } from '../../../utils/analytics'
 import { useLocale } from '../../../hooks/useLocale' 
@@ -21,7 +21,7 @@ const PRODUCTS = [
 ]
 
 function ProductCard({ product, onClick }) {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const label = t(`productStrip.${product.key}`)
   const name  = t(`solution.${product.key}`, { defaultValue: product.label })
 
@@ -52,7 +52,7 @@ function ProductCard({ product, onClick }) {
 }
 
 export default function ProductsPage() {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const [activeProduct, setActiveProduct] = useState(null)
   const locale = useLocale() 
 

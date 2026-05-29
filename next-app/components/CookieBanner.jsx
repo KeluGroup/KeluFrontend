@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const BLOCKED_ROUTES = ['/admin', '/dashboard']
 
 export default function CookieBanner() {
-  const { t }    = useTranslation()
+  const t        = useTranslations()
   const pathname = usePathname()
   const [visible, setVisible] = useState(false)
 

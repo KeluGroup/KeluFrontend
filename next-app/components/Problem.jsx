@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const FOOD_STICKERS = [
   { emoji: '🫓', label: 'Arepa' },
@@ -62,7 +62,7 @@ const CARDS = [
 ]
 
 export default function Problem() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section id="problem" className="section problem-section" aria-label="Problem">

@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const TIERS = [
   { key: 'tier1', featured: false },
@@ -9,7 +9,7 @@ const TIERS = [
 const FEATURE_COUNT = 5
 
 export default function Pricing() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section id="pricing" className="section" aria-label="Pricing">

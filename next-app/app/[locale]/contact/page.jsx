@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import { trackFormSubmit } from '../../../utils/analytics'
 
 /* ── Form config ── */
@@ -34,7 +34,7 @@ function validateMessage(v) {
 }
 
 export default function ContactPage() {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const [fields, setFields]   = useState(INITIAL)
   const [errors, setErrors]   = useState(INITIAL_ERRORS)
   const [touched, setTouched] = useState({ name: false, email: false, service: false, message: false })

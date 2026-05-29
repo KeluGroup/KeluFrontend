@@ -1,14 +1,15 @@
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+'use client'
+
+import { useTranslations } from 'next-intl'
 
 const CARDS = [
-  { key: 'one',   img: '/products/pan-de-bono.jpg',          tagColor: '#F59E0B' },
-  { key: 'two',   img: '/products/tequenos.jpg',             tagColor: 'var(--color-primary)' },
-  { key: 'three', img: '/products/tequenos-chocolate.jpg',   tagColor: '#8B5CF6' },
+  { key: 'one',   img: '/products/pan-de-bono.jpg',        tagColor: '#F59E0B' },
+  { key: 'two',   img: '/products/tequenos.jpg',           tagColor: 'var(--color-primary)' },
+  { key: 'three', img: '/products/tequenos-chocolate.jpg', tagColor: '#8B5CF6' },
 ]
 
 export default function MenuIdeas() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section className="menu-ideas-section" aria-label="Menu Ideas">
@@ -40,8 +41,6 @@ export default function MenuIdeas() {
             </div>
           ))}
         </div>
-
-
 
       </div>
     </section>

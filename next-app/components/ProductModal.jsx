@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 //import '../styles/modal.css'
 
 export default function ProductModal({ product, onClose }) {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const [closing, setClosing] = useState(false)
 
   const handleClose = () => {

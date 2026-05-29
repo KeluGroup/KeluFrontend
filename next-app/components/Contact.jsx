@@ -1,13 +1,11 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { useTranslation } from 'react-i18next'
-import { usePathname } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import { trackCTAClick } from '../utils/analytics'
 
 const EMOJIS = ['🫓', '🌽', '🧀', '🌶️', '🫑', '🥑', '🍋']
-const VALID_LOCALES = ['de', 'en', 'es', 'fr', 'it']
 
 function useEmojiRain(canvasRef) {
   useEffect(() => {
@@ -63,13 +61,10 @@ function useEmojiRain(canvasRef) {
 }
 
 export default function Contact() {
-  const { t }      = useTranslation()
-  const pathname   = usePathname()
+  const t          = useTranslations()
+  const locale     = useLocale()
   const sectionRef = useRef(null)
   const canvasRef  = useRef(null)
-
-  const urlLocale = pathname?.split('/')[1]
-  const locale = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
 
   useEmojiRain(canvasRef)
 
@@ -91,17 +86,14 @@ export default function Contact() {
       ref={sectionRef}
       aria-label="Contact"
     >
-      {/* Emoji rain */}
       <canvas ref={canvasRef} className="arepa-rain-canvas" aria-hidden="true" />
 
-      {/* Portal rings */}
       <div className="portal-rings" aria-hidden="true">
         {[1,2,3,4,5].map(n => (
           <div key={n} className={`portal-ring portal-ring--${n}`} />
         ))}
       </div>
 
-      {/* Floating particles */}
       <div className="cta-particles" aria-hidden="true">
         {['✦','★','◆','✦','★','◆','✦','★'].map((s, i) => (
           <span key={i} className={`cta-particle cta-particle--${i + 1}`}>{s}</span>

@@ -1,20 +1,16 @@
 'use client'
 
-import { useTranslation } from 'react-i18next'
+import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import { trackCTAClick } from '../utils/analytics'
-//import { useHashSync } from '../hooks/useHashSync'
-import { useLocale } from '../hooks/useLocale'
 
 export default function Home() {
-  // useHashSync('section[id], .contact-merged[id], .process-section[id]')
-  const { t } = useTranslation()
+  const t      = useTranslations()
   const locale = useLocale()
 
   return (
     <section id="home" className="section" aria-label="Home">
 
-      {/* ── Background Image ── */}
       <div className="hero-video-wrap" aria-hidden="true">
         <video
           className="hero-video"
@@ -28,7 +24,6 @@ export default function Home() {
         <div className="hero-video-overlay" />
       </div>
 
-      {/* ── Content ── */}
       <div className="home-inner">
         <div className="home-copy">
           <div className="hero-badge">

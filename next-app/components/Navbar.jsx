@@ -1,13 +1,11 @@
 'use client'
 
-import '../i18n/index'
 import { useEffect, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { BRAND_NAME } from '../config'
 
-// ── Icons ──────────────────────────────────────────────────────────────────
 const SunIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="12" cy="12" r="5"/>
@@ -20,7 +18,6 @@ const MoonIcon = () => (
   </svg>
 )
 
-// ── Language data ──────────────────────────────────────────────────────────
 const LANGS = [
   { code: 'de', label: 'Deutsch',  iso: 'de' },
   { code: 'en', label: 'English',  iso: 'gb' },
@@ -29,22 +26,18 @@ const LANGS = [
   { code: 'it', label: 'Italiano', iso: 'it' },
 ]
 
-const VALID_LOCALES = ['de', 'en', 'es', 'fr', 'it']
 const ITEM_H   = 52
 const CLOSED_W = 52
 const OPEN_W   = 165
 
-// ── LangDropdown ──────────────────────────────────────────────────────────
 function LangDropdown() {
-  const { i18n } = useTranslation()
+  const locale   = useLocale()
   const [open, setOpen] = useState(false)
-  const ref = useRef(null)
+  const ref      = useRef(null)
   const pathname = usePathname()
-  const router = useRouter()
+  const router   = useRouter()
 
-  const urlLocale = pathname?.split('/')[1]
-  const currentCode = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
-  const current = LANGS.find(l => l.code === currentCode) ?? LANGS[0]
+  const current = LANGS.find(l => l.code === locale) ?? LANGS[0]
 
   useEffect(() => {
     const handler = (e) => {
@@ -58,7 +51,8 @@ function LangDropdown() {
     setOpen(false)
     const segments = pathname.split('/')
     segments[1] = code
-    router.push(segments.join('/') || `/${code}`)
+    const newPath = segments.join('/') || `/${code}`
+    window.location.href = newPath  // ← hard navigation instead of router.push
   }
 
   return (
@@ -126,39 +120,20 @@ function LangDropdown() {
   )
 }
 
-// ── Navbar ─────────────────────────────────────────────────────────────────
 export default function Navbar({
   theme, onToggleTheme,
   menuOpen, onToggleMenu, onCloseMenu,
   activeSection, isAboutPage,
 }) {
-  const { t, i18n } = useTranslation()
+  const t        = useTranslations()
+  const locale   = useLocale()
   const pathname = usePathname()
-  const router = useRouter()
-
-  // ── derive before hooks that depend on it ──
-  const urlLocale = pathname?.split('/')[1]
-  const locale = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
-
-  // ── ALL hooks before any early return ──
-  //const [mounted, setMounted] = useState(false)
-  //useEffect(() => { setMounted(true) }, [])
-
-  useEffect(() => {
-    if (VALID_LOCALES.includes(urlLocale) && i18n.language !== urlLocale) {
-      if (typeof i18n.changeLanguage === 'function') {
-        i18n.changeLanguage(urlLocale)
-      }
-    }
-  }, [pathname])
+  const router   = useRouter()
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
-
-  // ── safe to return early now ──
-  //if (!mounted) return null
 
   const isHomePage = pathname === '/' || /^\/[a-z]{2}(\/)?$/.test(pathname)
 
@@ -183,7 +158,6 @@ export default function Navbar({
 
   return (
     <>
-      {/* ── Floating logo ── */}
       <Link
         href={`/${locale}`}
         onClick={handleHomeClick}
@@ -193,7 +167,6 @@ export default function Navbar({
         <img src="/logo-color.svg" alt={BRAND_NAME} width="52" height="52" aria-hidden="true" />
       </Link>
 
-      {/* ── Floating controls ── */}
       <div className="nav-controls">
         <LangDropdown />
         <button
@@ -205,7 +178,6 @@ export default function Navbar({
         </button>
       </div>
 
-      {/* ── Hamburger ── */}
       <button
         className={`nav-hamburger ${menuOpen ? 'nav-hamburger--open' : ''}`}
         onClick={onToggleMenu}
@@ -215,7 +187,6 @@ export default function Navbar({
         <span /><span /><span />
       </button>
 
-      {/* ── Full-screen overlay ── */}
       <div
         className={`fullmenu ${menuOpen ? 'fullmenu--open' : ''}`}
         role="dialog"

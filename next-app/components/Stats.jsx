@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import { useRef, useState, lazy, Suspense, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -80,7 +80,7 @@ const PRODUCT_CARD_KEYS = { 1: 'p2', 2: 'p4', 3: 'p1' }
 
 
 export default function Stats() {
-  const { t }  = useTranslation()
+  const t = useTranslations()
   const router = useRouter()
   const locale = useLocale()
   const [mapOpen,   setMapOpen]   = useState(false)

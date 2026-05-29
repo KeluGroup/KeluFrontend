@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 // AI-generated product images via Pollinations AI
 // Each seed ensures a consistent image on every load
@@ -71,7 +71,7 @@ const PRODUCTS = [
 ]
 
 function ProductCard({ product, visible, index }) {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const [imgLoaded, setImgLoaded] = useState(false)
 
   return (

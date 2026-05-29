@@ -1,28 +1,20 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "buildCommand": "cd next-app && npm run build",
+  "outputDirectory": "next-app/.next",
+  "installCommand": "cd next-app && npm install",
+  "framework": "nextjs",
   "headers": [
     {
-      "source": "/",
+      "source": "/_next/static/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
     {
-      "source": "/index.html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

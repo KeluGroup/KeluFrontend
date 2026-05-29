@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 export default function CookiesPage() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   useEffect(() => {
     window.scrollTo(0, 0)

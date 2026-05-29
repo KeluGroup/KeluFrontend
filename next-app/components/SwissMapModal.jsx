@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 // Accurate paths derived from real GeoJSON (empet/Datasets swiss-cantons.geojson)
 // projected via d3.geoMercator().fitSize([630,405]) + RDP simplification @ 1px tolerance
@@ -60,7 +60,7 @@ const CANTONS = [
 ]
 
 function ModalContent({ onClose }) {
-  const { t } = useTranslation()
+  const t = useTranslations()
   const [hovered, setHovered] = useState(null)
 
   useEffect(() => {

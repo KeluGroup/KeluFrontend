@@ -1,16 +1,27 @@
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import Link from 'next/link'
+import { useTranslations, useLocale } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
 import { BRAND_NAME } from '../config'
 
+const LOCALES = ['de', 'en', 'es', 'fr', 'it']
+
 export default function PageShell({ title, children, theme, onToggleTheme }) {
-  const { t, i18n } = useTranslation()
-  const toggleLang  = () => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')
+  const t = useTranslations()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const toggleLang = () => {
+    const next = locale === 'en' ? 'de' : 'en'
+    const newPath = pathname.replace(`/${locale}`, `/${next}`)
+    router.push(newPath)
+  }
 
   return (
     <>
       <header className="navbar" role="banner">
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo" aria-label={`${BRAND_NAME} — Back to home`}>
+          <Link href={`/${locale}`} className="navbar-logo" aria-label={`${BRAND_NAME} — Back to home`}>
             <img
               src="/logo.svg"
               alt={BRAND_NAME}
@@ -21,7 +32,7 @@ export default function PageShell({ title, children, theme, onToggleTheme }) {
             <span className="logo-wordmark">{BRAND_NAME}</span>
           </Link>
 
-          <Link to="/" className="back-link">
+          <Link href={`/${locale}`} className="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M19 12H5M12 5l-7 7 7 7"/>
             </svg>
@@ -30,7 +41,7 @@ export default function PageShell({ title, children, theme, onToggleTheme }) {
 
           <div className="navbar-actions">
             <button className="lang-switcher" onClick={toggleLang} aria-label="Switch language">
-              {i18n.language === 'en' ? 'DE' : 'EN'}
+              {locale === 'en' ? 'DE' : 'EN'}
             </button>
             <button className="icon-btn" onClick={onToggleTheme} aria-label="Toggle theme">
               {theme === 'dark'

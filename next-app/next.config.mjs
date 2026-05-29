@@ -1,8 +1,9 @@
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const withNextIntl = createNextIntlPlugin('./i18n.js')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // ensure only one React instance
-  },
   transpilePackages: ['react-i18next', 'i18next'],
   async rewrites() {
     return [
@@ -14,4 +15,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig)

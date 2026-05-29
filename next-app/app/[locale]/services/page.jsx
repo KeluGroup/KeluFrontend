@@ -2,8 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
-import { useLocale } from '../../../hooks/useLocale' 
+import { useTranslations, useLocale } from 'next-intl'
 
 const SERVICES = [
   {
@@ -75,8 +74,8 @@ const SERVICES = [
 ]
 
 export default function ServicesPage() {
-  const { t } = useTranslation()
-  const locale = useLocale() 
+  const t = useTranslations()
+  const locale = useLocale()
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -92,7 +91,6 @@ export default function ServicesPage() {
   return (
     <main className="services-main">
 
-      {/* ══ HERO ═══════════════════════════════════════════════════ */}
       <section className="services-section services-section--header" aria-label="Services header">
         <div className="section-inner">
           <div className="section-header scroll-animate">
@@ -102,7 +100,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ══ CARDS ══════════════════════════════════════════════════ */}
       <section className="services-section" aria-label="Our Services">
         <div className="section-inner">
           <div className="services-grid">

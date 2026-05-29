@@ -2,10 +2,10 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 export default function PrivacyPage() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   useEffect(() => {
     window.scrollTo(0, 0)

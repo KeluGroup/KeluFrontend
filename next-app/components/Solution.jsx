@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const CARDS = [
   // Pillar cards — with images
@@ -83,7 +83,7 @@ const CARDS = [
 ]
 
 export default function Solution() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section id="solution" className="section solution-section" aria-label="Solution">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const PRODUCTS = [
   { key: 'p1', label: 'Arepas',               img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepas%204%20variedades.jpg' },
@@ -13,7 +13,7 @@ const PRODUCTS = [
 ]
 
 export default function ProductStrip() {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <section className="product-strip-section" aria-label="Product catalogue strip">

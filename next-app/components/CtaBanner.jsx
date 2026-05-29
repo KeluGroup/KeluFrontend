@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations, useLocale } from 'next-intl'
 import { trackCTAClick } from '../utils/analytics'
 
 const EMOJIS = ['🫓', '🌽', '🧀', '🫓', '🌶️', '🫓', '🫓']
@@ -59,7 +59,8 @@ function useArepaRain(canvasRef, active) {
 }
 
 export default function CtaBanner() {
-  const { t } = useTranslation()
+  const t          = useTranslations()
+  const locale     = useLocale()
   const sectionRef = useRef(null)
   const canvasRef  = useRef(null)
   const activeRef  = useRef(false)
@@ -86,14 +87,12 @@ export default function CtaBanner() {
     <section className="cta-final cta-portal" ref={sectionRef} aria-label="Call to action">
       <canvas ref={canvasRef} className="arepa-rain-canvas" aria-hidden="true" />
 
-      {/* Portal rings */}
       <div className="portal-rings" aria-hidden="true">
         {[1,2,3,4,5].map(n => (
           <div key={n} className={`portal-ring portal-ring--${n}`} />
         ))}
       </div>
 
-      {/* Floating particles */}
       <div className="cta-particles" aria-hidden="true">
         {['✦','★','◆','✦','★','◆','✦','★'].map((s, i) => (
           <span key={i} className={`cta-particle cta-particle--${i + 1}`}>{s}</span>
