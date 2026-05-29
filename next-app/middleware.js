@@ -1,15 +1,16 @@
 import { NextResponse } from 'next/server'
 
-const LOCALES      = ['de', 'en', 'es', 'fr', 'it']
+const LOCALES       = ['de', 'en', 'es', 'fr', 'it']
 const DEFAULT_LOCALE = 'de'
 
 export function middleware(request) {
   const { pathname } = request.nextUrl
 
-  // Skip Next.js internals, API routes, and static files
+  // Skip Next.js internals, API routes, static files, and admin
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api')   ||
+    pathname.startsWith('/admin') ||  // ← add this
     pathname.includes('.')
   ) {
     return NextResponse.next()

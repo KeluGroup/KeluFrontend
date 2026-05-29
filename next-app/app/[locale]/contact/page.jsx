@@ -87,7 +87,7 @@ export default function ContactPage() {
     setStatus('loading')
     setErrMsg('')
     try {
-      const res = await fetch(`${API_BASE}/api/formsubmit`, {
+      const res = await fetch(`/api/formsubmit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
         body: JSON.stringify({

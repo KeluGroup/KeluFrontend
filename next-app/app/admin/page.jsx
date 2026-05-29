@@ -53,7 +53,7 @@ function PasswordGate({ onAuth }) {
     if (!val.trim()) return
     setLoading(true); setErr('')
     try {
-      const res = await fetch(`${API_BASE}/api/admin/login`, {
+      const res = await fetch(`/api/admin/login`, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ password: val }),
@@ -135,7 +135,7 @@ function StatusSelect({ lead, onUpdate }) {
     if (value === lead.status) { setOpen(false); return }
     setBusy(true); setOpen(false)
     try {
-      const res = await fetch(`${API_BASE}/api/admin/leads/${lead.id}`, {
+      const res = await fetch(`/api/admin/leads/${lead.id}`, {
         method:  'PATCH',
         headers: adminHeaders(),
         body:    JSON.stringify({ status: value }),
@@ -253,7 +253,7 @@ function LeadsTab() {
   const load = useCallback(async () => {
     setLoading(true); setError('')
     try {
-      const res = await fetch(`${API_BASE}/api/admin/leads`, { headers: adminHeaders() })
+      const res = await fetch(`/api/admin/leads`, { headers: adminHeaders() })
       if (res.status === 403) { sessionStorage.removeItem(SESSION_KEY); window.location.reload(); return }
       if (!res.ok) throw new Error(`Error ${res.status}`)
       const data = await res.json()

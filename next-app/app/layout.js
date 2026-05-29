@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-
 import { useState, useEffect } from 'react'
 const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false })
 import Footer from '../components/Footer'
@@ -23,9 +22,9 @@ export default function RootLayout({ children }) {
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled, setScrolled] = useState(false)
 
-  // Derive lang from URL
   const urlLocale = pathname?.split('/')[1]
   const lang = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
+  const isAdmin = pathname === '/admin'
 
   // Theme init
   useEffect(() => {
@@ -46,13 +45,15 @@ export default function RootLayout({ children }) {
 
   // Scroll progress listener
   useEffect(() => {
+    if (isAdmin) return
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [pathname, isAdmin])
 
   // Scroll animations
   useEffect(() => {
+    if (isAdmin) return
     const io = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
       { threshold: 0, rootMargin: '0px' }
@@ -67,11 +68,11 @@ export default function RootLayout({ children }) {
       })
     }, 250)
     return () => { clearTimeout(timer); io.disconnect() }
-  }, [pathname])
+  }, [pathname, isAdmin])
 
   // Active section tracking (home only)
   useEffect(() => {
-    if (!pathname.endsWith('/')) return
+    if (isAdmin || !pathname.endsWith('/')) return
     setActiveSection('home')
     const io = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id) }),
@@ -81,7 +82,7 @@ export default function RootLayout({ children }) {
       SECTIONS.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el) })
     }, 50)
     return () => { clearTimeout(timer); io.disconnect() }
-  }, [pathname])
+  }, [pathname, isAdmin])
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
   const toggleMenu  = () => setMenuOpen(o => !o)
@@ -92,14 +93,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang={lang} suppressHydrationWarning>
       <body>
-        <ScrollToHash />
-        <CursorTrail />
-        <CookieBanner />
-        <Navbar {...sharedProps} />
+        {!isAdmin && <ScrollToHash />}
+        {!isAdmin && <CursorTrail />}
+        {!isAdmin && <CookieBanner />}
+        {!isAdmin && <Navbar {...sharedProps} />}
         <main id="main-content">
           {children}
         </main>
-        <Footer />
+        {!isAdmin && <Footer />}
       </body>
     </html>
   )

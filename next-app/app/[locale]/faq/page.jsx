@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
+import { usePathname } from 'next/navigation'
+
+const VALID_LOCALES = ['de', 'en', 'es', 'fr', 'it']
 
 function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false)
@@ -23,6 +26,10 @@ function FAQItem({ question, answer }) {
 
 export default function FaqPage() {
   const { t } = useTranslation()
+  const pathname = usePathname()
+
+  const urlLocale = pathname?.split('/')[1]
+  const locale = VALID_LOCALES.includes(urlLocale) ? urlLocale : 'de'
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -49,7 +56,7 @@ export default function FaqPage() {
 
         <div className="faq-cta">
           <p className="faq-cta-text">{t('faq.contactCta')}</p>
-          <Link href="/contact" className="catalogue-cta-btn">
+          <Link href={`/${locale}/contact`} className="catalogue-cta-btn">
             {t('faq.contactBtn')}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2"
