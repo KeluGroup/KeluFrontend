@@ -73,7 +73,7 @@ const ICONS = [
 ]
 
 
-const STATS          = ['stat1', 'stat2', 'stat3', 'stat4']
+const STATS          = ['stat1', 'stat2', 'stat4']
 const MODAL_KEY      = { stat1: 'services', stat2: 'products', stat4: 'flavor' }
 const POPUP_STAT     = { services: 'stat1' }
 const PRODUCT_CARD_KEYS = { 1: 'p2', 2: 'p4', 3: 'p1' }

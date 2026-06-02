@@ -1538,7 +1538,7 @@ a.btn-ph {
   max-width: var(--content-wide);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-8);
   position: relative;
 }
