@@ -22,9 +22,9 @@
   --shadow-md:0 4px 12px rgba(24,79,37,0.10),0 2px 6px rgba(24,79,37,0.06);
   --shadow-lg:0 12px 32px rgba(24,79,37,0.14),0 4px 12px rgba(24,79,37,0.08);
   --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
-  --font-display:'Lora',Georgia,serif;
-  --font-body:'Lora',Georgia,serif;
-  --font-serif:'Lora',Georgia,serif;
+  --font-display: var(--font-lora);
+  --font-body: var(--font-lora);
+  --font-serif: var(--font-lora);
   --content-wide:1200px;
 }
 [data-theme="dark"] {
@@ -49,6 +49,15 @@ html, body {
   overflow-x: hidden;
   max-width: 100%;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
 
 #home, .home {
   overflow: hidden; /* already in your CSS but double-check it's applied */

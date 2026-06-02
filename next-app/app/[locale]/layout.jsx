@@ -5,6 +5,14 @@ import Script from 'next/script'
 import 'flag-icons/css/flag-icons.min.css'
 import '../globals.css'
 import '../modal.css'
+import { Lora } from 'next/font/google'
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+})
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -91,7 +99,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={lora.variable} suppressHydrationWarning>
       <head>
         {/* Structured Data */}
         <script
@@ -114,15 +122,7 @@ export default async function LocaleLayout({ children, params }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&display=swap"
-        />
+
 
         {/* Consent default — must run BEFORE GTM */}
         <Script id="gtm-consent" strategy="beforeInteractive">{`
