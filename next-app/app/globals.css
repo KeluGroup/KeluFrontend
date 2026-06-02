@@ -1785,7 +1785,7 @@ a.btn-ph {
 }
 
 @media (max-width: 480px) {
-  .stats-container { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .stats-container { grid-template-columns: repeat(3, 1fr); }
   .products-grid   { grid-template-columns: 1fr 1fr; }
   .process-grid { grid-template-columns: 1fr; }
 }
