@@ -52,7 +52,7 @@ function LangDropdown() {
     const segments = pathname.split('/')
     segments[1] = code
     const newPath = segments.join('/') || `/${code}`
-    window.location.href = newPath  // ← hard navigation instead of router.push
+    window.location.href = newPath
   }
 
   return (
@@ -209,7 +209,12 @@ export default function Navbar({
 
         <nav className="fullmenu-nav" aria-label="Menú principal">
           {NAV_LINKS.map(({ href, label, id, isRoute }, i) => {
-            const isActive = isRoute ? pathname.includes(`/${id}`) : activeSection === id
+            // ✅ Home: solo activo si estamos en la home Y activeSection es 'home'
+            // ✅ Resto: solo activo si el pathname coincide exactamente con el href
+            const isActive = isRoute
+              ? pathname === href
+              : isHomePage && activeSection === id
+
             return isRoute ? (
               <Link
                 key={href}
