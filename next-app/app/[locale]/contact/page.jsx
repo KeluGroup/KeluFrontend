@@ -125,63 +125,93 @@ export default function ContactPage() {
             <div className="contact-form-card">
               <h2 className="contact-form-heading">{t('contact.formTitle')}</h2>
 
-              <form onSubmit={handleSubmit} noValidate>
+              <form onSubmit={handleSubmit} noValidate className="cp-form">
 
                 <div className="form-row-2">
                   <div className="form-field">
                     <label className="form-label" htmlFor="cp-name">{t('contact.form.name')}</label>
-                    <input
-                      id="cp-name" name="name" type="text"
-                      className={`form-input${errors.name && touched.name ? ' form-input--error' : ''}`}
-                      value={fields.name} onChange={handleChange} onBlur={handleBlur}
-                    />
+                    <div className="form-input-wrap">
+                      <svg className="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                      </svg>
+                      <input
+                        id="cp-name" name="name" type="text"
+                        className={`form-input form-input--icon${errors.name && touched.name ? ' form-input--error' : ''}`}
+                        value={fields.name} onChange={handleChange} onBlur={handleBlur}
+                        placeholder="Jane Doe"
+                      />
+                    </div>
                     {errors.name && touched.name && <span className="form-error">{errors.name}</span>}
                   </div>
+
                   <div className="form-field">
                     <label className="form-label" htmlFor="cp-email">{t('contact.form.email')}</label>
-                    <input
-                      id="cp-email" name="email" type="email"
-                      className={`form-input${errors.email && touched.email ? ' form-input--error' : ''}`}
-                      value={fields.email} onChange={handleChange} onBlur={handleBlur}
-                    />
+                    <div className="form-input-wrap">
+                      <svg className="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                      </svg>
+                      <input
+                        id="cp-email" name="email" type="email"
+                        className={`form-input form-input--icon${errors.email && touched.email ? ' form-input--error' : ''}`}
+                        value={fields.email} onChange={handleChange} onBlur={handleBlur}
+                        placeholder="jane@company.com"
+                      />
+                    </div>
                     {errors.email && touched.email && <span className="form-error">{errors.email}</span>}
                   </div>
                 </div>
 
                 <div className="form-field">
                   <label className="form-label" htmlFor="cp-company">{t('contact.form.company')}</label>
-                  <input
-                    id="cp-company" name="company" type="text"
-                    className="form-input"
-                    value={fields.company} onChange={handleChange}
-                  />
+                  <div className="form-input-wrap">
+                    <svg className="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <input
+                      id="cp-company" name="company" type="text"
+                      className="form-input form-input--icon"
+                      value={fields.company} onChange={handleChange}
+                      placeholder={t('contact.form.companyPlaceholder') ?? 'Optional'}
+                    />
+                  </div>
                 </div>
 
                 <div className="form-field">
                   <label className="form-label" htmlFor="cp-service">{t('contact.form.service')}</label>
-                  <select
-                    id="cp-service" name="service"
-                    className={`form-input form-select${errors.service && touched.service ? ' form-input--error' : ''}`}
-                    value={fields.service} onChange={handleChange} onBlur={handleBlur}
-                  >
-                    <option value="">{t('contact.form.servicePlaceholder')}</option>
-                    <option value="B2B">{t('contact.form.serviceOne')}</option>
-                    <option value="Catering">{t('contact.form.serviceTwo')}</option>
-                    <option value="Events">{t('contact.form.serviceThree')}</option>
-                    <option value="Consulting">{t('contact.form.serviceFour')}</option>
-                    <option value="Retail and Major Chains">{t('contact.form.serviceFive')}</option>
-                  </select>
+                  <div className="form-input-wrap">
+                    <svg className="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <select
+                      id="cp-service" name="service"
+                      className={`form-input form-select form-input--icon${errors.service && touched.service ? ' form-input--error' : ''}`}
+                      value={fields.service} onChange={handleChange} onBlur={handleBlur}
+                    >
+                      <option value="">{t('contact.form.servicePlaceholder')}</option>
+                      <option value="B2B">{t('contact.form.serviceOne')}</option>
+                      <option value="Catering">{t('contact.form.serviceTwo')}</option>
+                      <option value="Events">{t('contact.form.serviceThree')}</option>
+                      <option value="Consulting">{t('contact.form.serviceFour')}</option>
+                      <option value="Retail and Major Chains">{t('contact.form.serviceFive')}</option>
+                    </select>
+                  </div>
                   {errors.service && touched.service && <span className="form-error">{errors.service}</span>}
                 </div>
 
                 <div className="form-field">
                   <label className="form-label" htmlFor="cp-message">{t('contact.form.message')}</label>
-                  <textarea
-                    id="cp-message" name="message"
-                    className={`form-input form-textarea${errors.message && touched.message ? ' form-input--error' : ''}`}
-                    value={fields.message} onChange={handleChange} onBlur={handleBlur}
-                    rows={5}
-                  />
+                  <div className="form-input-wrap form-input-wrap--textarea">
+                    <svg className="form-input-icon form-input-icon--top" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <textarea
+                      id="cp-message" name="message"
+                      className={`form-input form-textarea form-input--icon${errors.message && touched.message ? ' form-input--error' : ''}`}
+                      value={fields.message} onChange={handleChange} onBlur={handleBlur}
+                      rows={5}
+                      placeholder={t('contact.form.messagePlaceholder') ?? 'Tell us how we can help…'}
+                    />
+                  </div>
                   {errors.message && touched.message && <span className="form-error">{errors.message}</span>}
                 </div>
 
@@ -189,11 +219,14 @@ export default function ContactPage() {
                   <p className="form-feedback form-feedback--success">✓ {t('contact.form.success')}</p>
                 )}
                 {status === 'error' && (
-                  <p className="form-feedback form-feedback--error">✕ {t('contact.form.error')} {errMsg && `(${errMsg})`}</p>
+                  <p className="form-feedback form-feedback--error">✕ {t('contact.form.error')}{errMsg && ` (${errMsg})`}</p>
                 )}
 
                 <button type="submit" className="form-submit-btn" disabled={status === 'loading'}>
-                  {status === 'loading' ? t('contact.form.sending') : t('contact.form.send')}
+                  <span>{status === 'loading' ? t('contact.form.sending') : t('contact.form.send')}</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  </svg>
                 </button>
 
               </form>

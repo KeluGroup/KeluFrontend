@@ -3,8 +3,8 @@ import { getMessages, getTranslations } from 'next-intl/server'
 import ClientShell from '../../components/ClientShell'
 import Script from 'next/script'
 import 'flag-icons/css/flag-icons.min.css'
-import '../globals.css'
-import '../modal.css'
+import '../styles/globals.css'
+import '../styles/index.css'
 import { Lora } from 'next/font/google'
 
 const lora = Lora({

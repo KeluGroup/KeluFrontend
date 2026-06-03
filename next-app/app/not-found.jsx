@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import './globals.css'
-import './modal.css'
+import './styles/globals.css'
+import './styles/index.css'
 
 
 export default function NotFound() {

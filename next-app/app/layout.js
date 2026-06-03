@@ -1,6 +1,6 @@
 // app/layout.js
-import './globals.css'
-import './modal.css'
+import './styles/globals.css'
+import './styles/index.css'
 
 export default function RootLayout({ children }) {
   return children
