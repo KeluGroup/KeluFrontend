@@ -6493,6 +6493,7 @@ a.btn-ph {
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text);
+  width: 100%;
 }
 .smap-stat-dot {
   width: 8px;

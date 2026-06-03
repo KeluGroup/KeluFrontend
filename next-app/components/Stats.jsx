@@ -166,8 +166,8 @@ export default function Stats() {
                 ))}
               </ul>
             ) : (
-              <Link href={`/${locale}/services`} onClick={() => setOpenModal(null)} style={{ display: 'block', textDecoration: 'none' }}>
-                <ul className="smap-stat-list" style={{ width: '420px', height: '240.78px' }}>
+              <Link href={`/${locale}/services`} onClick={() => setOpenModal(null)} style={{ display: 'contents', textDecoration: 'none' }}>
+                <ul className="smap-stat-list" >
                   {[1, 2, 3].map(n => (
                     <li key={n} className="smap-stat-list-item smap-stat-list-item--link" role="button" tabIndex={0}>
                       <span className="smap-stat-dot" aria-hidden="true" />
