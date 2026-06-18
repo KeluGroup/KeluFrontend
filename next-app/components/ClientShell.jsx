@@ -7,6 +7,7 @@ import Footer from './Footer'
 import CookieBanner from './CookieBanner'
 import CursorTrail from './CursorTrail'
 import ScrollToHash from './ScrollToHash'
+import WhatsAppButton from './WhatsAppButton'
 import { SECTIONS } from '../config'
 import { trackPageView } from '../utils/analytics'
 
@@ -92,6 +93,7 @@ export default function ClientShell({ locale, children }) {
         {children}
       </main>
       {!isAdmin && <Footer />}
+      {!isAdmin && <WhatsAppButton />}
     </>
   )
 }

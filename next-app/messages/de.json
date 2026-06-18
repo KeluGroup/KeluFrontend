@@ -426,6 +426,10 @@
   "ctaBtn" : "rezeptideen entdecken"
 },
 
+"whatsapp": {
+  "message": "Hallo KELU, ich interessiere mich für Informationen über Ihre Produkte und Dienstleistungen für mein Unternehmen."
+},
+
 "meta": {
     "title": "KELU GmbH – Lateinamerikanischer B2B-Lieferant in der Schweiz",
     "description": "KELU GmbH liefert premium lateinamerikanische Produkte — Arepas, Tequeños, Empanadas, Yuca und mehr — an Restaurants in Zürich.",

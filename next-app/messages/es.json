@@ -435,6 +435,10 @@
   "ctaBtn" : "ideas de recetas"
 },
 
+"whatsapp": {
+  "message": "Hola KELU, me interesa información sobre sus productos y servicios para mi negocio."
+},
+
 "meta": {
     "title": "KELU GmbH – Proveedor Latino B2B en Suiza",
     "description": "KELU GmbH distribuye productos latinos premium — arepas, tequeños, empanadas, yuca, plátano y más — a restaurantes en Zúrich.",

@@ -1,9 +1,13 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
 import { BRAND_PHONE } from '../config'
 import { trackWhatsAppClick } from '../utils/analytics'
 
 export default function WhatsAppButton() {
+  const t = useTranslations('whatsapp')
   const phoneDigits = BRAND_PHONE.replace(/\D/g, '')
-  const msg = encodeURIComponent('Hola KELU, me interesa información sobre sus productos y servicios para mi negocio.')
+  const msg = encodeURIComponent(t('message'))
   const href = `https://wa.me/${phoneDigits}?text=${msg}`
 
   return (
