@@ -71,11 +71,16 @@ const jsonLdOrganization = {
   email: 'info@kelugroup.ch',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Langfurren 14',
+    postalCode: '8057',
     addressLocality: 'Zürich',
     addressCountry: 'CH',
   },
   areaServed: { '@type': 'Country', name: 'Switzerland' },
-  sameAs: ['https://www.instagram.com/kelugroup'],
+  sameAs: [
+    'https://www.instagram.com/kelugroup',
+    'https://www.tiktok.com/@kelugmbh',
+  ],
 }
 
 const jsonLdBusiness = {
@@ -87,6 +92,8 @@ const jsonLdBusiness = {
   telephone: '+41764653788',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Langfurren 14',
+    postalCode: '8057',
     addressLocality: 'Zürich',
     addressCountry: 'CH',
   },
