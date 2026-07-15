@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Team from '../../../components/Team'
+import CtaBanner from '../../../components/CtaBanner'
 
 export default function AboutPage() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="about-page-main">
       <Team />
+      <CtaBanner />
     </main>
   )
 }
