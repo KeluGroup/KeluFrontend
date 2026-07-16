@@ -6562,6 +6562,244 @@ a.btn-ph {
   }
 }
 
+/* === TASTING LANDING  (/degustacion) === */
+.tasting-main {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.tasting-hero {
+  padding: clamp(120px, 18vh, 180px) var(--space-6) var(--space-16);
+  text-align: center;
+}
+
+.tasting-hero-inner {
+  max-width: 640px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.tasting-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.tasting-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 44ch;
+  margin: 0;
+}
+
+.tasting-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: #25d366;
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  margin-top: var(--space-2);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.tasting-wa-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+}
+
+.tasting-steps {
+  padding: var(--space-16) var(--space-6);
+  background: var(--color-surface-2);
+}
+
+.tasting-steps-inner {
+  max-width: 960px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.tasting-steps-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin: 0 0 var(--space-10);
+}
+
+.tasting-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.tasting-step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.tasting-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .tasting-step-icon {
+  background: color-mix(in srgb, var(--color-accent-light) 14%, transparent);
+  color: var(--color-accent-light);
+}
+
+.tasting-step-num {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-border);
+  font-weight: 700;
+}
+
+.tasting-step-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.tasting-step-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.tasting-pricing {
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+}
+
+.tasting-pricing-inner {
+  max-width: 820px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.tasting-pricing-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.tasting-pricing-sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.tasting-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+.tasting-tier {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-6) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.tasting-tier-discount {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .tasting-tier-discount { color: var(--color-accent-light); }
+
+.tasting-tier-name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tasting-tier-threshold {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.tasting-services-link {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .tasting-services-link { color: var(--color-accent-light); }
+.tasting-services-link:hover { text-decoration: underline; }
+
+.tasting-trust {
+  padding: 0 var(--space-6) var(--space-12);
+  text-align: center;
+}
+
+.tasting-trust p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .tasting-hero {
+    padding: clamp(100px, 14vh, 140px) var(--space-5) var(--space-12);
+  }
+
+  .tasting-steps-grid,
+  .tasting-tiers {
+    grid-template-columns: 1fr;
+  }
+
+  .tasting-steps,
+  .tasting-pricing {
+    padding: var(--space-12) var(--space-5);
+  }
+}
+
 /* === ABOUT — Mission quote band === */
 .mission-band {
   position: relative;

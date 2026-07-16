@@ -466,6 +466,26 @@
     "contactTitle": "Contatto — Prenota il tuo Incontro | KELU GmbH",
     "contactDesc": "Prenota una chiamata di 30 minuti e scopri come KELU può diventare il fornitore di fiducia di prodotti latini per il tuo ristorante o attività in Svizzera.",
     "faqTitle": "FAQ — Ordini, Consegne e Prezzi | KELU GmbH",
-    "faqDesc": "Ordine minimo, zone di consegna, sconti per volume, metodi di pagamento e catena del freddo — tutto quello che devi sapere prima del tuo primo ordine con KELU."
+    "faqDesc": "Ordine minimo, zone di consegna, sconti per volume, metodi di pagamento e catena del freddo — tutto quello che devi sapere prima del tuo primo ordine con KELU.",
+    "tastingTitle": "Ti è piaciuta la box? | KELU GmbH",
+    "tastingDesc": "Hai ricevuto la nostra box di degustazione. Ecco cosa succede ora: una degustazione calda nella tua cucina e il tuo primo ordine con sconto."
+  },
+  "tasting": {
+    "tag": "Degustazione KELU",
+    "title": "Ti è piaciuta la box?",
+    "sub": "Quello che hai appena assaggiato è il nostro standard quotidiano. Ecco come si lavora con noi.",
+    "cta": "Scrivici su WhatsApp",
+    "waText": "Ciao Kevin, ho ricevuto la box KELU",
+    "stepsTitle": "Cosa succede ora",
+    "s1title": "Scrivici",
+    "s1text": "Basta un WhatsApp. Niente moduli, niente attese — rispondiamo in giornata.",
+    "s2title": "Degustazione calda",
+    "s2text": "Tequeños appena fatti per te e il tuo team di cucina, nel tuo locale. 15 minuti, senza impegno.",
+    "s3title": "Primo ordine con -15%",
+    "s3text": "Se ti convinciamo, la tua prima consegna arriva con lo sconto — consegnata da noi personalmente.",
+    "priceTitle": "Prezzi chiari, senza trattative",
+    "priceSub": "Più sei costante, migliori sono le tue condizioni. Pubblici e per iscritto.",
+    "pricesCta": "Vedi tutti i servizi",
+    "trust": "Kelu GmbH · UID CHE-189.376.134 · Langfurren 14, 8057 Zürich"
   }
 }

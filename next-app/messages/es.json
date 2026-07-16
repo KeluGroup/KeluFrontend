@@ -469,7 +469,26 @@
     "contactTitle": "Contacto — Agenda tu Reunión | KELU GmbH",
     "contactDesc": "Agenda una reunión de 30 minutos y descubre cómo KELU puede convertirse en el proveedor de confianza de productos latinos para tu restaurante o negocio en Suiza.",
     "faqTitle": "Preguntas Frecuentes — Pedidos, Entregas y Precios | KELU GmbH",
-    "faqDesc": "Pedido mínimo, zonas de entrega, descuentos por volumen, métodos de pago y cadena de frío — todo lo que necesitas saber antes de tu primer pedido con KELU."
+    "faqDesc": "Pedido mínimo, zonas de entrega, descuentos por volumen, métodos de pago y cadena de frío — todo lo que necesitas saber antes de tu primer pedido con KELU.",
+    "tastingTitle": "¿Te gustó la caja? | KELU GmbH",
+    "tastingDesc": "Recibiste nuestra caja de degustación. Esto es lo que sigue: degustación caliente en tu cocina y tu primer pedido con descuento."
+  },
+  "tasting": {
+    "tag": "Degustación KELU",
+    "title": "¿Te gustó la caja?",
+    "sub": "Eso que acabas de probar es nuestro estándar de todos los días. Así se ve trabajar con nosotros.",
+    "cta": "Escríbenos por WhatsApp",
+    "waText": "Hola Kevin, recibí la caja de KELU",
+    "stepsTitle": "Qué sigue",
+    "s1title": "Escríbenos",
+    "s1text": "Un WhatsApp basta. Sin formularios, sin esperas — te respondemos el mismo día.",
+    "s2title": "Degustación caliente",
+    "s2text": "Tequeños recién hechos para ti y tu equipo de cocina, en tu local. 15 minutos, sin compromiso.",
+    "s3title": "Primer pedido con -15%",
+    "s3text": "Si te convence, tu primera entrega llega con descuento — entregada por nosotros mismos.",
+    "priceTitle": "Precios claros, sin negociar",
+    "priceSub": "Cuanto más constante seas, mejores condiciones. Públicos y por escrito.",
+    "pricesCta": "Ver todos los servicios",
+    "trust": "Kelu GmbH · UID CHE-189.376.134 · Langfurren 14, 8057 Zürich"
   }
-
 }
