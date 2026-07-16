@@ -64,10 +64,13 @@ const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'KELU GmbH',
+  legalName: 'Kelu GmbH',
+  vatID: 'CHE-189.376.134',
+  identifier: 'CHE-189.376.134',
   url: 'https://www.kelugroup.ch',
   logo: 'https://www.kelugroup.ch/logo-color.svg',
   description: 'Distribuidora B2B de productos alimentarios latinoamericanos en Suiza. Arepas, tequeños, empanadas, yuca, plátano maduro y más para restaurantes y negocios en Zúrich.',
-  telephone: '+41764653788',
+  telephone: '+41446880284',
   email: 'info@kelugroup.ch',
   address: {
     '@type': 'PostalAddress',
@@ -89,7 +92,7 @@ const jsonLdBusiness = {
   name: 'KELU GmbH',
   description: 'Proveedor mayorista B2B de alimentos latinoamericanos en Zúrich, Suiza.',
   url: 'https://www.kelugroup.ch',
-  telephone: '+41764653788',
+  telephone: '+41446880284',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Langfurren 14',
