@@ -82,7 +82,7 @@ const jsonLdOrganization = {
   areaServed: { '@type': 'Country', name: 'Switzerland' },
   sameAs: [
     'https://www.instagram.com/kelugroup',
-    'https://www.tiktok.com/@kelugmbh',
+    'https://www.linkedin.com/in/kelu-gmbh-339753414/',
   ],
 }
 
