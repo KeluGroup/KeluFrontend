@@ -14,7 +14,10 @@ export function buildPageMetadata(path, titleKey, descKey) {
       description: t(descKey),
       alternates: {
         canonical: `/${locale}${path}`,
-        languages: Object.fromEntries(LOCALES.map(l => [l, `/${l}${path}`])),
+        languages: {
+          ...Object.fromEntries(LOCALES.map(l => [l, `/${l}${path}`])),
+          'x-default': `/de${path}`,
+        },
       },
       openGraph: {
         title: t(titleKey),

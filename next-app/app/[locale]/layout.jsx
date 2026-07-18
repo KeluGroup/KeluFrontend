@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
     themeColor: '#1a1a1a',
     metadataBase: new URL('https://www.kelugroup.ch'),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `./`,
       languages: {
         'es': '/es',
         'en': '/en',
