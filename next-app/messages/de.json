@@ -451,6 +451,7 @@
   "difficultyLabel": "Schwierigkeit",
   "difficulty_facil": "Einfach",
   "difficulty_media": "Mittel",
+  "difficulty_dificil": "Schwer",
   "ingredientsTitle": "Zutaten",
   "stepsTitle": "Zubereitung",
   "viewRecipe": "Rezept ansehen",
@@ -476,7 +477,27 @@
   "empanadas_carne_title": "Kolumbianische Rindfleisch-Empanadas",
   "empanadas_carne_teaser": "Knuspriger gelber Maisteig gefüllt mit einem saftigen Eintopf aus Rindfleisch, Kartoffel und Gewürzen.",
   "empanadas_carne_ingredients": ["500 g vorgekochtes gelbes Maismehl", "500 ml Rinderbrühe", "300 g Rinderhackfleisch", "2 mittelgrosse Kartoffeln, gekocht und gewürfelt", "1 Zwiebel und 2 Knoblauchzehen, gehackt", "Kreuzkümmel, Achiote und Salz nach Geschmack"],
-  "empanadas_carne_steps": ["Zwiebel und Knoblauch anbraten, Hackfleisch und Gewürze dazugeben und gut durchgaren.", "Die gewürfelte Kartoffel unterrühren und die Füllung abkühlen lassen.", "Mehl mit heisser Brühe zu einem weichen Teig verarbeiten; zu Scheiben formen.", "Füllen, die Ränder gut verschliessen und in heissem Öl goldbraun frittieren."]
+  "empanadas_carne_steps": ["Zwiebel und Knoblauch anbraten, Hackfleisch und Gewürze dazugeben und gut durchgaren.", "Die gewürfelte Kartoffel unterrühren und die Füllung abkühlen lassen.", "Mehl mit heisser Brühe zu einem weichen Teig verarbeiten; zu Scheiben formen.", "Füllen, die Ränder gut verschliessen und in heissem Öl goldbraun frittieren."],
+
+  "cachapas_maiz_title": "Süsse Maiscachapas mit Käse",
+  "cachapas_maiz_teaser": "Süsse Pfannkuchen aus zartem Mais, goldbraun auf dem Budare gebacken und mit geschmolzenem Frischkäse gefüllt.",
+  "cachapas_maiz_ingredients": ["6 Kolben zarter Mais (oder 3 Tassen Körner)", "2 EL Zucker", "1 Prise Salz", "2 EL Butter", "200 g Frischkäse oder Mozzarella", "Butter für den Budare"],
+  "cachapas_maiz_steps": ["Die Maiskörner mit Zucker und Salz zu einem dicken Teig pürieren.", "Eine Kelle auf den heissen, gefetteten Budare giessen; auf beiden Seiten goldbraun backen.", "Eine Scheibe Käse darauflegen und die Cachapa zur Hälfte falten, damit er schmilzt.", "Frisch servieren, nach Belieben mit extra Butter."],
+
+  "bunuelos_colombianos_title": "Kolumbianische Buñuelos",
+  "bunuelos_colombianos_teaser": "Goldene, knusprige Käsebällchen aus Costeño-Käse und Maniokstärke — auf keinem kolumbianischen Weihnachtstisch darf fehlen.",
+  "bunuelos_colombianos_ingredients": ["300 g geriebener Costeño-Käse", "150 g Maniokstärke", "100 g Maismehl", "2 Eier", "1 TL Backpulver", "Öl zum Frittieren"],
+  "bunuelos_colombianos_steps": ["Den geriebenen Käse mit den Stärken, den Eiern und dem Backpulver zu einem gleichmässigen Teig verarbeiten.", "Mit den Händen gleichmässige Kugeln ohne Risse formen.", "In nicht zu heissem Öl unter ständigem Rühren frittieren, bis sie innen und aussen gleichmässig goldbraun sind.", "Auf Küchenpapier abtropfen lassen und warm servieren."],
+
+  "pabellon_criollo_title": "Pabellón Criollo",
+  "pabellon_criollo_teaser": "Das venezolanische Nationalgericht: zerzupftes Rindfleisch, schwarze Bohnen, weisser Reis und süsse Kochbananenscheiben auf einem Teller.",
+  "pabellon_criollo_ingredients": ["500 g Rinderflanke", "2 Tassen gekochte schwarze Bohnen", "2 Tassen gekochter weisser Reis", "2 reife Kochbananen", "1 Zwiebel und 1 Peperoni, gehackt", "Kreuzkümmel, Knoblauch und Salz nach Geschmack"],
+  "pabellon_criollo_steps": ["Die Flanke gar kochen, zerzupfen und mit Zwiebel, Peperoni und Gewürzen anbraten.", "Die schwarzen Bohnen bei schwacher Hitze erwärmen, mit Salz und Kreuzkümmel abschmecken.", "Die Kochbananen in Scheiben schneiden und goldbraun braten.", "Den weissen Reis, das zerzupfte Rindfleisch, die schwarzen Bohnen und die Kochbananenscheiben zusammen auf dem Teller servieren."],
+
+  "arepas_choclo_title": "Kolumbianische Zuckermais-Arepas",
+  "arepas_choclo_teaser": "Süsse, luftige Arepas aus zartem Mais, in der Pfanne goldbraun gebraten und mit frischem Käse gekrönt.",
+  "arepas_choclo_ingredients": ["4 Tassen Zuckermaiskörner", "2 EL Zucker", "1 Prise Salz", "2 EL geschmolzene Butter", "200 g geriebener Frischkäse"],
+  "arepas_choclo_steps": ["Die Maiskörner mit Zucker und Salz zu einem dicken Teig verarbeiten.", "Die geschmolzene Butter dazugeben und gut vermischen.", "Die Arepas formen und in einer heissen Pfanne auf beiden Seiten goldbraun braten.", "Warm servieren, mit geriebenem Frischkäse bestreut."]
 },
 
 "whatsapp": {

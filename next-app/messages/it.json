@@ -456,6 +456,7 @@
     "difficultyLabel": "Difficoltà",
     "difficulty_facil": "Facile",
     "difficulty_media": "Media",
+    "difficulty_dificil": "Difficile",
     "ingredientsTitle": "Ingredienti",
     "stepsTitle": "Preparazione",
     "viewRecipe": "Vedi ricetta",
@@ -481,7 +482,27 @@
     "empanadas_carne_title": "Empanadas colombiane di carne",
     "empanadas_carne_teaser": "Pasta di mais giallo croccante ripiena di uno spezzatino succoso di manzo, patata e spezie.",
     "empanadas_carne_ingredients": ["500 g di farina di mais giallo precotta", "500 ml di brodo di manzo", "300 g di carne macinata di manzo", "2 patate medie, cotte e a cubetti", "1 cipolla e 2 spicchi d'aglio tritati", "Cumino, achiote e sale a piacere"],
-    "empanadas_carne_steps": ["Soffriggi cipolla e aglio, aggiungi la carne macinata e le spezie e cuoci bene.", "Incorpora la patata a cubetti e mescola; lascia raffreddare il ripieno.", "Mescola la farina con il brodo caldo fino a ottenere un impasto morbido; forma dei dischi.", "Farcisci, sigilla bene i bordi e friggi in olio caldo fino a doratura."]
+    "empanadas_carne_steps": ["Soffriggi cipolla e aglio, aggiungi la carne macinata e le spezie e cuoci bene.", "Incorpora la patata a cubetti e mescola; lascia raffreddare il ripieno.", "Mescola la farina con il brodo caldo fino a ottenere un impasto morbido; forma dei dischi.", "Farcisci, sigilla bene i bordi e friggi in olio caldo fino a doratura."],
+
+    "cachapas_maiz_title": "Cachapas di mais dolce con formaggio",
+    "cachapas_maiz_teaser": "Frittelle dolci di mais tenero, dorate sulla piastra e farcite di formaggio filante.",
+    "cachapas_maiz_ingredients": ["6 pannocchie di mais tenero (o 3 tazze di chicchi)", "2 cucchiai di zucchero", "1 pizzico di sale", "2 cucchiai di burro", "200 g di formaggio filante o mozzarella", "Burro per la piastra"],
+    "cachapas_maiz_steps": ["Frulla i chicchi di mais con lo zucchero e il sale fino a ottenere un composto denso.", "Versa un mestolo sulla piastra calda e unta; cuoci finché dorata su entrambi i lati.", "Metti una fetta di formaggio sopra e piega la cachapa a metà perché si sciolga.", "Servi appena fatta, con un po' di burro extra se vuoi."],
+
+    "bunuelos_colombianos_title": "Buñuelos colombiani",
+    "bunuelos_colombianos_teaser": "Palline dorate e croccanti di formaggio costeño e amido di yuca, immancabili su ogni tavola natalizia colombiana.",
+    "bunuelos_colombianos_ingredients": ["300 g di formaggio costeño grattugiato", "150 g di amido di yuca", "100 g di farina di mais", "2 uova", "1 cucchiaino di lievito per dolci", "Olio per friggere"],
+    "bunuelos_colombianos_steps": ["Mescola il formaggio grattugiato con gli amidi, le uova e il lievito fino a ottenere un impasto uniforme.", "Forma palline regolari con le mani, senza crepe.", "Friggi in olio non troppo caldo, mescolando di continuo, finché dorate uniformemente dentro e fuori.", "Scola su carta assorbente e servi calde."],
+
+    "pabellon_criollo_title": "Pabellón Criollo",
+    "pabellon_criollo_teaser": "Il piatto nazionale venezuelano: manzo sfilacciato, fagioli neri, riso bianco e fette di platano maturo, tutto nello stesso piatto.",
+    "pabellon_criollo_ingredients": ["500 g di controfiletto di manzo", "2 tazze di fagioli neri cotti", "2 tazze di riso bianco cotto", "2 platani maturi", "1 cipolla e 1 peperone tritati", "Cumino, aglio e sale a piacere"],
+    "pabellon_criollo_steps": ["Cuoci la carne finché tenera, sfilacciala e soffriggila con cipolla, peperone e spezie.", "Scalda i fagioli neri a fuoco lento, regolando sale e cumino.", "Taglia i platani a fette e friggili fino a doratura.", "Servi il riso bianco, la carne sfilacciata, i fagioli neri e le fette di platano insieme nel piatto."],
+
+    "arepas_choclo_title": "Arepas colombiane di mais dolce",
+    "arepas_choclo_teaser": "Arepas dolci e soffici di mais tenero, dorate in padella e guarnite con formaggio fresco.",
+    "arepas_choclo_ingredients": ["4 tazze di chicchi di mais dolce", "2 cucchiai di zucchero", "1 pizzico di sale", "2 cucchiai di burro fuso", "200 g di formaggio fresco grattugiato"],
+    "arepas_choclo_steps": ["Frulla i chicchi di mais con lo zucchero e il sale fino a ottenere un composto denso.", "Aggiungi il burro fuso e mescola bene.", "Forma le arepas e cuoci in padella calda finché dorate su entrambi i lati.", "Servi calde, guarnite con formaggio fresco grattugiato."]
   },
 
   "whatsapp": {

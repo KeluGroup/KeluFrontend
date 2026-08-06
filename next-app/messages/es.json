@@ -460,6 +460,7 @@
   "difficultyLabel": "Dificultad",
   "difficulty_facil": "Fácil",
   "difficulty_media": "Media",
+  "difficulty_dificil": "Difícil",
   "ingredientsTitle": "Ingredientes",
   "stepsTitle": "Preparación",
   "viewRecipe": "Ver receta",
@@ -485,7 +486,27 @@
   "empanadas_carne_title": "Empanadas Colombianas de Carne",
   "empanadas_carne_teaser": "Masa de maíz amarillo crocante rellena de un guiso jugoso de carne, papa y especias.",
   "empanadas_carne_ingredients": ["500 g de harina de maíz amarillo precocida", "500 ml de caldo de carne", "300 g de carne molida", "2 papas medianas cocidas y picadas", "1 cebolla y 2 dientes de ajo picados", "Comino, color y sal al gusto"],
-  "empanadas_carne_steps": ["Sofríe la cebolla y el ajo, agrega la carne molida y las especias hasta cocinar bien.", "Incorpora la papa picada y mezcla; deja enfriar el relleno.", "Mezcla la harina con el caldo caliente hasta formar una masa suave; forma discos.", "Rellena, cierra bien los bordes y fríe en aceite caliente hasta dorar."]
+  "empanadas_carne_steps": ["Sofríe la cebolla y el ajo, agrega la carne molida y las especias hasta cocinar bien.", "Incorpora la papa picada y mezcla; deja enfriar el relleno.", "Mezcla la harina con el caldo caliente hasta formar una masa suave; forma discos.", "Rellena, cierra bien los bordes y fríe en aceite caliente hasta dorar."],
+
+  "cachapas_maiz_title": "Cachapas de Maíz Dulce con Queso",
+  "cachapas_maiz_teaser": "Panquecas dulces de maíz tierno, doradas en budare y rellenas de queso de mano derretido.",
+  "cachapas_maiz_ingredients": ["6 mazorcas de maíz tierno (o 3 tazas de granos)", "2 cucharadas de azúcar", "1 pizca de sal", "2 cucharadas de mantequilla", "200 g de queso de mano o mozzarella", "Mantequilla para el budare"],
+  "cachapas_maiz_steps": ["Licúa los granos de maíz con el azúcar y la sal hasta obtener una mezcla espesa.", "Vierte un cucharón en el budare caliente y engrasado; cocina hasta que se doren ambos lados.", "Coloca una lámina de queso encima y dobla la cachapa por la mitad para que se derrita.", "Sirve recién hecha, con mantequilla extra si quieres."],
+
+  "bunuelos_colombianos_title": "Buñuelos Colombianos",
+  "bunuelos_colombianos_teaser": "Bolitas doradas y crujientes de queso costeño y almidón de yuca, infaltables en toda mesa navideña colombiana.",
+  "bunuelos_colombianos_ingredients": ["300 g de queso costeño rallado", "150 g de almidón de yuca", "100 g de harina de maíz", "2 huevos", "1 cucharadita de polvo de hornear", "Aceite para freír"],
+  "bunuelos_colombianos_steps": ["Combina el queso rallado con los almidones, los huevos y el polvo de hornear hasta formar una masa uniforme.", "Forma bolitas parejas con las manos, sin que queden grietas.", "Fríe en aceite no muy caliente, moviendo constantemente, hasta que doren parejo por dentro y por fuera.", "Escurre sobre papel absorbente y sirve calientes."],
+
+  "pabellon_criollo_title": "Pabellón Criollo",
+  "pabellon_criollo_teaser": "El plato nacional venezolano: carne mechada, caraotas negras, arroz blanco y tajadas de plátano maduro en un mismo plato.",
+  "pabellon_criollo_ingredients": ["500 g de falda de res", "2 tazas de caraotas negras cocidas", "2 tazas de arroz blanco cocido", "2 plátanos maduros", "1 cebolla y 1 pimentón picados", "Comino, ajo y sal al gusto"],
+  "pabellon_criollo_steps": ["Cocina la falda hasta que esté tierna, desmecha y sofríe con cebolla, pimentón y especias.", "Calienta las caraotas negras a fuego lento, ajustando sal y comino.", "Corta los plátanos en tajadas y fríelas hasta dorar.", "Sirve el arroz blanco, la carne mechada, las caraotas y las tajadas juntos en el plato."],
+
+  "arepas_choclo_title": "Arepas de Choclo Colombianas",
+  "arepas_choclo_teaser": "Arepas dulces y esponjosas de maíz tierno, doradas en sartén y coronadas con queso fresco.",
+  "arepas_choclo_ingredients": ["4 tazas de granos de choclo (maíz tierno)", "2 cucharadas de azúcar", "1 pizca de sal", "2 cucharadas de mantequilla derretida", "200 g de queso fresco rallado"],
+  "arepas_choclo_steps": ["Procesa los granos de choclo con el azúcar y la sal hasta obtener una masa espesa.", "Añade la mantequilla derretida y mezcla bien.", "Forma las arepas y cocina en sartén caliente hasta dorar ambos lados.", "Sirve calientes, cubiertas con queso fresco rallado."]
 },
 
 "whatsapp": {

@@ -453,6 +453,7 @@
   "difficultyLabel": "Difficulty",
   "difficulty_facil": "Easy",
   "difficulty_media": "Medium",
+  "difficulty_dificil": "Difficult",
   "ingredientsTitle": "Ingredients",
   "stepsTitle": "Preparation",
   "viewRecipe": "View recipe",
@@ -478,7 +479,27 @@
   "empanadas_carne_title": "Colombian Beef Empanadas",
   "empanadas_carne_teaser": "Crispy yellow corn dough filled with a juicy stew of beef, potato and spices.",
   "empanadas_carne_ingredients": ["500 g pre-cooked yellow corn flour", "500 ml beef broth", "300 g ground beef", "2 medium potatoes, cooked and diced", "1 onion and 2 garlic cloves, chopped", "Cumin, achiote and salt to taste"],
-  "empanadas_carne_steps": ["Sauté the onion and garlic, add the ground beef and spices and cook through.", "Stir in the diced potato and mix; let the filling cool.", "Mix the flour with hot broth into a soft dough; shape into discs.", "Fill, seal the edges well and fry in hot oil until golden."]
+  "empanadas_carne_steps": ["Sauté the onion and garlic, add the ground beef and spices and cook through.", "Stir in the diced potato and mix; let the filling cool.", "Mix the flour with hot broth into a soft dough; shape into discs.", "Fill, seal the edges well and fry in hot oil until golden."],
+
+  "cachapas_maiz_title": "Sweet Corn Cachapas with Cheese",
+  "cachapas_maiz_teaser": "Sweet pancakes made from tender corn, griddled golden and filled with melted farmer's cheese.",
+  "cachapas_maiz_ingredients": ["6 ears of tender corn (or 3 cups kernels)", "2 tbsp sugar", "A pinch of salt", "2 tbsp butter", "200 g farmer's cheese or mozzarella", "Butter for the griddle"],
+  "cachapas_maiz_steps": ["Blend the corn kernels with the sugar and salt into a thick batter.", "Pour a ladleful onto a hot, greased griddle; cook until golden on both sides.", "Place a slice of cheese on top and fold the cachapa in half so it melts.", "Serve fresh, with extra butter if you like."],
+
+  "bunuelos_colombianos_title": "Colombian Buñuelos",
+  "bunuelos_colombianos_teaser": "Golden, crispy cheese balls made with costeño cheese and cassava starch — a must at every Colombian Christmas table.",
+  "bunuelos_colombianos_ingredients": ["300 g grated costeño cheese", "150 g cassava starch", "100 g corn flour", "2 eggs", "1 tsp baking powder", "Oil for frying"],
+  "bunuelos_colombianos_steps": ["Combine the grated cheese with the starches, eggs and baking powder into an even dough.", "Shape into even balls with your hands, with no cracks.", "Fry in oil that isn't too hot, stirring constantly, until golden all the way through.", "Drain on paper towel and serve warm."],
+
+  "pabellon_criollo_title": "Pabellón Criollo",
+  "pabellon_criollo_teaser": "Venezuela's national dish: shredded beef, black beans, white rice and sweet plantain slices, all on one plate.",
+  "pabellon_criollo_ingredients": ["500 g beef flank", "2 cups cooked black beans", "2 cups cooked white rice", "2 ripe plantains", "1 onion and 1 bell pepper, chopped", "Cumin, garlic and salt to taste"],
+  "pabellon_criollo_steps": ["Cook the flank until tender, shred it and sauté with onion, bell pepper and spices.", "Warm the black beans over low heat, adjusting salt and cumin.", "Slice the plantains and fry until golden.", "Serve the white rice, shredded beef, black beans and plantain slices together on the plate."],
+
+  "arepas_choclo_title": "Colombian Sweet Corn Arepas",
+  "arepas_choclo_teaser": "Sweet, fluffy arepas made from tender corn, pan-fried golden and topped with fresh cheese.",
+  "arepas_choclo_ingredients": ["4 cups sweet corn kernels", "2 tbsp sugar", "A pinch of salt", "2 tbsp melted butter", "200 g grated fresh cheese"],
+  "arepas_choclo_steps": ["Process the corn kernels with the sugar and salt into a thick batter.", "Add the melted butter and mix well.", "Shape the arepas and cook on a hot pan until golden on both sides.", "Serve warm, topped with grated fresh cheese."]
 },
 
 "whatsapp": {

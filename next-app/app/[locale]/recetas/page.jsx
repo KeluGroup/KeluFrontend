@@ -13,6 +13,10 @@ const RECIPES = [
   { key: 'arepas_reina_pepiada',  country: 'venezuela', img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepas%204%20variedades.jpg', time: '40 min', difficulty: 'media' },
   { key: 'pan_de_bono',           country: 'colombia',  img: '/products/pan-de-bono.jpg', time: '35 min', difficulty: 'media' },
   { key: 'empanadas_carne',       country: 'colombia',  img: '/products/empanada-carne.jpg', time: '50 min', difficulty: 'media' },
+  { key: 'cachapas_maiz',         country: 'venezuela', img: 'https://images.unsplash.com/photo-1639929781092-fe59fae895c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '20 min', difficulty: 'facil' },
+  { key: 'bunuelos_colombianos',  country: 'colombia',  img: 'https://images.unsplash.com/photo-1708782345356-453fa9ef901e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '35 min', difficulty: 'media' },
+  { key: 'pabellon_criollo',      country: 'venezuela', img: 'https://images.unsplash.com/photo-1596069080606-b9cdbd242ff1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '60 min', difficulty: 'dificil' },
+  { key: 'arepas_choclo',         country: 'colombia',  img: 'https://images.unsplash.com/photo-1776765828695-ad21c7f27504?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '25 min', difficulty: 'facil' },
 ]
 
 const COUNTRY_FLAG = { venezuela: '🇻🇪', colombia: '🇨🇴' }

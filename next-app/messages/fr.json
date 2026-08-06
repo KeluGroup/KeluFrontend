@@ -446,6 +446,7 @@
     "difficultyLabel": "Difficulté",
     "difficulty_facil": "Facile",
     "difficulty_media": "Moyenne",
+    "difficulty_dificil": "Difficile",
     "ingredientsTitle": "Ingrédients",
     "stepsTitle": "Préparation",
     "viewRecipe": "Voir la recette",
@@ -471,7 +472,27 @@
     "empanadas_carne_title": "Empanadas colombiennes à la viande",
     "empanadas_carne_teaser": "Pâte de maïs jaune croustillante farcie d'un ragoût juteux de bœuf, pomme de terre et épices.",
     "empanadas_carne_ingredients": ["500 g de farine de maïs jaune précuite", "500 ml de bouillon de bœuf", "300 g de bœuf haché", "2 pommes de terre moyennes, cuites et coupées en dés", "1 oignon et 2 gousses d'ail hachés", "Cumin, achiote et sel selon le goût"],
-    "empanadas_carne_steps": ["Faites revenir l'oignon et l'ail, ajoutez le bœuf haché et les épices et faites bien cuire.", "Incorporez la pomme de terre en dés et mélangez ; laissez refroidir la farce.", "Mélangez la farine avec le bouillon chaud jusqu'à obtenir une pâte souple ; formez des disques.", "Garnissez, scellez bien les bords et faites frire dans l'huile chaude jusqu'à coloration dorée."]
+    "empanadas_carne_steps": ["Faites revenir l'oignon et l'ail, ajoutez le bœuf haché et les épices et faites bien cuire.", "Incorporez la pomme de terre en dés et mélangez ; laissez refroidir la farce.", "Mélangez la farine avec le bouillon chaud jusqu'à obtenir une pâte souple ; formez des disques.", "Garnissez, scellez bien les bords et faites frire dans l'huile chaude jusqu'à coloration dorée."],
+
+    "cachapas_maiz_title": "Cachapas de maïs doux au fromage",
+    "cachapas_maiz_teaser": "Des crêpes sucrées de maïs tendre, dorées à la plancha et fourrées de fromage fondant.",
+    "cachapas_maiz_ingredients": ["6 épis de maïs tendre (ou 3 tasses de grains)", "2 c. à soupe de sucre", "1 pincée de sel", "2 c. à soupe de beurre", "200 g de fromage fondant ou mozzarella", "Beurre pour la plancha"],
+    "cachapas_maiz_steps": ["Mixez les grains de maïs avec le sucre et le sel jusqu'à obtenir une pâte épaisse.", "Versez une louche sur la plancha chaude et graissée ; faites cuire jusqu'à ce que les deux côtés soient dorés.", "Placez une tranche de fromage dessus et pliez la cachapa en deux pour qu'il fonde.", "Servez fraîchement préparée, avec un peu de beurre en plus si vous le souhaitez."],
+
+    "bunuelos_colombianos_title": "Buñuelos colombiens",
+    "bunuelos_colombianos_teaser": "Des boules dorées et croustillantes de fromage costeño et de fécule de manioc, incontournables sur toute table de Noël colombienne.",
+    "bunuelos_colombianos_ingredients": ["300 g de fromage costeño râpé", "150 g de fécule de manioc", "100 g de farine de maïs", "2 œufs", "1 c. à café de levure chimique", "Huile de friture"],
+    "bunuelos_colombianos_steps": ["Mélangez le fromage râpé avec les fécules, les œufs et la levure jusqu'à obtenir une pâte homogène.", "Formez des boules régulières avec les mains, sans fissures.", "Faites frire dans une huile pas trop chaude, en remuant constamment, jusqu'à coloration dorée uniforme.", "Égouttez sur papier absorbant et servez chaud."],
+
+    "pabellon_criollo_title": "Pabellón Criollo",
+    "pabellon_criollo_teaser": "Le plat national vénézuélien : bœuf effiloché, haricots noirs, riz blanc et tranches de banane plantain mûre, le tout dans une même assiette.",
+    "pabellon_criollo_ingredients": ["500 g de bavette de bœuf", "2 tasses de haricots noirs cuits", "2 tasses de riz blanc cuit", "2 bananes plantains mûres", "1 oignon et 1 poivron hachés", "Cumin, ail et sel selon le goût"],
+    "pabellon_criollo_steps": ["Faites cuire la bavette jusqu'à ce qu'elle soit tendre, effilochez-la et faites-la revenir avec oignon, poivron et épices.", "Réchauffez les haricots noirs à feu doux, en ajustant le sel et le cumin.", "Coupez les bananes plantains en tranches et faites-les frire jusqu'à coloration dorée.", "Servez le riz blanc, le bœuf effiloché, les haricots noirs et les tranches de plantain ensemble dans l'assiette."],
+
+    "arepas_choclo_title": "Arepas colombiennes au maïs doux",
+    "arepas_choclo_teaser": "Des arepas sucrées et moelleuses à base de maïs tendre, dorées à la poêle et garnies de fromage frais.",
+    "arepas_choclo_ingredients": ["4 tasses de grains de maïs doux", "2 c. à soupe de sucre", "1 pincée de sel", "2 c. à soupe de beurre fondu", "200 g de fromage frais râpé"],
+    "arepas_choclo_steps": ["Mixez les grains de maïs avec le sucre et le sel jusqu'à obtenir une pâte épaisse.", "Ajoutez le beurre fondu et mélangez bien.", "Formez les arepas et faites-les cuire à la poêle chaude jusqu'à ce que les deux côtés soient dorés.", "Servez chaud, garni de fromage frais râpé."]
   },
   "about": {
     "tag":      "À propos de nous",
