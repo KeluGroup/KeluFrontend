@@ -141,6 +141,7 @@ export default function Navbar({
     { href: `/${locale}`,          label: t('nav.home'),     id: 'home',     isRoute: false },
     { href: `/${locale}/products`, label: t('nav.products'), id: 'products', isRoute: true  },
     { href: `/${locale}/services`, label: t('nav.services'), id: 'services', isRoute: true  },
+    { href: `/${locale}/recetas`,  label: t('nav.recipes'),  id: 'recetas',  isRoute: true  },
     { href: `/${locale}/contact`,  label: t('nav.contact'),  id: 'contact',  isRoute: true  },
     { href: `/${locale}/about`,    label: t('nav.about'),    id: 'about',    isRoute: true  },
     { href: `/${locale}/faq`,      label: 'FAQ',             id: 'faq',      isRoute: true  },

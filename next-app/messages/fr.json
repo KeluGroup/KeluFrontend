@@ -8,7 +8,8 @@
     "products": "Produits",
     "services": "Services",
     "contact":  "Contact",
-    "about":    "À propos"
+    "about":    "À propos",
+    "recipes":  "Recettes"
   },
   "home": {
     "eyebrow":       "Distribution alimentaire latine · Suisse",
@@ -434,6 +435,44 @@
   "recepts": {
     "ctaBtn": "idées de recettes"
   },
+  "recetas": {
+    "eyebrow": "Blog & Recettes",
+    "pageTitle": "Recettes aux saveurs latines",
+    "pageSubtitle": "Des idées à cuisiner chez vous ou dans votre cuisine professionnelle avec les produits KELU.",
+    "filterAll": "Toutes",
+    "countryVenezuela": "Venezuela",
+    "countryColombia": "Colombie",
+    "timeLabel": "Temps",
+    "difficultyLabel": "Difficulté",
+    "difficulty_facil": "Facile",
+    "difficulty_media": "Moyenne",
+    "ingredientsTitle": "Ingrédients",
+    "stepsTitle": "Préparation",
+    "viewRecipe": "Voir la recette",
+    "modalClose": "Fermer",
+    "ctaTitle": "Envie de ces produits dans votre cuisine ?",
+    "ctaBtn": "Voir le catalogue",
+
+    "tequenos_clasicos_title": "Tequeños vénézuéliens classiques",
+    "tequenos_clasicos_teaser": "L'incontournable de toute fête vénézuélienne : des bâtonnets de pâte croustillants farcis de fromage blanc fondant.",
+    "tequenos_clasicos_ingredients": ["500 g de farine de blé", "2 œufs", "100 g de beurre", "1 pincée de sel", "400 g de fromage blanc ferme (type telita ou Llanero)", "Huile de friture"],
+    "tequenos_clasicos_steps": ["Mélangez la farine, les œufs, le beurre et le sel jusqu'à obtenir une pâte lisse et homogène.", "Laissez reposer la pâte 15 minutes sous un linge.", "Étalez la pâte et coupez des bandes fines ; enroulez chaque bâtonnet de fromage en spirale.", "Faites frire dans l'huile bien chaude jusqu'à coloration dorée, égouttez et servez chaud."],
+
+    "arepas_reina_pepiada_title": "Arepas Reina Pepiada",
+    "arepas_reina_pepiada_teaser": "L'arepa la plus populaire du Venezuela : garnie d'un mélange crémeux de poulet effiloché et d'avocat.",
+    "arepas_reina_pepiada_ingredients": ["2 tasses de farine de maïs précuite", "2½ tasses d'eau tiède", "1 blanc de poulet cuit et effiloché", "2 avocats mûrs", "1 c. à soupe de mayonnaise", "Sel et coriandre selon le goût"],
+    "arepas_reina_pepiada_steps": ["Mélangez la farine avec l'eau et le sel jusqu'à obtenir une pâte lisse ; formez des boules et aplatissez-les.", "Faites cuire les arepas sur une plaque ou une poêle chaude jusqu'à ce qu'elles dorent des deux côtés, puis terminez au four.", "Mélangez le poulet effiloché avec l'avocat écrasé, la mayonnaise, le sel et la coriandre.", "Ouvrez l'arepa en deux et garnissez généreusement avec le mélange."],
+
+    "pan_de_bono_title": "Pan de Bono colombien",
+    "pan_de_bono_teaser": "Petits pains moelleux et légèrement salés à base de fromage costeño et de fécule de manioc.",
+    "pan_de_bono_ingredients": ["500 g de fécule de manioc aigre", "300 g de fromage costeño râpé", "2 œufs", "50 g de beurre", "1 c. à café de levure chimique", "Sel selon le goût"],
+    "pan_de_bono_steps": ["Mélangez la fécule de manioc avec le fromage râpé jusqu'à bien incorporer.", "Ajoutez les œufs, le beurre et la levure ; pétrissez jusqu'à obtenir une pâte élastique.", "Formez de petites boules ou ovales et disposez-les sur une plaque.", "Faites cuire à 200°C pendant 20-25 minutes jusqu'à ce qu'ils soient dorés à l'extérieur et moelleux à l'intérieur."],
+
+    "empanadas_carne_title": "Empanadas colombiennes à la viande",
+    "empanadas_carne_teaser": "Pâte de maïs jaune croustillante farcie d'un ragoût juteux de bœuf, pomme de terre et épices.",
+    "empanadas_carne_ingredients": ["500 g de farine de maïs jaune précuite", "500 ml de bouillon de bœuf", "300 g de bœuf haché", "2 pommes de terre moyennes, cuites et coupées en dés", "1 oignon et 2 gousses d'ail hachés", "Cumin, achiote et sel selon le goût"],
+    "empanadas_carne_steps": ["Faites revenir l'oignon et l'ail, ajoutez le bœuf haché et les épices et faites bien cuire.", "Incorporez la pomme de terre en dés et mélangez ; laissez refroidir la farce.", "Mélangez la farine avec le bouillon chaud jusqu'à obtenir une pâte souple ; formez des disques.", "Garnissez, scellez bien les bords et faites frire dans l'huile chaude jusqu'à coloration dorée."]
+  },
   "about": {
     "tag":      "À propos de nous",
     "title":    "Notre Histoire & Mission",
@@ -467,7 +506,9 @@
     "faqTitle": "FAQ — Commandes, Livraisons et Prix | KELU GmbH",
     "faqDesc": "Commande minimum, zones de livraison, remises sur volume, moyens de paiement et chaîne du froid — tout ce qu'il faut savoir avant votre première commande chez KELU.",
     "tastingTitle": "La box vous a plu ? | KELU GmbH",
-    "tastingDesc": "Vous avez reçu notre box de dégustation. Voici la suite : une dégustation chaude dans votre cuisine et votre première commande avec remise."
+    "tastingDesc": "Vous avez reçu notre box de dégustation. Voici la suite : une dégustation chaude dans votre cuisine et votre première commande avec remise.",
+    "recetasTitle": "Recettes Latines — Venezuela et Colombie | KELU GmbH",
+    "recetasDesc": "Recettes traditionnelles vénézuéliennes et colombiennes avec les produits KELU : tequeños, arepas, pan de bono et empanadas. Des idées pour votre cuisine ou votre carte."
   },
   "tasting": {
     "tag": "Dégustation KELU",

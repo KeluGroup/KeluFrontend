@@ -43,6 +43,9 @@ export default function Home() {
             <Link href={`/${locale}/services`} className="btn-ph btn-ph-primary" onClick={() => trackCTAClick('hero-services')}>
               {t('home.cta')}
             </Link>
+            <Link href={`/${locale}/recetas`} className="btn-ph btn-ph-ghost" onClick={() => trackCTAClick('hero-recetas')}>
+              {t('recepts.ctaBtn')}
+            </Link>
           </div>
         </div>
       </div>

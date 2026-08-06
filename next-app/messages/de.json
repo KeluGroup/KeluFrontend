@@ -8,7 +8,8 @@
     "products": "Produkte",
     "services": "Leistungen",
     "contact":  "Kontakt",
-    "about":    "Über uns"
+    "about":    "Über uns",
+    "recipes":  "Rezepte"
   },
   "home": {
     "eyebrow":       "Lateinamerikanische Lebensmittel · Schweiz",
@@ -439,6 +440,45 @@
   "ctaBtn" : "rezeptideen entdecken"
 },
 
+"recetas": {
+  "eyebrow": "Blog & Rezepte",
+  "pageTitle": "Rezepte mit lateinamerikanischem Geschmack",
+  "pageSubtitle": "Ideen für zuhause oder deine Profiküche mit KELU-Produkten.",
+  "filterAll": "Alle",
+  "countryVenezuela": "Venezuela",
+  "countryColombia": "Kolumbien",
+  "timeLabel": "Zeit",
+  "difficultyLabel": "Schwierigkeit",
+  "difficulty_facil": "Einfach",
+  "difficulty_media": "Mittel",
+  "ingredientsTitle": "Zutaten",
+  "stepsTitle": "Zubereitung",
+  "viewRecipe": "Rezept ansehen",
+  "modalClose": "Schliessen",
+  "ctaTitle": "Diese Produkte für deine Küche?",
+  "ctaBtn": "Katalog ansehen",
+
+  "tequenos_clasicos_title": "Klassische venezolanische Tequeños",
+  "tequenos_clasicos_teaser": "Ein Muss auf jeder venezolanischen Feier: knusprige Teigstangen gefüllt mit geschmolzenem weissem Käse.",
+  "tequenos_clasicos_ingredients": ["500 g Weizenmehl", "2 Eier", "100 g Butter", "1 Prise Salz", "400 g fester weisser Käse (Telita- oder Llanero-Käse)", "Öl zum Frittieren"],
+  "tequenos_clasicos_steps": ["Mehl, Eier, Butter und Salz zu einem glatten, gleichmässigen Teig verarbeiten.", "Den Teig 15 Minuten zugedeckt ruhen lassen.", "Den Teig ausrollen und in dünne Streifen schneiden; jeden Käsestab spiralförmig einwickeln.", "In heissem Öl goldbraun frittieren, abtropfen lassen und warm servieren."],
+
+  "arepas_reina_pepiada_title": "Arepas Reina Pepiada",
+  "arepas_reina_pepiada_teaser": "Die beliebteste Arepa Venezuelas: gefüllt mit einer cremigen Mischung aus Hühnerfleisch und Avocado.",
+  "arepas_reina_pepiada_ingredients": ["2 Tassen vorgekochtes Maismehl", "2½ Tassen warmes Wasser", "1 gekochte, zerzupfte Hähnchenbrust", "2 reife Avocados", "1 EL Mayonnaise", "Salz und Koriander nach Geschmack"],
+  "arepas_reina_pepiada_steps": ["Mehl mit Wasser und Salz zu einem glatten Teig verarbeiten; zu Kugeln formen und flach drücken.", "Die Arepas auf einer heissen Platte oder Pfanne auf beiden Seiten goldbraun braten, dann im Ofen fertig garen.", "Das zerzupfte Hähnchen mit zerdrückter Avocado, Mayonnaise, Salz und Koriander mischen.", "Die Arepa halbieren und grosszügig mit der Füllung befüllen."],
+
+  "pan_de_bono_title": "Kolumbianisches Pan de Bono",
+  "pan_de_bono_teaser": "Elastische, leicht salzige Brötchen aus Costeño-Käse und Maniokstärke.",
+  "pan_de_bono_ingredients": ["500 g saure Maniokstärke", "300 g geriebener Costeño-Käse", "2 Eier", "50 g Butter", "1 TL Backpulver", "Salz nach Geschmack"],
+  "pan_de_bono_steps": ["Die Maniokstärke mit dem geriebenen Käse gut vermischen.", "Eier, Butter und Backpulver dazugeben; zu einem elastischen Teig verkneten.", "Kleine Kugeln oder Ovale formen und auf ein Blech legen.", "Bei 200°C 20-25 Minuten backen, bis sie aussen goldbraun und innen weich sind."],
+
+  "empanadas_carne_title": "Kolumbianische Rindfleisch-Empanadas",
+  "empanadas_carne_teaser": "Knuspriger gelber Maisteig gefüllt mit einem saftigen Eintopf aus Rindfleisch, Kartoffel und Gewürzen.",
+  "empanadas_carne_ingredients": ["500 g vorgekochtes gelbes Maismehl", "500 ml Rinderbrühe", "300 g Rinderhackfleisch", "2 mittelgrosse Kartoffeln, gekocht und gewürfelt", "1 Zwiebel und 2 Knoblauchzehen, gehackt", "Kreuzkümmel, Achiote und Salz nach Geschmack"],
+  "empanadas_carne_steps": ["Zwiebel und Knoblauch anbraten, Hackfleisch und Gewürze dazugeben und gut durchgaren.", "Die gewürfelte Kartoffel unterrühren und die Füllung abkühlen lassen.", "Mehl mit heisser Brühe zu einem weichen Teig verarbeiten; zu Scheiben formen.", "Füllen, die Ränder gut verschliessen und in heissem Öl goldbraun frittieren."]
+},
+
 "whatsapp": {
   "message": "Hallo KELU, ich interessiere mich für Informationen über Ihre Produkte und Dienstleistungen für mein Unternehmen."
 },
@@ -462,7 +502,9 @@
     "faqTitle": "FAQ — Bestellungen, Lieferungen und Preise | KELU GmbH",
     "faqDesc": "Mindestbestellung, Lieferzonen, Mengenrabatte, Zahlungsmethoden und Kühlkette — alles, was du vor deiner ersten Bestellung bei KELU wissen musst.",
     "tastingTitle": "Hat Ihnen die Box gefallen? | KELU GmbH",
-    "tastingDesc": "Sie haben unsere Degustationsbox erhalten. So geht es weiter: eine warme Degustation in Ihrer Küche und Ihre erste Bestellung mit Rabatt."
+    "tastingDesc": "Sie haben unsere Degustationsbox erhalten. So geht es weiter: eine warme Degustation in Ihrer Küche und Ihre erste Bestellung mit Rabatt.",
+    "recetasTitle": "Lateinamerikanische Rezepte — Venezuela und Kolumbien | KELU GmbH",
+    "recetasDesc": "Traditionelle venezolanische und kolumbianische Rezepte mit KELU-Produkten: Tequeños, Arepas, Pan de Bono und Empanadas. Ideen für deine Küche oder deine Karte."
   },
   "tasting": {
     "tag": "KELU Degustation",

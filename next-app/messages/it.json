@@ -8,7 +8,8 @@
     "products": "Prodotti",
     "services": "Servizi",
     "contact":  "Contatto",
-    "about":    "Chi siamo"
+    "about":    "Chi siamo",
+    "recipes":  "Ricette"
   },
   "home": {
     "eyebrow":        "Distribuzione Alimentare Latina · Svizzera",
@@ -444,6 +445,44 @@
     "ctaBtn": "idee di ricette"
   },
 
+  "recetas": {
+    "eyebrow": "Blog & Ricette",
+    "pageTitle": "Ricette dal sapore latino",
+    "pageSubtitle": "Idee da cucinare a casa o nella tua cucina professionale con i prodotti KELU.",
+    "filterAll": "Tutte",
+    "countryVenezuela": "Venezuela",
+    "countryColombia": "Colombia",
+    "timeLabel": "Tempo",
+    "difficultyLabel": "Difficoltà",
+    "difficulty_facil": "Facile",
+    "difficulty_media": "Media",
+    "ingredientsTitle": "Ingredienti",
+    "stepsTitle": "Preparazione",
+    "viewRecipe": "Vedi ricetta",
+    "modalClose": "Chiudi",
+    "ctaTitle": "Vuoi questi prodotti nella tua cucina?",
+    "ctaBtn": "Vedi il catalogo",
+
+    "tequenos_clasicos_title": "Tequeños venezuelani classici",
+    "tequenos_clasicos_teaser": "Il must di ogni festa venezuelana: bastoncini di pasta croccante ripieni di formaggio bianco filante.",
+    "tequenos_clasicos_ingredients": ["500 g di farina di grano", "2 uova", "100 g di burro", "1 pizzico di sale", "400 g di formaggio bianco compatto (telita o Llanero)", "Olio per friggere"],
+    "tequenos_clasicos_steps": ["Mescola farina, uova, burro e sale fino a ottenere un impasto liscio e uniforme.", "Lascia riposare l'impasto 15 minuti coperto con un panno.", "Stendi l'impasto e taglia strisce sottili; avvolgi ogni bastoncino di formaggio a spirale.", "Friggi in olio ben caldo fino a doratura, scola e servi caldi."],
+
+    "arepas_reina_pepiada_title": "Arepas Reina Pepiada",
+    "arepas_reina_pepiada_teaser": "L'arepa più amata del Venezuela: farcita con un mix cremoso di pollo sfilacciato e avocado.",
+    "arepas_reina_pepiada_ingredients": ["2 tazze di farina di mais precotta", "2½ tazze di acqua tiepida", "1 petto di pollo cotto e sfilacciato", "2 avocado maturi", "1 cucchiaio di maionese", "Sale e coriandolo a piacere"],
+    "arepas_reina_pepiada_steps": ["Mescola la farina con acqua e sale fino a ottenere un impasto liscio; forma delle palline e schiacciale.", "Cuoci le arepas su una piastra o padella calda finché dorate su entrambi i lati, poi completa in forno.", "Mescola il pollo sfilacciato con avocado schiacciato, maionese, sale e coriandolo.", "Apri l'arepa a metà e farcisci generosamente con il composto."],
+
+    "pan_de_bono_title": "Pan de Bono colombiano",
+    "pan_de_bono_teaser": "Panini elastici e leggermente salati a base di formaggio costeño e amido di yuca.",
+    "pan_de_bono_ingredients": ["500 g di amido di yuca acido", "300 g di formaggio costeño grattugiato", "2 uova", "50 g di burro", "1 cucchiaino di lievito per dolci", "Sale a piacere"],
+    "pan_de_bono_steps": ["Mescola l'amido di yuca con il formaggio grattugiato fino a incorporarli bene.", "Aggiungi uova, burro e lievito; impasta fino a ottenere un composto elastico.", "Forma palline o ovali e disponili su una teglia.", "Cuoci a 200°C per 20-25 minuti finché dorati fuori e morbidi dentro."],
+
+    "empanadas_carne_title": "Empanadas colombiane di carne",
+    "empanadas_carne_teaser": "Pasta di mais giallo croccante ripiena di uno spezzatino succoso di manzo, patata e spezie.",
+    "empanadas_carne_ingredients": ["500 g di farina di mais giallo precotta", "500 ml di brodo di manzo", "300 g di carne macinata di manzo", "2 patate medie, cotte e a cubetti", "1 cipolla e 2 spicchi d'aglio tritati", "Cumino, achiote e sale a piacere"],
+    "empanadas_carne_steps": ["Soffriggi cipolla e aglio, aggiungi la carne macinata e le spezie e cuoci bene.", "Incorpora la patata a cubetti e mescola; lascia raffreddare il ripieno.", "Mescola la farina con il brodo caldo fino a ottenere un impasto morbido; forma dei dischi.", "Farcisci, sigilla bene i bordi e friggi in olio caldo fino a doratura."]
+  },
 
   "whatsapp": {
     "message": "Ciao KELU, sono interessato/a a informazioni sui vostri prodotti e servizi per la mia azienda."
@@ -468,7 +507,9 @@
     "faqTitle": "FAQ — Ordini, Consegne e Prezzi | KELU GmbH",
     "faqDesc": "Ordine minimo, zone di consegna, sconti per volume, metodi di pagamento e catena del freddo — tutto quello che devi sapere prima del tuo primo ordine con KELU.",
     "tastingTitle": "Ti è piaciuta la box? | KELU GmbH",
-    "tastingDesc": "Hai ricevuto la nostra box di degustazione. Ecco cosa succede ora: una degustazione calda nella tua cucina e il tuo primo ordine con sconto."
+    "tastingDesc": "Hai ricevuto la nostra box di degustazione. Ecco cosa succede ora: una degustazione calda nella tua cucina e il tuo primo ordine con sconto.",
+    "recetasTitle": "Ricette Latine — Venezuela e Colombia | KELU GmbH",
+    "recetasDesc": "Ricette tradizionali venezuelane e colombiane con i prodotti KELU: tequeños, arepas, pan de bono ed empanadas. Idee per la tua cucina o il tuo menù."
   },
   "tasting": {
     "tag": "Degustazione KELU",

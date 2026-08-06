@@ -8,7 +8,8 @@
     "products": "Products",
     "services": "Services",
     "contact":  "Contact",
-    "about":    "About Us"
+    "about":    "About Us",
+    "recipes":  "Recipes"
   },
   "home": {
     "eyebrow":       "Latin Food Distribution · Switzerland",
@@ -441,6 +442,44 @@
   "ctaBtn" : "recipe ideas"
 },
 
+"recetas": {
+  "eyebrow": "Blog & Recipes",
+  "pageTitle": "Recipes with Latin Flavor",
+  "pageSubtitle": "Ideas to cook at home or in your professional kitchen with KELU products.",
+  "filterAll": "All",
+  "countryVenezuela": "Venezuela",
+  "countryColombia": "Colombia",
+  "timeLabel": "Time",
+  "difficultyLabel": "Difficulty",
+  "difficulty_facil": "Easy",
+  "difficulty_media": "Medium",
+  "ingredientsTitle": "Ingredients",
+  "stepsTitle": "Preparation",
+  "viewRecipe": "View recipe",
+  "modalClose": "Close",
+  "ctaTitle": "Want these products in your kitchen?",
+  "ctaBtn": "View catalogue",
+
+  "tequenos_clasicos_title": "Classic Venezuelan Tequeños",
+  "tequenos_clasicos_teaser": "A must at every Venezuelan party: crispy dough sticks filled with melted white cheese.",
+  "tequenos_clasicos_ingredients": ["500 g wheat flour", "2 eggs", "100 g butter", "A pinch of salt", "400 g firm white cheese (telita or Llanero cheese)", "Oil for frying"],
+  "tequenos_clasicos_steps": ["Mix the flour, eggs, butter and salt into a smooth, even dough.", "Let the dough rest for 15 minutes, covered with a cloth.", "Roll out the dough and cut thin strips; wrap each cheese stick in a spiral.", "Fry in hot oil until golden, drain and serve warm."],
+
+  "arepas_reina_pepiada_title": "Reina Pepiada Arepas",
+  "arepas_reina_pepiada_teaser": "Venezuela's most popular arepa: filled with a creamy mix of shredded chicken and avocado.",
+  "arepas_reina_pepiada_ingredients": ["2 cups pre-cooked corn flour", "2½ cups warm water", "1 cooked, shredded chicken breast", "2 ripe avocados", "1 tbsp mayonnaise", "Salt and cilantro to taste"],
+  "arepas_reina_pepiada_steps": ["Mix the flour with water and salt into a smooth dough; shape into balls and flatten.", "Cook the arepas on a hot griddle or pan until golden on both sides, then finish in the oven.", "Mix the shredded chicken with mashed avocado, mayonnaise, salt and cilantro.", "Split the arepa in half and fill generously with the mixture."],
+
+  "pan_de_bono_title": "Colombian Pan de Bono",
+  "pan_de_bono_teaser": "Chewy, lightly salty rolls made with costeño cheese and cassava starch.",
+  "pan_de_bono_ingredients": ["500 g sour cassava starch", "300 g grated costeño cheese", "2 eggs", "50 g butter", "1 tsp baking powder", "Salt to taste"],
+  "pan_de_bono_steps": ["Mix the cassava starch with the grated cheese until well combined.", "Add the eggs, butter and baking powder; knead into an elastic dough.", "Shape into small balls or ovals and place on a baking tray.", "Bake at 200°C (400°F) for 20-25 minutes until golden outside and soft inside."],
+
+  "empanadas_carne_title": "Colombian Beef Empanadas",
+  "empanadas_carne_teaser": "Crispy yellow corn dough filled with a juicy stew of beef, potato and spices.",
+  "empanadas_carne_ingredients": ["500 g pre-cooked yellow corn flour", "500 ml beef broth", "300 g ground beef", "2 medium potatoes, cooked and diced", "1 onion and 2 garlic cloves, chopped", "Cumin, achiote and salt to taste"],
+  "empanadas_carne_steps": ["Sauté the onion and garlic, add the ground beef and spices and cook through.", "Stir in the diced potato and mix; let the filling cool.", "Mix the flour with hot broth into a soft dough; shape into discs.", "Fill, seal the edges well and fry in hot oil until golden."]
+},
 
 "whatsapp": {
   "message": "Hello KELU, I'm interested in information about your products and services for my business."
@@ -465,7 +504,9 @@
     "faqTitle": "FAQ — Orders, Deliveries and Pricing | KELU GmbH",
     "faqDesc": "Minimum order, delivery zones, volume discounts, payment methods and cold chain — everything you need to know before your first order with KELU.",
     "tastingTitle": "Did you like the box? | KELU GmbH",
-    "tastingDesc": "You received our tasting box. Here's what comes next: a hot tasting in your kitchen and your first order with a discount."
+    "tastingDesc": "You received our tasting box. Here's what comes next: a hot tasting in your kitchen and your first order with a discount.",
+    "recetasTitle": "Latin Recipes — Venezuela and Colombia | KELU GmbH",
+    "recetasDesc": "Traditional Venezuelan and Colombian recipes with KELU products: tequeños, arepas, pan de bono and empanadas. Ideas for your kitchen or your menu."
   },
   "tasting": {
     "tag": "KELU Tasting",

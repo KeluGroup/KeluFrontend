@@ -8,7 +8,8 @@
     "products": "Productos",
     "services": "Servicios",
     "contact":  "Contacto",
-    "about":    "Nosotros"
+    "about":    "Nosotros",
+    "recipes":  "Recetas"
   },
   "home": {
     "eyebrow":        "Distribución de Comida Latina · Suiza",
@@ -448,6 +449,45 @@
   "ctaBtn" : "ideas de recetas"
 },
 
+"recetas": {
+  "eyebrow": "Blog & Recetas",
+  "pageTitle": "Recetas con Sabor Latino",
+  "pageSubtitle": "Ideas para preparar en casa o en tu cocina profesional con productos KELU.",
+  "filterAll": "Todas",
+  "countryVenezuela": "Venezuela",
+  "countryColombia": "Colombia",
+  "timeLabel": "Tiempo",
+  "difficultyLabel": "Dificultad",
+  "difficulty_facil": "Fácil",
+  "difficulty_media": "Media",
+  "ingredientsTitle": "Ingredientes",
+  "stepsTitle": "Preparación",
+  "viewRecipe": "Ver receta",
+  "modalClose": "Cerrar",
+  "ctaTitle": "¿Quieres estos productos en tu cocina?",
+  "ctaBtn": "Ver catálogo",
+
+  "tequenos_clasicos_title": "Tequeños Venezolanos Clásicos",
+  "tequenos_clasicos_teaser": "El infaltable de toda fiesta venezolana: palitos de masa crujiente rellenos de queso blanco derretido.",
+  "tequenos_clasicos_ingredients": ["500 g de harina de trigo", "2 huevos", "100 g de mantequilla", "1 pizca de sal", "400 g de queso blanco duro tipo telita o queso Llanero", "Aceite para freír"],
+  "tequenos_clasicos_steps": ["Mezcla la harina, los huevos, la mantequilla y la sal hasta formar una masa suave y uniforme.", "Deja reposar la masa 15 minutos cubierta con un paño.", "Estira la masa y corta tiras finas; envuelve cada bastón de queso en espiral.", "Fríe en aceite bien caliente hasta dorar, escurre y sirve calientes."],
+
+  "arepas_reina_pepiada_title": "Arepas Reina Pepiada",
+  "arepas_reina_pepiada_teaser": "La arepa venezolana más popular: rellena de una cremosa mezcla de pollo desmechado y aguacate.",
+  "arepas_reina_pepiada_ingredients": ["2 tazas de harina de maíz precocida", "2 ½ tazas de agua tibia", "1 pechuga de pollo cocida y desmechada", "2 aguacates maduros", "1 cucharada de mayonesa", "Sal y cilantro al gusto"],
+  "arepas_reina_pepiada_steps": ["Mezcla la harina con agua y sal hasta lograr una masa homogénea; forma bolas y aplánalas.", "Cocina las arepas en un budare o sartén caliente hasta dorar ambos lados, luego termina en el horno.", "Mezcla el pollo desmechado con aguacate machacado, mayonesa, sal y cilantro.", "Abre la arepa por la mitad y rellena generosamente con la mezcla."],
+
+  "pan_de_bono_title": "Pan de Bono Colombiano",
+  "pan_de_bono_teaser": "Panecillos elásticos y ligeramente salados hechos con queso costeño y almidón de yuca.",
+  "pan_de_bono_ingredients": ["500 g de almidón de yuca (agrio)", "300 g de queso costeño rallado", "2 huevos", "50 g de mantequilla", "1 cucharadita de polvo de hornear", "Sal al gusto"],
+  "pan_de_bono_steps": ["Mezcla el almidón de yuca con el queso rallado hasta integrar bien.", "Añade los huevos, la mantequilla y el polvo de hornear; amasa hasta lograr una masa elástica.", "Forma bolitas u óvalos y colócalos en una bandeja.", "Hornea a 200°C por 20-25 minutos hasta que doren por fuera y queden suaves por dentro."],
+
+  "empanadas_carne_title": "Empanadas Colombianas de Carne",
+  "empanadas_carne_teaser": "Masa de maíz amarillo crocante rellena de un guiso jugoso de carne, papa y especias.",
+  "empanadas_carne_ingredients": ["500 g de harina de maíz amarillo precocida", "500 ml de caldo de carne", "300 g de carne molida", "2 papas medianas cocidas y picadas", "1 cebolla y 2 dientes de ajo picados", "Comino, color y sal al gusto"],
+  "empanadas_carne_steps": ["Sofríe la cebolla y el ajo, agrega la carne molida y las especias hasta cocinar bien.", "Incorpora la papa picada y mezcla; deja enfriar el relleno.", "Mezcla la harina con el caldo caliente hasta formar una masa suave; forma discos.", "Rellena, cierra bien los bordes y fríe en aceite caliente hasta dorar."]
+},
+
 "whatsapp": {
   "message": "Hola KELU, me interesa información sobre sus productos y servicios para mi negocio."
 },
@@ -471,7 +511,9 @@
     "faqTitle": "Preguntas Frecuentes — Pedidos, Entregas y Precios | KELU GmbH",
     "faqDesc": "Pedido mínimo, zonas de entrega, descuentos por volumen, métodos de pago y cadena de frío — todo lo que necesitas saber antes de tu primer pedido con KELU.",
     "tastingTitle": "¿Te gustó la caja? | KELU GmbH",
-    "tastingDesc": "Recibiste nuestra caja de degustación. Esto es lo que sigue: degustación caliente en tu cocina y tu primer pedido con descuento."
+    "tastingDesc": "Recibiste nuestra caja de degustación. Esto es lo que sigue: degustación caliente en tu cocina y tu primer pedido con descuento.",
+    "recetasTitle": "Recetas Latinas — Venezuela y Colombia | KELU GmbH",
+    "recetasDesc": "Recetas tradicionales venezolanas y colombianas con productos KELU: tequeños, arepas, pan de bono y empanadas. Ideas para tu cocina o tu carta."
   },
   "tasting": {
     "tag": "Degustación KELU",
