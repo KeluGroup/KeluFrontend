@@ -83,10 +83,13 @@ export default function RecetasPage() {
     <main className="benefits-main">
       <section className="benefits-section" aria-label="Recipes">
         <div className="section-inner">
-          <div className="section-header scroll-animate">
-            <span className="section-tag">{t('recetas.eyebrow')}</span>
-            <h1 className="section-title">{t('recetas.pageTitle')}</h1>
-            <p className="section-sub">{t('recetas.pageSubtitle')}</p>
+          <div className="section-header recetas-hero scroll-animate">
+            <div className="recetas-hero-bg" aria-hidden="true" />
+            <div className="recetas-hero-content">
+              <span className="section-tag recetas-hero-tag">{t('recetas.eyebrow')}</span>
+              <h1 className="section-title recetas-hero-title">{t('recetas.pageTitle')}</h1>
+              <p className="section-sub recetas-hero-sub">{t('recetas.pageSubtitle')}</p>
+            </div>
           </div>
 
           <div className="recetas-filters scroll-animate">

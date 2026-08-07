@@ -4532,6 +4532,39 @@ a.btn-ph {
   border-color: var(--color-primary);
   color: #fff;
 }
+.recetas-hero {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  padding: var(--space-12) var(--space-8);
+  isolation: isolate;
+}
+.recetas-hero-bg {
+  position: absolute;
+  inset: -20px;
+  background-image: url('/recetas/fiesta-bg.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  filter: blur(6px) saturate(1.15);
+  transform: scale(1.05);
+  z-index: -2;
+}
+.recetas-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(12,27,15,0.82) 10%, rgba(12,27,15,0.55) 55%, rgba(12,27,15,0.3) 100%);
+  z-index: -1;
+}
+.recetas-hero-content { position: relative; }
+.recetas-hero-tag { color: #F3D9A4; }
+.recetas-hero-tag::before { background: #F3D9A4; }
+.recetas-hero-title { color: #fff; }
+.recetas-hero-sub { color: rgba(255,255,255,0.85); }
+@media (max-width: 640px) {
+  .recetas-hero { padding: var(--space-8) var(--space-5); }
+}
+
 .recipe-card-country {
   background: var(--color-primary);
 }
