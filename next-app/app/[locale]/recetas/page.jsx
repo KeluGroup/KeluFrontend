@@ -8,23 +8,10 @@ import { useLocale } from '../../../hooks/useLocale'
 
 const RecipeModal = lazy(() => import('../../../components/RecipeModal'))
 
-const RECIPES = [
-  { key: 'tequenos_clasicos',     country: 'venezuela', img: '/products/tequenos.jpg', time: '30 min', difficulty: 'facil' },
-  { key: 'arepas_reina_pepiada',  country: 'venezuela', img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepas%204%20variedades.jpg', time: '40 min', difficulty: 'media' },
-  { key: 'pan_de_bono',           country: 'colombia',  img: '/products/pan-de-bono.jpg', time: '35 min', difficulty: 'media' },
-  { key: 'empanadas_carne',       country: 'colombia',  img: '/products/empanada-carne.jpg', time: '50 min', difficulty: 'media' },
-  { key: 'cachapas_maiz',         country: 'venezuela', img: 'https://images.unsplash.com/photo-1639929781092-fe59fae895c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '20 min', difficulty: 'facil' },
-  { key: 'bunuelos_colombianos',  country: 'colombia',  img: 'https://images.unsplash.com/photo-1708782345356-453fa9ef901e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '35 min', difficulty: 'media' },
-  { key: 'pabellon_criollo',      country: 'venezuela', img: 'https://images.unsplash.com/photo-1596069080606-b9cdbd242ff1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '60 min', difficulty: 'dificil' },
-  { key: 'arepas_choclo',         country: 'colombia',  img: 'https://images.unsplash.com/photo-1776765828695-ad21c7f27504?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', time: '25 min', difficulty: 'facil' },
-]
-
 const COUNTRY_FLAG = { venezuela: '🇻🇪', colombia: '🇨🇴' }
 
 function RecipeCard({ recipe, onClick, fallIndex }) {
   const t = useTranslations()
-  const title  = t(`recetas.${recipe.key}_title`)
-  const teaser = t(`recetas.${recipe.key}_teaser`)
 
   const handleClick = (e) => {
     const rect    = e.currentTarget.getBoundingClientRect()
@@ -43,17 +30,17 @@ function RecipeCard({ recipe, onClick, fallIndex }) {
       className="product-card-btn recipe-card-btn recipe-fall-item"
       style={fallStyle}
       onClick={handleClick}
-      aria-label={title}
+      aria-label={recipe.title}
     >
       <div className="product-card-img-wrap">
-        <img src={recipe.img} alt={title} className="product-card-img" loading="lazy" />
+        <img src={recipe.img} alt={recipe.title} className="product-card-img" loading="lazy" />
         <div className="product-card-overlay" aria-hidden="true" />
         <span className="menu-card-tag recipe-card-country">
           {COUNTRY_FLAG[recipe.country]} {t(`recetas.country${recipe.country === 'venezuela' ? 'Venezuela' : 'Colombia'}`)}
         </span>
         <div className="product-card-footer recipe-card-footer">
-          <span className="product-card-label">{title}</span>
-          <span className="recipe-card-teaser">{teaser}</span>
+          <span className="product-card-label">{recipe.title}</span>
+          <span className="recipe-card-teaser">{recipe.teaser}</span>
         </div>
       </div>
     </button>
@@ -63,8 +50,21 @@ function RecipeCard({ recipe, onClick, fallIndex }) {
 export default function RecetasPage() {
   const t = useTranslations()
   const locale = useLocale()
+  const [recipes, setRecipes] = useState([])
+  const [loading, setLoading] = useState(true)
   const [activeRecipe, setActiveRecipe] = useState(null)
   const [filter, setFilter] = useState('all')
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    fetch(`/api/recetas?locale=${locale}`)
+      .then(res => res.json())
+      .then(data => { if (!cancelled) setRecipes(data.recetas || []) })
+      .catch(() => { if (!cancelled) setRecipes([]) })
+      .finally(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
+  }, [locale])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -78,7 +78,7 @@ export default function RecetasPage() {
     return () => { clearTimeout(timer); io.disconnect() }
   }, [])
 
-  const filtered = filter === 'all' ? RECIPES : RECIPES.filter(r => r.country === filter)
+  const filtered = filter === 'all' ? recipes : recipes.filter(r => r.country === filter)
 
   return (
     <main className="benefits-main">
@@ -111,11 +111,13 @@ export default function RecetasPage() {
             </button>
           </div>
 
-          <div className="product-strip-grid recetas-grid" key={filter}>
-            {filtered.map((r, i) => (
-              <RecipeCard key={r.key} recipe={r} onClick={setActiveRecipe} fallIndex={i} />
-            ))}
-          </div>
+          {!loading && (
+            <div className="product-strip-grid recetas-grid" key={filter}>
+              {filtered.map((r, i) => (
+                <RecipeCard key={r.key} recipe={r} onClick={setActiveRecipe} fallIndex={i} />
+              ))}
+            </div>
+          )}
 
           <div className="products-section-cta scroll-animate">
             <p className="section-sub">{t('recetas.ctaTitle')}</p>

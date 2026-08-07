@@ -24,9 +24,9 @@ export default function RecipeModal({ recipe, onClose }) {
 
   if (!recipe) return null
 
-  const name        = t(`recetas.${recipe.key}_title`)
-  const ingredients = t.raw(`recetas.${recipe.key}_ingredients`) || []
-  const steps       = t.raw(`recetas.${recipe.key}_steps`) || []
+  const name        = recipe.title
+  const ingredients = recipe.ingredients || []
+  const steps       = recipe.steps || []
 
   const ox = recipe.originX ?? 0
   const oy = recipe.originY ?? 0
