@@ -4550,6 +4550,29 @@ a.btn-ph {
 @media (min-width: 900px) {
   .recetas-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* Recipe cards fall in like rain when the section/filter opens */
+@keyframes recipeFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-170px) rotate(var(--fall-rot, 0deg)) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) rotate(calc(var(--fall-rot, 0deg) * -0.35)) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+.recipe-fall-item {
+  animation: recipeFall 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: var(--fall-delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .recipe-fall-item { animation: none; opacity: 1; }
+}
 .product-strip-cta-btn {
   display: inline-flex;
   align-items: center;

@@ -21,7 +21,7 @@ const RECIPES = [
 
 const COUNTRY_FLAG = { venezuela: '🇻🇪', colombia: '🇨🇴' }
 
-function RecipeCard({ recipe, onClick }) {
+function RecipeCard({ recipe, onClick, fallIndex }) {
   const t = useTranslations()
   const title  = t(`recetas.${recipe.key}_title`)
   const teaser = t(`recetas.${recipe.key}_teaser`)
@@ -33,8 +33,18 @@ function RecipeCard({ recipe, onClick }) {
     onClick({ ...recipe, originX, originY })
   }
 
+  const fallStyle = {
+    '--fall-delay': `${(fallIndex % 8) * 70}ms`,
+    '--fall-rot': `${(fallIndex % 2 === 0 ? -1 : 1) * (3 + (fallIndex % 3) * 2)}deg`,
+  }
+
   return (
-    <button className="product-card-btn recipe-card-btn" onClick={handleClick} aria-label={title}>
+    <button
+      className="product-card-btn recipe-card-btn recipe-fall-item"
+      style={fallStyle}
+      onClick={handleClick}
+      aria-label={title}
+    >
       <div className="product-card-img-wrap">
         <img src={recipe.img} alt={title} className="product-card-img" loading="lazy" />
         <div className="product-card-overlay" aria-hidden="true" />
@@ -101,9 +111,9 @@ export default function RecetasPage() {
             </button>
           </div>
 
-          <div className="product-strip-grid recetas-grid scroll-animate">
-            {filtered.map(r => (
-              <RecipeCard key={r.key} recipe={r} onClick={setActiveRecipe} />
+          <div className="product-strip-grid recetas-grid" key={filter}>
+            {filtered.map((r, i) => (
+              <RecipeCard key={r.key} recipe={r} onClick={setActiveRecipe} fallIndex={i} />
             ))}
           </div>
 
