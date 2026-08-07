@@ -58,7 +58,7 @@ const CARDS = [
     key: 'feat3',
     titleKey: 'solution.feat3title',
     textKey:  'solution.feat3text',
-    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/team.jpg',
+    img: '/solution/team.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
