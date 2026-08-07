@@ -40,7 +40,6 @@ function RecipeCard({ recipe, onClick, fallIndex }) {
         </span>
         <div className="product-card-footer recipe-card-footer">
           <span className="product-card-label">{recipe.title}</span>
-          <span className="recipe-card-teaser">{recipe.teaser}</span>
         </div>
       </div>
     </button>

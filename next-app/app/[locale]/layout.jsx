@@ -5,13 +5,19 @@ import Script from 'next/script'
 import 'flag-icons/css/flag-icons.min.css'
 import '../styles/globals.css'
 import '../styles/index.css'
-import { Lora } from 'next/font/google'
+import { Lora, Baloo_2 } from 'next/font/google'
 
 const lora = Lora({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-lora',
+})
+
+const baloo = Baloo_2({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-baloo',
 })
 
 export async function generateMetadata({ params }) {
@@ -109,7 +115,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={lora.variable} suppressHydrationWarning>
+    <html lang={locale} className={`${lora.variable} ${baloo.variable}`} suppressHydrationWarning>
       <head>
         {/* Structured Data */}
         <script
