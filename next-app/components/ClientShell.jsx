@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Footer from './Footer'
+import IntroLoader from './IntroLoader'
 import CookieBanner from './CookieBanner'
 import CursorTrail from './CursorTrail'
 import ScrollToHash from './ScrollToHash'
@@ -85,6 +86,7 @@ export default function ClientShell({ locale, children }) {
 
   return (
     <>
+      {!isAdmin && <IntroLoader />}
       {!isAdmin && <ScrollToHash />}
       {!isAdmin && <CursorTrail />}
       {!isAdmin && <CookieBanner />}
