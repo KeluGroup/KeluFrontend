@@ -41,10 +41,10 @@ export default function Footer() {
               <span className="footer-thin-wordmark">{BRAND_NAME}</span>
             </a>
             <address className="footer-thin-address">
-              KeLu GmbH · UID CHE-189.376.134<br />
+              KeLu GmbH<br />
               Langfurren 14, 8057 Zürich<br />
-              <a href="tel:+41446880284">+41 44 688 02 84</a><br />
-              <a href="mailto:info@kelugroup.ch">info@kelugroup.ch</a>
+              +41 44 688 02 84<br />
+              info@kelugroup.ch
             </address>
           </div>
 
