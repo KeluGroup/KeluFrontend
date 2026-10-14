@@ -29,9 +29,17 @@ export default function Team() {
                 />
               </div>
               <div className="founders-caption">
-                <span>Kevin · Andrés · Luis</span>
+                <span>{t("team.foundersCaption")}</span>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="story-socials" style={{textAlign:'center',marginTop:'2rem'}}>
+          <p style={{fontWeight:600,marginBottom:'.35rem'}}>{t('team.followTitle')}</p>
+          <p style={{marginBottom:'1rem'}}>{t('team.followDesc')}</p>
+          <div style={{display:'flex',gap:'1.25rem',justifyContent:'center',flexWrap:'wrap'}}>
+            <a href="https://www.instagram.com/kelugroup" target="_blank" rel="noopener noreferrer" aria-label="KELU Instagram">Instagram ↗</a>
+            <a href="https://www.linkedin.com/in/kelu-gmbh-339753414/" target="_blank" rel="noopener noreferrer" aria-label="KELU LinkedIn">LinkedIn ↗</a>
           </div>
         </div>
       </section>

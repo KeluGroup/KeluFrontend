@@ -16,29 +16,21 @@
     "heading": "Apporter la",
     "headingSpan": "Saveur Latine",
     "headingEm": "au Cœur de l'Europe",
-    "body": "Produits latins premium avec livraisons fixes, tarifs clairs et le service que vous méritez — pour les restaurants, épiceries fines, traiteurs et tous ceux qui prennent la cuisine latine au sérieux.",
+    "body": "Produits latino-américains et événements gastronomiques à Zurich. Nous développons notre offre B2B pour les restaurants et entreprises.",
     "cta": "Services",
     "ctaSecond": "Produits",
     "scroll": "Défiler",
     "heroLabel": "Visuel Hero / Médias",
     "imgLabel": "Image",
     "contentLabel": "Contenu",
-    "trustB2b": "Distribution B2B",
+    "trustB2b": "Événements et distribution B2B en développement",
     "trustSwiss": "Normes Suisses",
-    "trustDelivery": "Livraison Nationale"
+    "trustDelivery": "Démarrage à Zurich"
   },
   "services": {
     "tag": "Ce Que Nous Proposons",
     "title": "Nos Services",
-    "subtitle": "Distribution authentique de produits latinos soutenue par une logistique fiable, des prix transparents et un accompagnement personnalisé dans toute la Suisse.",
-    "trustM1": "150+",
-    "trustL1": "Références au catalogue",
-    "trustM2": "40+",
-    "trustL2": "Clients B2B actifs",
-    "trustM3": "98%",
-    "trustL3": "Livraisons à temps",
-    "trustM4": "100%",
-    "trustL4": "Normes alimentaires suisses",
+    "subtitle": "Produits latino-américains, événements gastronomiques et développement progressif de notre distribution B2B à Zurich.",
     "one": "Marché B2B",
     "two": "Traiteur",
     "three": "Événements",
@@ -103,7 +95,7 @@
     "ctaDesc": "Nous préparerons un catalogue personnalisé avec les produits, les prix et les solutions les mieux adaptés à votre activité.",
     "ctaButton": "Découvrez notre gamme complète de produits",
     "catalogueBtn": "Télécharger le catalogue",
-    "catalogueSoon": "Catalogue bientôt disponible — contactez-nous pour une version personnalisée",
+    "catalogueSoon": "Catalogue disponible au téléchargement",
     "modal_p1_pairingTitle": "Le service parfait",
     "modal_p2_pairingTitle": "Comment le servir",
     "modal_p3_pairingTitle": "Comment le servir",
@@ -190,9 +182,9 @@
     "servicesModalCta": "Voir tous les services"
   },
   "map": {
-    "title": "Couverture de livraison nationale",
-    "subtitle": "26 cantons suisses. Un partenaire de confiance.",
-    "svgLabel": "Nous livrons dans toute la Suisse"
+    "title": "Nous commençons à Zurich",
+    "subtitle": "Nous développons progressivement notre distribution locale.",
+    "svgLabel": "Zurich, phase de lancement"
   },
   "process": {
     "tag": "Comment ça marche",
@@ -223,9 +215,9 @@
     "storyHeadingLine1": "Racines, Tradition",
     "storyHeadingConnector": "et une",
     "storyHeadingEm": "Vision Commune",
-    "storyP1": "Luis et Andrés ont grandi au Venezuela. Kevin, en Colombie. Trois Latino-Américains arrivés en Suisse avec quelque chose qu'aucune valise ne peut perdre : le goût du chez-soi, une identité gravée dans chaque recette.",
-    "storyP2": "Ici, ils ont découvert que la cuisine latine était invisible. Les distributeurs vendaient «Latino» comme une étiquette, pas comme une identité — stocks imprévisibles, produits médiocres et commerciaux n'ayant jamais goûté une vraie arepa. Inacceptable.",
-    "storyP3": "C'est ainsi que KELU est né. Pas comme une simple entreprise, mais comme une déclaration : la cuisine latine mérite un partenaire sérieux — avec un catalogue authentique, des livraisons fiables et le respect que mérite chaque recette. Aujourd'hui, nous apportons ce standard aux restaurants, traiteurs et chefs de toute la Suisse.",
+    "storyP1": "Tout a commencé par une question : comment rapprocher les saveurs authentiques d'Amérique latine des particuliers et des professionnels en Suisse ?",
+    "storyP2": "Luis et Andrés ont grandi au Venezuela, Kevin en Colombie. Pour nous, la cuisine est une culture, une identité et un lien avec ses racines. Nos événements gastronomiques nous ont permis de partager ces saveurs et d'échanger directement avec nos clients.",
+    "storyP3": "C'est ainsi qu'est né KELU : pour faire découvrir ces saveurs et créer de nouvelles possibilités. Aujourd'hui, nous associons les événements gastronomiques au développement progressif d'une offre pour les restaurants et les entreprises, en commençant à Zurich.",
     "missionQuote": "Nous ne sommes pas une boutique. Nous sommes le partenaire d'approvisionnement de votre cuisine — 100% B2B, sans distractions.",
     "missionAttribution": "L'équipe fondatrice de KELU",
     "valuesTag": "Notre Engagement",
@@ -262,7 +254,10 @@
       "Présence digitale",
       "Relations clients",
       "Outils de processus"
-    ]
+    ],
+    "foundersCaption": "Les fondateurs de KELU GmbH",
+    "followTitle": "Notre histoire continue. Suivez-nous.",
+    "followDesc": "Découvrez nos produits, événements et nouveautés."
   },
   "contact": {
     "tag": "Contactez-nous",
@@ -423,9 +418,9 @@
     "tag": "Couverture de Livraison",
     "title": "Nous venons à vous",
     "subtitle": "Actuellement opérationnel à Zurich. En expansion pour couvrir toute la Suisse.",
-    "currentLabel": "Actif — Zurich",
-    "currentDesc": "4 zones de livraison hebdomadaires couvrant la région métropolitaine de Zurich.",
-    "expandLabel": "Bientôt — Suisse",
+    "currentLabel": "Zurich, phase de lancement",
+    "currentDesc": "Livraison selon disponibilité et accord préalable.",
+    "expandLabel": "Autres régions : développement futur",
     "expandDesc": "Expansion nationale en cours. Contactez-nous si vous êtes en dehors de Zurich."
   },
   "faq": {

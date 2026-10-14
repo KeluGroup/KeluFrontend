@@ -16,29 +16,21 @@
     "heading": "Bringing",
     "headingSpan": "Latin Flavour",
     "headingEm": "to the Heart of Europe",
-    "body": "Premium Latin products with fixed deliveries, clear pricing and the service you deserve — for restaurants, delis, caterers and anyone who takes Latin food seriously.",
+    "body": "Latin American products and culinary events in Zurich. We are gradually developing our B2B offering for restaurants and businesses.",
     "cta": "Services",
     "ctaSecond": "Products",
     "scroll": "Scroll",
     "heroLabel": "Hero Visual / Media",
     "imgLabel": "Image",
     "contentLabel": "Content",
-    "trustB2b": "B2B Distribution",
+    "trustB2b": "Food events and developing B2B distribution",
     "trustSwiss": "Swiss Standards",
-    "trustDelivery": "Nationwide Delivery"
+    "trustDelivery": "Starting in Zurich"
   },
   "services": {
     "tag": "What We Offer",
     "title": "Our Services",
-    "subtitle": "Authentic Latin food distribution backed by reliable logistics, transparent pricing and personalised support across Switzerland.",
-    "trustM1": "150+",
-    "trustL1": "Catalogue references",
-    "trustM2": "40+",
-    "trustL2": "Active B2B clients",
-    "trustM3": "98%",
-    "trustL3": "On-time deliveries",
-    "trustM4": "100%",
-    "trustL4": "Swiss food standards",
+    "subtitle": "Latin American products, culinary events and the gradual development of B2B distribution in Zurich.",
     "one": "B2B Market",
     "two": "Catering",
     "three": "Events",
@@ -103,7 +95,7 @@
     "ctaDesc": "We'll prepare a customised catalogue with the products, pricing and solutions best suited to your business.",
     "ctaButton": "Discover our full product range",
     "catalogueBtn": "Download Catalogue",
-    "catalogueSoon": "Catalogue coming soon — contact us for a personalised version",
+    "catalogueSoon": "Catalogue available to download",
     "modal_p1_history": "A 3,000-year-old icon of Venezuelan and Colombian soul. These golden, grilled corn cakes are the \"daily bread\" of the Andes—versatile enough to star at breakfast, lunch, and dinner.",
     "modal_p1_pairingTitle": "The Perfect Pour",
     "modal_p2_pairingTitle": "How to serve it",
@@ -190,9 +182,9 @@
     "servicesModalCta": "View all services"
   },
   "map": {
-    "title": "Nationwide Delivery Coverage",
-    "subtitle": "26 Swiss cantons. One reliable partner.",
-    "svgLabel": "We deliver across Switzerland"
+    "title": "Starting in Zurich",
+    "subtitle": "We are developing our local distribution step by step.",
+    "svgLabel": "Zurich, initial phase"
   },
   "process": {
     "tag": "How It Works",
@@ -223,9 +215,9 @@
     "storyHeadingLine1": "Roots, Tradition",
     "storyHeadingConnector": "& a",
     "storyHeadingEm": "Shared Vision",
-    "storyP1": "Luis and Andrés grew up in Venezuela. Kevin, in Colombia. Three Latin Americans who arrived in Switzerland carrying something no suitcase can lose: the taste of home, an identity built into every recipe.",
-    "storyP2": "Here they found that Latin cuisine was invisible. Distributors sold 'Latino' as a label, not an identity — unpredictable stock, mediocre products, and salespeople who had never tasted a real arepa. Unacceptable.",
-    "storyP3": "That's how KELU was born. Not as just another business, but as a statement: Latin food deserves a serious partner — with an authentic catalogue, reliable deliveries, and the respect every recipe deserves. Today we bring that standard to restaurants, caterers and chefs across Switzerland.",
+    "storyP1": "It began with a question: how could we bring authentic Latin American flavours to people and businesses in Switzerland?",
+    "storyP2": "Luis and Andrés grew up in Venezuela, Kevin in Colombia. For us, food means culture, identity and a connection to home. Culinary events have given us the opportunity to serve our food and hear directly from our customers.",
+    "storyP3": "That is how KELU began: to share those flavours and create new opportunities. Today we combine food events with the gradual development of a product range for restaurants and businesses, starting in Zurich.",
     "missionQuote": "We are not a shop. We are your kitchen's supply partner — 100% B2B, no distractions.",
     "missionAttribution": "The KELU founding team",
     "valuesTag": "Our Commitment",
@@ -262,7 +254,10 @@
       "Digital presence",
       "Customer relations",
       "Process tools"
-    ]
+    ],
+    "foundersCaption": "The founders of KELU GmbH",
+    "followTitle": "Our story continues. Follow us.",
+    "followDesc": "Discover our products, events and news."
   },
   "contact": {
     "tag": "Get in Touch",
@@ -423,9 +418,9 @@
     "tag": "Delivery Coverage",
     "title": "We Come to You",
     "subtitle": "Currently operating in Zürich. Expanding to cover all of Switzerland.",
-    "currentLabel": "Active — Zürich",
-    "currentDesc": "4 weekly delivery zones covering the Zürich metropolitan area.",
-    "expandLabel": "Coming Soon — Switzerland",
+    "currentLabel": "Zurich, initial phase",
+    "currentDesc": "Supply subject to availability and prior arrangement.",
+    "expandLabel": "Other regions: potential future expansion",
     "expandDesc": "National expansion in progress. Contact us if you're outside Zürich."
   },
   "faq": {
