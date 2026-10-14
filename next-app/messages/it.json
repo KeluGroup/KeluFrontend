@@ -39,15 +39,7 @@
   "services": {
     "tag": "Cosa Offriamo",
     "title": "I Nostri Servizi",
-    "subtitle": "Distribuzione autentica di alimenti latini supportata da una logistica affidabile, prezzi trasparenti e assistenza personalizzata in tutta la Svizzera.",
-    "trustM1": "150+",
-    "trustL1": "Referenze a catalogo",
-    "trustM2": "40+",
-    "trustL2": "Clienti B2B attivi",
-    "trustM3": "98%",
-    "trustL3": "Consegne puntuali",
-    "trustM4": "100%",
-    "trustL4": "Standard alimentari svizzeri",
+    "subtitle": "Prodotti latinoamericani, eventi gastronomici e sviluppo graduale della distribuzione B2B a Zurigo.",
     "one": "Mercato B2B",
     "two": "Catering",
     "three": "Eventi",
@@ -110,7 +102,7 @@
     "modalPairing": "Come servirlo",
     "modalClose": "Chiudi",
     "catalogueBtn": "Scarica il Catalogo",
-    "catalogueSoon": "Catalogo in arrivo — contattaci per una versione personalizzata",
+    "catalogueSoon": "Catalogo disponibile per il download",
     "ctaDesc": "Prepareremo un catalogo personalizzato con i prodotti, i prezzi e le soluzioni più adatti alla tua attività.",
     "ctaButton": "Scopri la nostra gamma completa di prodotti",
     "modal_p1_pairingTitle": "La colata perfetta",
@@ -199,8 +191,8 @@
     "servicesModalCta": "Vedi tutti i servizi"
   },
   "map": {
-    "title": "Copertura di consegna nazionale",
-    "subtitle": "26 cantoni svizzeri. Un partner di fiducia.",
+    "title": "Partiamo da Zurigo",
+    "subtitle": "Sviluppiamo gradualmente la distribuzione locale.",
     "svgLabel": "Consegniamo in tutta la Svizzera"
   },
   "process": {
@@ -232,9 +224,9 @@
     "storyHeadingLine1": "Radici, Tradizione",
     "storyHeadingConnector": "e una",
     "storyHeadingEm": "Visione Condivisa",
-    "storyP1": "Luis e Andrés sono cresciuti in Venezuela. Kevin, in Colombia. Tre latinoamericani arrivati in Svizzera con qualcosa che nessuna valigia può perdere: il sapore di casa, un'identità dentro ogni ricetta.",
-    "storyP2": "Qui hanno scoperto che la cucina latina era invisibile. I distributori vendevano «Latino» come etichetta, non come identità — stock imprevedibili, prodotti mediocri e venditori che non avevano mai assaggiato una vera arepa. Inaccettabile.",
-    "storyP3": "Così è nato KELU. Non come un'azienda qualunque, ma come una dichiarazione: la cucina latina merita un partner serio — con un catalogo autentico, consegne affidabili e il rispetto che ogni ricetta merita. Oggi portiamo questo standard a ristoranti, catering e chef in tutta la Svizzera.",
+    "storyP1": "Tutto è iniziato con una domanda: come portare i sapori autentici dell'America Latina alle persone e alle attività in Svizzera?",
+    "storyP2": "Luis e Andrés sono cresciuti in Venezuela, Kevin in Colombia. Per noi, il cibo è cultura, identità e legame con casa. Gli eventi gastronomici ci hanno permesso di servire i nostri prodotti e ascoltare direttamente i clienti.",
+    "storyP3": "Così è nata KELU: per condividere questi sapori e creare nuove opportunità. Oggi affianchiamo agli eventi gastronomici lo sviluppo graduale di un'offerta per ristoranti e attività commerciali, partendo da Zurigo.",
     "missionQuote": "Non siamo un negozio. Siamo il partner di fornitura della tua cucina — 100% B2B, senza distrazioni.",
     "missionAttribution": "Il team fondatore di KELU",
     "valuesTag": "Il Nostro Impegno",
@@ -271,7 +263,10 @@
       "Presenza digitale",
       "Relazioni con i clienti",
       "Strumenti di processo"
-    ]
+    ],
+    "foundersCaption": "I fondatori di KELU GmbH",
+    "followTitle": "La nostra storia continua. Seguici.",
+    "followDesc": "Scopri prodotti, eventi e novità."
   },
   "contact": {
     "tag": "Contattaci",
