@@ -16,16 +16,16 @@
     "heading": "Apporter la",
     "headingSpan": "Saveur Latine",
     "headingEm": "au Cœur de l'Europe",
-    "body": "Produits latins premium avec livraisons fixes, tarifs clairs et le service que vous méritez — pour les restaurants, épiceries fines, traiteurs et tous ceux qui prennent la cuisine latine au sérieux.",
+    "body": "Produits latino-américains et événements gastronomiques à Zurich. Nous développons notre offre B2B pour les restaurants et entreprises.",
     "cta": "Services",
     "ctaSecond": "Produits",
     "scroll": "Défiler",
     "heroLabel": "Visuel Hero / Médias",
     "imgLabel": "Image",
     "contentLabel": "Contenu",
-    "trustB2b": "Distribution B2B",
+    "trustB2b": "Événements et distribution B2B en développement",
     "trustSwiss": "Normes Suisses",
-    "trustDelivery": "Livraison Nationale"
+    "trustDelivery": "Démarrage à Zurich"
   },
   "services": {
     "tag": "Ce Que Nous Proposons",
@@ -184,7 +184,7 @@
   "map": {
     "title": "Nous commençons à Zurich",
     "subtitle": "Nous développons progressivement notre distribution locale.",
-    "svgLabel": "Nous livrons dans toute la Suisse"
+    "svgLabel": "Zurich, phase de lancement"
   },
   "process": {
     "tag": "Comment ça marche",
@@ -418,9 +418,9 @@
     "tag": "Couverture de Livraison",
     "title": "Nous venons à vous",
     "subtitle": "Actuellement opérationnel à Zurich. En expansion pour couvrir toute la Suisse.",
-    "currentLabel": "Actif — Zurich",
-    "currentDesc": "4 zones de livraison hebdomadaires couvrant la région métropolitaine de Zurich.",
-    "expandLabel": "Bientôt — Suisse",
+    "currentLabel": "Zurich, phase de lancement",
+    "currentDesc": "Livraison selon disponibilité et accord préalable.",
+    "expandLabel": "Autres régions : développement futur",
     "expandDesc": "Expansion nationale en cours. Contactez-nous si vous êtes en dehors de Zurich."
   },
   "faq": {
