@@ -16,16 +16,16 @@
     "heading": "Portando il",
     "headingSpan": "Sapore Latino",
     "headingEm": "nel Cuore dell'Europa",
-    "body": "Prodotti latini premium con consegne fisse, prezzi chiari e il servizio che meriti — per ristoranti, gastronomie, catering e chiunque prenda sul serio la cucina latina.",
+    "body": "Prodotti latinoamericani ed eventi gastronomici a Zurigo. Stiamo sviluppando gradualmente la nostra offerta B2B per ristoranti e attività.",
     "cta": "Servizi",
     "ctaSecond": "Prodotti",
     "scroll": "Scorri",
     "heroLabel": "Visuale Hero / Media",
     "imgLabel": "Immagine",
     "contentLabel": "Contenuto",
-    "trustB2b": "Distribuzione B2B",
+    "trustB2b": "Eventi e distribuzione B2B in sviluppo",
     "trustSwiss": "Standard Svizzeri",
-    "trustDelivery": "Consegna Nazionale"
+    "trustDelivery": "Partiamo da Zurigo"
   },
   "about": {
     "tag": "Chi Siamo",
@@ -193,7 +193,7 @@
   "map": {
     "title": "Partiamo da Zurigo",
     "subtitle": "Sviluppiamo gradualmente la distribuzione locale.",
-    "svgLabel": "Consegniamo in tutta la Svizzera"
+    "svgLabel": "Zurigo, fase iniziale"
   },
   "process": {
     "tag": "Come funziona",
@@ -427,9 +427,9 @@
     "tag": "Copertura Consegne",
     "title": "Arriviamo da Te",
     "subtitle": "Attualmente operiamo a Zurigo. In espansione per coprire tutta la Svizzera.",
-    "currentLabel": "Attivo — Zurigo",
-    "currentDesc": "4 zone di consegna settimanale che coprono l'area metropolitana di Zurigo.",
-    "expandLabel": "Prossimamente — Svizzera",
+    "currentLabel": "Zurigo, fase iniziale",
+    "currentDesc": "Forniture soggette a disponibilità e accordi preliminari.",
+    "expandLabel": "Altre regioni: possibile sviluppo futuro",
     "expandDesc": "Espansione nazionale in corso. Contattaci se sei fuori da Zurigo."
   },
   "faq": {
