@@ -16,16 +16,16 @@
     "heading": "Bringing",
     "headingSpan": "Latin Flavour",
     "headingEm": "to the Heart of Europe",
-    "body": "Premium Latin products with fixed deliveries, clear pricing and the service you deserve — for restaurants, delis, caterers and anyone who takes Latin food seriously.",
+    "body": "Latin American products and culinary events in Zurich. We are gradually developing our B2B offering for restaurants and businesses.",
     "cta": "Services",
     "ctaSecond": "Products",
     "scroll": "Scroll",
     "heroLabel": "Hero Visual / Media",
     "imgLabel": "Image",
     "contentLabel": "Content",
-    "trustB2b": "B2B Distribution",
+    "trustB2b": "Food events and developing B2B distribution",
     "trustSwiss": "Swiss Standards",
-    "trustDelivery": "Nationwide Delivery"
+    "trustDelivery": "Starting in Zurich"
   },
   "services": {
     "tag": "What We Offer",
@@ -184,7 +184,7 @@
   "map": {
     "title": "Starting in Zurich",
     "subtitle": "We are developing our local distribution step by step.",
-    "svgLabel": "We deliver across Switzerland"
+    "svgLabel": "Zurich, initial phase"
   },
   "process": {
     "tag": "How It Works",
@@ -418,9 +418,9 @@
     "tag": "Delivery Coverage",
     "title": "We Come to You",
     "subtitle": "Currently operating in Zürich. Expanding to cover all of Switzerland.",
-    "currentLabel": "Active — Zürich",
-    "currentDesc": "4 weekly delivery zones covering the Zürich metropolitan area.",
-    "expandLabel": "Coming Soon — Switzerland",
+    "currentLabel": "Zurich, initial phase",
+    "currentDesc": "Supply subject to availability and prior arrangement.",
+    "expandLabel": "Other regions: potential future expansion",
     "expandDesc": "National expansion in progress. Contact us if you're outside Zürich."
   },
   "faq": {
