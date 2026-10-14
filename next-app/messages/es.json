@@ -39,15 +39,7 @@
   "services": {
     "tag": "Lo Que Ofrecemos",
     "title": "Nuestros Servicios",
-    "subtitle": "Distribución auténtica de alimentos latinos respaldada por una logística fiable, precios transparentes y soporte personalizado en toda Suiza.",
-    "trustM1": "150+",
-    "trustL1": "Referencias en catálogo",
-    "trustM2": "40+",
-    "trustL2": "Clientes B2B activos",
-    "trustM3": "98%",
-    "trustL3": "Entregas a tiempo",
-    "trustM4": "100%",
-    "trustL4": "Normas alimentarias suizas",
+    "subtitle": "Productos latinoamericanos, eventos gastronómicos y desarrollo gradual de nuestra distribución B2B en Zúrich.",
     "one": "B2B Market",
     "two": "Catering",
     "three": "Eventos",
@@ -110,7 +102,7 @@
     "modalPairing": "Cómo servirlo",
     "modalClose": "Cerrar",
     "catalogueBtn": "Descargar Catálogo",
-    "catalogueSoon": "Catálogo próximamente — contáctanos para una versión personalizada",
+    "catalogueSoon": "Catálogo disponible para descargar",
     "ctaDesc": "Prepararemos un catálogo personalizado con los productos, precios y soluciones más adecuados para su negocio.",
     "ctaButton": "Descubra nuestra gama completa de productos",
     "modal_p1_history": "Un ícono de más de 3.000 años del alma venezolana y colombiana. Estas doradas tortas de maíz a la plancha son el pan de cada día de los Andes — lo suficientemente versátiles para brillar en el desayuno, el almuerzo y la cena.",
@@ -199,8 +191,8 @@
     "servicesModalCta": "Ver todos los servicios"
   },
   "map": {
-    "title": "Cobertura de entrega nacional",
-    "subtitle": "26 cantones suizos. Un socio de confianza.",
+    "title": "Empezamos en Zúrich",
+    "subtitle": "Desarrollamos nuestra distribución local paso a paso.",
     "svgLabel": "Entregamos en toda Suiza"
   },
   "process": {
@@ -232,9 +224,9 @@
     "storyHeadingLine1": "Raíces, Tradición",
     "storyHeadingConnector": "y una",
     "storyHeadingEm": "Visión Compartida",
-    "storyP1": "Luis y Andrés crecieron en Venezuela. Kevin, en Colombia. Tres latinoamericanos que llegaron a Suiza con algo que ninguna maleta puede perder: el sabor de casa, la identidad en cada receta.",
-    "storyP2": "Aquí encontraron que la cocina latina era invisible. Los distribuidores vendían «latino» como etiqueta, no como identidad — stock impredecible, productos mediocres y vendedores que nunca habían probado una arepa de verdad. Inaceptable.",
-    "storyP3": "Así nació KELU. No como un negocio más, sino como una declaración: la comida latina merece un partner serio, con catálogo auténtico, entregas fiables y el respeto que cada receta se merece. Hoy llevamos ese estándar a restaurantes, caterers y chefs en toda Suiza.",
+    "storyP1": "Todo comenzó con una pregunta: ¿cómo acercar los sabores auténticos de Latinoamérica a quienes viven y trabajan en Suiza?",
+    "storyP2": "Luis y Andrés crecieron en Venezuela y Kevin en Colombia. La gastronomía es cultura, identidad y una manera de sentirse en casa. Nuestra experiencia en eventos gastronómicos nos ha permitido compartir estos sabores y escuchar directamente a nuestros clientes.",
+    "storyP3": "Así nació KELU: para conectar esos sabores con nuevas oportunidades. Hoy combinamos eventos gastronómicos con el desarrollo de una oferta para restaurantes y negocios, comenzando en Zúrich y creciendo paso a paso.",
     "missionQuote": "No somos una tienda. Somos el socio de suministro de tu cocina — 100% B2B, sin distracciones.",
     "missionAttribution": "El equipo fundador de KELU",
     "valuesTag": "Nuestro Compromiso",
@@ -271,7 +263,10 @@
       "Presencia digital",
       "Relaciones con clientes",
       "Herramientas de proceso"
-    ]
+    ],
+    "foundersCaption": "Los fundadores de KELU GmbH",
+    "followTitle": "Nuestra historia continúa. Síguenos.",
+    "followDesc": "Descubre nuestros productos, eventos y novedades."
   },
   "contact": {
     "tag": "Contáctanos",
