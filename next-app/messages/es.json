@@ -16,16 +16,16 @@
     "heading": "Llevando el",
     "headingSpan": "Sabor Latino",
     "headingEm": "al Corazón de Europa",
-    "body": "Productos latinos premium con entregas fijas, precios claros y el servicio que mereces — para restaurantes, delicatessen, caterers y todo el que se tome en serio la comida latina.",
+    "body": "Eventos gastronómicos y productos latinoamericanos en Zúrich. Estamos desarrollando nuestra oferta B2B para restaurantes y negocios.",
     "cta": "Servicios",
     "ctaSecond": "Productos",
     "scroll": "Desplazar",
     "heroLabel": "Visual Hero / Medios",
     "imgLabel": "Imagen",
     "contentLabel": "Contenido",
-    "trustB2b": "Distribución B2B",
+    "trustB2b": "Eventos gastronómicos y distribución B2B en desarrollo",
     "trustSwiss": "Normas Suizas",
-    "trustDelivery": "Entrega Nacional"
+    "trustDelivery": "Actividad inicial en Zúrich"
   },
   "about": {
     "tag": "Sobre Nosotros",
@@ -193,7 +193,7 @@
   "map": {
     "title": "Empezamos en Zúrich",
     "subtitle": "Desarrollamos nuestra distribución local paso a paso.",
-    "svgLabel": "Entregamos en toda Suiza"
+    "svgLabel": "Zúrich, fase inicial"
   },
   "process": {
     "tag": "Cómo funciona",
@@ -427,9 +427,9 @@
     "tag": "Cobertura de Entrega",
     "title": "Llegamos a Ti",
     "subtitle": "Actualmente operamos en Zúrich. En expansión para cubrir toda Suiza.",
-    "currentLabel": "Activo — Zúrich",
-    "currentDesc": "4 zonas de entrega semanal cubriendo el área metropolitana de Zúrich.",
-    "expandLabel": "Próximamente — Suiza",
+    "currentLabel": "Zúrich, fase inicial",
+    "currentDesc": "Consultas de suministro sujetas a disponibilidad y coordinación.",
+    "expandLabel": "Otras regiones: expansión futura",
     "expandDesc": "Expansión nacional en progreso. Contáctanos si estás fuera de Zúrich."
   },
   "faq": {
