@@ -7802,3 +7802,29 @@ body.intro-lock {
 @media (prefers-reduced-motion: reduce) {
   .intro-loader { display: none; }
 }
+
+/* Localised product catalogue downloads */
+.catalogue-languages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+  font-size: var(--text-sm);
+}
+.catalogue-languages a,
+.catalogue-quote-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+.catalogue-language-note { margin: 0; }
+.catalogue-cta-btn:focus-visible,
+.catalogue-languages a:focus-visible,
+.catalogue-quote-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+.products-section-cta + .products-hint { margin-top: 2.5rem; }

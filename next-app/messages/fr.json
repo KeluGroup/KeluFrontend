@@ -525,5 +525,12 @@
     "priceSub": "Plus vous êtes régulier, meilleures sont vos conditions. Publiques et par écrit.",
     "pricesCta": "Voir tous les services",
     "trust": "Kelu GmbH · UID CHE-189.376.134 · Langfurren 14, 8057 Zürich"
+  },
+  "catalogueDownloads": {
+    "description": "Catalogue B2B avec prix par carton. Octobre 2026 · PDF · env. 11 Mo.",
+    "download": "Télécharger le catalogue en français",
+    "otherLanguages": "Autres langues :",
+    "contact": "Demander une offre personnalisée",
+    "fallback": ""
   }
 }

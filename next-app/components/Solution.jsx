@@ -44,7 +44,7 @@ const CARDS = [
     key: 'feat2',
     titleKey: 'solution.feat2title',
     textKey:  'solution.feat2text',
-    img: 'https://an7cx1vpwwkxwbzr.public.blob.vercel-storage.com/arepa%20rellena.jpg',
+    img: '/solution/kelu-selected-products.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
@@ -58,7 +58,8 @@ const CARDS = [
     key: 'feat3',
     titleKey: 'solution.feat3title',
     textKey:  'solution.feat3text',
-    img: '/solution/team.jpg',
+    img: '/solution/kelu-latin-food-experience.jpg',
+    imagePosition: '65% center',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -96,14 +97,14 @@ export default function Solution() {
         </div>
 
         <div className="pillars-grid">
-          {CARDS.map(({ key, titleKey, textKey, img, icon }, i) => (
+          {CARDS.map(({ key, titleKey, textKey, img, imagePosition, icon }, i) => (
             <div
               key={key}
               className="pillar-card scroll-animate"
               style={{ '--card-delay': `${i * 100}ms` }}
             >
               <div className="pillar-card-img-wrap">
-                {img && <img src={img} alt="" aria-hidden="true" className="pillar-card-img" loading="lazy" />}
+                {img && <img src={img} alt="" aria-hidden="true" className="pillar-card-img" loading="lazy" style={imagePosition ? { objectPosition: imagePosition } : undefined} />}
                 <div className="pillar-card-overlay" aria-hidden="true" />
               </div>
               <div className="pillar-card-body">

@@ -52,3 +52,11 @@ export function trackCatalogueRequest() {
     category: 'lead',
   })
 }
+
+// Catalogue PDF downloads (separate from quotation requests).
+export function trackCatalogueDownload(language) {
+  gtag('event', 'catalogue_download', {
+    catalogue_language: language,
+    catalogue_edition: '2026-10',
+  })
+}

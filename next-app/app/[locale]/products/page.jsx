@@ -4,8 +4,17 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Suspense, lazy } from 'react'
-import { trackProductView, trackCatalogueRequest } from '../../../utils/analytics'
+import { trackProductView, trackCatalogueRequest, trackCatalogueDownload } from '../../../utils/analytics'
 import { useLocale } from '../../../hooks/useLocale' 
+
+const CATALOGUES = [
+  { code: 'de', label: 'Deutsch' },
+  { code: 'fr', label: 'Français' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
+]
+
+const cataloguePath = code => `/catalogues/kelu-catalogue-2026-10-${code}.pdf`
 
 const ProductModal = lazy(() => import('../../../components/ProductModal'))
 
@@ -54,7 +63,8 @@ function ProductCard({ product, onClick }) {
 export default function ProductsPage() {
   const t = useTranslations()
   const [activeProduct, setActiveProduct] = useState(null)
-  const locale = useLocale() 
+  const locale = useLocale()
+  const catalogueLocale = CATALOGUES.some(item => item.code === locale) ? locale : 'de'
 
   useEffect(() => {
     const hash = window.location.hash
@@ -104,16 +114,38 @@ export default function ProductsPage() {
           </div>
 
           <div className="products-section-cta scroll-animate">
-            <p className="section-sub">{t('productStrip.ctaDesc')}</p>
-            <Link href={`/${locale}/contact`} className="catalogue-cta-btn" onClick={trackCatalogueRequest}>
-              {t('productStrip.ctaButton')}
+            <p className="section-sub">{t('catalogueDownloads.description')}</p>
+            {locale === 'it' && <p className="catalogue-language-note">{t('catalogueDownloads.fallback')}</p>}
+            <a
+              href={cataloguePath(catalogueLocale)}
+              className="catalogue-cta-btn"
+              download
+              hrefLang={catalogueLocale}
+              type="application/pdf"
+              onClick={() => trackCatalogueDownload(catalogueLocale)}
+            >
+              {t('catalogueDownloads.download')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
+                <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4" />
               </svg>
+            </a>
+            <nav className="catalogue-languages" aria-label={t('catalogueDownloads.otherLanguages')}>
+              <span>{t('catalogueDownloads.otherLanguages')}</span>
+              {CATALOGUES.filter(item => item.code !== catalogueLocale).map(item => (
+                <a key={item.code} href={cataloguePath(item.code)} hrefLang={item.code}
+                  lang={item.code} download type="application/pdf"
+                  onClick={() => trackCatalogueDownload(item.code)}>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <Link href={`/${locale}/contact`} className="catalogue-quote-link" onClick={trackCatalogueRequest}>
+              {t('catalogueDownloads.contact')}
             </Link>
           </div>
+
+
         </div>
       </section>
 

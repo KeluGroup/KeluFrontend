@@ -525,5 +525,12 @@
     "priceSub": "Più sei costante, migliori sono le tue condizioni. Pubblici e per iscritto.",
     "pricesCta": "Vedi tutti i servizi",
     "trust": "Kelu GmbH · UID CHE-189.376.134 · Langfurren 14, 8057 Zürich"
+  },
+  "catalogueDownloads": {
+    "description": "Catalogo B2B con prezzi per cartone. Ottobre 2026 · PDF · circa 11 MB.",
+    "download": "Scarica il catalogo in tedesco",
+    "otherLanguages": "Altre lingue:",
+    "contact": "Richiedi un’offerta personalizzata",
+    "fallback": "Il catalogo è disponibile in tedesco, francese, inglese e spagnolo."
   }
 }

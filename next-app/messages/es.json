@@ -89,7 +89,7 @@
     "contentTitle": "Todo lo que necesitas, nada que no necesitas",
     "feat2title": "Productos seleccionados que realmente se venden",
     "feat2text": "Sin catálogos sobredimensionados llenos de stock de baja rotación. Nos enfocamos en productos probados de alta demanda que tus clientes ya aman.",
-    "feat3title": "Un equipo que habla comida latina",
+    "feat3title": "Un equipo que sabe de comida latina",
     "feat3text": "Esto no es mayoreo genérico. Crecimos con estos productos, estas recetas y esta cultura — ayudándote a comprar de forma más inteligente, no solo más barata.",
     "feat4title": "Precios transparentes diseñados para el crecimiento",
     "feat4text": "Precios claros y escalables diseñados para apoyar tu crecimiento. Cuanto más pides, mejores son tus márgenes — sin tarifas ocultas, negociaciones complicadas ni costos inesperados.",
@@ -525,5 +525,12 @@
     "priceSub": "Cuanto más constante seas, mejores condiciones. Públicos y por escrito.",
     "pricesCta": "Ver todos los servicios",
     "trust": "Kelu GmbH · UID CHE-189.376.134 · Langfurren 14, 8057 Zürich"
+  },
+  "catalogueDownloads": {
+    "description": "Catálogo B2B con precios por caja. Octubre de 2026 · PDF · aprox. 11 MB.",
+    "download": "Descargar el catálogo en español",
+    "otherLanguages": "Otros idiomas:",
+    "contact": "Solicitar una oferta personalizada",
+    "fallback": ""
   }
 }
