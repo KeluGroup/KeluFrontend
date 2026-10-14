@@ -16,16 +16,16 @@
     "heading": "Lateinamerikanischen",
     "headingSpan": "Geschmack",
     "headingEm": "ins Herz Europas bringen",
-    "body": "Erstklassige lateinamerikanische Produkte mit festen Lieferzeiten, klaren Preisen und dem Service, den du verdienst — für Restaurants, Delis, Caterer und alle, die lateinamerikanisches Essen ernst nehmen.",
+    "body": "Lateinamerikanische Produkte und gastronomische Events in Zürich. Wir entwickeln derzeit unser B2B-Angebot für Restaurants und Betriebe.",
     "cta": "Leistungen",
     "ctaSecond": "Produkte",
     "scroll": "Scrollen",
     "heroLabel": "Hero-Visual / Medien",
     "imgLabel": "Bild",
     "contentLabel": "Inhalt",
-    "trustB2b": "B2B-Vertrieb",
+    "trustB2b": "Events und B2B-Vertrieb im Aufbau",
     "trustSwiss": "Schweizer Qualität",
-    "trustDelivery": "Schweizweite Lieferung"
+    "trustDelivery": "Start in Zürich"
   },
   "services": {
     "tag": "Was Wir Bieten",
@@ -184,7 +184,7 @@
   "map": {
     "title": "Unser Start in Zürich",
     "subtitle": "Wir entwickeln den lokalen Vertrieb Schritt für Schritt.",
-    "svgLabel": "Wir liefern in der ganzen Schweiz"
+    "svgLabel": "Zürich, Startphase"
   },
   "process": {
     "tag": "So funktioniert es",
@@ -418,9 +418,9 @@
     "tag": "Liefergebiet",
     "title": "Wir kommen zu Ihnen",
     "subtitle": "Aktuell in Zürich aktiv. Expansion auf die gesamte Schweiz in Vorbereitung.",
-    "currentLabel": "Aktiv — Zürich",
-    "currentDesc": "4 wöchentliche Lieferzonen im Grossraum Zürich.",
-    "expandLabel": "Bald — gesamte Schweiz",
+    "currentLabel": "Zürich, Startphase",
+    "currentDesc": "Lieferungen nach Verfügbarkeit und Absprache.",
+    "expandLabel": "Weitere Regionen: mögliche spätere Expansion",
     "expandDesc": "Nationale Expansion in Vorbereitung. Kontaktieren Sie uns ausserhalb Zürichs."
   },
   "faq": {
