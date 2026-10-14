@@ -30,15 +30,7 @@
   "services": {
     "tag": "Was Wir Bieten",
     "title": "Unsere Leistungen",
-    "subtitle": "Authentischer Vertrieb lateinamerikanischer Lebensmittel mit zuverlässiger Logistik, transparenten Preisen und persönlichem Support in der ganzen Schweiz.",
-    "trustM1": "150+",
-    "trustL1": "Katalog-Referenzen",
-    "trustM2": "40+",
-    "trustL2": "Aktive B2B-Kunden",
-    "trustM3": "98%",
-    "trustL3": "Pünktliche Lieferungen",
-    "trustM4": "100%",
-    "trustL4": "Schweizer Lebensmittelstandards",
+    "subtitle": "Lateinamerikanische Produkte, gastronomische Events und schrittweiser Aufbau unseres B2B-Vertriebs in Zürich.",
     "one": "B2B Markt",
     "two": "Catering",
     "three": "Events",
@@ -89,7 +81,7 @@
     "ctaSchedule": "Kostenloses Meeting buchen",
     "ctaCatalogue": "Produkte & Preise entdecken",
     "catalogueBtn": "Katalog herunterladen",
-    "catalogueSoon": "Katalog demnächst verfügbar — kontaktieren Sie uns für eine personalisierte Version",
+    "catalogueSoon": "Katalog jetzt herunterladen",
     "ctaDesc": "Wir erstellen Ihnen einen personalisierten Katalog mit den Produkten, Preisen und Lösungen, die am besten zu Ihrem Unternehmen passen.",
     "productsTitle": "Unsere Produkte",
     "p1": "Vorgekochte Arepas",
@@ -190,8 +182,8 @@
     "servicesModalCta": "Alle Leistungen ansehen"
   },
   "map": {
-    "title": "Schweizweite Lieferabdeckung",
-    "subtitle": "26 Schweizer Kantone. Ein zuverlässiger Partner.",
+    "title": "Unser Start in Zürich",
+    "subtitle": "Wir entwickeln den lokalen Vertrieb Schritt für Schritt.",
     "svgLabel": "Wir liefern in der ganzen Schweiz"
   },
   "process": {
@@ -223,9 +215,9 @@
     "storyHeadingLine1": "Wurzeln, Tradition",
     "storyHeadingConnector": "& eine",
     "storyHeadingEm": "gemeinsame Vision",
-    "storyP1": "Luis und Andrés wuchsen in Venezuela auf. Kevin in Kolumbien. Drei Lateinamerikaner, die in die Schweiz kamen und etwas mitbrachten, das kein Koffer verlieren kann: den Geschmack von Zuhause, eine Identität in jedem Rezept.",
-    "storyP2": "Hier stellten sie fest, dass die lateinamerikanische Küche unsichtbar war. Lieferanten verkauften «Latino» als Etikett, nicht als Identität — unzuverlässige Bestände, mittelmäßige Produkte und Vertreter, die noch nie eine echte Arepa probiert hatten. Inakzeptabel.",
-    "storyP3": "So entstand KELU. Nicht als ein weiteres Unternehmen, sondern als Aussage: Lateinamerikanisches Essen verdient einen ernsthaften Partner — mit authentischem Sortiment, zuverlässigen Lieferungen und dem Respekt, den jedes Rezept verdient. Heute bringen wir diesen Standard zu Restaurants, Caterern und Köchen in der ganzen Schweiz.",
+    "storyP1": "Alles begann mit einer Frage: Wie bringen wir authentische lateinamerikanische Aromen zu Menschen und Betrieben in der Schweiz?",
+    "storyP2": "Luis und Andrés wuchsen in Venezuela auf, Kevin in Kolumbien. Essen bedeutet für uns Kultur, Identität und ein Stück Heimat. Bei gastronomischen Events konnten wir unsere Spezialitäten anbieten und direkt mit unseren Gästen sprechen.",
+    "storyP3": "So entstand KELU: um diese Aromen mit neuen Möglichkeiten zu verbinden. Heute verbinden wir unsere Erfahrung bei Events mit dem schrittweisen Aufbau eines Angebots für Restaurants und Betriebe – zunächst in Zürich.",
     "missionQuote": "Wir sind kein Laden. Wir sind der Lieferpartner deiner Küche — 100% B2B, ohne Ablenkung.",
     "missionAttribution": "Das KELU-Gründerteam",
     "valuesTag": "Unser Versprechen",
@@ -262,7 +254,10 @@
       "Digitale Präsenz",
       "Kundenbeziehungen",
       "Prozess-Tools"
-    ]
+    ],
+    "foundersCaption": "Die Gründer der KELU GmbH",
+    "followTitle": "Unsere Geschichte geht weiter. Folge uns.",
+    "followDesc": "Entdecke unsere Produkte, Events und Neuigkeiten."
   },
   "contact": {
     "tag": "Kontakt aufnehmen",
